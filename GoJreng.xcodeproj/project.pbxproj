@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		55F130FA2669EF23008BFC97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F130F92669EF23008BFC97 /* AppDelegate.swift */; };
 		55F130FC2669EF23008BFC97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F130FB2669EF23008BFC97 /* SceneDelegate.swift */; };
-		55F130FE2669EF23008BFC97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F130FD2669EF23008BFC97 /* ViewController.swift */; };
 		55F131012669EF23008BFC97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F130FF2669EF23008BFC97 /* Main.storyboard */; };
 		55F131042669EF23008BFC97 /* GoJreng.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55F131022669EF23008BFC97 /* GoJreng.xcdatamodeld */; };
 		55F131062669EF26008BFC97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F131052669EF26008BFC97 /* Assets.xcassets */; };
 		55F131092669EF26008BFC97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F131072669EF26008BFC97 /* LaunchScreen.storyboard */; };
 		55F131142669EF26008BFC97 /* GoJrengTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F131132669EF26008BFC97 /* GoJrengTests.swift */; };
 		55F1311F2669EF26008BFC97 /* GoJrengUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F1311E2669EF26008BFC97 /* GoJrengUITests.swift */; };
+		55F131362669EF9A008BFC97 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F131352669EF9A008BFC97 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		55F130F62669EF23008BFC97 /* GoJreng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoJreng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F130F92669EF23008BFC97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55F130FB2669EF23008BFC97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		55F130FD2669EF23008BFC97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		55F131002669EF23008BFC97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55F131032669EF23008BFC97 /* GoJreng.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoJreng.xcdatamodel; sourceTree = "<group>"; };
 		55F131052669EF26008BFC97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		55F1311A2669EF26008BFC97 /* GoJrengUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoJrengUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F1311E2669EF26008BFC97 /* GoJrengUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoJrengUITests.swift; sourceTree = "<group>"; };
 		55F131202669EF26008BFC97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55F131352669EF9A008BFC97 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +101,14 @@
 		55F130F82669EF23008BFC97 /* GoJreng */ = {
 			isa = PBXGroup;
 			children = (
+				55F131342669EF58008BFC97 /* Mode3 */,
+				55F131332669EF52008BFC97 /* Mode2 */,
+				55F131322669EF4C008BFC97 /* Mode1 */,
+				55F131312669EF46008BFC97 /* Home */,
+				55F131302669EF3D008BFC97 /* Resource */,
+				55F1312F2669EF30008BFC97 /* Utils */,
 				55F130F92669EF23008BFC97 /* AppDelegate.swift */,
 				55F130FB2669EF23008BFC97 /* SceneDelegate.swift */,
-				55F130FD2669EF23008BFC97 /* ViewController.swift */,
-				55F130FF2669EF23008BFC97 /* Main.storyboard */,
 				55F131052669EF26008BFC97 /* Assets.xcassets */,
 				55F131072669EF26008BFC97 /* LaunchScreen.storyboard */,
 				55F1310A2669EF26008BFC97 /* Info.plist */,
@@ -129,6 +133,58 @@
 				55F131202669EF26008BFC97 /* Info.plist */,
 			);
 			path = GoJrengUITests;
+			sourceTree = "<group>";
+		};
+		55F1312F2669EF30008BFC97 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				55F131402669F06F008BFC97 /* Model */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		55F131302669EF3D008BFC97 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		55F131312669EF46008BFC97 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				55F130FF2669EF23008BFC97 /* Main.storyboard */,
+				55F131352669EF9A008BFC97 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		55F131322669EF4C008BFC97 /* Mode1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mode1;
+			sourceTree = "<group>";
+		};
+		55F131332669EF52008BFC97 /* Mode2 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mode2;
+			sourceTree = "<group>";
+		};
+		55F131342669EF58008BFC97 /* Mode3 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mode3;
+			sourceTree = "<group>";
+		};
+		55F131402669F06F008BFC97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +317,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F131362669EF9A008BFC97 /* HomeViewController.swift in Sources */,
 				55F131042669EF23008BFC97 /* GoJreng.xcdatamodeld in Sources */,
-				55F130FE2669EF23008BFC97 /* ViewController.swift in Sources */,
 				55F130FA2669EF23008BFC97 /* AppDelegate.swift in Sources */,
 				55F130FC2669EF23008BFC97 /* SceneDelegate.swift in Sources */,
 			);
