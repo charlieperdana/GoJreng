@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B348D532672087900404EF4 /* BaseModality.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B348D522672087900404EF4 /* BaseModality.storyboard */; settings = {ASSET_TAGS = (11, ); }; };
+		0B348D582672089400404EF4 /* ModalityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B348D572672089400404EF4 /* ModalityViewController.swift */; };
+		0B348D5D26720E4B00404EF4 /* BaseModalityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B348D5C26720E4B00404EF4 /* BaseModalityViewController.swift */; };
 		55F130FA2669EF23008BFC97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F130F92669EF23008BFC97 /* AppDelegate.swift */; };
 		55F130FC2669EF23008BFC97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F130FB2669EF23008BFC97 /* SceneDelegate.swift */; };
 		55F131012669EF23008BFC97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F130FF2669EF23008BFC97 /* Main.storyboard */; };
@@ -16,6 +19,10 @@
 		55F131142669EF26008BFC97 /* GoJrengTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F131132669EF26008BFC97 /* GoJrengTests.swift */; };
 		55F1311F2669EF26008BFC97 /* GoJrengUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F1311E2669EF26008BFC97 /* GoJrengUITests.swift */; };
 		55F131362669EF9A008BFC97 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F131352669EF9A008BFC97 /* HomeViewController.swift */; };
+		55F131DB2672002E008BFC97 /* ExitPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F131DA2672002E008BFC97 /* ExitPresentationController.swift */; };
+		55F131E326720187008BFC97 /* ExitOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55F131E226720187008BFC97 /* ExitOverlayView.xib */; };
+		55F131F026720A63008BFC97 /* ExitOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F131EF26720A63008BFC97 /* ExitOverlayView.swift */; };
+		95E254DA2670A65900BB39D8 /* GoJrengColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E254D92670A65900BB39D8 /* GoJrengColors.swift */; };
 		84364171266F76B40060A9CE /* UnlockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436416F266F76B40060A9CE /* UnlockTableViewCell.swift */; };
 		84364172266F76B40060A9CE /* UnlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84364170266F76B40060A9CE /* UnlockTableViewCell.xib */; };
 		84364180266F8DC40060A9CE /* LockedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436417E266F8DC40060A9CE /* LockedTableViewCell.swift */; };
@@ -43,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B348D522672087900404EF4 /* BaseModality.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BaseModality.storyboard; sourceTree = "<group>"; };
+		0B348D572672089400404EF4 /* ModalityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalityViewController.swift; sourceTree = "<group>"; };
+		0B348D5C26720E4B00404EF4 /* BaseModalityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModalityViewController.swift; sourceTree = "<group>"; };
 		55F130F62669EF23008BFC97 /* GoJreng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoJreng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F130F92669EF23008BFC97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55F130FB2669EF23008BFC97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +68,10 @@
 		55F1311E2669EF26008BFC97 /* GoJrengUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoJrengUITests.swift; sourceTree = "<group>"; };
 		55F131202669EF26008BFC97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55F131352669EF9A008BFC97 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		55F131DA2672002E008BFC97 /* ExitPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitPresentationController.swift; sourceTree = "<group>"; };
+		55F131E226720187008BFC97 /* ExitOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExitOverlayView.xib; sourceTree = "<group>"; };
+		55F131EF26720A63008BFC97 /* ExitOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitOverlayView.swift; sourceTree = "<group>"; };
+		95E254D92670A65900BB39D8 /* GoJrengColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoJrengColors.swift; sourceTree = "<group>"; };
 		8436416F266F76B40060A9CE /* UnlockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockTableViewCell.swift; sourceTree = "<group>"; };
 		84364170266F76B40060A9CE /* UnlockTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnlockTableViewCell.xib; sourceTree = "<group>"; };
 		8436417E266F8DC40060A9CE /* LockedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedTableViewCell.swift; sourceTree = "<group>"; };
@@ -92,6 +106,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B240FAF2672201700058030 /* AnswerPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				0B348D522672087900404EF4 /* BaseModality.storyboard */,
+				0B348D572672089400404EF4 /* ModalityViewController.swift */,
+				0B348D5C26720E4B00404EF4 /* BaseModalityViewController.swift */,
+			);
+			path = AnswerPopUp;
+			sourceTree = "<group>";
+		};
 		55F130ED2669EF23008BFC97 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +139,9 @@
 		55F130F82669EF23008BFC97 /* GoJreng */ = {
 			isa = PBXGroup;
 			children = (
+				55F131D82671FE0A008BFC97 /* Modality */,
+				95E254D82670A61600BB39D8 /* Themes */,
+				849451ED266E7642007287D4 /* Helper */,
 				B5E6E1A0266FBD42004C3CBD /* Model */,
 				849451ED266E7642007287D4 /* Helper */,
 				55F131342669EF58008BFC97 /* Mode3 */,
@@ -207,11 +234,40 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		55F131D82671FE0A008BFC97 /* Modality */ = {
+			isa = PBXGroup;
+			children = (
+				0B240FAF2672201700058030 /* AnswerPopUp */,
+				55F131D92671FE3E008BFC97 /* Exit */,
+			);
+			path = Modality;
+			sourceTree = "<group>";
+		};
+		95E254D82670A61600BB39D8 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				95E254D92670A65900BB39D8 /* GoJrengColors.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
 		849451ED266E7642007287D4 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				0B240FAF2672201700058030 /* AnswerPopUp */,
+				55F131D92671FE3E008BFC97 /* Exit */,
 			);
-			path = Helper;
+			path = Modality;
+			sourceTree = "<group>";
+		};
+		55F131D92671FE3E008BFC97 /* Exit */ = {
+			isa = PBXGroup;
+			children = (
+				55F131DA2672002E008BFC97 /* ExitPresentationController.swift */,
+				55F131E226720187008BFC97 /* ExitOverlayView.xib */,
+				55F131EF26720A63008BFC97 /* ExitOverlayView.swift */,
+			);
+			path = Exit;
 			sourceTree = "<group>";
 		};
 		B5E6E1A0266FBD42004C3CBD /* Model */ = {
@@ -220,6 +276,15 @@
 				B5E6E1A1266FBD53004C3CBD /* Stages.swift */,
 				B5FBC108266FBEDC008CA574 /* QuestionsAnswers.swift */,
 				B587A7302671399C00C6B734 /* StagesData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B5E6E1A0266FBD42004C3CBD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B5E6E1A1266FBD53004C3CBD /* Stages.swift */,
+				B5FBC108266FBEDC008CA574 /* QuestionsAnswers.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -286,6 +351,10 @@
 		55F130EE2669EF23008BFC97 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					11,
+					wrongButt,
+				);
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
@@ -327,9 +396,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B348D532672087900404EF4 /* BaseModality.storyboard in Resources */,
 				55F131092669EF26008BFC97 /* LaunchScreen.storyboard in Resources */,
 				55F131062669EF26008BFC97 /* Assets.xcassets in Resources */,
 				55F131012669EF23008BFC97 /* Main.storyboard in Resources */,
+				55F131E326720187008BFC97 /* ExitOverlayView.xib in Resources */,
 				84364172266F76B40060A9CE /* UnlockTableViewCell.xib in Resources */,
 				84364181266F8DC40060A9CE /* LockedTableViewCell.xib in Resources */,
 			);
@@ -357,14 +428,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				84364171266F76B40060A9CE /* UnlockTableViewCell.swift in Sources */,
+				55F131F026720A63008BFC97 /* ExitOverlayView.swift in Sources */,
 				84364180266F8DC40060A9CE /* LockedTableViewCell.swift in Sources */,
 				55F131362669EF9A008BFC97 /* HomeViewController.swift in Sources */,
 				B587A7312671399C00C6B734 /* StagesData.swift in Sources */,
 				55F131042669EF23008BFC97 /* GoJreng.xcdatamodeld in Sources */,
 				55F130FA2669EF23008BFC97 /* AppDelegate.swift in Sources */,
+				0B348D582672089400404EF4 /* ModalityViewController.swift in Sources */,
+				55F131DB2672002E008BFC97 /* ExitPresentationController.swift in Sources */,
 				B5FBC109266FBEDC008CA574 /* QuestionsAnswers.swift in Sources */,
 				B5E6E1A2266FBD53004C3CBD /* Stages.swift in Sources */,
+				0B348D5D26720E4B00404EF4 /* BaseModalityViewController.swift in Sources */,
 				55F130FC2669EF23008BFC97 /* SceneDelegate.swift in Sources */,
+				95E254DA2670A65900BB39D8 /* GoJrengColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
