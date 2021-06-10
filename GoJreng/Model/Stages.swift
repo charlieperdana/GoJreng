@@ -58,8 +58,6 @@ class Stages {
         self.questionNumber = questionNumber
         self.highScore = highScore
     }
-    
-    
 }
 
 
