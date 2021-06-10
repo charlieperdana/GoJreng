@@ -18,6 +18,7 @@ class ExitPresentationController: UIPresentationController {
         super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissController))
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurEffectView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7948230466)
         self.blurEffectView.isUserInteractionEnabled = true
         self.blurEffectView.addGestureRecognizer(tapGestureRecognizer)
     }

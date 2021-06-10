@@ -12,10 +12,26 @@ class ExitOverlayView: UIViewController {
     var hasSetPointOrigin = false
     var pointOrigin: CGPoint?
 
+    @IBOutlet weak var exitBtn: UIButton!{
+        didSet{
+            exitBtn.backgroundColor = .clear
+            exitBtn.layer.cornerRadius = 10
+            exitBtn.layer.borderWidth = 2
+            exitBtn.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.8549019608, blue: 0.768627451, alpha: 1)
+        }
+    }
+    
+    @IBOutlet weak var goBackBtn: UIButton!{
+        didSet{
+            goBackBtn.layer.cornerRadius = 10
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
         view.addGestureRecognizer(panGesture)
+        setButtonView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -47,6 +63,24 @@ class ExitOverlayView: UIViewController {
         }
     }
     
-
+    func setButtonView() {
+        exitBtn?.setTitle("Exit", for: .normal)
+        goBackBtn?.setTitle("Go Back", for: .normal)
+    }
+    
+    
+    @IBAction func tapExit(_ sender: UIButton) {
+        let homeSB = UIStoryboard(name: "Main", bundle: nil)
+        let vc = homeSB.instantiateViewController(withIdentifier: "HomeViewController")
+        vc.modalTransitionStyle = .coverVertical
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+    
+    @IBAction func tapBack(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
