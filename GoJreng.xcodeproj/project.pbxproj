@@ -16,12 +16,13 @@
 		55F131142669EF26008BFC97 /* GoJrengTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F131132669EF26008BFC97 /* GoJrengTests.swift */; };
 		55F1311F2669EF26008BFC97 /* GoJrengUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F1311E2669EF26008BFC97 /* GoJrengUITests.swift */; };
 		55F131362669EF9A008BFC97 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F131352669EF9A008BFC97 /* HomeViewController.swift */; };
-		B5E6E1A2266FBD53004C3CBD /* Stages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6E1A1266FBD53004C3CBD /* Stages.swift */; };
-		B5FBC109266FBEDC008CA574 /* QuestionsAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBC108266FBEDC008CA574 /* QuestionsAnswers.swift */; };
 		84364171266F76B40060A9CE /* UnlockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436416F266F76B40060A9CE /* UnlockTableViewCell.swift */; };
 		84364172266F76B40060A9CE /* UnlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84364170266F76B40060A9CE /* UnlockTableViewCell.xib */; };
 		84364180266F8DC40060A9CE /* LockedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436417E266F8DC40060A9CE /* LockedTableViewCell.swift */; };
 		84364181266F8DC40060A9CE /* LockedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8436417F266F8DC40060A9CE /* LockedTableViewCell.xib */; };
+		B587A7312671399C00C6B734 /* StagesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587A7302671399C00C6B734 /* StagesData.swift */; };
+		B5E6E1A2266FBD53004C3CBD /* Stages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6E1A1266FBD53004C3CBD /* Stages.swift */; };
+		B5FBC109266FBEDC008CA574 /* QuestionsAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBC108266FBEDC008CA574 /* QuestionsAnswers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,12 +58,13 @@
 		55F1311E2669EF26008BFC97 /* GoJrengUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoJrengUITests.swift; sourceTree = "<group>"; };
 		55F131202669EF26008BFC97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55F131352669EF9A008BFC97 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		B5E6E1A1266FBD53004C3CBD /* Stages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stages.swift; sourceTree = "<group>"; };
-		B5FBC108266FBEDC008CA574 /* QuestionsAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsAnswers.swift; sourceTree = "<group>"; };
 		8436416F266F76B40060A9CE /* UnlockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockTableViewCell.swift; sourceTree = "<group>"; };
 		84364170266F76B40060A9CE /* UnlockTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnlockTableViewCell.xib; sourceTree = "<group>"; };
 		8436417E266F8DC40060A9CE /* LockedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedTableViewCell.swift; sourceTree = "<group>"; };
 		8436417F266F8DC40060A9CE /* LockedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockedTableViewCell.xib; sourceTree = "<group>"; };
+		B587A7302671399C00C6B734 /* StagesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesData.swift; sourceTree = "<group>"; };
+		B5E6E1A1266FBD53004C3CBD /* Stages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stages.swift; sourceTree = "<group>"; };
+		B5FBC108266FBEDC008CA574 /* QuestionsAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsAnswers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,20 +207,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		B5E6E1A0266FBD42004C3CBD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B5E6E1A1266FBD53004C3CBD /* Stages.swift */,
-				B5FBC108266FBEDC008CA574 /* QuestionsAnswers.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		849451ED266E7642007287D4 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		B5E6E1A0266FBD42004C3CBD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B5E6E1A1266FBD53004C3CBD /* Stages.swift */,
+				B5FBC108266FBEDC008CA574 /* QuestionsAnswers.swift */,
+				B587A7302671399C00C6B734 /* StagesData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +359,7 @@
 				84364171266F76B40060A9CE /* UnlockTableViewCell.swift in Sources */,
 				84364180266F8DC40060A9CE /* LockedTableViewCell.swift in Sources */,
 				55F131362669EF9A008BFC97 /* HomeViewController.swift in Sources */,
+				B587A7312671399C00C6B734 /* StagesData.swift in Sources */,
 				55F131042669EF23008BFC97 /* GoJreng.xcdatamodeld in Sources */,
 				55F130FA2669EF23008BFC97 /* AppDelegate.swift in Sources */,
 				B5FBC109266FBEDC008CA574 /* QuestionsAnswers.swift in Sources */,
