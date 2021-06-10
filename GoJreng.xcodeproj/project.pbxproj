@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B348D532672087900404EF4 /* BaseModality.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B348D522672087900404EF4 /* BaseModality.storyboard */; settings = {ASSET_TAGS = (11, ); }; };
+		0B348D582672089400404EF4 /* ModalityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B348D572672089400404EF4 /* ModalityViewController.swift */; };
+		0B348D5D26720E4B00404EF4 /* BaseModalityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B348D5C26720E4B00404EF4 /* BaseModalityViewController.swift */; };
 		55F130FA2669EF23008BFC97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F130F92669EF23008BFC97 /* AppDelegate.swift */; };
 		55F130FC2669EF23008BFC97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F130FB2669EF23008BFC97 /* SceneDelegate.swift */; };
 		55F131012669EF23008BFC97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F130FF2669EF23008BFC97 /* Main.storyboard */; };
@@ -45,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B348D522672087900404EF4 /* BaseModality.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BaseModality.storyboard; sourceTree = "<group>"; };
+		0B348D572672089400404EF4 /* ModalityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalityViewController.swift; sourceTree = "<group>"; };
+		0B348D5C26720E4B00404EF4 /* BaseModalityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModalityViewController.swift; sourceTree = "<group>"; };
 		55F130F62669EF23008BFC97 /* GoJreng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoJreng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F130F92669EF23008BFC97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55F130FB2669EF23008BFC97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +102,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B240FAF2672201700058030 /* AnswerPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				0B348D522672087900404EF4 /* BaseModality.storyboard */,
+				0B348D572672089400404EF4 /* ModalityViewController.swift */,
+				0B348D5C26720E4B00404EF4 /* BaseModalityViewController.swift */,
+			);
+			path = AnswerPopUp;
+			sourceTree = "<group>";
+		};
 		55F130ED2669EF23008BFC97 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +231,7 @@
 		55F131D82671FE0A008BFC97 /* Modality */ = {
 			isa = PBXGroup;
 			children = (
+				0B240FAF2672201700058030 /* AnswerPopUp */,
 				55F131D92671FE3E008BFC97 /* Exit */,
 			);
 			path = Modality;
@@ -308,6 +325,10 @@
 		55F130EE2669EF23008BFC97 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					11,
+					wrongButt,
+				);
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
@@ -349,6 +370,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B348D532672087900404EF4 /* BaseModality.storyboard in Resources */,
 				55F131092669EF26008BFC97 /* LaunchScreen.storyboard in Resources */,
 				55F131062669EF26008BFC97 /* Assets.xcassets in Resources */,
 				55F131012669EF23008BFC97 /* Main.storyboard in Resources */,
@@ -385,9 +407,11 @@
 				55F131362669EF9A008BFC97 /* HomeViewController.swift in Sources */,
 				55F131042669EF23008BFC97 /* GoJreng.xcdatamodeld in Sources */,
 				55F130FA2669EF23008BFC97 /* AppDelegate.swift in Sources */,
+				0B348D582672089400404EF4 /* ModalityViewController.swift in Sources */,
 				55F131DB2672002E008BFC97 /* ExitPresentationController.swift in Sources */,
 				B5FBC109266FBEDC008CA574 /* QuestionsAnswers.swift in Sources */,
 				B5E6E1A2266FBD53004C3CBD /* Stages.swift in Sources */,
+				0B348D5D26720E4B00404EF4 /* BaseModalityViewController.swift in Sources */,
 				55F130FC2669EF23008BFC97 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
