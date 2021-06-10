@@ -102,14 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B348D492672080D00404EF4 /* Common */ = {
+		0B240FAF2672201700058030 /* AnswerPopUp */ = {
 			isa = PBXGroup;
 			children = (
 				0B348D522672087900404EF4 /* BaseModality.storyboard */,
 				0B348D572672089400404EF4 /* ModalityViewController.swift */,
 				0B348D5C26720E4B00404EF4 /* BaseModalityViewController.swift */,
 			);
-			path = Common;
+			path = AnswerPopUp;
 			sourceTree = "<group>";
 		};
 		55F130ED2669EF23008BFC97 = {
@@ -135,7 +135,6 @@
 		55F130F82669EF23008BFC97 /* GoJreng */ = {
 			isa = PBXGroup;
 			children = (
-				0B348D492672080D00404EF4 /* Common */,
 				55F131D82671FE0A008BFC97 /* Modality */,
 				B5E6E1A0266FBD42004C3CBD /* Model */,
 				849451ED266E7642007287D4 /* Helper */,
@@ -232,6 +231,7 @@
 		55F131D82671FE0A008BFC97 /* Modality */ = {
 			isa = PBXGroup;
 			children = (
+				0B240FAF2672201700058030 /* AnswerPopUp */,
 				55F131D92671FE3E008BFC97 /* Exit */,
 			);
 			path = Modality;
