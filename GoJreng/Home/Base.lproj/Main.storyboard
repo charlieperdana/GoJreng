@@ -42,6 +42,17 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXZ-zF-mEG">
+                                <rect key="frame" x="144" y="59" width="159" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.95454210039999998" green="0.17206546659999999" blue="0.28233352299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="TO MODAL TEST PAGE">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="afV-Mg-viF" kind="presentation" modalPresentationStyle="fullScreen" id="o1M-5O-T3k"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -54,7 +65,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.76923076923077" y="115.87677725118483"/>
+            <point key="canvasLocation" x="-117" y="110"/>
+        </scene>
+        <!--BaseModality-->
+        <scene sceneID="2Ok-I0-TBf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BaseModality" id="afV-Mg-viF" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="i3y-Jz-CD0"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="77a-wh-x5b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="486" y="36"/>
         </scene>
     </scenes>
     <resources>
