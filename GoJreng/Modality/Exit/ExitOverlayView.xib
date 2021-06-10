@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExitOverlayView" customModule="GoJreng" customModuleProvider="target">
             <connections>
+                <outlet property="exitBtn" destination="k9p-HR-Aje" id="3sJ-eg-QTV"/>
+                <outlet property="goBackBtn" destination="Klg-uL-N5F" id="039-4V-mRs"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Sz0-ZA-xNQ"/>
             </connections>
         </placeholder>
@@ -32,14 +34,27 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Klg-uL-N5F">
-                    <rect key="frame" x="242" y="181" width="58" height="30"/>
+                    <rect key="frame" x="200" y="167" width="165" height="56"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Go Back"/>
+                    <color key="backgroundColor" red="0.90588235294117647" green="0.85490196078431369" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="22"/>
+                    <state key="normal" title="Go Back">
+                        <color key="titleColor" red="0.63137254901960782" green="0.34901960784313724" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="tapBack:" destination="-1" eventType="touchUpInside" id="z6y-0F-DBD"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9p-HR-Aje">
-                    <rect key="frame" x="128" y="181" width="30" height="30"/>
+                    <rect key="frame" x="27" y="167" width="165" height="56"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Exit"/>
+                    <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="22"/>
+                    <state key="normal" title="Exit">
+                        <color key="titleColor" red="0.90588235294117647" green="0.85490196078431369" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="tapExit:" destination="-1" eventType="touchUpInside" id="x0X-ct-kL3"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
