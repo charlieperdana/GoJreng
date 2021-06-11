@@ -204,7 +204,7 @@ var questionsForStage2 = [
         Answers(answerSound: "\(minorQuestionsAnswers[7])", answerLabel: "Em", isCorrect: false),
         Answers(answerSound: "\(majorQuestionsAnswers[10])", answerLabel: "G", isCorrect: true),
         Answers(answerSound: "\(minorQuestionsAnswers[11])", answerLabel: "Gm", isCorrect: false),
-        Answers(answerSound: "\(majorQuestionsAnswers[11])", answerLabel: "G#", isCorrect: <#T##Bool#>),
+        Answers(answerSound: "\(majorQuestionsAnswers[11])", answerLabel: "G#", isCorrect: false),
         
     ]),
     
