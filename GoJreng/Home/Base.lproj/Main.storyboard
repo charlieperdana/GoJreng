@@ -50,6 +50,17 @@
                                     <action selector="exitModal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vSv-xE-CZQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKx-8H-s6L">
+                                <rect key="frame" x="60" y="772" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.95454210039999998" green="0.17206546659999999" blue="0.28233352299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="TO STG 1">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="jYF-RU-PgG" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="pxP-Wz-esz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -64,6 +75,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.76923076923077" y="115.87677725118483"/>
+        </scene>
+        <!--Mode1Board-->
+        <scene sceneID="Pcj-aJ-bKg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Mode1Board" id="jYF-RU-PgG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zst-Ym-OCv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="849" y="280"/>
         </scene>
     </scenes>
     <resources>
