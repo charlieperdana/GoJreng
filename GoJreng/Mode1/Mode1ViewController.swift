@@ -77,7 +77,13 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     
     func checkAnswer(choice: String) {
         print("CHOICE: " + choice)
-        let chord = questionArray[qIndex-1]
+        var chord: String
+        if qIndex == 0{
+            chord = questionArray[qIndex]
+        }
+        else{
+            chord = questionArray[qIndex-1]
+        }
         print("ANS: " + chord)
         var isCorrect: Bool
 //        if minor
