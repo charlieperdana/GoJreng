@@ -12,7 +12,9 @@ class Mode1ViewController: UIViewController {
     @IBOutlet weak var majorButton: UIButton!
     @IBOutlet weak var minorButton: UIButton!
     @IBOutlet var lifePicks: [UIImageView]!
+    @IBOutlet weak var timerLabel: UILabel!
     
+    var timer = 90
     var lifeCount = 3
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,11 @@ class Mode1ViewController: UIViewController {
         self.majorButton.clipsToBounds = true
         self.minorButton.layer.cornerRadius = 10
         self.minorButton.clipsToBounds = true
+        
+//        timer setup
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+
+        
     }
     
 
@@ -43,4 +50,11 @@ class Mode1ViewController: UIViewController {
         lifeCount -= 1
     }
     
+//    update timer
+    @objc func update() {
+        if(timer > 0) {
+            timer -= 1
+            timerLabel.text = String(timer)
+        }
+    }
 }

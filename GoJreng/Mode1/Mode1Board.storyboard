@@ -111,6 +111,7 @@
                     <connections>
                         <outlet property="majorButton" destination="nvi-Lc-JmJ" id="zMk-da-sNC"/>
                         <outlet property="minorButton" destination="h9k-Q6-4UB" id="vfw-nm-NUx"/>
+                        <outlet property="timerLabel" destination="V1k-Sh-O87" id="9u5-t4-KbK"/>
                         <outletCollection property="lifePicks" destination="nuJ-7i-hNl" collectionClass="NSMutableArray" id="Vft-bZ-Lea"/>
                         <outletCollection property="lifePicks" destination="25T-Lx-ZHr" collectionClass="NSMutableArray" id="mwP-ts-xXg"/>
                         <outletCollection property="lifePicks" destination="F00-n0-q9w" collectionClass="NSMutableArray" id="Kea-XD-T1n"/>
