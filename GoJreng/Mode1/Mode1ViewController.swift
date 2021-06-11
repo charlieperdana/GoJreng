@@ -40,6 +40,10 @@ class Mode1ViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func majorTouched(_ sender: Any) {
+        showWrongAnswerModal()
+    }
+    
     @IBAction func minorTouched(_ sender: Any) {
         if (lifeCount <= 0){
 //            TODO handle game over
@@ -48,6 +52,14 @@ class Mode1ViewController: UIViewController {
         }
         lifePicks[lifeCount-1].isHidden = true
         lifeCount -= 1
+    }
+    
+    func showWrongAnswerModal(){
+        let modalstoryboard = UIStoryboard(name: "BaseModality", bundle: nil)
+        let vc = modalstoryboard.instantiateViewController(withIdentifier: "wrongSimple")
+        vc.modalPresentationStyle = .overFullScreen //or .overFullScreen for transparency
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true)
     }
     
 //    update timer

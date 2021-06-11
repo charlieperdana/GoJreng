@@ -28,6 +28,9 @@
                                 <state key="normal" title="Major">
                                     <color key="titleColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="majorTouched:" destination="d7F-JX-kRO" eventType="touchUpInside" id="php-Q6-poa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9k-Q6-4UB">
                                 <rect key="frame" x="208" y="648" width="160" height="56"/>
