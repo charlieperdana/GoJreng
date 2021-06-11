@@ -13,9 +13,9 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     @IBOutlet weak var stageCollection: UICollectionView!
     
     let stage = [
-        Stages(stageName: "Mayor/Minor Identification", stageState: .unlocked, question: [], highScore: 900),
-        Stages(stageName: "Chord Identification", stageState: .locked, question: [], highScore: 0),
-        Stages(stageName: "Chord Progession Indentification", stageState: .locked, question: [], highScore: 0)
+        Stages(stageName: "Mayor/Minor Identification", stageState: .unlocked, question: [], questionNumber: 100, highScore: 900),
+        Stages(stageName: "Chord Identification", stageState: .locked, question: [], questionNumber: 100, highScore: 0),
+        Stages(stageName: "Chord Progession Indentification", stageState: .locked, question: [], questionNumber: 100, highScore: 0)
     ]
     
     override func viewDidLoad() {

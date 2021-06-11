@@ -14,6 +14,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var stageTable: UITableView!
     
+    @IBOutlet weak var closeBtn: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,5 +72,25 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //    }
     
     
+    @IBAction func exitModal(_ sender: UIButton) {
+        showExitModal()
+    }
     
+    
+    @objc func showExitModal() {
+        print("exit tapped")
+        let exitModality = ExitOverlayView()
+        exitModality.modalPresentationStyle = .custom
+        exitModality.transitioningDelegate = self
+        self.present(exitModality, animated: true, completion: nil)
+
+    }
+    
+    
+}
+
+extension HomeViewController : UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        ExitPresentationController(presentedViewController: presented, presenting: presenting)
+    }
 }

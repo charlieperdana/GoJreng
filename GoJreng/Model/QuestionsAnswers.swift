@@ -14,6 +14,7 @@ struct Questions {
 }
 
 struct Answers {
-    var answerSound: String
-    var isCorrect: Bool
+    var answerSound: String?
+    var answerLabel: String
+    var isCorrect: Bool?
 }
