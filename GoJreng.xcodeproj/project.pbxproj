@@ -29,6 +29,8 @@
 		84364180266F8DC40060A9CE /* LockedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436417E266F8DC40060A9CE /* LockedTableViewCell.swift */; };
 		84364181266F8DC40060A9CE /* LockedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8436417F266F8DC40060A9CE /* LockedTableViewCell.xib */; };
 		95E254DA2670A65900BB39D8 /* GoJrengColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E254D92670A65900BB39D8 /* GoJrengColors.swift */; };
+		A5CCC0AE267374A7006F2F42 /* FeedbackPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCC0AC267374A7006F2F42 /* FeedbackPageViewController.swift */; };
+		A5CCC0AF267374A7006F2F42 /* FeedbackPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CCC0AD267374A7006F2F42 /* FeedbackPage.storyboard */; };
 		B5B7AFB32672743000A2F263 /* StagesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7AFB22672743000A2F263 /* StagesData.swift */; };
 		B5E6E1A2266FBD53004C3CBD /* Stages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6E1A1266FBD53004C3CBD /* Stages.swift */; };
 		B5FBC109266FBEDC008CA574 /* QuestionsAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBC108266FBEDC008CA574 /* QuestionsAnswers.swift */; };
@@ -80,6 +82,8 @@
 		8436417E266F8DC40060A9CE /* LockedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedTableViewCell.swift; sourceTree = "<group>"; };
 		8436417F266F8DC40060A9CE /* LockedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockedTableViewCell.xib; sourceTree = "<group>"; };
 		95E254D92670A65900BB39D8 /* GoJrengColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoJrengColors.swift; sourceTree = "<group>"; };
+		A5CCC0AC267374A7006F2F42 /* FeedbackPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackPageViewController.swift; sourceTree = "<group>"; };
+		A5CCC0AD267374A7006F2F42 /* FeedbackPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FeedbackPage.storyboard; sourceTree = "<group>"; };
 		B5B7AFB22672743000A2F263 /* StagesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesData.swift; sourceTree = "<group>"; };
 		B5E6E1A1266FBD53004C3CBD /* Stages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stages.swift; sourceTree = "<group>"; };
 		B5FBC108266FBEDC008CA574 /* QuestionsAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsAnswers.swift; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 				55F131342669EF58008BFC97 /* Mode3 */,
 				55F131332669EF52008BFC97 /* Mode2 */,
 				55F131312669EF46008BFC97 /* Home */,
+				A5CCC0AB267374A7006F2F42 /* Feedback */,
 				55F131302669EF3D008BFC97 /* Resource */,
 				55F1312F2669EF30008BFC97 /* Utils */,
 				55F130F92669EF23008BFC97 /* AppDelegate.swift */,
@@ -294,6 +299,15 @@
 			path = Themes;
 			sourceTree = "<group>";
 		};
+		A5CCC0AB267374A7006F2F42 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				A5CCC0AC267374A7006F2F42 /* FeedbackPageViewController.swift */,
+				A5CCC0AD267374A7006F2F42 /* FeedbackPage.storyboard */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
 		B5E6E1A0266FBD42004C3CBD /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +425,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5CCC0AF267374A7006F2F42 /* FeedbackPage.storyboard in Resources */,
 				0B348D532672087900404EF4 /* BaseModality.storyboard in Resources */,
 				55F131092669EF26008BFC97 /* LaunchScreen.storyboard in Resources */,
 				0B64588E2673643D005DAD2B /* Mode1Board.storyboard in Resources */,
@@ -444,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84364171266F76B40060A9CE /* UnlockTableViewCell.swift in Sources */,
+				A5CCC0AE267374A7006F2F42 /* FeedbackPageViewController.swift in Sources */,
 				55F131F026720A63008BFC97 /* ExitOverlayView.swift in Sources */,
 				84364180266F8DC40060A9CE /* LockedTableViewCell.swift in Sources */,
 				0B64588F2673643D005DAD2B /* Mode1ViewController.swift in Sources */,
