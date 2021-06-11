@@ -94,6 +94,9 @@
                                 <rect key="frame" x="123" y="381" width="144" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="stage1PlayButton"/>
+                                <connections>
+                                    <action selector="playSoundClicked:" destination="d7F-JX-kRO" eventType="touchUpInside" id="jQ0-va-2XL"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="alivePicksRotated" translatesAutoresizingMaskIntoConstraints="NO" id="F00-n0-q9w">
                                 <rect key="frame" x="267" y="110.66666666666663" width="29" height="34"/>

@@ -7,9 +7,13 @@
 
 import Foundation
 
-var stage1 = Stages(stageName: "Major/Minor Identification", stageState: .unlocked, question: questionsForStage1, questionNumber: 24)
-var stage2 = Stages(stageName: "Chord Identification", stageState: .locked, question: questionsForStage2, questionNumber: 10)
-var stage3 = Stages(stageName: "Chord Progression Identification", stageState: .locked, question: questionsForStage3, questionNumber: 10)
+//var stage1 = Stages(stageName: "Major/Minor Identification", stageState: .unlocked, question: questionsForStage1, questionNumber: 24)
+//var stage2 = Stages(stageName: "Chord Identification", stageState: .locked, question: questionsForStage2, questionNumber: 10)
+//var stage3 = Stages(stageName: "Chord Progression Identification", stageState: .locked, question: questionsForStage3, questionNumber: 10)
+
+var stage1 = Stages(stageName: "Major/Minor Identification", stageState: .unlocked, questionNumber: 24)
+var stage2 = Stages(stageName: "Chord Identification", stageState: .locked, questionNumber: 10)
+var stage3 = Stages(stageName: "Chord Progression Identification", stageState: .locked, questionNumber: 10)
 
 func setUpQuestionsStage() {
     //Append questions for stage 1
