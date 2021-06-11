@@ -31,12 +31,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: LockedTableViewCell.identifier, for: indexPath) as! LockedTableViewCell
+            cell.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
             //cell.testLabel.text = "Jancuk"
             return cell
         }
@@ -47,11 +48,25 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             //cell.testLabel.text = "Jancuk"
             return cell
         }
+        if indexPath.row == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: LockedTableViewCell.identifier, for: indexPath) as! LockedTableViewCell
+            cell.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+            //cell.testLabel.text = "Jancuk"
+            return cell
+        }
          else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             return cell
          }
     }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if indexPath.row == 0{
+//            return 151
+//        }else{
+//            return 100
+//        }
+//    }
     
     
     
