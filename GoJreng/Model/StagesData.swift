@@ -18,7 +18,7 @@ func setUpQuestionsStage() {
         minorQuestionsAnswers.append("minor-\(i)")
     }
     
-    //Append questions for stage 2 starting from 2 chords played.
+    //Append questions for stage 2 and stage 3 starting from 2 chords played.
     for i in 0..<(stage2.questionNumber) {
         chord2Progressions.append("chord2-\(i)")
         chord3Progressions.append("chord3-\(i)")
@@ -31,26 +31,6 @@ var minorQuestionsAnswers: [String] = []
 var chord2Progressions: [String] = []
 var chord3Progressions: [String] = []
 var chord4Progressions: [String] = []
-
-//var majorQuestionsAnswers: [String] = [
-//    "major-0","major-1","major-2",
-//    "major-3","major-4","major-5",
-//    "major-6","major-7","major-8",
-//    "major-9","major-10","major-11"
-//]
-//var minorQuestionsAnswers: [String] =
-//    [
-//    "minor-0","minor-1","minor-2",
-//    "minor-3","minor-4","minor-5",
-//    "minor-6","minor-7","minor-8",
-//    "minor-9","minor-10","minor-11"
-//    ]
-
-//for i in 0..<(stage1.questionNumber/2) {
-//    majorQuestions.append("major-\(i)")
-//    minorQuestions.append("minor-\(i)")
-//}
-//print("berhasil diprint")
 
 var questionsForStage1 = [
     
