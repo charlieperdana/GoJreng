@@ -17,10 +17,24 @@ class FeedbackPageViewController: UIViewController {
   @IBOutlet weak var primaryButton: UIButton!
   @IBOutlet weak var secondaryButton: UIButton!
 
-  override func viewDidLoad() {
-        super.viewDidLoad()
+  var stageScore = 0
+  var currentHighScore = 0
 
-        // Do any additional setup after loading the view.
+  //feedback type 0 - GreatJob
+  //feedback type 1 - GameOver
+  var feedbackType = 0
+
+
+  override func viewDidLoad() {
+      super.viewDidLoad()
+
+    switch feedbackType {
+    case 0:
+      feedbackTitleLabel.text = ""
+    default: //GameOver
+      feedbackTitleLabel.text = ""
+    }
+
     }
 
 }
@@ -39,7 +53,7 @@ class Feedback{
   }
 
 
-  func feedbackGreatJob (title: String, stageScore: Int) -> feedbackStruct {
+  func feedbackGreatJob (stageScore: Int) -> feedbackStruct {
     //belum ada cek highscore
     let content = feedbackStruct(feedbackTitle: "Great Job", feedbackBG: #imageLiteral(resourceName: "Feedback Page Congrats") ,feedbackImg: #imageLiteral(resourceName: "win"), score: stageScore, newHighScore: true, feedbackDesc: "Congratulations! \nReady to enter the next stage?", primaryButtonText: "Continue", secondaryButtonText: "")
 
