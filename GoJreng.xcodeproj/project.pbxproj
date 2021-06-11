@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B348D532672087900404EF4 /* BaseModality.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B348D522672087900404EF4 /* BaseModality.storyboard */; settings = {ASSET_TAGS = (11, ); }; };
+		0B348D582672089400404EF4 /* ModalityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B348D572672089400404EF4 /* ModalityViewController.swift */; };
+		0B348D5D26720E4B00404EF4 /* BaseModalityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B348D5C26720E4B00404EF4 /* BaseModalityViewController.swift */; };
 		55F130FA2669EF23008BFC97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F130F92669EF23008BFC97 /* AppDelegate.swift */; };
 		55F130FC2669EF23008BFC97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F130FB2669EF23008BFC97 /* SceneDelegate.swift */; };
 		55F131012669EF23008BFC97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F130FF2669EF23008BFC97 /* Main.storyboard */; };
@@ -71,6 +74,17 @@
 		B51920462673570A00000DA0 /* chord4-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B519203C2673570A00000DA0 /* chord4-2.mp3 */; };
 		B51920472673570A00000DA0 /* chord4-4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B519203D2673570A00000DA0 /* chord4-4.mp3 */; };
 		B519204B26735AE200000DA0 /* ChordList.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B519204A26735AE200000DA0 /* ChordList.pdf */; };
+		55F131DB2672002E008BFC97 /* ExitPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F131DA2672002E008BFC97 /* ExitPresentationController.swift */; };
+		55F131E326720187008BFC97 /* ExitOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55F131E226720187008BFC97 /* ExitOverlayView.xib */; };
+		55F131F026720A63008BFC97 /* ExitOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F131EF26720A63008BFC97 /* ExitOverlayView.swift */; };
+		84364171266F76B40060A9CE /* UnlockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436416F266F76B40060A9CE /* UnlockTableViewCell.swift */; };
+		84364172266F76B40060A9CE /* UnlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84364170266F76B40060A9CE /* UnlockTableViewCell.xib */; };
+		84364180266F8DC40060A9CE /* LockedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436417E266F8DC40060A9CE /* LockedTableViewCell.swift */; };
+		84364181266F8DC40060A9CE /* LockedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8436417F266F8DC40060A9CE /* LockedTableViewCell.xib */; };
+		95E254DA2670A65900BB39D8 /* GoJrengColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E254D92670A65900BB39D8 /* GoJrengColors.swift */; };
+		B5B7AFB32672743000A2F263 /* StagesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7AFB22672743000A2F263 /* StagesData.swift */; };
+		B5E6E1A2266FBD53004C3CBD /* Stages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6E1A1266FBD53004C3CBD /* Stages.swift */; };
+		B5FBC109266FBEDC008CA574 /* QuestionsAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBC108266FBEDC008CA574 /* QuestionsAnswers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +105,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B348D522672087900404EF4 /* BaseModality.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BaseModality.storyboard; sourceTree = "<group>"; };
+		0B348D572672089400404EF4 /* ModalityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalityViewController.swift; sourceTree = "<group>"; };
+		0B348D5C26720E4B00404EF4 /* BaseModalityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModalityViewController.swift; sourceTree = "<group>"; };
 		55F130F62669EF23008BFC97 /* GoJreng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoJreng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F130F92669EF23008BFC97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55F130FB2669EF23008BFC97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +178,17 @@
 		B519203C2673570A00000DA0 /* chord4-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "chord4-2.mp3"; sourceTree = "<group>"; };
 		B519203D2673570A00000DA0 /* chord4-4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "chord4-4.mp3"; sourceTree = "<group>"; };
 		B519204A26735AE200000DA0 /* ChordList.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ChordList.pdf; sourceTree = "<group>"; };
+		55F131DA2672002E008BFC97 /* ExitPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitPresentationController.swift; sourceTree = "<group>"; };
+		55F131E226720187008BFC97 /* ExitOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExitOverlayView.xib; sourceTree = "<group>"; };
+		55F131EF26720A63008BFC97 /* ExitOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitOverlayView.swift; sourceTree = "<group>"; };
+		8436416F266F76B40060A9CE /* UnlockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockTableViewCell.swift; sourceTree = "<group>"; };
+		84364170266F76B40060A9CE /* UnlockTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnlockTableViewCell.xib; sourceTree = "<group>"; };
+		8436417E266F8DC40060A9CE /* LockedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedTableViewCell.swift; sourceTree = "<group>"; };
+		8436417F266F8DC40060A9CE /* LockedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockedTableViewCell.xib; sourceTree = "<group>"; };
+		95E254D92670A65900BB39D8 /* GoJrengColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoJrengColors.swift; sourceTree = "<group>"; };
+		B5B7AFB22672743000A2F263 /* StagesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesData.swift; sourceTree = "<group>"; };
+		B5E6E1A1266FBD53004C3CBD /* Stages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stages.swift; sourceTree = "<group>"; };
+		B5FBC108266FBEDC008CA574 /* QuestionsAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsAnswers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +216,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B240FAF2672201700058030 /* AnswerPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				0B348D522672087900404EF4 /* BaseModality.storyboard */,
+				0B348D572672089400404EF4 /* ModalityViewController.swift */,
+				0B348D5C26720E4B00404EF4 /* BaseModalityViewController.swift */,
+			);
+			path = AnswerPopUp;
+			sourceTree = "<group>";
+		};
 		55F130ED2669EF23008BFC97 = {
 			isa = PBXGroup;
 			children = (
@@ -211,7 +249,11 @@
 		55F130F82669EF23008BFC97 /* GoJreng */ = {
 			isa = PBXGroup;
 			children = (
+
 				B5191FD7267354A100000DA0 /* Supporting Files */,
+				95E254D82670A61600BB39D8 /* Themes */,
+				B5E6E1A0266FBD42004C3CBD /* Model */,
+				849451ED266E7642007287D4 /* Modality */,
 				55F131342669EF58008BFC97 /* Mode3 */,
 				55F131332669EF52008BFC97 /* Mode2 */,
 				55F131322669EF4C008BFC97 /* Mode1 */,
@@ -266,6 +308,10 @@
 			children = (
 				55F130FF2669EF23008BFC97 /* Main.storyboard */,
 				55F131352669EF9A008BFC97 /* HomeViewController.swift */,
+				8436416F266F76B40060A9CE /* UnlockTableViewCell.swift */,
+				84364170266F76B40060A9CE /* UnlockTableViewCell.xib */,
+				8436417E266F8DC40060A9CE /* LockedTableViewCell.swift */,
+				8436417F266F8DC40060A9CE /* LockedTableViewCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -298,6 +344,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+
 		B5191FD7267354A100000DA0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +437,42 @@
 				B5191FFF2673553200000DA0 /* minor-11.mp3 */,
 			);
 			path = "1 Chord";
+
+		55F131D92671FE3E008BFC97 /* Exit */ = {
+			isa = PBXGroup;
+			children = (
+				55F131DA2672002E008BFC97 /* ExitPresentationController.swift */,
+				55F131E226720187008BFC97 /* ExitOverlayView.xib */,
+				55F131EF26720A63008BFC97 /* ExitOverlayView.swift */,
+			);
+			path = Exit;
+			sourceTree = "<group>";
+		};
+		849451ED266E7642007287D4 /* Modality */ = {
+			isa = PBXGroup;
+			children = (
+				0B240FAF2672201700058030 /* AnswerPopUp */,
+				55F131D92671FE3E008BFC97 /* Exit */,
+			);
+			path = Modality;
+			sourceTree = "<group>";
+		};
+		95E254D82670A61600BB39D8 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				95E254D92670A65900BB39D8 /* GoJrengColors.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		B5E6E1A0266FBD42004C3CBD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B5E6E1A1266FBD53004C3CBD /* Stages.swift */,
+				B5FBC108266FBEDC008CA574 /* QuestionsAnswers.swift */,
+				B5B7AFB22672743000A2F263 /* StagesData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,6 +537,10 @@
 		55F130EE2669EF23008BFC97 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					11,
+					wrongButt,
+				);
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
@@ -495,6 +582,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				B5191FEC2673551D00000DA0 /* major-9.mp3 in Resources */,
 				B51920442673570A00000DA0 /* chord4-0.mp3 in Resources */,
 				B51920322673561D00000DA0 /* chord3-1.mp3 in Resources */,
@@ -530,6 +618,8 @@
 				B519201B267355BE00000DA0 /* chord2-3.mp3 in Resources */,
 				B519201C267355BE00000DA0 /* chord2-4.mp3 in Resources */,
 				B5191FE82673551D00000DA0 /* major-5.mp3 in Resources */,
+				0B348D532672087900404EF4 /* BaseModality.storyboard in Resources */,
+
 				55F131092669EF26008BFC97 /* LaunchScreen.storyboard in Resources */,
 				B5192016267355BE00000DA0 /* chord2-2.mp3 in Resources */,
 				B5192019267355BE00000DA0 /* chord2-1.mp3 in Resources */,
@@ -549,10 +639,15 @@
 				B5191FE92673551D00000DA0 /* major-7.mp3 in Resources */,
 				B51920002673553200000DA0 /* minor-1.mp3 in Resources */,
 				55F131012669EF23008BFC97 /* Main.storyboard in Resources */,
+
 				B5191FEF2673551D00000DA0 /* major-6.mp3 in Resources */,
 				B51920462673570A00000DA0 /* chord4-2.mp3 in Resources */,
 				B5191FEA2673551D00000DA0 /* major-10.mp3 in Resources */,
 				B519202A2673561D00000DA0 /* chord3-9.mp3 in Resources */,
+
+				55F131E326720187008BFC97 /* ExitOverlayView.xib in Resources */,
+				84364172266F76B40060A9CE /* UnlockTableViewCell.xib in Resources */,
+				84364181266F8DC40060A9CE /* LockedTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,10 +672,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84364171266F76B40060A9CE /* UnlockTableViewCell.swift in Sources */,
+				55F131F026720A63008BFC97 /* ExitOverlayView.swift in Sources */,
+				84364180266F8DC40060A9CE /* LockedTableViewCell.swift in Sources */,
 				55F131362669EF9A008BFC97 /* HomeViewController.swift in Sources */,
 				55F131042669EF23008BFC97 /* GoJreng.xcdatamodeld in Sources */,
 				55F130FA2669EF23008BFC97 /* AppDelegate.swift in Sources */,
+				0B348D582672089400404EF4 /* ModalityViewController.swift in Sources */,
+				55F131DB2672002E008BFC97 /* ExitPresentationController.swift in Sources */,
+				B5FBC109266FBEDC008CA574 /* QuestionsAnswers.swift in Sources */,
+				B5E6E1A2266FBD53004C3CBD /* Stages.swift in Sources */,
+				B5B7AFB32672743000A2F263 /* StagesData.swift in Sources */,
+				0B348D5D26720E4B00404EF4 /* BaseModalityViewController.swift in Sources */,
 				55F130FC2669EF23008BFC97 /* SceneDelegate.swift in Sources */,
+				95E254DA2670A65900BB39D8 /* GoJrengColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
