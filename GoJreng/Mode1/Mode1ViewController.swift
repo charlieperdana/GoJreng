@@ -117,7 +117,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
             print("gemover!!")
             return
         }
-        lifePicks[lifeCount-1].isHidden = true
+        lifePicks[lifeCount-1].image = UIImage(named: "deadPicks")
         lifeCount -= 1
 //        show modal
         showWrongAnswerModal()
