@@ -288,26 +288,51 @@ var questionsForStage2 = [
 
 var questionsForStage3 = [
     
+    // MARK: -HARUS DIOPTIMIZE LAGI STRUCTURENYA
+    //TODO
+        // Harus dioptimize lagi STRUCTURENYA!
+    
     //2 chord
     
     //C-Am
     Questions(questionSound: "\(chord2Progressions[1])", answer: [
-        Answers(answerLabel: "C-Am", isCorrect: true)
+        //Pilihan
+        Answers(answerLabel: "C", isCorrect: false),
+        Answers(answerLabel: "Am", isCorrect: false),
         
+        //Jawaban
+        Answers(answerLabel: "C-Am", isCorrect: true)
     ]),
+    
     
     //Dm-G
     Questions(questionSound: "\(chord2Progressions[5])", answer: [
+        //Pilihan
+        Answers(answerLabel: "Dm", isCorrect: false),
+        Answers(answerLabel: "G", isCorrect: false),
+        
+        //Jawaban
         Answers(answerLabel: "Dm-G", isCorrect: true)
     ]),
     
+
     //F-G
     Questions(questionSound: "\(chord2Progressions[7])", answer: [
+        //Pilihan
+        Answers(answerLabel: "F", isCorrect: false),
+        Answers(answerLabel: "G", isCorrect: false),
+        
+        //Jawaban
         Answers(answerLabel: "F-G", isCorrect: true),
     ]),
     
     //D-G
     Questions(questionSound: "\(chord2Progressions[4])", answer: [
+        //Pilihan
+        Answers(answerLabel: "D", isCorrect: false),
+        Answers(answerLabel: "G", isCorrect: false),
+        
+        //Jawaban
         Answers(answerLabel: "D-G", isCorrect: true),
     ]),
     
@@ -315,16 +340,35 @@ var questionsForStage3 = [
     
     //C-Am-Dm
     Questions(questionSound: "\(chord3Progressions[1])", answer: [
+        //Pilihan
+        Answers(answerLabel: "C", isCorrect: false),
+        Answers(answerLabel: "Am", isCorrect: false),
+        Answers(answerLabel: "Dm", isCorrect: false),
+        
+        //Jawaban
         Answers(answerLabel: "C-Am-Dm", isCorrect: true),
     ]),
     
     //C-F-G
     Questions(questionSound: "\(chord3Progressions[1])", answer: [
-        Answers(answerLabel: "C-Am-Dm", isCorrect: true),
+        //Pilihan
+        Answers(answerLabel: "C", isCorrect: false),
+        Answers(answerLabel: "F", isCorrect: false),
+        Answers(answerLabel: "G", isCorrect: false),
+        
+        //Jawaban
+        Answers(answerLabel: "C-F-G", isCorrect: true),
     ]),
     
     //G-C-D
     Questions(questionSound: "\(chord3Progressions[8])", answer: [
+        //Pilihan
+        Answers(answerLabel: "G", isCorrect: false),
+        Answers(answerLabel: "C", isCorrect: false),
+        Answers(answerLabel: "D", isCorrect: false),
+
+        //Jawaban
+        
         Answers(answerLabel: "G-C-D", isCorrect: true),
     ]),
     
@@ -332,16 +376,37 @@ var questionsForStage3 = [
     
     //C-Am-Dm-G
     Questions(questionSound: "\(chord4Progressions[1])", answer: [
+        //Pilihan
+        Answers(answerLabel: "C", isCorrect: false),
+        Answers(answerLabel: "Am", isCorrect: false),
+        Answers(answerLabel: "Dm", isCorrect: false),
+        Answers(answerLabel: "G", isCorrect: false),
+        //Jawaban
+        
         Answers(answerLabel: "C-Am-Dm-G", isCorrect: true),
     ]),
     
     //C-F-Am-G
     Questions(questionSound: "\(chord4Progressions[2])", answer: [
+        //Pilihan
+        Answers(answerLabel: "C", isCorrect: false),
+        Answers(answerLabel: "F", isCorrect: false),
+        Answers(answerLabel: "Am", isCorrect: false),
+        Answers(answerLabel: "G", isCorrect: false),
+        
+        //Jawaban
         Answers(answerLabel: "C-F-Am-G", isCorrect: true),
     ]),
     
     //C-G-C-F
     Questions(questionSound: "\(chord4Progressions[3])", answer: [
+        //Pilihan
+        Answers(answerLabel: "C", isCorrect: false),
+        Answers(answerLabel: "G", isCorrect: false),
+        Answers(answerLabel: "C", isCorrect: false),
+        Answers(answerLabel: "F", isCorrect: false),
+        //Jawaban
+        
         Answers(answerLabel: "C-G-C-F", isCorrect: true),
     ]),
 ]
