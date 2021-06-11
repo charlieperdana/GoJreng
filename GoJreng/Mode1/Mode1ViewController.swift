@@ -14,6 +14,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var minorButton: UIButton!
     @IBOutlet var lifePicks: [UIImageView]!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     var questionArray = ["A", "bm", "C", "f#m"]
     
@@ -23,6 +24,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     var soundIsPlaying = false
     var lifeCount = 3
     var qIndex = 0
+    var score = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -49,7 +51,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     */
     @IBAction func playSoundClicked(_ sender: Any) {
-        if (soundIsPlaying == false && qIndex < questionArray.count - 1){
+        if (soundIsPlaying == false && qIndex <= questionArray.count - 1){
             playSound(soundFileName: questionArray[qIndex])
             if (qIndex <= questionArray.count - 1){
                 qIndex += 1
@@ -97,6 +99,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     func rightAnswerSequence(){
 //        buat siapatau mau play sound effect kalo bener
 //        TODO handle nambah poin
+        score += 100
+        scoreLabel.text = String(score)
         showCorrectAnswerModal()
         
     }

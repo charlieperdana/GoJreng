@@ -59,7 +59,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="102" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUW-sZ-rXo">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUW-sZ-rXo">
                                         <rect key="frame" x="43" y="0.0" width="51" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
@@ -117,6 +117,7 @@
                     <connections>
                         <outlet property="majorButton" destination="nvi-Lc-JmJ" id="zMk-da-sNC"/>
                         <outlet property="minorButton" destination="h9k-Q6-4UB" id="vfw-nm-NUx"/>
+                        <outlet property="scoreLabel" destination="pUW-sZ-rXo" id="bvt-kG-Mms"/>
                         <outlet property="timerLabel" destination="V1k-Sh-O87" id="9u5-t4-KbK"/>
                         <outletCollection property="lifePicks" destination="nuJ-7i-hNl" collectionClass="NSMutableArray" id="Vft-bZ-Lea"/>
                         <outletCollection property="lifePicks" destination="25T-Lx-ZHr" collectionClass="NSMutableArray" id="mwP-ts-xXg"/>
