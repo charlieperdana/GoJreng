@@ -27,8 +27,8 @@
 		84364180266F8DC40060A9CE /* LockedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436417E266F8DC40060A9CE /* LockedTableViewCell.swift */; };
 		84364181266F8DC40060A9CE /* LockedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8436417F266F8DC40060A9CE /* LockedTableViewCell.xib */; };
 		95E254DA2670A65900BB39D8 /* GoJrengColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E254D92670A65900BB39D8 /* GoJrengColors.swift */; };
-		A5CCC0AE267374A7006F2F42 /* FeedbackPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CCC0AC267374A7006F2F42 /* FeedbackPageViewController.swift */; };
-		A5CCC0AF267374A7006F2F42 /* FeedbackPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CCC0AD267374A7006F2F42 /* FeedbackPage.storyboard */; };
+		A597393E2673CF40003DE384 /* FeedbackPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A597393C2673CF40003DE384 /* FeedbackPageViewController.swift */; };
+		A597393F2673CF40003DE384 /* FeedbackPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A597393D2673CF40003DE384 /* FeedbackPage.storyboard */; };
 		B5B7AFB32672743000A2F263 /* StagesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B7AFB22672743000A2F263 /* StagesData.swift */; };
 		B5D56DDA2673B417000E358E /* chord2-0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B5D56DA02673B417000E358E /* chord2-0.mp3 */; };
 		B5D56DDB2673B417000E358E /* chord2-1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B5D56DA12673B417000E358E /* chord2-1.mp3 */; };
@@ -133,8 +133,9 @@
 		8436417E266F8DC40060A9CE /* LockedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedTableViewCell.swift; sourceTree = "<group>"; };
 		8436417F266F8DC40060A9CE /* LockedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockedTableViewCell.xib; sourceTree = "<group>"; };
 		95E254D92670A65900BB39D8 /* GoJrengColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoJrengColors.swift; sourceTree = "<group>"; };
+		A597393C2673CF40003DE384 /* FeedbackPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackPageViewController.swift; sourceTree = "<group>"; };
+		A597393D2673CF40003DE384 /* FeedbackPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FeedbackPage.storyboard; sourceTree = "<group>"; };
 		A5CCC0AC267374A7006F2F42 /* FeedbackPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackPageViewController.swift; sourceTree = "<group>"; };
-		A5CCC0AD267374A7006F2F42 /* FeedbackPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FeedbackPage.storyboard; sourceTree = "<group>"; };
 		B5B7AFB22672743000A2F263 /* StagesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesData.swift; sourceTree = "<group>"; };
 		B5D56DA02673B417000E358E /* chord2-0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "chord2-0.mp3"; sourceTree = "<group>"; };
 		B5D56DA12673B417000E358E /* chord2-1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "chord2-1.mp3"; sourceTree = "<group>"; };
@@ -237,6 +238,7 @@
 				55F131122669EF26008BFC97 /* GoJrengTests */,
 				55F1311D2669EF26008BFC97 /* GoJrengUITests */,
 				55F130F72669EF23008BFC97 /* Products */,
+				A597393A2673CEC0003DE384 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -253,6 +255,7 @@
 		55F130F82669EF23008BFC97 /* GoJreng */ = {
 			isa = PBXGroup;
 			children = (
+				A597393B2673CF40003DE384 /* Feedback */,
 				B5D56D9E2673B417000E358E /* Supporting Files */,
 				95E254D82670A61600BB39D8 /* Themes */,
 				B5E6E1A0266FBD42004C3CBD /* Model */,
@@ -261,7 +264,6 @@
 				55F131332669EF52008BFC97 /* Mode2 */,
 				55F131322669EF4C008BFC97 /* Mode1 */,
 				55F131312669EF46008BFC97 /* Home */,
-				A5CCC0AB267374A7006F2F42 /* Feedback */,
 				55F131302669EF3D008BFC97 /* Resource */,
 				55F1312F2669EF30008BFC97 /* Utils */,
 				55F130F92669EF23008BFC97 /* AppDelegate.swift */,
@@ -373,6 +375,23 @@
 				95E254D92670A65900BB39D8 /* GoJrengColors.swift */,
 			);
 			path = Themes;
+			sourceTree = "<group>";
+		};
+		A597393A2673CEC0003DE384 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				A5CCC0AC267374A7006F2F42 /* FeedbackPageViewController.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		A597393B2673CF40003DE384 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				A597393C2673CF40003DE384 /* FeedbackPageViewController.swift */,
+				A597393D2673CF40003DE384 /* FeedbackPage.storyboard */,
+			);
+			path = Feedback;
 			sourceTree = "<group>";
 		};
 		B5D56D9E2673B417000E358E /* Supporting Files */ = {
@@ -640,6 +659,7 @@
 				B5D56DE02673B417000E358E /* chord2-5.mp3 in Resources */,
 				B5D56E102673B417000E358E /* chord3-8.mp3 in Resources */,
 				B5D56DF42673B417000E358E /* major-0.mp3 in Resources */,
+				A597393F2673CF40003DE384 /* FeedbackPage.storyboard in Resources */,
 				B5D56DF52673B417000E358E /* minor-10.mp3 in Resources */,
 				84364172266F76B40060A9CE /* UnlockTableViewCell.xib in Resources */,
 				B5D56DE62673B417000E358E /* chord4-5.mp3 in Resources */,
@@ -673,7 +693,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84364171266F76B40060A9CE /* UnlockTableViewCell.swift in Sources */,
-				A5CCC0AE267374A7006F2F42 /* FeedbackPageViewController.swift in Sources */,
+				A597393E2673CF40003DE384 /* FeedbackPageViewController.swift in Sources */,
 				55F131F026720A63008BFC97 /* ExitOverlayView.swift in Sources */,
 				84364180266F8DC40060A9CE /* LockedTableViewCell.swift in Sources */,
 				55F131362669EF9A008BFC97 /* HomeViewController.swift in Sources */,

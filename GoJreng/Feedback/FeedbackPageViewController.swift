@@ -9,6 +9,7 @@ import UIKit
 
 class FeedbackPageViewController: UIViewController {
 
+  @IBOutlet weak var feedbackBG: UIImageView!
   @IBOutlet weak var feedbackTitleLabel: UILabel!
   @IBOutlet weak var feedbackImage: UIImageView!
   @IBOutlet weak var scoreLabel: UILabel!
@@ -17,8 +18,8 @@ class FeedbackPageViewController: UIViewController {
   @IBOutlet weak var primaryButton: UIButton!
   @IBOutlet weak var secondaryButton: UIButton!
 
-  var stageScore = 0
-  var currentHighScore = 0
+  var stageScore = 500
+  var currentHighScore = 1000
 
   //feedback type 0 - GreatJob
   //feedback type 1 - GameOver
@@ -28,43 +29,50 @@ class FeedbackPageViewController: UIViewController {
   override func viewDidLoad() {
       super.viewDidLoad()
 
-    switch feedbackType {
-    case 0:
-      feedbackTitleLabel.text = ""
-    default: //GameOver
-      feedbackTitleLabel.text = ""
-    }
+      primaryButton.layer.cornerRadius = 14
+      secondaryButton.layer.cornerRadius = 14
+      secondaryButton.layer.borderWidth = 2
+      secondaryButton.layer.borderColor = #colorLiteral(red: 0.9155033827, green: 0.8542029858, blue: 0.7580156922, alpha: 1)
+
+      switch feedbackType {
+      case 0:
+        feedbackBG.image = #imageLiteral(resourceName: "feedbackGameOver")
+        feedbackTitleLabel.text = "Great Job"
+        feedbackImage.image = #imageLiteral(resourceName: "win")
+        scoreLabel.text = String(stageScore)
+        feedbackDescLabel.text = "Congratulations! \nReady to enter the next stage?"
+        primaryButton.setTitle("Continue", for: .normal)
+        secondaryButton.isHidden = true
+
+        newHighScoreLabel.isHidden = Feedback.newHighScore(currentHighScore: currentHighScore, stageScore: stageScore)
+
+      default: //GameOver
+        feedbackBG.image = #imageLiteral(resourceName: "feedbackGreatJob")
+        feedbackTitleLabel.text = "GameOver"
+        feedbackImage.image = #imageLiteral(resourceName: "lose")
+        scoreLabel.text = String(stageScore)
+        feedbackDescLabel.text = "No worries, practice makes progress! \nDare to try again?"
+        primaryButton.setTitle("Try Again", for: .normal)
+        secondaryButton.setTitle("Close", for: .normal)
+        newHighScoreLabel.isHidden = Feedback.newHighScore(currentHighScore: currentHighScore, stageScore: stageScore)
+      }
 
     }
 
 }
 
 class Feedback{
+  static func newHighScore (currentHighScore: Int, stageScore: Int) -> Bool {
 
-  struct feedbackStruct{
-    var feedbackTitle: String
-    var feedbackBG : UIImage
-    var feedbackImg: UIImage
-    var score : Int
-    var newHighScore : Bool
-    var feedbackDesc : String
-    var primaryButtonText: String
-    var secondaryButtonText: String
-  }
+    if currentHighScore > stageScore {
+      // untuk fungsi isHidden
+      return true
+    }
 
-
-  func feedbackGreatJob (stageScore: Int) -> feedbackStruct {
-    //belum ada cek highscore
-    let content = feedbackStruct(feedbackTitle: "Great Job", feedbackBG: #imageLiteral(resourceName: "Feedback Page Congrats") ,feedbackImg: #imageLiteral(resourceName: "win"), score: stageScore, newHighScore: true, feedbackDesc: "Congratulations! \nReady to enter the next stage?", primaryButtonText: "Continue", secondaryButtonText: "")
-
-    return content
-  }
-
-  func feedbackGameOver (title: String, stageScore: Int) -> feedbackStruct {
-    //belum ada cek highscore
-    let content = feedbackStruct(feedbackTitle: "GameOver", feedbackBG: #imageLiteral(resourceName: "Feedback Page Game Over"), feedbackImg: #imageLiteral(resourceName: "lose") , score: stageScore, newHighScore: true, feedbackDesc: "No worries, practice makes progress! \nDare to try again?", primaryButtonText: "Try Again", secondaryButtonText: "Close")
-
-    return content
+    else{
+      // untuk fungsi isHidden
+      return false
+    }
   }
 }
 
