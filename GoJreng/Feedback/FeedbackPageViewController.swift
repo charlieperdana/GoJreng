@@ -23,7 +23,7 @@ class FeedbackPageViewController: UIViewController {
 
   //feedback type 0 - GreatJob
   //feedback type 1 - GameOver
-  var feedbackType = 1
+  var feedbackType: Int?
 
 
   override func viewDidLoad() {
@@ -37,6 +37,8 @@ class FeedbackPageViewController: UIViewController {
       stageScore = 500
       currentHighScore = 1000
 
+      feedbackType = Feedback.getFeedbackPage(curHighScore: currentHighScore ?? 0, stgScore: stageScore ?? 0)
+
       switch feedbackType {
       case 0:
         feedbackBG.image = #imageLiteral(resourceName: "feedbackGreatJob")
@@ -47,8 +49,7 @@ class FeedbackPageViewController: UIViewController {
         primaryButton.setTitle("Continue", for: .normal)
         secondaryButton.isHidden = true
 
-        newHighScoreLabel.isHidden = Feedback.newHighScore(currentHighScore: currentHighScore ?? 0, stageScore: stageScore ?? 0)
-
+        newHighScoreLabel.isHidden = false
       default: //GameOver
         feedbackBG.image = #imageLiteral(resourceName: "feedbackGameOver")
         feedbackTitleLabel.text = "Game Over"
@@ -57,7 +58,7 @@ class FeedbackPageViewController: UIViewController {
         feedbackDescLabel.text = "No worries, practice makes progress! \nDare to try again?"
         primaryButton.setTitle("Try Again", for: .normal)
         secondaryButton.setTitle("Close", for: .normal)
-        newHighScoreLabel.isHidden = Feedback.newHighScore(currentHighScore: currentHighScore ?? 0, stageScore: stageScore ?? 0)
+        newHighScoreLabel.isHidden = true //Feedback.newHighScore(currentHighScore: currentHighScore ?? 0, stageScore: stageScore ?? 0)
       }
 
     }
@@ -65,16 +66,20 @@ class FeedbackPageViewController: UIViewController {
 }
 
 class Feedback{
-  static func newHighScore (currentHighScore: Int, stageScore: Int) -> Bool {
+  static func getFeedbackPage (curHighScore: Int, stgScore: Int) -> Int{
 
-    if currentHighScore > stageScore {
-      // untuk fungsi isHidden
-      return true
+    if curHighScore == 0{
+      //feedback type 1 - GameOver
+      return 1
+    }
+    else if curHighScore > stgScore {
+      //feedback type 0 - Congrats
+      return 0
     }
 
     else{
-      // untuk fungsi isHidden
-      return false
+      //feedback type 1 - GameOver
+      return 1
     }
   }
 }
