@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 
+
 class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
 
     @IBOutlet weak var majorButton: UIButton!
@@ -56,6 +57,9 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
             playSound(soundFileName: questionArray![qIndex])
             if (qIndex <= questionArray!.count - 1){
                 qIndex += 1
+                if qIndex == questionArray!.count{
+                    feedbackSequence(type: 0)
+                }
             }
         }
         else{
@@ -113,9 +117,10 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func wrongAnswerSequence(){
-        if (lifeCount <= 0){ // decrease life count
+        if (lifeCount <= 1){ // decrease life count
 //            TODO handle game over
             print("gemover!!")
+            feedbackSequence(type: 1)
             return
         }
         lifePicks[lifeCount-1].image = UIImage(named: "deadPicks")
@@ -170,11 +175,28 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         soundIsPlaying = false
     }
     
+    func feedbackSequence(type: Int){
+        let modalstoryboard = UIStoryboard(name: "FeedbackPage", bundle: nil)
+        let vc = modalstoryboard.instantiateViewController(withIdentifier: "fp") as! FeedbackPageViewController
+        vc.feedbackType = type
+        vc.stageScore =  score
+        vc.modalPresentationStyle = .overFullScreen //or .overFullScreen for transparency
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true)
+    }
+    
+    @IBAction func testGameover(_ sender: Any) {
+        feedbackSequence(type:1)
+    }
+    
 //    update timer
     @objc func update() {
         if(timer > 0) {
             timer -= 1
             timerLabel.text = String(timer)
+        }
+        if (timer == 0 && lifeCount != 0){
+            feedbackSequence(type:1)
         }
     }
 }
