@@ -687,6 +687,7 @@
 				0BD9BB432673A8A9005DD71E /* F#.mp3 in Resources */,
 				A5CCC0AF267374A7006F2F42 /* FeedbackPage.storyboard in Resources */,
 				0BD9BB4B2673A8A9005DD71E /* cm.mp3 in Resources */,
+				A5CCC0AF267374A7006F2F42 /* FeedbackPage.storyboard in Resources */,
 				B5D56DE32673B417000E358E /* chord2-8.mp3 in Resources */,
 				B5D56E0E2673B417000E358E /* chord3-7.mp3 in Resources */,
 				B5D56DED2673B417000E358E /* chord4-8.mp3 in Resources */,
