@@ -359,8 +359,13 @@ var questionsForStage3 = [
         //Pilihan
         Answers(answerLabel: "C", isCorrect: false),
         Answers(answerLabel: "Am", isCorrect: false),
+        Answers(answerLabel: "D", isCorrect: false),
+        Answers(answerLabel: "F#m", isCorrect: false),
+        Answers(answerLabel: "Cm", isCorrect: false),
+        Answers(answerLabel: "G#", isCorrect: false),
         Answers(answerLabel: "Dm", isCorrect: false),
         Answers(answerLabel: "G", isCorrect: false),
+        
         //Jawaban
         
         Answers(answerLabel: "C-Am-Dm-G", isCorrect: true),
@@ -371,6 +376,10 @@ var questionsForStage3 = [
         //Pilihan
         Answers(answerLabel: "C", isCorrect: false),
         Answers(answerLabel: "F", isCorrect: false),
+        Answers(answerLabel: "Dm", isCorrect: false),
+        Answers(answerLabel: "E", isCorrect: false),
+        Answers(answerLabel: "A", isCorrect: false),
+        Answers(answerLabel: "B", isCorrect: false),
         Answers(answerLabel: "Am", isCorrect: false),
         Answers(answerLabel: "G", isCorrect: false),
         
@@ -384,7 +393,11 @@ var questionsForStage3 = [
         Answers(answerLabel: "C", isCorrect: false),
         Answers(answerLabel: "G", isCorrect: false),
         Answers(answerLabel: "C", isCorrect: false),
-        Answers(answerLabel: "F", isCorrect: false),
+        Answers(answerLabel: "A", isCorrect: false),
+        Answers(answerLabel: "Em", isCorrect: false),
+        Answers(answerLabel: "Am", isCorrect: false),
+        Answers(answerLabel: "Dm", isCorrect: false),
+        Answers(answerLabel: "F#", isCorrect: false),
         //Jawaban
         
         Answers(answerLabel: "C-G-C-F", isCorrect: true),
