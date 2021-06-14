@@ -16,7 +16,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    var questionArray = ["A", "bm", "C", "f#m"]
+    var questionArray: [String]?
     
     var player: AVAudioPlayer?
     var timer = 90
@@ -35,7 +35,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         
 //        test question
         setUpQuestionsStage()
-        
+        questionArray = majorQuestionsAnswers + minorQuestionsAnswers
+        questionArray?.shuffle()
 //        timer setup
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
     }
@@ -51,9 +52,9 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     */
     @IBAction func playSoundClicked(_ sender: Any) {
-        if (soundIsPlaying == false && qIndex <= questionArray.count - 1){
-            playSound(soundFileName: questionArray[qIndex])
-            if (qIndex <= questionArray.count - 1){
+        if (soundIsPlaying == false && qIndex <= questionArray!.count - 1){
+            playSound(soundFileName: questionArray![qIndex])
+            if (qIndex <= questionArray!.count - 1){
                 qIndex += 1
             }
         }
@@ -79,15 +80,15 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         print("CHOICE: " + choice)
         var chord: String
         if qIndex == 0{
-            chord = questionArray[qIndex]
+            chord = questionArray![qIndex]
         }
         else{
-            chord = questionArray[qIndex-1]
+            chord = questionArray![qIndex-1]
         }
         print("ANS: " + chord)
         var isCorrect: Bool
 //        if minor
-        if chord.contains("m") {
+        if chord.contains("minor") {
             isCorrect = choice == "minor"
         }
         else{ //if major
