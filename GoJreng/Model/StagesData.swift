@@ -171,6 +171,15 @@ var questionsForStage1 = [
 var questionsForStage2 = [
     //1 chord
     
+    //Testing
+    //C
+    Questions(questionSound: "C", answer: [
+        Answers(answerSound: "C", answerLabel: "C", isCorrect: true),
+        Answers(answerSound: "F", answerLabel: "F", isCorrect: false),
+        Answers(answerSound: "G", answerLabel: "G", isCorrect: false),
+        Answers(answerSound: "Am", answerLabel: "Am", isCorrect: false),
+        ]),
+    
     //C
     Questions(questionSound: "\(majorQuestionsAnswers[3])", answer: [
         Answers(answerSound: "\(majorQuestionsAnswers[3])", answerLabel: "C", isCorrect: true),
