@@ -7,11 +7,12 @@
 
 import Foundation
 
-var stage1 = Stages(stageName: "Major/Minor Identification", stageState: .unlocked,  questionNumber: 24)
-var stage2 = Stages(stageName: "Chord Identification", stageState: .locked,  questionNumber: 10)
-var stage3 = Stages(stageName: "Chord Progression Identification", stageState: .locked,  questionNumber: 10)
+var stage1 = Stages(stageName: "Major/Minor Identification", stageState: .unlocked, questionNumber: 24)
+var stage2 = Stages(stageName: "Chord Identification", stageState: .locked, questionNumber: 10)
+var stage3 = Stages(stageName: "Chord Progression Identification", stageState: .locked, questionNumber: 10)
 
 func setUpQuestionsStage() {
+
     //Append questions for stage 1
     for i in 0..<(stage1.questionNumber/2) {
         majorQuestionsAnswers.append("major-\(i)")
@@ -23,9 +24,14 @@ func setUpQuestionsStage() {
         chord2Progressions.append("chord2-\(i)")
         chord3Progressions.append("chord3-\(i)")
         chord4Progressions.append("chord4-\(i)")
+        
     }
+    
+    stage1.question = questionsForStage1
+    stage2.question = questionsForStage2
+    stage3.question = questionsForStage3
+    
 }
-
 var majorQuestionsAnswers: [String] = []
 var minorQuestionsAnswers: [String] = []
 var chord2Progressions: [String] = []
@@ -359,8 +365,13 @@ var questionsForStage3 = [
         //Pilihan
         Answers(answerLabel: "C", isCorrect: false),
         Answers(answerLabel: "Am", isCorrect: false),
+        Answers(answerLabel: "D", isCorrect: false),
+        Answers(answerLabel: "F#m", isCorrect: false),
+        Answers(answerLabel: "Cm", isCorrect: false),
+        Answers(answerLabel: "G#", isCorrect: false),
         Answers(answerLabel: "Dm", isCorrect: false),
         Answers(answerLabel: "G", isCorrect: false),
+        
         //Jawaban
         
         Answers(answerLabel: "C-Am-Dm-G", isCorrect: true),
@@ -371,6 +382,10 @@ var questionsForStage3 = [
         //Pilihan
         Answers(answerLabel: "C", isCorrect: false),
         Answers(answerLabel: "F", isCorrect: false),
+        Answers(answerLabel: "Dm", isCorrect: false),
+        Answers(answerLabel: "E", isCorrect: false),
+        Answers(answerLabel: "A", isCorrect: false),
+        Answers(answerLabel: "B", isCorrect: false),
         Answers(answerLabel: "Am", isCorrect: false),
         Answers(answerLabel: "G", isCorrect: false),
         
@@ -384,9 +399,14 @@ var questionsForStage3 = [
         Answers(answerLabel: "C", isCorrect: false),
         Answers(answerLabel: "G", isCorrect: false),
         Answers(answerLabel: "C", isCorrect: false),
-        Answers(answerLabel: "F", isCorrect: false),
+        Answers(answerLabel: "A", isCorrect: false),
+        Answers(answerLabel: "Em", isCorrect: false),
+        Answers(answerLabel: "Am", isCorrect: false),
+        Answers(answerLabel: "Dm", isCorrect: false),
+        Answers(answerLabel: "F#", isCorrect: false),
         //Jawaban
         
         Answers(answerLabel: "C-G-C-F", isCorrect: true),
     ]),
 ]
+

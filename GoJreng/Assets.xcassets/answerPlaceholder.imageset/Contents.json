@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "bg1.png",
+      "filename" : "answerPlaceholder.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "answerPlaceholder@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "answerPlaceholder@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
