@@ -175,7 +175,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     
     func feedbackSequence(type: Int){
         let modalstoryboard = UIStoryboard(name: "FeedbackPage", bundle: nil)
-        let vc = modalstoryboard.instantiateViewController(withIdentifier: "fp") as! FeedbackPageViewController
+        let vc = modalstoryboard.instantiateViewController(withIdentifier: "feedbackPage") as! FeedbackPageViewController
         vc.feedbackType = type
         vc.stageScore =  score
         vc.modalPresentationStyle = .overFullScreen

@@ -50,6 +50,15 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ro-hn-PAP">
+                                <rect key="frame" x="71" y="786" width="220" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.95454210039999998" green="0.17206546659999999" blue="0.28233352299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="TO STG 1"/>
+                                <connections>
+                                    <segue destination="gvy-J0-fEC" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="N15-2D-igS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bDE-iN-3jt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -68,6 +77,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igj-iH-jrp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2110.144927536232" y="-615.40178571428567"/>
+        </scene>
+        <!--Mode1Board-->
+        <scene sceneID="gcr-zV-wNE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Mode1Board" id="gvy-J0-fEC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c58-Op-tlD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1541" y="-388"/>
         </scene>
     </scenes>
     <resources>
