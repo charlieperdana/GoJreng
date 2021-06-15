@@ -39,7 +39,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3k-58-d8l">
-                        <rect key="frame" x="57" y="89" width="38" height="27"/>
+                        <rect key="frame" x="52" y="89" width="56" height="27"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
                         <color key="textColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -62,7 +62,7 @@
                 <outlet property="scoreLabel" destination="d3k-58-d8l" id="QI5-jP-rds"/>
                 <outlet property="titleLabel" destination="nmr-bb-j6A" id="dE8-cj-LLt"/>
             </connections>
-            <point key="canvasLocation" x="128.98550724637681" y="121.54017857142857"/>
+            <point key="canvasLocation" x="128.2608695652174" y="121.54017857142857"/>
         </collectionViewCell>
     </objects>
     <resources>

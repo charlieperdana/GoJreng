@@ -17,9 +17,13 @@ class UnlockCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var scoreImage: UIImageView!
     @IBOutlet weak var bagdeImage: UIImageView!
     
+    
     static let identifier = "unlockCell"
     
     static func nib() -> UINib{
         return UINib(nibName: "UnlockCollectionViewCell", bundle: nil)
     }
+    
+    
+    
 }

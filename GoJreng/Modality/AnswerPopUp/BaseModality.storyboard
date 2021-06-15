@@ -58,12 +58,12 @@
         <!--nope-->
         <scene sceneID="7ci-od-fsQ">
             <objects>
-                <viewController title="nope" id="mwJ-nv-NfL" customClass="ModalityViewController" customModule="GoJreng" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="wrongSimple" title="nope" id="mwJ-nv-NfL" customClass="ModalityViewController" customModule="GoJreng" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MZo-sx-SwA">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iMU-1D-1Ad">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iMU-1D-1Ad">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -113,6 +113,7 @@
                     </view>
                     <connections>
                         <outlet property="correctAnswerBg" destination="yeB-et-emz" id="N2X-Lh-ODg"/>
+                        <outlet property="correctAnswerLabel" destination="h1w-rG-PEC" id="iNa-C1-fWW"/>
                         <outlet property="wrongContinueButton" destination="jeW-ky-gMe" id="HHR-uR-o66"/>
                     </connections>
                 </viewController>
@@ -124,12 +125,12 @@
         <!--yay-->
         <scene sceneID="gTk-eH-vgx">
             <objects>
-                <viewController title="yay" id="pZ8-nQ-2ft" customClass="ModalityViewController" customModule="GoJreng" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="correct" title="yay" id="pZ8-nQ-2ft" customClass="ModalityViewController" customModule="GoJreng" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qxB-Sz-NQq">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lmh-mc-0kF">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lmh-mc-0kF">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>

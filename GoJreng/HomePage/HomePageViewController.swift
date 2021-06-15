@@ -7,15 +7,18 @@
 
 import UIKit
 
+
 class HomePageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var stageCollection: UICollectionView!
     
+    var newHighScore: Int = 100
+    
     let stage = [
-        Stages(stageName: "Mayor/Minor Identification", stageState: .unlocked, question: [], questionNumber: 100, highScore: 900),
-        Stages(stageName: "Chord Identification", stageState: .locked, question: [], questionNumber: 100, highScore: 0),
-        Stages(stageName: "Chord Progession Indentification", stageState: .locked, question: [], questionNumber: 100, highScore: 0)
+        Stages(stageName: "Mayor/Minor Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 900),
+        Stages(stageName: "Chord Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 0),
+        Stages(stageName: "Chord Progession Indentification", stageState: .locked, question: [], questionNumber: 10, highScore: 200)
     ]
     
     override func viewDidLoad() {
@@ -23,6 +26,8 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
 
         stageCollection.dataSource = self
         stageCollection.delegate = self
+        
+        stage[1].highScore = newHighScore
         
      //   let layout = self.stageCollection.collectionViewLayout as! UICollectionViewFlowLayout
         
@@ -36,11 +41,12 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         if indexPath.row == 0{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UnlockCollectionViewCell.identifier, for: indexPath) as! UnlockCollectionViewCell
             
             cell.titleLabel.text = stage[indexPath.row].stageName
-            cell.scoreLabel.text = "\(stage[indexPath.row].highScore)"
+            cell.scoreLabel.text = "\(stage[indexPath.row].highScore ?? 0)"
             cell.layer.cornerRadius = 14
             
             return cell
@@ -61,7 +67,8 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
                 
                 cell.layer.cornerRadius = 14
                 cell.titleLabel.text = stage[indexPath.row].stageName
-                cell.scoreLabel.text = "\(stage[indexPath.row].highScore)"
+                cell.scoreLabel.text = "\(newHighScore)"
+//                cell.scoreLabel.text = "\(stage[indexPath.row].highScore ?? 0)"
                 return cell
             }
                 
@@ -82,7 +89,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
                 
                 cell.layer.cornerRadius = 14
                 cell.titleLabel.text = stage[indexPath.row].stageName
-                cell.scoreLabel.text = "\(stage[indexPath.row].highScore)"
+                cell.scoreLabel.text = "\(stage[indexPath.row].highScore ?? 0)"
                 return cell
             }
         }
@@ -94,6 +101,19 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("\(indexPath.row)")
+        if indexPath.row == 0{
+            print("\(indexPath.row)")
+        } else if indexPath.row == 1{
+            showStage2()
+        }
+    }
+    
+    func showStage2(){
+        let modalstoryboard = UIStoryboard(name: "SecondStage", bundle: nil)
+        let vc = modalstoryboard.instantiateViewController(identifier: "secondStage") as! SecondStageViewController
+        vc.highScore = newHighScore
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true)
     }
 }

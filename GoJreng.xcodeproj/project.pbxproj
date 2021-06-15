@@ -35,8 +35,6 @@
 		8436557E26764BD800244A84 /* B.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8436556626764BD600244A84 /* B.mp3 */; };
 		8436558226764BD800244A84 /* E.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8436556A26764BD700244A84 /* E.mp3 */; };
 		8436558426764BD800244A84 /* D.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8436556C26764BD800244A84 /* D.mp3 */; };
-		843655872676721F00244A84 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843655862676721F00244A84 /* Question.swift */; };
-		84365589267673B200244A84 /* ListQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84365588267673B200244A84 /* ListQuestion.swift */; };
 		849D29F22671E6660022B08E /* HomeP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849D29F12671E6660022B08E /* HomeP.storyboard */; };
 		84A268112671DCCD00536F14 /* UnlockCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2680F2671DCCD00536F14 /* UnlockCollectionViewCell.swift */; };
 		84A268122671DCCD00536F14 /* UnlockCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A268102671DCCD00536F14 /* UnlockCollectionViewCell.xib */; };
@@ -158,8 +156,6 @@
 		8436556626764BD600244A84 /* B.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = B.mp3; sourceTree = "<group>"; };
 		8436556A26764BD700244A84 /* E.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = E.mp3; sourceTree = "<group>"; };
 		8436556C26764BD800244A84 /* D.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = D.mp3; sourceTree = "<group>"; };
-		843655862676721F00244A84 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		84365588267673B200244A84 /* ListQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListQuestion.swift; sourceTree = "<group>"; };
 		849D29F12671E6660022B08E /* HomeP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeP.storyboard; sourceTree = "<group>"; };
 		84A2680F2671DCCD00536F14 /* UnlockCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockCollectionViewCell.swift; sourceTree = "<group>"; };
 		84A268102671DCCD00536F14 /* UnlockCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnlockCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -295,7 +291,7 @@
 				55F131342669EF58008BFC97 /* Mode3 */,
 				55F131332669EF52008BFC97 /* Mode2 */,
 				55F131322669EF4C008BFC97 /* Mode1 */,
-				84044D922671D94400196E42 /* Home 2 */,
+				84044D922671D94400196E42 /* HomePage */,
 				55F131312669EF46008BFC97 /* Home */,
 				A5CCC0AB267374A7006F2F42 /* Feedback */,
 				55F131302669EF3D008BFC97 /* Resource */,
@@ -366,7 +362,6 @@
 		55F131332669EF52008BFC97 /* Mode2 */ = {
 			isa = PBXGroup;
 			children = (
-				843655852676720A00244A84 /* Model Testing */,
 				8436554A26733E2200244A84 /* SecondStage.storyboard */,
 				8436554C26733E3300244A84 /* SecondStageViewController.swift */,
 			);
@@ -397,7 +392,7 @@
 			path = Exit;
 			sourceTree = "<group>";
 		};
-		84044D922671D94400196E42 /* Home 2 */ = {
+		84044D922671D94400196E42 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
 				84A2680F2671DCCD00536F14 /* UnlockCollectionViewCell.swift */,
@@ -407,7 +402,7 @@
 				849D29F12671E6660022B08E /* HomeP.storyboard */,
 				84B050E92671EA0100F968FC /* HomePageViewController.swift */,
 			);
-			path = "Home 2";
+			path = HomePage;
 			sourceTree = "<group>";
 		};
 		8436555426764B7000244A84 /* Chord */ = {
@@ -422,15 +417,6 @@
 				8436556526764BD500244A84 /* G.mp3 */,
 			);
 			path = Chord;
-			sourceTree = "<group>";
-		};
-		843655852676720A00244A84 /* Model Testing */ = {
-			isa = PBXGroup;
-			children = (
-				843655862676721F00244A84 /* Question.swift */,
-				84365588267673B200244A84 /* ListQuestion.swift */,
-			);
-			path = "Model Testing";
 			sourceTree = "<group>";
 		};
 		849451ED266E7642007287D4 /* Modality */ = {
@@ -459,14 +445,14 @@
 			path = Feedback;
 			sourceTree = "<group>";
 		};
-				B5D56D9E2673B417000E358E /* Supporting Files */ = {
+		B5D56D9E2673B417000E358E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B5D56D9F2673B417000E358E /* 2 Chord Progressions */,
-				B5D56DAA2673B417000E358E /* 4 Chord Progressions */,
 				B5D56DB52673B417000E358E /* 1 Chord */,
-				B5D56DCE2673B417000E358E /* ChordList.pdf */,
+				B5D56D9F2673B417000E358E /* 2 Chord Progressions */,
 				B5D56DCF2673B417000E358E /* 3 Chord Progressions */,
+				B5D56DAA2673B417000E358E /* 4 Chord Progressions */,
+				B5D56DCE2673B417000E358E /* ChordList.pdf */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -777,7 +763,6 @@
 				84364171266F76B40060A9CE /* UnlockTableViewCell.swift in Sources */,
 				A5CCC0AE267374A7006F2F42 /* FeedbackPageViewController.swift in Sources */,
 				55F131F026720A63008BFC97 /* ExitOverlayView.swift in Sources */,
-				843655872676721F00244A84 /* Question.swift in Sources */,
 				84364180266F8DC40060A9CE /* LockedTableViewCell.swift in Sources */,
 				55F131362669EF9A008BFC97 /* HomeViewController.swift in Sources */,
 				55F131042669EF23008BFC97 /* GoJreng.xcdatamodeld in Sources */,
@@ -789,7 +774,6 @@
 				B5FBC109266FBEDC008CA574 /* QuestionsAnswers.swift in Sources */,
 				B5E6E1A2266FBD53004C3CBD /* Stages.swift in Sources */,
 				B5B7AFB32672743000A2F263 /* StagesData.swift in Sources */,
-				84365589267673B200244A84 /* ListQuestion.swift in Sources */,
 				0B348D5D26720E4B00404EF4 /* BaseModalityViewController.swift in Sources */,
 				55F130FC2669EF23008BFC97 /* SceneDelegate.swift in Sources */,
 				95E254DA2670A65900BB39D8 /* GoJrengColors.swift in Sources */,
