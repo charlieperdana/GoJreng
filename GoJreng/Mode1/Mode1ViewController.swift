@@ -36,7 +36,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         
 //        test question
         setUpQuestionsStage()
-        questionArray = majorQuestionsAnswers + minorQuestionsAnswers
+        questionArray = majorQuestionsAnswers //+ minorQuestionsAnswers
+        questionArray = Array(questionArray![0..<3])
         questionArray?.shuffle()
 //        timer setup
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
@@ -57,9 +58,9 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
             playSound(soundFileName: questionArray![qIndex])
             if (qIndex <= questionArray!.count - 1){
                 qIndex += 1
-                if qIndex == questionArray!.count{
-                    feedbackSequence(type: 0)
-                }
+//                if qIndex == questionArray!.count{
+//                    feedbackSequence(type: 0)
+//                }
             }
         }
         else{
@@ -135,6 +136,9 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         vc.modalPresentationStyle = .overFullScreen //or .overFullScreen for transparency
         vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true)
+        vc.dismiss(animated: true, completion: {
+                    self.checkFinished()})
+//        checkFinished()
     }
     
     func showWrongAnswerModal(){
@@ -143,6 +147,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         vc.modalPresentationStyle = .overFullScreen //or .overFullScreen for transparency
         vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true)
+        vc.dismiss(animated: true, completion: nil)
+        checkFinished()
     }
     
     func playSound(soundFileName: String){
@@ -207,8 +213,29 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
             timer -= 1
             timerLabel.text = String(timer)
         }
-        if (timer == 0 && lifeCount != 0){
+//        if (timer == 0 && lifeCount != 0){
+//            feedbackSequence(type:1)
+//        }
+    }
+    func checkFinished(){
+//        life
+        if lifeCount > 0{
+//            check if time's up
+            if timer <= 0{
+                feedbackSequence(type:1)
+                return
+            }
+            if soundIsPlaying == false && qIndex >= questionArray!.count{
+                print("finished")
+                feedbackSequence(type:0)
+                return
+            }
+            print("continue + " + String(qIndex))
+        }
+//        dead
+        else{
             feedbackSequence(type:1)
+            return
         }
     }
 }
