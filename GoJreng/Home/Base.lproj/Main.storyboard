@@ -56,6 +56,14 @@
             </objects>
             <point key="canvasLocation" x="130.76923076923077" y="115.87677725118483"/>
         </scene>
+        <!--Mode1Board-->
+        <scene sceneID="Pcj-aJ-bKg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Mode1Board" id="jYF-RU-PgG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zst-Ym-OCv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="849" y="280"/>
+        </scene>
     </scenes>
     <resources>
         <image name="HomePage" width="390" height="844"/>
