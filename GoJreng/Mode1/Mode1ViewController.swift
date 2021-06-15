@@ -36,36 +36,32 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         
 //        test question
         setUpQuestionsStage()
-        questionArray = majorQuestionsAnswers //+ minorQuestionsAnswers
-        questionArray = Array(questionArray![0..<3])
+        questionArray = majorQuestionsAnswers + minorQuestionsAnswers
+//        questionArray = Array(questionArray![0..<3])
         questionArray?.shuffle()
+        print(questionArray?.count)
 //        timer setup
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+        
+        playQuestion(index: qIndex)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func playQuestion(index: Int){
+        playSound(soundFileName: questionArray![index])
+        
     }
-    */
+    
     @IBAction func playSoundClicked(_ sender: Any) {
         if (soundIsPlaying == false && qIndex <= questionArray!.count - 1){
             playSound(soundFileName: questionArray![qIndex])
-            if (qIndex <= questionArray!.count - 1){
-                qIndex += 1
-//                if qIndex == questionArray!.count{
-//                    feedbackSequence(type: 0)
-//                }
-            }
         }
         else{
-//            todo gameover
-            print("false")
+            if soundIsPlaying == false {
+                return
+            }
+            else {
+                print("questionarray index logic error")
+            }
         }
     }
     
@@ -88,7 +84,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
             chord = questionArray![qIndex]
         }
         else{
-            chord = questionArray![qIndex-1]
+            chord = questionArray![qIndex]
         }
         print("ANS: " + chord)
         var isCorrect: Bool
@@ -100,6 +96,9 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
             isCorrect = choice == "major"
         }
         
+        if (qIndex < questionArray!.count){
+            qIndex += 1
+        }
         if isCorrect{
             rightAnswerSequence()
             return
@@ -230,6 +229,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
                 return
             }
             print("continue + " + String(qIndex))
+            playQuestion(index: qIndex)
         }
 //        dead
         else{
