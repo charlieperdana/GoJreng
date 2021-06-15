@@ -113,6 +113,14 @@
                                 <rect key="frame" x="335" y="110" width="29" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thm-74-qPh">
+                                <rect key="frame" x="400" y="410" width="96" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="stage1PlayButton"/>
+                                <connections>
+                                    <action selector="playSoundClicked:" destination="d7F-JX-kRO" eventType="touchUpInside" id="B2j-2B-6Vc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gLB-5C-CKw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -120,6 +128,8 @@
                     <connections>
                         <outlet property="majorButton" destination="nvi-Lc-JmJ" id="zMk-da-sNC"/>
                         <outlet property="minorButton" destination="h9k-Q6-4UB" id="vfw-nm-NUx"/>
+                        <outlet property="playButton" destination="srr-9p-7gg" id="OyF-82-ZBo"/>
+                        <outlet property="rightPlayButton" destination="Thm-74-qPh" id="bPV-kd-1rb"/>
                         <outlet property="scoreLabel" destination="pUW-sZ-rXo" id="bvt-kG-Mms"/>
                         <outlet property="timerLabel" destination="V1k-Sh-O87" id="9u5-t4-KbK"/>
                         <outletCollection property="lifePicks" destination="nuJ-7i-hNl" collectionClass="NSMutableArray" id="Vft-bZ-Lea"/>

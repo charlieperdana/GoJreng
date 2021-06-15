@@ -16,6 +16,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet var lifePicks: [UIImageView]!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var rightPlayButton: UIButton!
     
     var questionArray: [String]?
     
@@ -218,13 +220,52 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
                 return
             }
             print("continue + " + String(qIndex))
-            playQuestion(index: qIndex)
+            animatePlayButton{ (success) -> Void in
+                if success {
+//                    restoreButtonPosition()
+                    playQuestion(index: qIndex)
+                }
+            }
         }
 //        dead
         else{
             feedbackSequence(type:1)
             return
         }
+    }
+    
+    func animatePlayButton(completion: (_ success: Bool) -> Void){
+        let midy = self.playButton.frame.origin.y
+        let righty = self.rightPlayButton.frame.origin.y
+//        let initxActual = self.playButton.frame.midX
+
+        
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
+                //Frame Option 1:
+            self.playButton.frame = CGRect(x: 0 - self.playButton.frame.width, y: midy, width: self.playButton.frame.width, height: self.playButton.frame.height)
+            
+            
+            self.rightPlayButton.frame = CGRect(x: self.view.frame.midX - self.rightPlayButton.frame.width/2, y: righty, width: self.rightPlayButton.frame.width, height: self.rightPlayButton.frame.height)
+
+            },completion: { finish in
+                UIView.animate(withDuration: 0.7, delay: 0,options: UIView.AnimationOptions.curveEaseOut,animations: {
+                self.rightPlayButton.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            },
+                completion:  { finish in
+                    self.restoreButtonPosition()
+                }
+                )})
+        
+        completion(true)
+    }
+    
+    func restoreButtonPosition(){
+        let mid = self.view.frame.midX
+        let size = playButton.frame.width
+        playButton.frame = CGRect(x: mid - size/2, y: playButton.frame.origin.y, width: size, height: size)
+        
+//        let rmid = self.view.frame.midX
+        rightPlayButton.frame = CGRect(x: 500, y: playButton.frame.origin.y, width: size/1.5, height: size/1.5)
     }
 }
 
