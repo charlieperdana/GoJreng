@@ -1,11 +1,7 @@
 {
   "images" : [
     {
-<<<<<<< HEAD:GoJreng/Assets.xcassets/PlayButtonStage.imageset/Contents.json
       "filename" : "PlayButtonStage.png",
-=======
-      "filename" : "placeholder.png",
->>>>>>> origin/staging:GoJreng/Assets.xcassets/placeholder.imageset/Contents.json
       "idiom" : "universal",
       "scale" : "1x"
     },
