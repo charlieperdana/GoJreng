@@ -1,19 +1,18 @@
 {
   "images" : [
     {
-      "filename" : "[No Win] Bagde.png",
+      "filename" : "answerPlaceholder.png",
       "idiom" : "universal",
-      "locale" : "No",
       "scale" : "1x"
     },
     {
+      "filename" : "answerPlaceholder@2x.png",
       "idiom" : "universal",
-      "locale" : "No",
       "scale" : "2x"
     },
     {
+      "filename" : "answerPlaceholder@3x.png",
       "idiom" : "universal",
-      "locale" : "No",
       "scale" : "3x"
     }
   ],
