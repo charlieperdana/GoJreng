@@ -37,9 +37,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
 //        test question
         setUpQuestionsStage()
         questionArray = majorQuestionsAnswers + minorQuestionsAnswers
-//        questionArray = Array(questionArray![0..<3])
         questionArray?.shuffle()
-        print(questionArray?.count)
+
 //        timer setup
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         
@@ -56,7 +55,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
             playSound(soundFileName: questionArray![qIndex])
         }
         else{
-            if soundIsPlaying == false {
+            if soundIsPlaying == true {
                 return
             }
             else {
@@ -116,12 +115,6 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func wrongAnswerSequence(){
-//        if (lifeCount <= 1){ // decrease life count
-////            TODO handle game over
-//            print("gemover!!")
-//            feedbackSequence(type: 1)
-//            return
-//        }
         lifePicks[lifeCount-1].image = UIImage(named: "deadPicks")
         lifeCount -= 1
 //        show modal
@@ -136,7 +129,6 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         self.present(vc, animated: true)
         vc.dismiss(animated: true, completion: {
                     self.checkFinished()})
-//        checkFinished()
     }
     
     func showWrongAnswerModal(){
@@ -184,7 +176,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         let vc = modalstoryboard.instantiateViewController(withIdentifier: "fp") as! FeedbackPageViewController
         vc.feedbackType = type
         vc.stageScore =  score
-        vc.modalPresentationStyle = .overFullScreen //or .overFullScreen for transparency
+        vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true)
     }
@@ -211,9 +203,6 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
             timer -= 1
             timerLabel.text = String(timer)
         }
-//        if (timer == 0 && lifeCount != 0){
-//            feedbackSequence(type:1)
-//        }
     }
     func checkFinished(){
 //        life
