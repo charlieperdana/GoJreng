@@ -186,8 +186,20 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func testGameover(_ sender: Any) {
-        feedbackSequence(type:1)
+        showExitModal()
     }
+    
+    
+    
+    @objc func showExitModal() {
+        print("exit tapped")
+        let exitModality = ExitOverlayView()
+        exitModality.modalPresentationStyle = .custom
+        exitModality.transitioningDelegate = self
+        self.present(exitModality, animated: true, completion: nil)
+
+    }
+    
     
 //    update timer
     @objc func update() {
@@ -198,5 +210,11 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         if (timer == 0 && lifeCount != 0){
             feedbackSequence(type:1)
         }
+    }
+}
+
+extension Mode1ViewController : UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        ExitPresentationController(presentedViewController: presented, presenting: presenting)
     }
 }

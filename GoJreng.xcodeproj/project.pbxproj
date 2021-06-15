@@ -367,7 +367,6 @@
 				55F131332669EF52008BFC97 /* Mode2 */,
 				55F131312669EF46008BFC97 /* Home */,
 				A5CCC0AB267374A7006F2F42 /* Feedback */,
-				55F131302669EF3D008BFC97 /* Resource */,
 				55F1312F2669EF30008BFC97 /* Utils */,
 				55F130F92669EF23008BFC97 /* AppDelegate.swift */,
 				55F130FB2669EF23008BFC97 /* SceneDelegate.swift */,
@@ -486,8 +485,6 @@
 		A5CCC0AB267374A7006F2F42 /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
-				A5CCC0AC267374A7006F2F42 /* FeedbackPageViewController.swift */,
-				A5CCC0AD267374A7006F2F42 /* FeedbackPage.storyboard */,
 			);
 			path = Feedback;
 			sourceTree = "<group>";
@@ -504,7 +501,6 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-
 		B5D56D9F2673B417000E358E /* 2 Chord Progressions */ = {
 			isa = PBXGroup;
 			children = (
@@ -707,9 +703,7 @@
 				0BD9BB3B2673A8A9005DD71E /* C#.mp3 in Resources */,
 				0BD9BB372673A8A9005DD71E /* A.mp3 in Resources */,
 				0BD9BB432673A8A9005DD71E /* F#.mp3 in Resources */,
-				A5CCC0AF267374A7006F2F42 /* FeedbackPage.storyboard in Resources */,
 				0BD9BB4B2673A8A9005DD71E /* cm.mp3 in Resources */,
-				A5CCC0AF267374A7006F2F42 /* FeedbackPage.storyboard in Resources */,
 				B5D56DE32673B417000E358E /* chord2-8.mp3 in Resources */,
 				B5D56E0E2673B417000E358E /* chord3-7.mp3 in Resources */,
 				B5D56DED2673B417000E358E /* chord4-8.mp3 in Resources */,
