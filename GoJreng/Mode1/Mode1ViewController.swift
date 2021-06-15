@@ -110,7 +110,6 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     
     func rightAnswerSequence(){
 //        buat siapatau mau play sound effect kalo bener
-//        TODO handle nambah poin
         score += 100
         scoreLabel.text = String(score)
         showCorrectAnswerModal()
@@ -118,12 +117,12 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func wrongAnswerSequence(){
-        if (lifeCount <= 1){ // decrease life count
-//            TODO handle game over
-            print("gemover!!")
-            feedbackSequence(type: 1)
-            return
-        }
+//        if (lifeCount <= 1){ // decrease life count
+////            TODO handle game over
+//            print("gemover!!")
+//            feedbackSequence(type: 1)
+//            return
+//        }
         lifePicks[lifeCount-1].image = UIImage(named: "deadPicks")
         lifeCount -= 1
 //        show modal
@@ -147,8 +146,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         vc.modalPresentationStyle = .overFullScreen //or .overFullScreen for transparency
         vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true)
-        vc.dismiss(animated: true, completion: nil)
-        checkFinished()
+        vc.dismiss(animated: true, completion: {
+                    self.checkFinished()})
     }
     
     func playSound(soundFileName: String){
