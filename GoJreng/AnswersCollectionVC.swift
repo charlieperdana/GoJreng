@@ -11,4 +11,5 @@ class AnswersCollectionVC: UICollectionViewCell {
     
     @IBOutlet weak var answerBackground: UIView!
     @IBOutlet weak var answerLabel: UILabel!
+    @IBOutlet weak var imageOptionChord: UIImageView!
 }
