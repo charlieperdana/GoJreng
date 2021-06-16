@@ -69,16 +69,16 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBAction func majorTouched(_ sender: Any) {
         player?.stop()
         soundIsPlaying = false
-        checkAnswer(choice: "major")
+        checkAnswer(choice: "major", button: majorButton)
     }
     
     @IBAction func minorTouched(_ sender: Any) {
         player?.stop()
         soundIsPlaying = false
-        checkAnswer(choice: "minor")
+        checkAnswer(choice: "minor", button: minorButton)
     }
     
-    func checkAnswer(choice: String) {
+    func checkAnswer(choice: String, button: UIButton) {
         print("CHOICE: " + choice)
         var chord: String
         if qIndex == 0{
@@ -101,47 +101,62 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
             qIndex += 1
         }
         if isCorrect{
-            rightAnswerSequence()
+            rightAnswerSequence(button: button)
             return
         }
 //        kalo salah
-        wrongAnswerSequence()
+        wrongAnswerSequence(button: button)
     }
     
-    func rightAnswerSequence(){
+    func rightAnswerSequence(button: UIButton){
 //        buat siapatau mau play sound effect kalo bener
         score += 100
         scoreLabel.text = String(score)
-        showCorrectAnswerModal()
+        let prevColor = button.backgroundColor
+        UIView.animate(withDuration: 0.5, animations: {
+                    button.backgroundColor = UIColor.green
+                },completion: { _ in
+                    button.backgroundColor = prevColor //change it back to original
+                    self.checkFinished()
+                })
+//        showCorrectAnswerModal()
         
     }
     
-    func wrongAnswerSequence(){
+    func wrongAnswerSequence(button: UIButton){
         lifePicks[lifeCount-1].image = UIImage(named: "deadPicks")
         lifeCount -= 1
+        let prevColor = button.backgroundColor
+        UIView.animate(withDuration: 0.5, animations: {
+                    button.backgroundColor = UIColor.red
+                },completion: { _ in
+                    button.backgroundColor = prevColor //change it back to original
+                    self.checkFinished()
+                })
+        
 //        show modal
-        showWrongAnswerModal()
+//        showWrongAnswerModal()
     }
     
-    func showCorrectAnswerModal(){
-        let modalstoryboard = UIStoryboard(name: "BaseModality", bundle: nil)
-        let vc = modalstoryboard.instantiateViewController(withIdentifier: "correct")
-        vc.modalPresentationStyle = .overFullScreen //or .overFullScreen for transparency
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true)
-        vc.dismiss(animated: true, completion: {
-                    self.checkFinished()})
-    }
-    
-    func showWrongAnswerModal(){
-        let modalstoryboard = UIStoryboard(name: "BaseModality", bundle: nil)
-        let vc = modalstoryboard.instantiateViewController(withIdentifier: "wrongSimple")
-        vc.modalPresentationStyle = .overFullScreen //or .overFullScreen for transparency
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true)
-        vc.dismiss(animated: true, completion: {
-                    self.checkFinished()})
-    }
+//    func showCorrectAnswerModal(){
+//        let modalstoryboard = UIStoryboard(name: "BaseModality", bundle: nil)
+//        let vc = modalstoryboard.instantiateViewController(withIdentifier: "correct")
+//        vc.modalPresentationStyle = .overFullScreen //or .overFullScreen for transparency
+//        vc.modalTransitionStyle = .crossDissolve
+//        self.present(vc, animated: true)
+//        vc.dismiss(animated: true, completion: {
+//                    self.checkFinished()})
+//    }
+//
+//    func showWrongAnswerModal(){
+//        let modalstoryboard = UIStoryboard(name: "BaseModality", bundle: nil)
+//        let vc = modalstoryboard.instantiateViewController(withIdentifier: "wrongSimple")
+//        vc.modalPresentationStyle = .overFullScreen //or .overFullScreen for transparency
+//        vc.modalTransitionStyle = .crossDissolve
+//        self.present(vc, animated: true)
+//        vc.dismiss(animated: true, completion: {
+//                    self.checkFinished()})
+//    }
     
     func playSound(soundFileName: String){
         let fileUrl = Bundle.main.path(forResource: soundFileName, ofType: "mp3")
