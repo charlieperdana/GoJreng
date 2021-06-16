@@ -32,7 +32,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="win" adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="WFX-Bw-maw">
-                                        <rect key="frame" x="107" y="60" width="145" height="157"/>
+                                        <rect key="frame" x="106.66666666666669" y="60.333333333333343" width="145" height="157"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jx0-Yj-0ud">
@@ -121,6 +121,7 @@
                         <outlet property="scoreLabel" destination="xon-yR-DnA" id="QJg-IE-l2G"/>
                         <outlet property="scoreTitleLabel" destination="Jx0-Yj-0ud" id="mLS-u8-n87"/>
                         <outlet property="secondaryButton" destination="Ge1-hq-31i" id="sZU-N2-zxo"/>
+                        <outlet property="stackViewBottom" destination="FzL-0t-TLo" id="q80-SV-h4b"/>
                         <outlet property="stackViewFeedback" destination="isX-EQ-CcY" id="RzF-fC-HZU"/>
                     </connections>
                 </viewController>

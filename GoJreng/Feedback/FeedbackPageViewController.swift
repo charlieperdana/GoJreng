@@ -19,6 +19,7 @@ class FeedbackPageViewController: UIViewController {
   @IBOutlet weak var primaryButton: UIButton!
   @IBOutlet weak var secondaryButton: UIButton!
   @IBOutlet weak var stackViewFeedback: UIStackView!
+  @IBOutlet weak var stackViewBottom: NSLayoutConstraint!
 
   var stageScore: Int?
   var currentHighScore: Int?
@@ -62,7 +63,8 @@ class FeedbackPageViewController: UIViewController {
       secondaryButton.isHidden = true
       newHighScoreLabel.isHidden = false
 
-      stackViewFeedback.setCustomSpacing(80, after: primaryButton)
+      //stackViewFeedback.setCustomSpacing(80, after: primaryButton)
+      stackViewBottom.constant = 56
 
     default: //GameOver
       feedbackBG.image = #imageLiteral(resourceName: "feedbackGameOver")
