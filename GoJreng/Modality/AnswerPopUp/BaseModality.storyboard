@@ -58,83 +58,56 @@
         <!--nope-->
         <scene sceneID="7ci-od-fsQ">
             <objects>
-                <viewController storyboardIdentifier="wrongSimple" title="nope" id="mwJ-nv-NfL" customClass="ModalityViewController" customModule="GoJreng" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="wrong" title="nope" id="mwJ-nv-NfL" customClass="ModalityViewController" customModule="GoJreng" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MZo-sx-SwA">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMU-1D-1Ad">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iMU-1D-1Ad">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wrongAnswer" translatesAutoresizingMaskIntoConstraints="NO" id="9KQ-KT-KSx">
-                                        <rect key="frame" x="75" y="251" width="240" height="244"/>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yeB-et-emz">
-                                        <rect key="frame" x="0.0" y="592" width="390" height="252"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeW-ky-gMe">
-                                                <rect key="frame" x="20" y="161" width="350" height="56"/>
-                                                <color key="backgroundColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="22"/>
-                                                <state key="normal" title="Continue">
-                                                    <color key="titleColor" red="0.59458351139999999" green="0.3629985154" blue="0.15680089589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="wrongContinueTapped:" destination="mwJ-nv-NfL" eventType="touchUpInside" id="o2F-Zx-UDK"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct Answer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbE-Aq-6Na">
-                                                <rect key="frame" x="20" y="36" width="176" height="28"/>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
-                                                <color key="textColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="love is the answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1w-rG-PEC">
-                                                <rect key="frame" x="20" y="64" width="350" height="52"/>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="34"/>
-                                                <color key="textColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.23525029419999999" green="0.22745192049999999" blue="0.22745102640000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstItem="AbE-Aq-6Na" firstAttribute="width" secondItem="yeB-et-emz" secondAttribute="width" multiplier="0.451282" id="3aC-p1-KP0"/>
-                                            <constraint firstItem="AbE-Aq-6Na" firstAttribute="leading" secondItem="yeB-et-emz" secondAttribute="leading" constant="20" id="6YJ-3c-lRO"/>
-                                            <constraint firstItem="jeW-ky-gMe" firstAttribute="top" secondItem="h1w-rG-PEC" secondAttribute="bottom" constant="45" id="6m4-7T-UKz"/>
-                                            <constraint firstItem="AbE-Aq-6Na" firstAttribute="height" secondItem="yeB-et-emz" secondAttribute="height" multiplier="0.111111" id="Drb-ux-CQg"/>
-                                            <constraint firstItem="jeW-ky-gMe" firstAttribute="height" secondItem="yeB-et-emz" secondAttribute="height" multiplier="0.222222" id="KkD-e7-YAz"/>
-                                            <constraint firstItem="h1w-rG-PEC" firstAttribute="leading" secondItem="yeB-et-emz" secondAttribute="leading" constant="20" symbolic="YES" id="M02-Uz-ouP"/>
-                                            <constraint firstItem="h1w-rG-PEC" firstAttribute="top" secondItem="yeB-et-emz" secondAttribute="top" multiplier="0.5" constant="64" id="QiO-5P-eyr"/>
-                                            <constraint firstItem="AbE-Aq-6Na" firstAttribute="top" secondItem="yeB-et-emz" secondAttribute="top" constant="36" id="W7f-4M-Mb4"/>
-                                            <constraint firstItem="jeW-ky-gMe" firstAttribute="centerX" secondItem="yeB-et-emz" secondAttribute="centerX" id="ZrP-3D-VNA"/>
-                                            <constraint firstAttribute="bottom" secondItem="jeW-ky-gMe" secondAttribute="bottom" constant="35" id="dS2-wu-O06"/>
-                                            <constraint firstItem="jeW-ky-gMe" firstAttribute="width" secondItem="yeB-et-emz" secondAttribute="width" multiplier="0.897436" id="dx2-bP-dea"/>
-                                            <constraint firstItem="h1w-rG-PEC" firstAttribute="height" secondItem="yeB-et-emz" secondAttribute="height" multiplier="0.206349" id="nqb-qu-B5R"/>
-                                            <constraint firstItem="h1w-rG-PEC" firstAttribute="width" secondItem="yeB-et-emz" secondAttribute="width" multiplier="0.897436" id="w6e-Yr-QsO"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstItem="yeB-et-emz" firstAttribute="height" secondItem="iMU-1D-1Ad" secondAttribute="height" multiplier="0.298578" id="BGD-bz-txM"/>
-                                    <constraint firstItem="yeB-et-emz" firstAttribute="width" secondItem="iMU-1D-1Ad" secondAttribute="width" id="N3S-fO-6O0"/>
-                                    <constraint firstItem="9KQ-KT-KSx" firstAttribute="top" secondItem="iMU-1D-1Ad" secondAttribute="top" constant="251" id="OzC-Qc-LUg"/>
-                                    <constraint firstItem="yeB-et-emz" firstAttribute="centerX" secondItem="iMU-1D-1Ad" secondAttribute="centerX" id="Q9q-V9-ogM"/>
-                                    <constraint firstItem="9KQ-KT-KSx" firstAttribute="centerX" secondItem="iMU-1D-1Ad" secondAttribute="centerX" id="WhC-PY-HMT"/>
-                                    <constraint firstItem="9KQ-KT-KSx" firstAttribute="height" secondItem="iMU-1D-1Ad" secondAttribute="height" multiplier="0.2891" id="dDK-12-WUy"/>
-                                    <constraint firstAttribute="bottom" secondItem="yeB-et-emz" secondAttribute="bottom" id="mX4-mB-igy"/>
-                                    <constraint firstItem="9KQ-KT-KSx" firstAttribute="width" secondItem="iMU-1D-1Ad" secondAttribute="width" multiplier="0.615385" id="wjC-xA-mz0"/>
-                                </constraints>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yeB-et-emz">
+                                <rect key="frame" x="0.0" y="592" width="390" height="252"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeW-ky-gMe">
+                                        <rect key="frame" x="20" y="161" width="350" height="56"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="22"/>
+                                        <state key="normal" title="Continue">
+                                            <color key="titleColor" red="0.59458351139999999" green="0.3629985154" blue="0.15680089589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="wrongContinueTapped:" destination="mwJ-nv-NfL" eventType="touchUpInside" id="o2F-Zx-UDK"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Correct Answer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbE-Aq-6Na">
+                                        <rect key="frame" x="20" y="36" width="176" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                        <color key="textColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="love is the answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1w-rG-PEC">
+                                        <rect key="frame" x="20" y="64" width="350" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="34"/>
+                                        <color key="textColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.23525029419999999" green="0.22745192049999999" blue="0.22745102640000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wrongAnswer" translatesAutoresizingMaskIntoConstraints="NO" id="9KQ-KT-KSx">
+                                <rect key="frame" x="76" y="251" width="240" height="244"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5nf-nX-t62"/>
-                        <constraints>
-                            <constraint firstItem="iMU-1D-1Ad" firstAttribute="leading" secondItem="5nf-nX-t62" secondAttribute="leading" id="2lO-fh-6SM"/>
-                            <constraint firstItem="iMU-1D-1Ad" firstAttribute="top" secondItem="MZo-sx-SwA" secondAttribute="top" id="MCc-uj-2zw"/>
-                            <constraint firstItem="iMU-1D-1Ad" firstAttribute="trailing" secondItem="5nf-nX-t62" secondAttribute="trailing" id="Xma-R8-cJy"/>
-                            <constraint firstAttribute="bottom" secondItem="iMU-1D-1Ad" secondAttribute="bottom" id="Ysg-Cq-c09"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="correctAnswerBg" destination="yeB-et-emz" id="N2X-Lh-ODg"/>
@@ -145,7 +118,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggp-L4-KSZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="UKc-V5-5j2"/>
             </objects>
-            <point key="canvasLocation" x="204.61538461538461" y="888.62559241706163"/>
+            <point key="canvasLocation" x="160" y="955"/>
         </scene>
         <!--yay-->
         <scene sceneID="gTk-eH-vgx">
@@ -158,20 +131,18 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lmh-mc-0kF">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="correctAnswer" translatesAutoresizingMaskIntoConstraints="NO" id="BQs-L5-pik">
-                                        <rect key="frame" x="75" y="251" width="240" height="244"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5p-Ju-Nst">
-                                        <rect key="frame" x="20" y="746" width="0.0" height="0.0"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="22"/>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="correctAnswer" translatesAutoresizingMaskIntoConstraints="NO" id="BQs-L5-pik">
+                                <rect key="frame" x="81" y="285" width="240" height="244"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5p-Ju-Nst">
+                                <rect key="frame" x="195" y="422" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="22"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8jU-H3-MTX"/>
                     </view>
@@ -183,6 +154,41 @@
                 <tapGestureRecognizer id="Vb3-rT-Q9n"/>
             </objects>
             <point key="canvasLocation" x="-614" y="889"/>
+        </scene>
+        <!--nopeSimple-->
+        <scene sceneID="q2r-C5-eme">
+            <objects>
+                <viewController storyboardIdentifier="wrongSimple" title="nopeSimple" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iie-2l-dDe" customClass="ModalityViewController" customModule="GoJreng" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dSV-yN-YMk">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O3e-6P-gXz">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqH-gp-2rc">
+                                <rect key="frame" x="-390" y="1260" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="22"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wrongAnswer" translatesAutoresizingMaskIntoConstraints="NO" id="ReZ-bf-HwT">
+                                <rect key="frame" x="76" y="251" width="240" height="244"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mqb-cJ-Df0"/>
+                    </view>
+                    <connections>
+                        <outlet property="wrongContinueButton" destination="yqH-gp-2rc" id="OwY-xR-Wff"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9C9-Fb-aJy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2AD-eW-i0B"/>
+            </objects>
+            <point key="canvasLocation" x="797" y="451"/>
         </scene>
     </scenes>
     <resources>

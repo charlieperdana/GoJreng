@@ -313,7 +313,7 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
     
     func showWrongAnswerModal(){
         let modalstoryboard = UIStoryboard(name: "BaseModality", bundle: nil)
-        let vc = modalstoryboard.instantiateViewController(identifier: "wrongSimple") as! ModalityViewController
+        let vc = modalstoryboard.instantiateViewController(identifier: "wrong") as! ModalityViewController
         vc.text = correctSong
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
