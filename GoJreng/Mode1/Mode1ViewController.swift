@@ -113,29 +113,23 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         score += 100
         scoreLabel.text = String(score)
         let prevColor = button.backgroundColor
-        UIView.animate(withDuration: 0.5, animations: {
-                    button.backgroundColor = UIColor.green
-                },completion: { _ in
-                    button.backgroundColor = prevColor //change it back to original
-                    self.checkFinished()
-                })
-//        showCorrectAnswerModal()
-        
+        button.backgroundColor = UIColor.green
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            button.backgroundColor = prevColor //change it back to original
+            self.checkFinished()
+        }
     }
     
     func wrongAnswerSequence(button: UIButton){
         lifePicks[lifeCount-1].image = UIImage(named: "deadPicks")
         lifeCount -= 1
         let prevColor = button.backgroundColor
-        UIView.animate(withDuration: 0.5, animations: {
-                    button.backgroundColor = UIColor.red
-                },completion: { _ in
-                    button.backgroundColor = prevColor //change it back to original
-                    self.checkFinished()
-                })
+        button.backgroundColor = UIColor.red
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            button.backgroundColor = prevColor //change it back to original
+            self.checkFinished()
+        }
         
-//        show modal
-//        showWrongAnswerModal()
     }
     
 //    func showCorrectAnswerModal(){
