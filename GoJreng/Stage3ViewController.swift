@@ -26,7 +26,8 @@ class Stage3ViewController: UIViewController{
     
     
     var selectedIndex = 0
-    var itemsChord : [UIImage] = []
+//    var itemsChord : [UIImage] = []
+    var itemsChord : [String] = []
     
     
     override func viewDidLoad() {
@@ -43,7 +44,8 @@ class Stage3ViewController: UIViewController{
         //setupQuestions
         setUpQuestionsStage()
         
-        itemsChord = [#imageLiteral(resourceName: "Em"),#imageLiteral(resourceName: "Dm"),#imageLiteral(resourceName: "G"),#imageLiteral(resourceName: "B"),#imageLiteral(resourceName: "A"),#imageLiteral(resourceName: "F"),#imageLiteral(resourceName: "C"),#imageLiteral(resourceName: "Am")]
+//        itemsChord = [#imageLiteral(resourceName: "Em"),#imageLiteral(resourceName: "Dm"),#imageLiteral(resourceName: "G"),#imageLiteral(resourceName: "B"),#imageLiteral(resourceName: "A"),#imageLiteral(resourceName: "F"),#imageLiteral(resourceName: "C"),#imageLiteral(resourceName: "Am")]
+        itemsChord = ["Em","Dm","G","B","A","F","C","Am"]
         optionChordCollectonView.dataSource = self
         optionChordCollectonView.delegate = self
         
@@ -131,19 +133,22 @@ extension Stage3ViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier:"answerCell", for: indexPath) as! AnswersCollectionVC
-        cell.imageOptionChord.image = itemsChord[indexPath.row]
+//        cell.imageOptionChord.image = itemsChord[indexPath.row]
+        cell.imageOptionChord.image = UIImage(named: "\(itemsChord[indexPath.row])")
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-        let item = self.itemsChord[indexPath.row]
-        let itemProvider = NSItemProvider(object: item as UIImage)
+//        let item = self.itemsChord[indexPath.row]
+        let item = UIImage(named: "\(self.itemsChord[indexPath.row])")
+        let itemProvider = NSItemProvider(object: item! as UIImage)
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = item
         selectedIndex = indexPath.row + 1
         
         //change the cell after drag
-        itemsChord[indexPath.row] = #imageLiteral(resourceName: "noChord")
+//        itemsChord[indexPath.row] = #imageLiteral(resourceName: "noChord")
+        itemsChord[indexPath.row] = "noChord"
 //        optionChordCollectonView.reloadData()
         
         return [dragItem]
