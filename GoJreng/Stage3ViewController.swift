@@ -29,6 +29,8 @@ class Stage3ViewController: UIViewController{
 //    var itemsChord : [UIImage] = []
     var itemsChord : [String] = []
     
+    var concateAnswer : String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +52,8 @@ class Stage3ViewController: UIViewController{
         optionChordCollectonView.delegate = self
         
         self.setDragAndDropSettings()
+        
+    
         
         
     }
@@ -120,6 +124,9 @@ class Stage3ViewController: UIViewController{
         super.didReceiveMemoryWarning()
     }
 
+    @IBAction func checkAnswer(_ sender: UIButton) {
+        print("Answer "+concateAnswer)
+    }
 }
 extension Stage3ViewController: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
@@ -146,10 +153,15 @@ extension Stage3ViewController: UICollectionViewDataSource, UICollectionViewDele
         dragItem.localObject = item
         selectedIndex = indexPath.row + 1
         
+        //setAnswer
+        self.concateAnswer += "\(itemsChord[indexPath.row])-"
+        
         //change the cell after drag
 //        itemsChord[indexPath.row] = #imageLiteral(resourceName: "noChord")
         itemsChord[indexPath.row] = "noChord"
 //        optionChordCollectonView.reloadData()
+        
+        
         
         return [dragItem]
     }
