@@ -16,10 +16,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="295" height="145"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg1" translatesAutoresizingMaskIntoConstraints="NO" id="QyV-82-qin">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-1" translatesAutoresizingMaskIntoConstraints="NO" id="QyV-82-qin">
                         <rect key="frame" x="0.0" y="0.0" width="295" height="145"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Play Button" translatesAutoresizingMaskIntoConstraints="NO" id="Hf7-e8-DIk">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="playButton" translatesAutoresizingMaskIntoConstraints="NO" id="Hf7-e8-DIk">
                         <rect key="frame" x="176" y="49" width="74" height="74"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
@@ -27,7 +27,7 @@
                         <rect key="frame" x="248" y="8" width="30" height="44"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Score " translatesAutoresizingMaskIntoConstraints="NO" id="GtG-Cv-YO8">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="score" translatesAutoresizingMaskIntoConstraints="NO" id="GtG-Cv-YO8">
                         <rect key="frame" x="9" y="83" width="102" height="40"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
@@ -66,9 +66,9 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Play Button" width="74" height="74"/>
-        <image name="Score " width="102" height="40"/>
-        <image name="bg1" width="294" height="149"/>
+        <image name="bg-1" width="290" height="145"/>
         <image name="loseBadge" width="30" height="44"/>
+        <image name="playButton" width="74" height="74"/>
+        <image name="score" width="102" height="40"/>
     </resources>
 </document>

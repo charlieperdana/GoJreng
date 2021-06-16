@@ -20,7 +20,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage-2" translatesAutoresizingMaskIntoConstraints="NO" id="FuE-j7-VXX">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What Chord is it?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nH-bp-dYr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What Chord is it?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nH-bp-dYr">
                                 <rect key="frame" x="49" y="185" width="292" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="34"/>
@@ -132,7 +132,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STa-Tw-KPu">
                                 <rect key="frame" x="123" y="263" width="144" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="PlayButtonStage"/>
+                                <state key="normal" image="stagesPlayButton"/>
                                 <connections>
                                     <action selector="playSound:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4WJ-Mg-I7W"/>
                                 </connections>
@@ -177,10 +177,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="PlayButtonStage" width="144" height="144"/>
-        <image name="closeButton" width="166" height="166"/>
+        <image name="closeButton" width="24" height="24"/>
         <image name="score" width="102" height="40"/>
         <image name="stage-2" width="390" height="844"/>
+        <image name="stagesPlayButton" width="144" height="144"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

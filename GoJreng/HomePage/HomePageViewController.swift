@@ -12,8 +12,16 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var stageCollection: UICollectionView!
+    @IBOutlet weak var logoImage: UIImageView!
     
-    var newHighScore: Int = 100
+    @IBOutlet weak var testLabel: UILabel!
+    
+   // let userDefaults = UserDefaults.standard
+    
+    let defaults = UserDefaults.standard
+    
+    
+    var newHighScore: Int = 0
     
     let stage = [
         Stages(stageName: "Mayor/Minor Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 900),
@@ -23,16 +31,35 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        if defaults.bool(forKey: "First") == true{
+//            print("second")
+//
+//
+//
+//            defaults.set(true, forKey: "First")
+//        } else {
+//            print("First")
+//
+//            defaults.set(true, forKey: "First")
+//
+//            defaults.set(0, forKey: "highS")
+//        }
+        
 
         stageCollection.dataSource = self
         stageCollection.delegate = self
         
-        stage[1].highScore = newHighScore
-        
-     //   let layout = self.stageCollection.collectionViewLayout as! UICollectionViewFlowLayout
+       // stage[1].highScore = newHighScore
         
         stageCollection.register(UnlockCollectionViewCell.nib(), forCellWithReuseIdentifier: UnlockCollectionViewCell.identifier)
         stageCollection.register(LockCollectionViewCell.nib(), forCellWithReuseIdentifier: LockCollectionViewCell.identifier)
+        let hScore = defaults.integer(forKey: "hS")
+        
+        testLabel.text = "\(hScore)"
+        
+        
+        //stageCollection.reloadData()
     }
     
 
@@ -64,11 +91,12 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
             }
             else{
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UnlockCollectionViewCell.identifier, for: indexPath) as! UnlockCollectionViewCell
-                
                 cell.layer.cornerRadius = 14
                 cell.titleLabel.text = stage[indexPath.row].stageName
-                cell.scoreLabel.text = "\(newHighScore)"
-//                cell.scoreLabel.text = "\(stage[indexPath.row].highScore ?? 0)"
+                
+                
+                cell.scoreLabel.text = "\(defaults.value(forKey: "hS") ?? 0)"
+              //  defaults.set(cell.scoreLabel.text, forKey: "hS")
                 return cell
             }
                 

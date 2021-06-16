@@ -16,62 +16,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feedbackGameOver" translatesAutoresizingMaskIntoConstraints="NO" id="RAh-hv-n1P">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feedbackGameOver" translatesAutoresizingMaskIntoConstraints="NO" id="RAh-hv-n1P">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Great Job!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMH-9h-6GE">
-                                <rect key="frame" x="92" y="115" width="232" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great Job!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMH-9h-6GE">
+                                <rect key="frame" x="91" y="115" width="232" height="52"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="32"/>
                                 <color key="textColor" red="0.90507751700000005" green="0.85627824070000003" blue="0.76861482859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="win" translatesAutoresizingMaskIntoConstraints="NO" id="WFX-Bw-maw">
-                                <rect key="frame" x="87" y="241" width="240" height="153.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="win" translatesAutoresizingMaskIntoConstraints="NO" id="WFX-Bw-maw">
+                                <rect key="frame" x="87" y="241" width="240" height="153"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jx0-Yj-0ud">
-                                <rect key="frame" x="100" y="422" width="215" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jx0-Yj-0ud">
+                                <rect key="frame" x="100" y="421.5" width="214" height="28.5"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
                                 <color key="textColor" red="0.90507751700000005" green="0.85627824070000003" blue="0.76861482859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="750" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xon-yR-DnA">
-                                <rect key="frame" x="100" y="458" width="215" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="750" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xon-yR-DnA">
+                                <rect key="frame" x="100" y="458" width="214" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="95i-oI-c59"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="52"/>
                                 <color key="textColor" red="0.90507751700000005" green="0.85627824070000003" blue="0.76861482859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New high score!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rye-nE-b1v">
-                                <rect key="frame" x="101" y="534" width="215" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New high score!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rye-nE-b1v">
+                                <rect key="frame" x="164" y="534" width="86" height="17"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="12"/>
                                 <color key="textColor" red="0.82751530409999996" green="0.85121142859999999" blue="0.83529353139999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPA-mn-3Yf">
-                                <rect key="frame" x="32" y="676" width="350" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPA-mn-3Yf">
+                                <rect key="frame" x="32" y="681" width="350" height="56"/>
                                 <color key="backgroundColor" red="0.90507751700000005" green="0.85627824070000003" blue="0.76861482859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="22"/>
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" red="0.62953209880000005" green="0.3518363833" blue="0.090077958999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ge1-hq-31i">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ge1-hq-31i">
                                 <rect key="frame" x="32" y="748" width="350" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1215708628" green="0.12156457449999999" blue="0.12156885119999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="WZz-pX-HfA"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="22"/>
                                 <state key="normal" title="Close">
                                     <color key="titleColor" red="0.90507751700000005" green="0.85627824070000003" blue="0.76861482859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Congratulations!Ready to enter the next stage?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfQ-gx-Quh">
-                                <rect key="frame" x="-10" y="559" width="436" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!Ready to enter the next stage?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfQ-gx-Quh">
+                                <rect key="frame" x="-10" y="559" width="434" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="Y2U-qy-04X"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
                                 <color key="textColor" red="0.90507751700000005" green="0.85627824070000003" blue="0.76861482859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -80,10 +81,37 @@
                         <viewLayoutGuide key="safeArea" id="t51-MY-Dfs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="RAh-hv-n1P" secondAttribute="bottom" id="XDB-ex-j3L"/>
+                            <constraint firstItem="dPA-mn-3Yf" firstAttribute="centerX" secondItem="WFX-Bw-maw" secondAttribute="centerX" id="0ID-mx-ZMW"/>
+                            <constraint firstItem="dPA-mn-3Yf" firstAttribute="centerX" secondItem="xon-yR-DnA" secondAttribute="centerX" id="6EY-Vm-ezF"/>
+                            <constraint firstAttribute="bottom" secondItem="xon-yR-DnA" secondAttribute="bottom" constant="364" id="7MO-qM-eHP"/>
+                            <constraint firstItem="xon-yR-DnA" firstAttribute="leading" secondItem="Jx0-Yj-0ud" secondAttribute="leading" id="8gT-H6-GzD"/>
+                            <constraint firstItem="PMH-9h-6GE" firstAttribute="height" secondItem="RAh-hv-n1P" secondAttribute="height" multiplier="0.0580357" id="9Vo-Dk-8Xu"/>
+                            <constraint firstItem="lfQ-gx-Quh" firstAttribute="leading" secondItem="l1o-sI-gbd" secondAttribute="leadingMargin" constant="-30" id="Dcq-Ez-klF"/>
+                            <constraint firstItem="RAh-hv-n1P" firstAttribute="top" secondItem="l1o-sI-gbd" secondAttribute="top" id="FBf-pi-0ap"/>
+                            <constraint firstItem="dPA-mn-3Yf" firstAttribute="leading" secondItem="Ge1-hq-31i" secondAttribute="leading" id="GUW-eR-0l0"/>
+                            <constraint firstItem="PMH-9h-6GE" firstAttribute="width" secondItem="RAh-hv-n1P" secondAttribute="width" multiplier="0.560386" id="IA4-2W-AV2"/>
+                            <constraint firstItem="dPA-mn-3Yf" firstAttribute="centerX" secondItem="RAh-hv-n1P" secondAttribute="centerX" id="Ity-39-Q3s"/>
+                            <constraint firstItem="xon-yR-DnA" firstAttribute="centerX" secondItem="lfQ-gx-Quh" secondAttribute="centerX" id="JTP-jd-uv6"/>
+                            <constraint firstItem="rye-nE-b1v" firstAttribute="top" secondItem="xon-yR-DnA" secondAttribute="bottom" constant="2" id="JfT-oJ-rUZ"/>
+                            <constraint firstItem="Jx0-Yj-0ud" firstAttribute="top" secondItem="WFX-Bw-maw" secondAttribute="bottom" constant="27.5" id="Jvv-G4-MpL"/>
+                            <constraint firstItem="WFX-Bw-maw" firstAttribute="top" secondItem="l1o-sI-gbd" secondAttribute="top" constant="241" id="KaL-7b-MYH"/>
+                            <constraint firstItem="lfQ-gx-Quh" firstAttribute="top" secondItem="rye-nE-b1v" secondAttribute="bottom" constant="8" id="R7V-Q1-JSg"/>
+                            <constraint firstItem="dPA-mn-3Yf" firstAttribute="trailing" secondItem="Ge1-hq-31i" secondAttribute="trailing" id="Rpy-aH-zIP"/>
+                            <constraint firstItem="xon-yR-DnA" firstAttribute="top" secondItem="Jx0-Yj-0ud" secondAttribute="bottom" constant="8" id="SVf-Fl-YcP"/>
+                            <constraint firstItem="RAh-hv-n1P" firstAttribute="bottom" secondItem="l1o-sI-gbd" secondAttribute="bottom" id="TQz-zB-kuD"/>
+                            <constraint firstItem="WFX-Bw-maw" firstAttribute="height" secondItem="RAh-hv-n1P" secondAttribute="height" multiplier="0.170759" id="Udj-43-Zly"/>
+                            <constraint firstItem="t51-MY-Dfs" firstAttribute="bottom" secondItem="Ge1-hq-31i" secondAttribute="bottom" constant="58" id="Ukt-Vw-tcX"/>
+                            <constraint firstItem="dPA-mn-3Yf" firstAttribute="bottom" secondItem="RAh-hv-n1P" secondAttribute="bottom" multiplier="0.82228" id="Xx1-qK-ZxW"/>
+                            <constraint firstItem="dPA-mn-3Yf" firstAttribute="height" secondItem="RAh-hv-n1P" secondAttribute="height" multiplier="0.0625" id="YXQ-wP-XPb"/>
+                            <constraint firstItem="xon-yR-DnA" firstAttribute="leading" secondItem="t51-MY-Dfs" secondAttribute="leading" constant="100" id="a5C-e5-xqH"/>
                             <constraint firstAttribute="trailing" secondItem="RAh-hv-n1P" secondAttribute="trailing" id="bmS-Af-Dih"/>
                             <constraint firstItem="RAh-hv-n1P" firstAttribute="leading" secondItem="l1o-sI-gbd" secondAttribute="leading" id="lBt-eP-taS"/>
-                            <constraint firstItem="RAh-hv-n1P" firstAttribute="top" secondItem="l1o-sI-gbd" secondAttribute="top" id="tbL-il-LwA"/>
+                            <constraint firstItem="dPA-mn-3Yf" firstAttribute="width" secondItem="RAh-hv-n1P" secondAttribute="width" multiplier="0.845411" id="trx-90-rZy"/>
+                            <constraint firstItem="xon-yR-DnA" firstAttribute="centerX" secondItem="PMH-9h-6GE" secondAttribute="centerX" id="uRN-Uf-mGW"/>
+                            <constraint firstItem="lfQ-gx-Quh" firstAttribute="centerX" secondItem="rye-nE-b1v" secondAttribute="centerX" id="vWW-jW-Ecq"/>
+                            <constraint firstItem="WFX-Bw-maw" firstAttribute="leading" secondItem="t51-MY-Dfs" secondAttribute="leading" constant="87" id="x72-XJ-0bt"/>
+                            <constraint firstItem="dPA-mn-3Yf" firstAttribute="centerX" secondItem="Jx0-Yj-0ud" secondAttribute="centerX" id="zWK-fl-0ch"/>
+                            <constraint firstItem="WFX-Bw-maw" firstAttribute="top" secondItem="PMH-9h-6GE" secondAttribute="bottom" constant="74" id="zaJ-We-bIP"/>
                         </constraints>
                     </view>
                     <connections>

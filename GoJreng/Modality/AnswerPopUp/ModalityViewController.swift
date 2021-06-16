@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ModalityViewControllerDelegate: AnyObject {
+    func toHome(authorized: Bool)
+}
+
 class ModalityViewController: UIViewController {
 
     @IBOutlet weak var wrongContinueButton: UIButton!
@@ -14,6 +18,10 @@ class ModalityViewController: UIViewController {
     @IBOutlet weak var correctAnswerLabel: UILabel!
     
     var text: String?
+    
+    var indexQuestion = 0
+    
+    weak var delegate: ModalityViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +34,9 @@ class ModalityViewController: UIViewController {
         }
         else{
             Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
-                self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true) {
+                    self.delegate?.toHome(authorized: self.indexQuestion == 9 ? true : false)
+                }
             }
         }
         

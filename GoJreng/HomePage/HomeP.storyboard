@@ -50,6 +50,17 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="titleGoJreng" translatesAutoresizingMaskIntoConstraints="NO" id="eqv-DL-J5V">
+                                <rect key="frame" x="137" y="91" width="141" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCO-Dn-7lH">
+                                <rect key="frame" x="20" y="44" width="72" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bDE-iN-3jt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -62,7 +73,9 @@
                     </view>
                     <connections>
                         <outlet property="bgImage" destination="0Yk-NL-SFq" id="lTa-U4-p4j"/>
+                        <outlet property="logoImage" destination="eqv-DL-J5V" id="fP3-lm-Xod"/>
                         <outlet property="stageCollection" destination="RDc-14-gts" id="VaN-sJ-6S9"/>
+                        <outlet property="testLabel" destination="TCO-Dn-7lH" id="WYP-dq-ZW3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igj-iH-jrp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -72,6 +85,10 @@
     </scenes>
     <resources>
         <image name="HomePage" width="390" height="844"/>
+        <image name="titleGoJreng" width="141" height="53"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

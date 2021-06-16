@@ -63,21 +63,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iMU-1D-1Ad">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMU-1D-1Ad">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wrongAnswer" translatesAutoresizingMaskIntoConstraints="NO" id="9KQ-KT-KSx">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wrongAnswer" translatesAutoresizingMaskIntoConstraints="NO" id="9KQ-KT-KSx">
                                         <rect key="frame" x="75" y="251" width="240" height="244"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yeB-et-emz">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yeB-et-emz">
                                         <rect key="frame" x="0.0" y="592" width="390" height="252"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeW-ky-gMe">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeW-ky-gMe">
                                                 <rect key="frame" x="20" y="161" width="350" height="56"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="22"/>
                                                 <state key="normal" title="Continue">
@@ -87,29 +83,58 @@
                                                     <action selector="wrongContinueTapped:" destination="mwJ-nv-NfL" eventType="touchUpInside" id="o2F-Zx-UDK"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Correct Answer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbE-Aq-6Na">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct Answer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbE-Aq-6Na">
                                                 <rect key="frame" x="20" y="36" width="176" height="28"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
                                                 <color key="textColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="love is the answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1w-rG-PEC">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="love is the answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1w-rG-PEC">
                                                 <rect key="frame" x="20" y="64" width="350" height="52"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="34"/>
                                                 <color key="textColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.23525029419999999" green="0.22745192049999999" blue="0.22745102640000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="AbE-Aq-6Na" firstAttribute="width" secondItem="yeB-et-emz" secondAttribute="width" multiplier="0.451282" id="3aC-p1-KP0"/>
+                                            <constraint firstItem="AbE-Aq-6Na" firstAttribute="leading" secondItem="yeB-et-emz" secondAttribute="leading" constant="20" id="6YJ-3c-lRO"/>
+                                            <constraint firstItem="jeW-ky-gMe" firstAttribute="top" secondItem="h1w-rG-PEC" secondAttribute="bottom" constant="45" id="6m4-7T-UKz"/>
+                                            <constraint firstItem="AbE-Aq-6Na" firstAttribute="height" secondItem="yeB-et-emz" secondAttribute="height" multiplier="0.111111" id="Drb-ux-CQg"/>
+                                            <constraint firstItem="jeW-ky-gMe" firstAttribute="height" secondItem="yeB-et-emz" secondAttribute="height" multiplier="0.222222" id="KkD-e7-YAz"/>
+                                            <constraint firstItem="h1w-rG-PEC" firstAttribute="leading" secondItem="yeB-et-emz" secondAttribute="leading" constant="20" symbolic="YES" id="M02-Uz-ouP"/>
+                                            <constraint firstItem="h1w-rG-PEC" firstAttribute="top" secondItem="yeB-et-emz" secondAttribute="top" multiplier="0.5" constant="64" id="QiO-5P-eyr"/>
+                                            <constraint firstItem="AbE-Aq-6Na" firstAttribute="top" secondItem="yeB-et-emz" secondAttribute="top" constant="36" id="W7f-4M-Mb4"/>
+                                            <constraint firstItem="jeW-ky-gMe" firstAttribute="centerX" secondItem="yeB-et-emz" secondAttribute="centerX" id="ZrP-3D-VNA"/>
+                                            <constraint firstAttribute="bottom" secondItem="jeW-ky-gMe" secondAttribute="bottom" constant="35" id="dS2-wu-O06"/>
+                                            <constraint firstItem="jeW-ky-gMe" firstAttribute="width" secondItem="yeB-et-emz" secondAttribute="width" multiplier="0.897436" id="dx2-bP-dea"/>
+                                            <constraint firstItem="h1w-rG-PEC" firstAttribute="height" secondItem="yeB-et-emz" secondAttribute="height" multiplier="0.206349" id="nqb-qu-B5R"/>
+                                            <constraint firstItem="h1w-rG-PEC" firstAttribute="width" secondItem="yeB-et-emz" secondAttribute="width" multiplier="0.897436" id="w6e-Yr-QsO"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="yeB-et-emz" firstAttribute="height" secondItem="iMU-1D-1Ad" secondAttribute="height" multiplier="0.298578" id="BGD-bz-txM"/>
+                                    <constraint firstItem="yeB-et-emz" firstAttribute="width" secondItem="iMU-1D-1Ad" secondAttribute="width" id="N3S-fO-6O0"/>
+                                    <constraint firstItem="9KQ-KT-KSx" firstAttribute="top" secondItem="iMU-1D-1Ad" secondAttribute="top" constant="251" id="OzC-Qc-LUg"/>
+                                    <constraint firstItem="yeB-et-emz" firstAttribute="centerX" secondItem="iMU-1D-1Ad" secondAttribute="centerX" id="Q9q-V9-ogM"/>
+                                    <constraint firstItem="9KQ-KT-KSx" firstAttribute="centerX" secondItem="iMU-1D-1Ad" secondAttribute="centerX" id="WhC-PY-HMT"/>
+                                    <constraint firstItem="9KQ-KT-KSx" firstAttribute="height" secondItem="iMU-1D-1Ad" secondAttribute="height" multiplier="0.2891" id="dDK-12-WUy"/>
+                                    <constraint firstAttribute="bottom" secondItem="yeB-et-emz" secondAttribute="bottom" id="mX4-mB-igy"/>
+                                    <constraint firstItem="9KQ-KT-KSx" firstAttribute="width" secondItem="iMU-1D-1Ad" secondAttribute="width" multiplier="0.615385" id="wjC-xA-mz0"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5nf-nX-t62"/>
+                        <constraints>
+                            <constraint firstItem="iMU-1D-1Ad" firstAttribute="leading" secondItem="5nf-nX-t62" secondAttribute="leading" id="2lO-fh-6SM"/>
+                            <constraint firstItem="iMU-1D-1Ad" firstAttribute="top" secondItem="MZo-sx-SwA" secondAttribute="top" id="MCc-uj-2zw"/>
+                            <constraint firstItem="iMU-1D-1Ad" firstAttribute="trailing" secondItem="5nf-nX-t62" secondAttribute="trailing" id="Xma-R8-cJy"/>
+                            <constraint firstAttribute="bottom" secondItem="iMU-1D-1Ad" secondAttribute="bottom" id="Ysg-Cq-c09"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="correctAnswerBg" destination="yeB-et-emz" id="N2X-Lh-ODg"/>

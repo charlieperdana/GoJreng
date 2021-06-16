@@ -38,12 +38,20 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
     
     var correctSong: String?
     
+    var defaults = UserDefaults.standard
+    
     //Home
     var highScore: Int = 0
     
     //
     var questionArray: [Int] = [0,1,2,3]
     
+    
+    var questionShuffle: [String] = []
+    
+    var arrayNumber: [Int] = [0,1,2,3,4,5,6,7,8,9]
+    
+    var arrayBaru: [Questions] = [Questions]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,13 +73,19 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         setUpQuestionsStage()
         print(" ini: \(highScore)")
         
+        let newArray = questionsForStage2[0..<4].shuffled() + questionsForStage2[4..<7].shuffled() + questionsForStage2[7..<10].shuffled()
+        
+        
+        arrayBaru = newArray
+        
+        print("\(arrayBaru)")
         questionAssertArray.append(questionNum)
         updateQuestion()
     }
 
     
     @IBAction func playSound(_ sender: UIButton) {
-        let pathToSound = Bundle.main.path(forResource: questionsForStage2[questionNum].questionSound, ofType: "mp3")!
+        let pathToSound = Bundle.main.path(forResource: arrayBaru[questionNum].questionSound, ofType: "mp3")!
         let url = URL(fileURLWithPath: pathToSound)
         
         if remaining == 1{
@@ -97,7 +111,7 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
     @IBAction func answerPressed(_ sender: UIButton) {
         
         if sender.tag == 1{
-            let pathToSound = Bundle.main.path(forResource: questionsForStage2[questionNum].answer[0].answerSound, ofType: "mp3")!
+            let pathToSound = Bundle.main.path(forResource: arrayBaru[questionNum].answer[0].answerSound, ofType: "mp3")!
             let url = URL(fileURLWithPath: pathToSound)
             
             do{
@@ -109,7 +123,7 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
             
             
         } else if sender.tag == 2 {
-            let pathToSound = Bundle.main.path(forResource: questionsForStage2[questionNum].answer[1].answerSound, ofType: "mp3")!
+            let pathToSound = Bundle.main.path(forResource: arrayBaru[questionNum].answer[1].answerSound, ofType: "mp3")!
             let url = URL(fileURLWithPath: pathToSound)
             
             do{
@@ -121,7 +135,7 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
             
             
         } else if sender.tag == 3{
-            let pathToSound = Bundle.main.path(forResource: questionsForStage2[questionNum].answer[2].answerSound, ofType: "mp3")!
+            let pathToSound = Bundle.main.path(forResource: arrayBaru[questionNum].answer[2].answerSound, ofType: "mp3")!
             let url = URL(fileURLWithPath: pathToSound)
             
             do{
@@ -134,7 +148,7 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
             
         }
         else if sender.tag == 4{
-            let pathToSound = Bundle.main.path(forResource: questionsForStage2[questionNum].answer[3].answerSound, ofType: "mp3")!
+            let pathToSound = Bundle.main.path(forResource: arrayBaru[questionNum].answer[3].answerSound, ofType: "mp3")!
             let url = URL(fileURLWithPath: pathToSound)
             
             do{
@@ -159,13 +173,10 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         sender.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1);
         sender.titleLabel?.textColor = #colorLiteral(red: 0.9062767625, green: 0.8542633057, blue: 0.7669899464, alpha: 1)
         
-        if questionsForStage2[questionNum].answer[sender.tag - 1].isCorrect == true{
-            correctSong = questionsForStage2[questionNum].answer[sender.tag - 1].answerLabel
+        if arrayBaru[questionNum].answer[sender.tag - 1].isCorrect == true{
             print("Kamu Hebat")
             status = true
-            //score += 100
         } else {
-            print("\(correctSong)")
             print("Ahhh Bodoh Kamu")
             status = false
         }
@@ -178,12 +189,12 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         print("Pressed")
         if status == true{
             showCorrectAnswerModal()
+//            showHomePage()
             print("Benar")
             score += 100
 
         } else {
             showWrongAnswerModal()
-            //showFeedback()
             print("Salah")
             score += 0
         }
@@ -198,14 +209,20 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
             if score <= highScore{
                 score = highScore
                 print("skor masih kurang")
-                showHomePage()
+                //showHomePage()
+               // showFeedback()
             } else {
                 print("new HG")
                 highScore = score
                 print(" ini HG:  \(highScore)")
-                showHomePage()
+                //showHomePage()
+                showFeedback()
             }
         }
+        
+        print("\(score)")
+        
+        
         
         print(" ini Cuk: \(highScore)")
         print("question num : \(questionNum)")
@@ -241,16 +258,18 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
     
     func updateQuestion(){
         
-        if questionNum <= questionsForStage2.count - 1{
-            song = questionsForStage2[questionNum].questionSound
-            Buttons[0].setTitle(questionsForStage2[questionNum].answer[questionArray[0]].answerLabel, for: UIControl.State.normal)
-            Buttons[1].setTitle(questionsForStage2[questionNum].answer[questionArray[1]].answerLabel, for: UIControl.State.normal)
-            Buttons[2].setTitle(questionsForStage2[questionNum].answer[questionArray[2]].answerLabel, for: UIControl.State.normal)
-            Buttons[3].setTitle(questionsForStage2[questionNum].answer[questionArray[3]].answerLabel, for: UIControl.State.normal)
+        if questionNum <= arrayBaru.count - 1{
+            song = arrayBaru[questionNum].questionSound
+            correctSong = arrayBaru[questionNum].questionSoundName
+            Buttons[0].setTitle(arrayBaru[questionNum].answer[questionArray[0]].answerLabel, for: UIControl.State.normal)
+            Buttons[1].setTitle(arrayBaru[questionNum].answer[questionArray[1]].answerLabel, for: UIControl.State.normal)
+            Buttons[2].setTitle(arrayBaru[questionNum].answer[questionArray[2]].answerLabel, for: UIControl.State.normal)
+            Buttons[3].setTitle(arrayBaru[questionNum].answer[questionArray[3]].answerLabel, for: UIControl.State.normal)
+           // showHomePage()
             
         } else {
             print("Ini kepanggil")
-            showFeedback()
+            showHomePage()
         }
         
         remaining = 2
@@ -286,7 +305,10 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         let vc = modalstoryboard.instantiateViewController(identifier: "correct") as! ModalityViewController
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true)
+        vc.delegate = self
+        
+        vc.indexQuestion = questionNum
+       self.present(vc, animated: true)
     }
     
     func showWrongAnswerModal(){
@@ -304,8 +326,10 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
     func showFeedback(){
         let modalstoryboard = UIStoryboard(name: "FeedbackPage", bundle: nil)
         let vc = modalstoryboard.instantiateViewController(identifier: "feedbackPage") as! FeedbackPageViewController
+        vc.stageScore = score
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
+        print("ini pasing:::\(vc.stageScore)")
         self.present(vc, animated: true)
     }
     
@@ -313,6 +337,8 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         let modalstoryboard = UIStoryboard(name: "HomeP", bundle: nil)
         let vc = modalstoryboard.instantiateViewController(identifier: "HomeView") as! HomePageViewController
         vc.newHighScore = score
+        defaults.set("\(score)", forKey: "hS")
+        //vc.viewDidLoad()
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true)
@@ -323,5 +349,13 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
 extension SecondStageViewController : UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         ExitPresentationController(presentedViewController: presented, presenting: presenting)
+    }
+}
+
+extension SecondStageViewController: ModalityViewControllerDelegate {
+    func toHome(authorized: Bool) {
+        if authorized {
+            showHomePage()
+        }
     }
 }

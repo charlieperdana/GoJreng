@@ -18,8 +18,10 @@ class FeedbackPageViewController: UIViewController {
   @IBOutlet weak var primaryButton: UIButton!
   @IBOutlet weak var secondaryButton: UIButton!
 
-  var stageScore: Int?
-  var currentHighScore: Int?
+  var stageScore: Int = 500
+  var currentHighScore: Int = 1000
+    
+    var newStageScore: Int?
 
   //feedback type 0 - GreatJob
   //feedback type 1 - GameOver
@@ -27,6 +29,8 @@ class FeedbackPageViewController: UIViewController {
 
 
   override func viewDidLoad() {
+    
+    newStageScore = stageScore
       super.viewDidLoad()
 
       primaryButton.layer.cornerRadius = 14
@@ -34,17 +38,14 @@ class FeedbackPageViewController: UIViewController {
       secondaryButton.layer.borderWidth = 2
       secondaryButton.layer.borderColor = #colorLiteral(red: 0.9155033827, green: 0.8542029858, blue: 0.7580156922, alpha: 1)
 
-      stageScore = 500
-      currentHighScore = 1000
-
-      feedbackType = Feedback.getFeedbackPage(curHighScore: currentHighScore ?? 0, stgScore: stageScore ?? 0)
+      feedbackType = Feedback.getFeedbackPage(curHighScore: currentHighScore, stgScore: stageScore )
 
       switch feedbackType {
       case 0:
         feedbackBG.image = #imageLiteral(resourceName: "feedbackGreatJob")
         feedbackTitleLabel.text = "Great Job"
         feedbackImage.image = #imageLiteral(resourceName: "win")
-        scoreLabel.text = "\(stageScore ?? 0)"
+        scoreLabel.text = "\(stageScore)"
         feedbackDescLabel.text = "Congratulations! \nReady to enter the next stage?"
         primaryButton.setTitle("Continue", for: .normal)
         secondaryButton.isHidden = true
@@ -54,7 +55,7 @@ class FeedbackPageViewController: UIViewController {
         feedbackBG.image = #imageLiteral(resourceName: "feedbackGameOver")
         feedbackTitleLabel.text = "Game Over"
         feedbackImage.image = #imageLiteral(resourceName: "lose")
-        scoreLabel.text = "\(stageScore ?? 0)"
+        scoreLabel.text = "\(stageScore)"
         feedbackDescLabel.text = "No worries, practice makes progress! \nDare to try again?"
         primaryButton.setTitle("Try Again", for: .normal)
         secondaryButton.setTitle("Close", for: .normal)
