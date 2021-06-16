@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Second Stage View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="secondStage" id="Y6W-OH-hqX" customClass="SecondStageViewController" customModule="GoJreng" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage-2" translatesAutoresizingMaskIntoConstraints="NO" id="FuE-j7-VXX">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What Chord is it?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nH-bp-dYr">
+                                <rect key="frame" x="49" y="185" width="292" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="34"/>
+                                <color key="textColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="score" translatesAutoresizingMaskIntoConstraints="NO" id="fIN-iR-9vf">
+                                <rect key="frame" x="272" y="67" width="102" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1D-87-imn">
+                                <rect key="frame" x="319" y="71" width="47" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                <color key="textColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remaining: 2x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixk-4n-srN">
+                                <rect key="frame" x="126" y="425" width="138" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                <color key="textColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bG-Dv-dfF">
+                                <rect key="frame" x="20" y="734" width="350" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.57621103529999995" green="0.55328506229999996" blue="0.52940851450000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                <state key="normal" title="Check">
+                                    <color key="titleColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Q7u-T4-DKJ"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0AA-wx-WiJ">
+                                <rect key="frame" x="20" y="44" width="354" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="3" id="gKe-rh-RBb">
+                                    <size key="itemSize" width="32" height="4"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="oBa-Bs-pec">
+                                        <rect key="frame" x="0.0" y="3" width="32" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VBS-DP-vBC">
+                                            <rect key="frame" x="0.0" y="0.0" width="32" height="4"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="customSize" width="32" height="4"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJh-9u-Cy4">
+                                <rect key="frame" x="37" y="498" width="148" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="34"/>
+                                <state key="normal" title="A">
+                                    <color key="titleColor" red="0.59458351139999999" green="0.3629985154" blue="0.15680089589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="answerPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="y80-xv-rzJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bf6-ex-a9R">
+                                <rect key="frame" x="205" y="498" width="148" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="34"/>
+                                <state key="normal" title="B">
+                                    <color key="titleColor" red="0.59458351139999999" green="0.3629985154" blue="0.15680089589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="answerPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ie6-Fs-Zoq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBe-fT-tw9">
+                                <rect key="frame" x="37" y="593" width="148" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="34"/>
+                                <state key="normal" title="C">
+                                    <color key="titleColor" red="0.59458351139999999" green="0.3629985154" blue="0.15680089589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="answerPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Hdj-aC-Npd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19M-7Q-spY">
+                                <rect key="frame" x="205" y="593" width="148" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="34"/>
+                                <state key="normal" title="D">
+                                    <color key="titleColor" red="0.59458351139999999" green="0.3629985154" blue="0.15680089589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="answerPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cX6-mo-5fq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STa-Tw-KPu">
+                                <rect key="frame" x="123" y="263" width="144" height="144"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="PlayButtonStage"/>
+                                <connections>
+                                    <action selector="playSound:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4WJ-Mg-I7W"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoo-A6-PRV">
+                                <rect key="frame" x="21" y="67" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="closeButton"/>
+                                <connections>
+                                    <action selector="exitPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="rZb-IU-y8T"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FuE-j7-VXX" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="AFd-J9-c7F"/>
+                            <constraint firstAttribute="bottom" secondItem="FuE-j7-VXX" secondAttribute="bottom" id="GGC-mr-av6"/>
+                            <constraint firstItem="FuE-j7-VXX" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="Zk9-lc-O6g"/>
+                            <constraint firstAttribute="trailing" secondItem="FuE-j7-VXX" secondAttribute="trailing" id="fOz-tr-Ohd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bgImage" destination="FuE-j7-VXX" id="fAu-bh-aMi"/>
+                        <outlet property="checkButton" destination="2bG-Dv-dfF" id="Bld-C6-dDJ"/>
+                        <outlet property="exitButton" destination="yoo-A6-PRV" id="WOX-KP-cAq"/>
+                        <outlet property="indikatorCollection" destination="0AA-wx-WiJ" id="3oO-zo-pKv"/>
+                        <outlet property="playButton" destination="STa-Tw-KPu" id="OE4-2C-dES"/>
+                        <outlet property="questionLabel" destination="3nH-bp-dYr" id="STA-DU-QhE"/>
+                        <outlet property="remainingLabel" destination="ixk-4n-srN" id="lqY-Sl-Iok"/>
+                        <outlet property="scoreImage" destination="fIN-iR-9vf" id="UJ1-W6-vmI"/>
+                        <outlet property="scoreLabel" destination="G1D-87-imn" id="VJC-mV-JIB"/>
+                        <outletCollection property="Buttons" destination="lJh-9u-Cy4" collectionClass="NSMutableArray" id="NUd-Hr-5r3"/>
+                        <outletCollection property="Buttons" destination="bf6-ex-a9R" collectionClass="NSMutableArray" id="qam-Bq-85i"/>
+                        <outletCollection property="Buttons" destination="tBe-fT-tw9" collectionClass="NSMutableArray" id="E7v-q1-8dd"/>
+                        <outletCollection property="Buttons" destination="19M-7Q-spY" collectionClass="NSMutableArray" id="7By-Qo-H9g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="127.69230769230769" y="130.09478672985782"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="PlayButtonStage" width="144" height="144"/>
+        <image name="closeButton" width="166" height="166"/>
+        <image name="score" width="102" height="40"/>
+        <image name="stage-2" width="390" height="844"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
