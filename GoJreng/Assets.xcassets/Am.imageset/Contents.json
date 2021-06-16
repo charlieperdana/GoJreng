@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "chordC.png",
+      "filename" : "Am.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Am@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Am@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

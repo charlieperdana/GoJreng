@@ -43,7 +43,7 @@ class Stage3ViewController: UIViewController{
         //setupQuestions
         setUpQuestionsStage()
         
-        itemsChord = [#imageLiteral(resourceName: "chordC"),#imageLiteral(resourceName: "chordG"),#imageLiteral(resourceName: "chordE"),#imageLiteral(resourceName: "chordAm"),#imageLiteral(resourceName: "chordF"),#imageLiteral(resourceName: "chordEm"),#imageLiteral(resourceName: "chordDm"),#imageLiteral(resourceName: "chordC")]
+        itemsChord = [#imageLiteral(resourceName: "Em"),#imageLiteral(resourceName: "Dm"),#imageLiteral(resourceName: "G"),#imageLiteral(resourceName: "B"),#imageLiteral(resourceName: "A"),#imageLiteral(resourceName: "F"),#imageLiteral(resourceName: "C"),#imageLiteral(resourceName: "Am")]
         optionChordCollectonView.dataSource = self
         optionChordCollectonView.delegate = self
         
@@ -141,6 +141,11 @@ extension Stage3ViewController: UICollectionViewDataSource, UICollectionViewDele
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = item
         selectedIndex = indexPath.row + 1
+        
+        //change the cell after drag
+        itemsChord[indexPath.row] = #imageLiteral(resourceName: "noChord")
+//        optionChordCollectonView.reloadData()
+        
         return [dragItem]
     }
     
@@ -188,6 +193,10 @@ extension Stage3ViewController : UIDropInteractionDelegate {
             dropOperation = .cancel
             selectedIndex = 0
         }
+        
+        //reload collectionview
+        optionChordCollectonView.reloadData()
+        
         return UIDropProposal(operation: dropOperation!)
     }
     
