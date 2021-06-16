@@ -17,10 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stage-3" translatesAutoresizingMaskIntoConstraints="NO" id="LZB-VA-fIf">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="score" translatesAutoresizingMaskIntoConstraints="NO" id="Tsq-np-O9N">
                                 <rect key="frame" x="267" y="72" width="102" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -89,6 +85,9 @@
                                         <integer key="value" value="14"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="checkAnswer:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KgJ-E1-68q"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nsw-dP-e94">
                                 <rect key="frame" x="21" y="575" width="348" height="154"/>
@@ -174,7 +173,6 @@
         <image name="answerPlaceholder3" width="72" height="63"/>
         <image name="closeButton" width="24" height="24"/>
         <image name="score" width="102" height="40"/>
-        <image name="stage-3" width="390" height="844"/>
         <image name="stagesPlayButton" width="144" height="144"/>
         <image name="time" width="98" height="48"/>
         <systemColor name="systemBackgroundColor">
