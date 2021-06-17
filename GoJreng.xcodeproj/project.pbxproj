@@ -61,6 +61,8 @@
 		84A268192671E31200536F14 /* LockCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A268172671E31200536F14 /* LockCollectionViewCell.xib */; };
 		84B050EA2671EA0100F968FC /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B050E92671EA0100F968FC /* HomePageViewController.swift */; };
 		95E254DA2670A65900BB39D8 /* GoJrengColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E254D92670A65900BB39D8 /* GoJrengColors.swift */; };
+		A58E3D19267A2BD400F641EA /* FeedbackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58E3D18267A2BD400F641EA /* FeedbackHelper.swift */; };
+		A58E3D1B267A2C1600F641EA /* PageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58E3D1A267A2C1600F641EA /* PageHelper.swift */; };
 		A597393E2673CF40003DE384 /* FeedbackPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A597393C2673CF40003DE384 /* FeedbackPageViewController.swift */; };
 		A597393F2673CF40003DE384 /* FeedbackPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A597393D2673CF40003DE384 /* FeedbackPage.storyboard */; };
 		B54233FC2677647F000DB5D2 /* timer 10s.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B54233F82677647F000DB5D2 /* timer 10s.mp3 */; };
@@ -205,6 +207,8 @@
 		84A268172671E31200536F14 /* LockCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockCollectionViewCell.xib; sourceTree = "<group>"; };
 		84B050E92671EA0100F968FC /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		95E254D92670A65900BB39D8 /* GoJrengColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoJrengColors.swift; sourceTree = "<group>"; };
+		A58E3D18267A2BD400F641EA /* FeedbackHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackHelper.swift; sourceTree = "<group>"; };
+		A58E3D1A267A2C1600F641EA /* PageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHelper.swift; sourceTree = "<group>"; };
 		A597393C2673CF40003DE384 /* FeedbackPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackPageViewController.swift; sourceTree = "<group>"; };
 		A597393D2673CF40003DE384 /* FeedbackPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FeedbackPage.storyboard; sourceTree = "<group>"; };
 		A5CCC0AC267374A7006F2F42 /* FeedbackPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackPageViewController.swift; sourceTree = "<group>"; };
@@ -381,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				0BD9BADC2673A85B005DD71E /* Resources */,
+				A58E3D1A267A2C1600F641EA /* PageHelper.swift */,
 				0B64587D26736413005DAD2B /* Mode1 */,
 				A597393B2673CF40003DE384 /* Feedback */,
 				B5D56D9E2673B417000E358E /* Supporting Files */,
@@ -518,6 +523,7 @@
 			children = (
 				A597393C2673CF40003DE384 /* FeedbackPageViewController.swift */,
 				A597393D2673CF40003DE384 /* FeedbackPage.storyboard */,
+				A58E3D18267A2BD400F641EA /* FeedbackHelper.swift */,
 			);
 			path = Feedback;
 			sourceTree = "<group>";
@@ -889,6 +895,7 @@
 				84364180266F8DC40060A9CE /* LockedTableViewCell.swift in Sources */,
 				0B64588F2673643D005DAD2B /* Mode1ViewController.swift in Sources */,
 				55F131362669EF9A008BFC97 /* HomeViewController.swift in Sources */,
+				A58E3D19267A2BD400F641EA /* FeedbackHelper.swift in Sources */,
 				55F131042669EF23008BFC97 /* GoJreng.xcdatamodeld in Sources */,
 				84A268182671E31200536F14 /* LockCollectionViewCell.swift in Sources */,
 				55F130FA2669EF23008BFC97 /* AppDelegate.swift in Sources */,
@@ -896,6 +903,7 @@
 				55F131DB2672002E008BFC97 /* ExitPresentationController.swift in Sources */,
 				84B050EA2671EA0100F968FC /* HomePageViewController.swift in Sources */,
 				B5FBC109266FBEDC008CA574 /* QuestionsAnswers.swift in Sources */,
+				A58E3D1B267A2C1600F641EA /* PageHelper.swift in Sources */,
 				B5E6E1A2266FBD53004C3CBD /* Stages.swift in Sources */,
 				B5B7AFB32672743000A2F263 /* StagesData.swift in Sources */,
 				0B348D5D26720E4B00404EF4 /* BaseModalityViewController.swift in Sources */,

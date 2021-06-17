@@ -21,13 +21,15 @@ class FeedbackPageViewController: UIViewController {
   @IBOutlet weak var stackViewFeedback: UIStackView!
   @IBOutlet weak var stackViewBottom: NSLayoutConstraint!
 
+  //send this to feedbackPage
+  var stagePlayed: Int?
   var stageScore: Int?
   var currentHighScore: Int?
 
   //feedback type 0 - GreatJob
   //feedback type 1 - GameOver
   var feedbackType: Int?
-
+  var newHighScore: Int?
 
 
   override func viewDidLoad() {
@@ -40,18 +42,39 @@ class FeedbackPageViewController: UIViewController {
 
       stageScore = 1200
       currentHighScore = 1000
-
-
+      feedbackType = FeedbackHelper.getFeedbackPage(curHighScore: currentHighScore ?? 0, stgScore: stageScore ?? 0)
+      newHighScore = PageHelper.highScoreChanger(stgScore: stageScore ?? 0, curHighScore: currentHighScore ?? 0)
       FeedbackType()
       setupStackView()
 
-
     }
 
+  @IBAction func primaryButtonAction(_ sender: Any) {
+    if feedbackType == 0 {
+      //greatJob -> homePage
+      PageHelper.showHomePage(newHighS: newHighScore ?? 0, currentStoryBoard: self)
+    }
+    else{
+      //tryagain
+      switch stagePlayed {
+      case 1:
+        PageHelper.showStage1(currentStoryBoard: self)
+      case 2:
+        PageHelper.showStage2(newHighScore: newHighScore ?? 0, currentStoryBoard: self)
+      case 3:
+        PageHelper.showStage3()
+      default:
+        PageHelper.showHomePage(newHighS: newHighScore ?? 0, currentStoryBoard: self)
+      }
+
+    }
+  }
+
+  @IBAction func secondaryButtonAction(_ sender: Any) {
+    PageHelper.showHomePage(newHighS: currentHighScore ?? 0, currentStoryBoard: self)
+  }
 
   func FeedbackType(){
-    feedbackType = FeedbackHelper.getFeedbackPage(curHighScore: currentHighScore ?? 0, stgScore: stageScore ?? 0)
-
     switch feedbackType {
     case 0:
       feedbackBG.image = #imageLiteral(resourceName: "feedbackGreatJob")
@@ -63,7 +86,6 @@ class FeedbackPageViewController: UIViewController {
       secondaryButton.isHidden = true
       newHighScoreLabel.isHidden = false
 
-      //stackViewFeedback.setCustomSpacing(80, after: primaryButton)
       stackViewBottom.constant = 56
 
     default: //GameOver
@@ -74,7 +96,7 @@ class FeedbackPageViewController: UIViewController {
       feedbackDescLabel.text = "No worries, practice makes progress! \nDare to try again?"
       primaryButton.setTitle("Try Again", for: .normal)
       secondaryButton.setTitle("Close", for: .normal)
-      newHighScoreLabel.isHidden = true //Feedback.newHighScore(currentHighScore: currentHighScore ?? 0, stageScore: stageScore ?? 0)
+      newHighScoreLabel.isHidden = true
 
       stackViewFeedback.setCustomSpacing(40, after: scoreLabel)
       stackViewFeedback.setCustomSpacing(24, after: newHighScoreLabel)
@@ -97,24 +119,5 @@ class FeedbackPageViewController: UIViewController {
     feedbackDescLabel.numberOfLines = 2
   }
 
-}
-
-class FeedbackHelper{
-  static func getFeedbackPage (curHighScore: Int, stgScore: Int) -> Int{
-
-    if curHighScore == 0{
-      //feedback type 1 - GameOver
-      return 1
-    }
-    else if curHighScore < stgScore {
-      //feedback type 0 - Congrats
-      return 0
-    }
-
-    else{
-      //feedback type 1 - GameOver
-      return 1
-    }
-  }
 }
 
