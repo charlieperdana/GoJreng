@@ -23,7 +23,6 @@ class Stage3ViewController: UIViewController{
     var questionSoundsArray: [String] = []
     var score: Int = 0
     
-    
     //answerPlaceholder
     @IBOutlet weak var answer1: UIImageView!
     @IBOutlet weak var answer2: UIImageView!
@@ -54,7 +53,7 @@ class Stage3ViewController: UIViewController{
         for i in 0..<(stage3.questionNumber) {
             questionSoundsArray.append(questionsForStage3[i].questionSound)
         }
- 
+        
         //Check Button is disabled at first
         checkButton.isEnabled = false
         checkButton.backgroundColor = #colorLiteral(red: 0.5803921569, green: 0.5529411765, blue: 0.5254901961, alpha: 1)
@@ -71,7 +70,6 @@ class Stage3ViewController: UIViewController{
     }
     
     func updateQuestion() {
-        currentQuestionIndex+=1
         seconds = 30
         timeLabel.text = "\(seconds)"
         checkButton.isEnabled = false
@@ -105,7 +103,6 @@ class Stage3ViewController: UIViewController{
     
     @IBAction func playButtonTapped(_ sender: UIButton) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
-        
         playQuestionSound(questionSoundFileName: questionSoundsArray[currentQuestionIndex])
     }
     
@@ -121,7 +118,6 @@ class Stage3ViewController: UIViewController{
         } catch  {
             print(error)
         }
-        print("CurrentQuestion Index sebelum check button di tap : \(currentQuestionIndex)")
     }
     
     @IBAction func closeButtonTapped(_ sender: UIButton) {
@@ -141,6 +137,7 @@ class Stage3ViewController: UIViewController{
         view.backgroundColor = UIColor(patternImage: UIImage(named: "stage-3") ?? UIImage())
     }
     @IBAction func checkButtonTapped(_ sender: UIButton) {
+        
         if questionSound != nil {
             questionSound.stop()
         }
@@ -151,12 +148,6 @@ class Stage3ViewController: UIViewController{
             timerSound.stop()
         }
         
-        if currentQuestionIndex > 9 {
-            currentQuestionIndex = 0
-        }
-        
-        print("Current question index setelah tap check button : \(currentQuestionIndex)")
-        
         //If the answer is true
         if(true){
             score+=100
@@ -166,25 +157,43 @@ class Stage3ViewController: UIViewController{
         else {
             showWrongModal()
         }
+        print("Current Question Index = \(currentQuestionIndex)")
         
-        updateQuestion()
+        if currentQuestionIndex == 9 {
+            showFeedback()
+        }
+        else{
+            currentQuestionIndex+=1
+            updateQuestion()
+            print("Current question index setelah tap check button : \(currentQuestionIndex)")
+        }
+        
     }
-    
+    func showFeedback() {
+        let feedbackStoryboard = UIStoryboard(name: "FeedbackPage", bundle: nil)
+        let vc = feedbackStoryboard.instantiateViewController(identifier: "feedback") as! FeedbackPageViewController
+        print(score)
+        vc.stageScore = score
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        
+        self.present(vc, animated: true)
+    }
     func showCorrectModal() {
         let modalStoryboard = UIStoryboard(name: "BaseModality", bundle: nil)
-                let vc = modalStoryboard.instantiateViewController(identifier: "correct") as! ModalityViewController
-                vc.modalPresentationStyle = .overFullScreen
-                vc.modalTransitionStyle = .crossDissolve
-                self.present(vc, animated: true)
+        let vc = modalStoryboard.instantiateViewController(identifier: "correct") as! ModalityViewController
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true)
     }
     
     func showWrongModal() {
         let modalStoryboard = UIStoryboard(name: "BaseModality", bundle: nil)
-                let vc = modalStoryboard.instantiateViewController(identifier: "wrong") as! ModalityViewController
-                //vc.text = correctSong
-                vc.modalPresentationStyle = .overFullScreen
-                vc.modalTransitionStyle = .crossDissolve
-                self.present(vc, animated: true)
+        let vc = modalStoryboard.instantiateViewController(identifier: "wrong") as! ModalityViewController
+        //vc.text = correctSong
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true)
         
     }
     func setDragAndDropSettings(){
@@ -241,7 +250,9 @@ extension Stage3ViewController: UIViewControllerTransitioningDelegate {
 
 extension Stage3ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDragDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return itemsChord.count    }
+        return itemsChord.count
+        
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier:"answerCell", for: indexPath) as! AnswersCollectionVC
@@ -271,10 +282,8 @@ extension Stage3ViewController: UICollectionViewDataSource, UICollectionViewDele
         checkButton.setTitleColor(#colorLiteral(red: 0.9058823529, green: 0.8549019608, blue: 0.768627451, alpha: 1), for: .normal)
         
         return [dragItem]
-
+        
     }
-    
-    
 }
 
 extension Stage3ViewController: UIDragInteractionDelegate{
