@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <Group
-      location = "group:../GoJreng/Mode1"
-      name = "Mode1">
-      <FileRef
-         location = "group:Mode1Board.storyboard">
-      </FileRef>
-      <FileRef
-         location = "group:Mode1ViewController.swift">
-      </FileRef>
-   </Group>
    <FileRef
       location = "self:">
    </FileRef>
