@@ -6,14 +6,23 @@
 //
 
 import UIKit
-
+import AVFoundation
 class Stage3ViewController: UIViewController{
     
+    
+    @IBOutlet weak var optionChordCollectonView: UICollectionView!
     @IBOutlet weak var timeLabel: UILabel!
-    var currentQuestion: Questions?
-    var seconds = 15
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var checkButton: UIButton!
+    @IBOutlet weak var playButton: UIButton!
+    
+    //var currentQuestion: Questions?
+    var seconds = 30
     var timer = Timer()
-    var soundName: String = ""
+    var currentQuestionIndex: Int = 8
+    var questionSoundsArray: [String] = []
+    var score: Int = 0
+    
     
     //answerPlaceholder
     @IBOutlet weak var answer1: UIImageView!
@@ -21,12 +30,14 @@ class Stage3ViewController: UIViewController{
     @IBOutlet weak var answer3: UIImageView!
     @IBOutlet weak var answer4: UIImageView!
     
+    //audio
+    var questionSound: AVAudioPlayer!
+    var timerSound: AVAudioPlayer!
     
-    @IBOutlet weak var optionChordCollectonView: UICollectionView!
     
     
     var selectedIndex = 0
-//    var itemsChord : [UIImage] = []
+    //    var itemsChord : [UIImage] = []
     var itemsChord : [String] = []
     
     var concateAnswer : String = ""
@@ -34,40 +45,88 @@ class Stage3ViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setBackground()
-      
-        guard let pathQuestionSound = Bundle.main.path(forResource: soundName, ofType: "mp3") else { return }
-        let urlQuesetionSound = URL(fileURLWithPath: pathQuestionSound)
-        
-        
-        //timer
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
+        setBackground()
         
         //setupQuestions
         setUpQuestionsStage()
         
-//        itemsChord = [#imageLiteral(resourceName: "Em"),#imageLiteral(resourceName: "Dm"),#imageLiteral(resourceName: "G"),#imageLiteral(resourceName: "B"),#imageLiteral(resourceName: "A"),#imageLiteral(resourceName: "F"),#imageLiteral(resourceName: "C"),#imageLiteral(resourceName: "Am")]
+        //Set questions sounds
+        for i in 0..<(stage3.questionNumber) {
+            questionSoundsArray.append(questionsForStage3[i].questionSound)
+        }
+ 
+        //Check Button is disabled at first
+        checkButton.isEnabled = false
+        checkButton.backgroundColor = #colorLiteral(red: 0.5803921569, green: 0.5529411765, blue: 0.5254901961, alpha: 1)
+        checkButton.setTitleColor(#colorLiteral(red: 0.9058823529, green: 0.8549019608, blue: 0.768627451, alpha: 1), for: .disabled)
+        
+        
+        //        itemsChord = [#imageLiteral(resourceName: "Em"),#imageLiteral(resourceName: "Dm"),#imageLiteral(resourceName: "G"),#imageLiteral(resourceName: "B"),#imageLiteral(resourceName: "A"),#imageLiteral(resourceName: "F"),#imageLiteral(resourceName: "C"),#imageLiteral(resourceName: "Am")]
         itemsChord = ["Em","Dm","G","B","A","F","C","Am"]
         optionChordCollectonView.dataSource = self
         optionChordCollectonView.delegate = self
         
         self.setDragAndDropSettings()
         
-    
-        
-        
     }
     
+    func updateQuestion() {
+        currentQuestionIndex+=1
+        seconds = 30
+        timeLabel.text = "\(seconds)"
+        checkButton.isEnabled = false
+        checkButton.backgroundColor = #colorLiteral(red: 0.5803921569, green: 0.5529411765, blue: 0.5254901961, alpha: 1)
+        checkButton.setTitleColor(#colorLiteral(red: 0.9058823529, green: 0.8549019608, blue: 0.768627451, alpha: 1), for: .disabled)
+    }
     @objc func timerCounter() {
         seconds -= 1
         timeLabel.text = "\(seconds)"
         
+        //Play sound effects of 10s timer
+        if(seconds==10){
+            guard let pathQuestionSound = Bundle.main.path(forResource: "timer 10s", ofType: "mp3") else {return}
+            
+            let urlTimerSound = URL(fileURLWithPath: pathQuestionSound ?? "")
+            do {
+                timerSound = try AVAudioPlayer(contentsOf: urlTimerSound)
+                timerSound.volume = 2
+                timerSound.play()
+            }
+            catch {
+                print(error)
+            }
+        }
         if (seconds==0){
             timer.invalidate()
+            questionSound.stop()
+            seconds = 30
         }
     }
     
+    @IBAction func playButtonTapped(_ sender: UIButton) {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
+        
+        playQuestionSound(questionSoundFileName: questionSoundsArray[currentQuestionIndex])
+    }
+    
+    func playQuestionSound(questionSoundFileName: String) {
+        guard let pathQuestionSound = Bundle.main.path(forResource: questionSoundFileName, ofType: "mp3") else {return}
+        
+        let urlQuestionSounds = URL(fileURLWithPath: pathQuestionSound ?? "")
+        
+        do {
+            questionSound = try AVAudioPlayer(contentsOf: urlQuestionSounds)
+            questionSound.volume = 1.7
+            questionSound.play()
+        } catch  {
+            print(error)
+        }
+        print("CurrentQuestion Index sebelum check button di tap : \(currentQuestionIndex)")
+    }
+    
     @IBAction func closeButtonTapped(_ sender: UIButton) {
+        timer.invalidate()
+        questionSound.pause()
         exitModal()
     }
     
@@ -81,7 +140,53 @@ class Stage3ViewController: UIViewController{
     func setBackground() {
         view.backgroundColor = UIColor(patternImage: UIImage(named: "stage-3") ?? UIImage())
     }
+    @IBAction func checkButtonTapped(_ sender: UIButton) {
+        if questionSound != nil {
+            questionSound.stop()
+        }
+        
+        timer.invalidate()
+        
+        if timerSound != nil{
+            timerSound.stop()
+        }
+        
+        if currentQuestionIndex > 9 {
+            currentQuestionIndex = 0
+        }
+        
+        print("Current question index setelah tap check button : \(currentQuestionIndex)")
+        
+        //If the answer is true
+        if(true){
+            score+=100
+            scoreLabel.text = "\(score)"
+            showCorrectModal()
+        }
+        else {
+            showWrongModal()
+        }
+        
+        updateQuestion()
+    }
     
+    func showCorrectModal() {
+        let modalStoryboard = UIStoryboard(name: "BaseModality", bundle: nil)
+                let vc = modalStoryboard.instantiateViewController(identifier: "correct") as! ModalityViewController
+                vc.modalPresentationStyle = .overFullScreen
+                vc.modalTransitionStyle = .crossDissolve
+                self.present(vc, animated: true)
+    }
+    
+    func showWrongModal() {
+        let modalStoryboard = UIStoryboard(name: "BaseModality", bundle: nil)
+                let vc = modalStoryboard.instantiateViewController(identifier: "wrong") as! ModalityViewController
+                //vc.text = correctSong
+                vc.modalPresentationStyle = .overFullScreen
+                vc.modalTransitionStyle = .crossDissolve
+                self.present(vc, animated: true)
+        
+    }
     func setDragAndDropSettings(){
         
         optionChordCollectonView.dragDelegate = self
@@ -91,22 +196,22 @@ class Stage3ViewController: UIViewController{
         answer2.isUserInteractionEnabled = true
         answer3.isUserInteractionEnabled = true
         answer4.isUserInteractionEnabled = true
-       
+        
         
         self.view.isUserInteractionEnabled = true
-
+        
         let dragInteraction1 = UIDragInteraction(delegate: self)
         dragInteraction1.isEnabled = true
-
+        
         let dragInteraction2 = UIDragInteraction(delegate: self)
         dragInteraction2.isEnabled = true
-
+        
         let dragInteraction3 = UIDragInteraction(delegate: self)
         dragInteraction3.isEnabled = true
         
         let dragInteraction4 = UIDragInteraction(delegate: self)
         dragInteraction4.isEnabled = true
-
+        
         let dropInteraction1 = UIDropInteraction(delegate: self)
         let dropInteraction2 = UIDropInteraction(delegate: self)
         let dropInteraction3 = UIDropInteraction(delegate: self)
@@ -117,13 +222,13 @@ class Stage3ViewController: UIViewController{
         answer2.addInteraction(dropInteraction2)
         answer3.addInteraction(dropInteraction3)
         answer4.addInteraction(dropInteraction4)
-
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     @IBAction func checkAnswer(_ sender: UIButton) {
         print("Answer "+concateAnswer)
     }
@@ -140,13 +245,13 @@ extension Stage3ViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier:"answerCell", for: indexPath) as! AnswersCollectionVC
-//        cell.imageOptionChord.image = itemsChord[indexPath.row]
+        //        cell.imageOptionChord.image = itemsChord[indexPath.row]
         cell.imageOptionChord.image = UIImage(named: "\(itemsChord[indexPath.row])")
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-//        let item = self.itemsChord[indexPath.row]
+        //        let item = self.itemsChord[indexPath.row]
         let item = UIImage(named: "\(self.itemsChord[indexPath.row])")
         let itemProvider = NSItemProvider(object: item! as UIImage)
         let dragItem = UIDragItem(itemProvider: itemProvider)
@@ -157,13 +262,16 @@ extension Stage3ViewController: UICollectionViewDataSource, UICollectionViewDele
         self.concateAnswer += "\(itemsChord[indexPath.row])-"
         
         //change the cell after drag
-//        itemsChord[indexPath.row] = #imageLiteral(resourceName: "noChord")
+        //        itemsChord[indexPath.row] = #imageLiteral(resourceName: "noChord")
         itemsChord[indexPath.row] = "noChord"
-//        optionChordCollectonView.reloadData()
+        //        optionChordCollectonView.reloadData()
         
-        
+        checkButton.isEnabled = true
+        checkButton.backgroundColor = #colorLiteral(red: 0.631372549, green: 0.3490196078, blue: 0.09019607843, alpha: 1)
+        checkButton.setTitleColor(#colorLiteral(red: 0.9058823529, green: 0.8549019608, blue: 0.768627451, alpha: 1), for: .normal)
         
         return [dragItem]
+
     }
     
     
@@ -222,7 +330,7 @@ extension Stage3ViewController : UIDropInteractionDelegate {
             session.loadObjects(ofClass: UIImage.self) { (items) in
                 if let images = items as? [UIImage] {
                     switch self.selectedIndex{
-                        
+                    
                     case 1 :
                         self.answer1.image = images.last
                         break
