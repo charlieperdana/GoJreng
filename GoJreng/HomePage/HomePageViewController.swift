@@ -46,9 +46,9 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
         print("\(hScore1)")
         
         var checkStage2 = defaults.value(forKey: "hS1")
-        
-        if defaults.value(forKey: "hS1") as! String == "300"{
-            stage[1].stageState = .unlocked
+
+      if defaults.value(forKey: "hS1") as? String != nil && defaults.value(forKey: "hS1") as! String >= "300"  {
+          stage[1].stageState = .unlocked
         }
         
     }

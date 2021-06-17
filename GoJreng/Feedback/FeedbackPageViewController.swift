@@ -31,6 +31,7 @@ class FeedbackPageViewController: UIViewController {
   var feedbackType: Int?
   var newHighScore: Int?
 
+  var defaults = UserDefaults.standard
 
   override func viewDidLoad() {
       super.viewDidLoad()
@@ -39,11 +40,10 @@ class FeedbackPageViewController: UIViewController {
       secondaryButton.layer.cornerRadius = 14
       secondaryButton.layer.borderWidth = 2
       secondaryButton.layer.borderColor = #colorLiteral(red: 0.9155033827, green: 0.8542029858, blue: 0.7580156922, alpha: 1)
-
-      stageScore = 1200
-      currentHighScore = 1000
+      
+      currentHighScore = FeedbackHelper.getCurrentHighScore(stagePlayed: stagePlayed ?? 0)
       feedbackType = FeedbackHelper.getFeedbackPage(curHighScore: currentHighScore ?? 0, stgScore: stageScore ?? 0)
-      newHighScore = PageHelper.highScoreChanger(stgScore: stageScore ?? 0, curHighScore: currentHighScore ?? 0)
+      newHighScore = FeedbackHelper.highScoreChanger(stgScore: stageScore ?? 0, curHighScore: currentHighScore ?? 0)
       FeedbackType()
       setupStackView()
 
@@ -52,7 +52,8 @@ class FeedbackPageViewController: UIViewController {
   @IBAction func primaryButtonAction(_ sender: Any) {
     if feedbackType == 0 {
       //greatJob -> homePage
-      PageHelper.showHomePage(newHighS: newHighScore ?? 0, currentStoryBoard: self)
+      FeedbackHelper.saveHighScore(stagePlayed: stagePlayed ?? 0, newHighScore: newHighScore ?? 0)
+      PageHelper.showHomePage(currentStoryBoard: self)
     }
     else{
       //tryagain
@@ -60,18 +61,18 @@ class FeedbackPageViewController: UIViewController {
       case 1:
         PageHelper.showStage1(currentStoryBoard: self)
       case 2:
-        PageHelper.showStage2(newHighScore: newHighScore ?? 0, currentStoryBoard: self)
+        PageHelper.showStage2(currentStoryBoard: self)
       case 3:
         PageHelper.showStage3()
       default:
-        PageHelper.showHomePage(newHighS: newHighScore ?? 0, currentStoryBoard: self)
+        PageHelper.showHomePage(currentStoryBoard: self)
       }
 
     }
   }
 
   @IBAction func secondaryButtonAction(_ sender: Any) {
-    PageHelper.showHomePage(newHighS: currentHighScore ?? 0, currentStoryBoard: self)
+    PageHelper.showHomePage(currentStoryBoard: self)
   }
 
   func FeedbackType(){
@@ -88,7 +89,7 @@ class FeedbackPageViewController: UIViewController {
 
       stackViewBottom.constant = 56
 
-    default: //GameOver
+    case 1: //GameOver
       feedbackBG.image = #imageLiteral(resourceName: "feedbackGameOver")
       feedbackTitleLabel.text = "Game Over"
       feedbackImage.image = #imageLiteral(resourceName: "lose")
@@ -100,6 +101,9 @@ class FeedbackPageViewController: UIViewController {
 
       stackViewFeedback.setCustomSpacing(40, after: scoreLabel)
       stackViewFeedback.setCustomSpacing(24, after: newHighScoreLabel)
+
+    default:
+      break
     }
   }
 
@@ -118,14 +122,6 @@ class FeedbackPageViewController: UIViewController {
     feedbackDescLabel.minimumScaleFactor = 0.2
     feedbackDescLabel.numberOfLines = 2
   }
-    
-    func showHomePage(){
-        let modalstoryboard = UIStoryboard(name: "HomeP", bundle: nil)
-        let vc = modalstoryboard.instantiateViewController(identifier: "HomeView") as! HomePageViewController
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true)
-    }
 
 }
 
