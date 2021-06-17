@@ -21,45 +21,36 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     let defaults = UserDefaults.standard
     
     
-    var newHighScore: Int = 0
+    var newHighScore2: Int = 0
+    var newHighScore1: Int = 0
     
     let stage = [
-        Stages(stageName: "Mayor/Minor Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 900),
-        Stages(stageName: "Chord Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 0),
+        Stages(stageName: "Mayor/Minor Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 0),
+        Stages(stageName: "Chord Identification", stageState: .locked, question: [], questionNumber: 10, highScore: 0),
         Stages(stageName: "Chord Progession Indentification", stageState: .locked, question: [], questionNumber: 10, highScore: 200)
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        if defaults.bool(forKey: "First") == true{
-//            print("second")
-//
-//
-//
-//            defaults.set(true, forKey: "First")
-//        } else {
-//            print("First")
-//
-//            defaults.set(true, forKey: "First")
-//
-//            defaults.set(0, forKey: "highS")
-//        }
-        
 
         stageCollection.dataSource = self
         stageCollection.delegate = self
         
-       // stage[1].highScore = newHighScore
-        
         stageCollection.register(UnlockCollectionViewCell.nib(), forCellWithReuseIdentifier: UnlockCollectionViewCell.identifier)
         stageCollection.register(LockCollectionViewCell.nib(), forCellWithReuseIdentifier: LockCollectionViewCell.identifier)
-        let hScore = defaults.integer(forKey: "hS")
         
-        testLabel.text = "\(hScore)"
+        let hScore2 = defaults.integer(forKey: "hS2")
+        print("\(hScore2)")
         
+        let hScore1 = defaults.integer(forKey: "hS1")
+        print("\(hScore1)")
         
-        //stageCollection.reloadData()
+        var checkStage2 = defaults.value(forKey: "hS1")
+        
+        if defaults.value(forKey: "hS1") as! String == "300"{
+            stage[1].stageState = .unlocked
+        }
+        
     }
     
 
@@ -73,7 +64,12 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UnlockCollectionViewCell.identifier, for: indexPath) as! UnlockCollectionViewCell
             
             cell.titleLabel.text = stage[indexPath.row].stageName
-            cell.scoreLabel.text = "\(stage[indexPath.row].highScore ?? 0)"
+            cell.scoreLabel.text = "\(defaults.value(forKey: "hS1") ?? 0)"
+            if cell.scoreLabel.text == "1000"{
+                cell.bagdeImage.image = #imageLiteral(resourceName: "goldBadge")
+            } else if cell.scoreLabel.text == "600" || cell.scoreLabel.text == "500"{
+                cell.bagdeImage.image = #imageLiteral(resourceName: "silverBadge")
+            }
             cell.layer.cornerRadius = 14
             
             return cell
@@ -93,10 +89,13 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UnlockCollectionViewCell.identifier, for: indexPath) as! UnlockCollectionViewCell
                 cell.layer.cornerRadius = 14
                 cell.titleLabel.text = stage[indexPath.row].stageName
+                cell.scoreLabel.text = "\(defaults.value(forKey: "hS2") ?? 0)"
+                if cell.scoreLabel.text == "1000"{
+                    cell.bagdeImage.image = #imageLiteral(resourceName: "goldBadge")
+                } else if cell.scoreLabel.text == "900" || cell.scoreLabel.text == "800"{
+                    cell.bagdeImage.image = #imageLiteral(resourceName: "silverBadge")
+                }
                 
-                
-                cell.scoreLabel.text = "\(defaults.value(forKey: "hS") ?? 0)"
-              //  defaults.set(cell.scoreLabel.text, forKey: "hS")
                 return cell
             }
                 
@@ -130,7 +129,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0{
-            print("\(indexPath.row)")
+            showStage1()
         } else if indexPath.row == 1{
             showStage2()
         }
@@ -139,7 +138,16 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     func showStage2(){
         let modalstoryboard = UIStoryboard(name: "SecondStage", bundle: nil)
         let vc = modalstoryboard.instantiateViewController(identifier: "secondStage") as! SecondStageViewController
-        vc.highScore = newHighScore
+        vc.highScore = newHighScore2
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true)
+    }
+    
+    func showStage1(){
+        let modalstoryboard = UIStoryboard(name: "Mode1Board", bundle: nil)
+        let vc = modalstoryboard.instantiateViewController(identifier: "firstStage") as! Mode1ViewController
+        vc.highScore = newHighScore1
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true)

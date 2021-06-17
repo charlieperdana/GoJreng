@@ -207,7 +207,7 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         
         if questionNum == 9{
             if score <= highScore{
-                score = highScore
+                //score = highScore
                 print("skor masih kurang")
                 //showHomePage()
                // showFeedback()
@@ -317,6 +317,8 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         vc.text = correctSong
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
+        vc.delegate = self
+        vc.indexQuestion = questionNum
         self.present(vc, animated: true)
 //        vc.dismiss(animated: true, completion: {
 //
@@ -336,9 +338,8 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
     func showHomePage(){
         let modalstoryboard = UIStoryboard(name: "HomeP", bundle: nil)
         let vc = modalstoryboard.instantiateViewController(identifier: "HomeView") as! HomePageViewController
-        vc.newHighScore = score
-        defaults.set("\(score)", forKey: "hS")
-        //vc.viewDidLoad()
+        vc.newHighScore2 = score
+        defaults.set("\(highScore)", forKey: "hS2")
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true)

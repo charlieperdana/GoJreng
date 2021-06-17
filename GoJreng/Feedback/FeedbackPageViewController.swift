@@ -38,8 +38,8 @@ class FeedbackPageViewController: UIViewController {
       secondaryButton.layer.borderWidth = 2
       secondaryButton.layer.borderColor = #colorLiteral(red: 0.9155033827, green: 0.8542029858, blue: 0.7580156922, alpha: 1)
 
-      stageScore = 1200
-      currentHighScore = 1000
+      //stageScore = 1200
+      currentHighScore = 0
 
 
       FeedbackType()
@@ -62,8 +62,7 @@ class FeedbackPageViewController: UIViewController {
       primaryButton.setTitle("Continue", for: .normal)
       secondaryButton.isHidden = true
       newHighScoreLabel.isHidden = false
-
-      //stackViewFeedback.setCustomSpacing(80, after: primaryButton)
+        //stackViewFeedback.setCustomSpacing(80, after: primaryButton)
       stackViewBottom.constant = 56
 
     default: //GameOver
@@ -96,6 +95,14 @@ class FeedbackPageViewController: UIViewController {
     feedbackDescLabel.minimumScaleFactor = 0.2
     feedbackDescLabel.numberOfLines = 2
   }
+    
+    func showHomePage(){
+        let modalstoryboard = UIStoryboard(name: "HomeP", bundle: nil)
+        let vc = modalstoryboard.instantiateViewController(identifier: "HomeView") as! HomePageViewController
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true)
+    }
 
 }
 
