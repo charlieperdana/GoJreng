@@ -10,6 +10,7 @@ import UIKit
 class UnlockCollectionViewCell: UICollectionViewCell {
 
     
+    @IBOutlet weak var unlockCellWrapper: UIView!
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var playImage: UIImageView!
@@ -24,6 +25,12 @@ class UnlockCollectionViewCell: UICollectionViewCell {
         return UINib(nibName: "UnlockCollectionViewCell", bundle: nil)
     }
     
-    
+    override func awakeFromNib() {
+       
+        unlockCellWrapper.translatesAutoresizingMaskIntoConstraints = false
+        
+        //Set Autolayout for Xib - Alt 1
+        unlockCellWrapper.widthAnchor.constraint(lessThanOrEqualToConstant: UIScreen.main.bounds.size.width - 50).isActive = true
+    }
     
 }

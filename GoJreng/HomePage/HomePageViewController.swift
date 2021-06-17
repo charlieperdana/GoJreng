@@ -67,6 +67,15 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     func setupStackView() {
         view.addSubview(stackViewHome)
         stackViewHome.setCustomSpacing(72, after: logoImage)
+        
+        setupCollectionViewAutolayout()
+    }
+    
+    func setupCollectionViewAutolayout() {
+        
+        if let collectionViewLayout = stageCollection.collectionViewLayout as? UICollectionViewFlowLayout {
+            collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
