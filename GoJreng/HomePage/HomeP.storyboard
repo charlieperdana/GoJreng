@@ -50,15 +50,10 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ro-hn-PAP">
-                                <rect key="frame" x="71" y="786" width="220" height="30"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="titleGoJreng" translatesAutoresizingMaskIntoConstraints="NO" id="eqv-DL-J5V">
+                                <rect key="frame" x="137" y="91" width="141" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.95454210039999998" green="0.17206546659999999" blue="0.28233352299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="TO STG 1"/>
-                                <connections>
-                                    <segue destination="gvy-J0-fEC" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="N15-2D-igS"/>
-                                </connections>
-                            </button>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bDE-iN-3jt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -71,6 +66,7 @@
                     </view>
                     <connections>
                         <outlet property="bgImage" destination="0Yk-NL-SFq" id="lTa-U4-p4j"/>
+                        <outlet property="logoImage" destination="eqv-DL-J5V" id="fP3-lm-Xod"/>
                         <outlet property="stageCollection" destination="RDc-14-gts" id="VaN-sJ-6S9"/>
                     </connections>
                 </viewController>
@@ -78,17 +74,10 @@
             </objects>
             <point key="canvasLocation" x="-2110.144927536232" y="-615.40178571428567"/>
         </scene>
-        <!--Mode1Board-->
-        <scene sceneID="gcr-zV-wNE">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Mode1Board" id="gvy-J0-fEC" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c58-Op-tlD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1541" y="-388"/>
-        </scene>
     </scenes>
     <resources>
         <image name="HomePage" width="390" height="844"/>
+        <image name="titleGoJreng" width="141" height="53"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

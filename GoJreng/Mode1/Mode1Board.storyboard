@@ -11,7 +11,7 @@
         <!--Mode1 View Controller-->
         <scene sceneID="kbk-7V-nwa">
             <objects>
-                <viewController id="d7F-JX-kRO" customClass="Mode1ViewController" customModule="GoJreng" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstStage" id="d7F-JX-kRO" customClass="Mode1ViewController" customModule="GoJreng" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Oi-wS-ifv">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,7 +144,7 @@
     </scenes>
     <resources>
         <image name="alivePicksRotated" width="31" height="34"/>
-        <image name="closeButton" width="166" height="166"/>
+        <image name="closeButton" width="24" height="24"/>
         <image name="score" width="102" height="40"/>
         <image name="stage-1" width="390" height="844"/>
         <image name="stage1PlayButton" width="144" height="144"/>

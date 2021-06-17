@@ -28,6 +28,11 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     var lifeCount = 3
     var qIndex = 0
     var score = 0
+    
+    var highScore: Int = 0
+    
+    var defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -132,26 +137,6 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         
     }
     
-//    func showCorrectAnswerModal(){
-//        let modalstoryboard = UIStoryboard(name: "BaseModality", bundle: nil)
-//        let vc = modalstoryboard.instantiateViewController(withIdentifier: "correct")
-//        vc.modalPresentationStyle = .overFullScreen //or .overFullScreen for transparency
-//        vc.modalTransitionStyle = .crossDissolve
-//        self.present(vc, animated: true)
-//        vc.dismiss(animated: true, completion: {
-//                    self.checkFinished()})
-//    }
-//
-//    func showWrongAnswerModal(){
-//        let modalstoryboard = UIStoryboard(name: "BaseModality", bundle: nil)
-//        let vc = modalstoryboard.instantiateViewController(withIdentifier: "wrongSimple")
-//        vc.modalPresentationStyle = .overFullScreen //or .overFullScreen for transparency
-//        vc.modalTransitionStyle = .crossDissolve
-//        self.present(vc, animated: true)
-//        vc.dismiss(animated: true, completion: {
-//                    self.checkFinished()})
-//    }
-    
     func playSound(soundFileName: String){
         let fileUrl = Bundle.main.path(forResource: soundFileName, ofType: "mp3")
         do {
@@ -182,10 +167,9 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         soundIsPlaying = false
     }
     
-    func feedbackSequence(type: Int){
+    func feedbackSequence(){
         let modalstoryboard = UIStoryboard(name: "FeedbackPage", bundle: nil)
         let vc = modalstoryboard.instantiateViewController(withIdentifier: "feedbackPage") as! FeedbackPageViewController
-        vc.feedbackType = type
         vc.stageScore =  score
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
@@ -216,16 +200,26 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     func checkFinished(){
+        if score <= highScore{
+            //score = highScore
+            print("Masih Kurang")
+        } else{
+            print("New HS")
+            highScore = score
+        }
+        
 //        life
         if lifeCount > 0{
 //            check if time's up
-            if timer <= 0{
-                feedbackSequence(type:1)
+            if timer <= 0{//ggl
+                showHomePage()
+                //feedbackSequence()
                 return
             }
             if soundIsPlaying == false && qIndex >= questionArray!.count{
-                print("finished")
-                feedbackSequence(type:0)
+                print("finished")//bhsl
+                showHomePage()
+                //feedbackSequence()
                 return
             }
             print("continue + " + String(qIndex))
@@ -237,8 +231,9 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
             }
         }
 //        dead
-        else{
-            feedbackSequence(type:1)
+        else{//ggl
+            showHomePage()
+            //feedbackSequence()
             return
         }
     }
@@ -275,6 +270,16 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         
 //        let rmid = self.view.frame.midX
         rightPlayButton.frame = CGRect(x: 500, y: playButton.frame.origin.y, width: size/1.5, height: size/1.5)
+    }
+    
+    func showHomePage(){
+        let modalstoryboard = UIStoryboard(name: "HomeP", bundle: nil)
+        let vc = modalstoryboard.instantiateViewController(identifier: "HomeView") as! HomePageViewController
+        vc.newHighScore1 = score
+        defaults.set("\(highScore)", forKey: "hS1")
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true)
     }
 }
 

@@ -118,6 +118,14 @@ class FeedbackPageViewController: UIViewController {
     feedbackDescLabel.minimumScaleFactor = 0.2
     feedbackDescLabel.numberOfLines = 2
   }
+    
+    func showHomePage(){
+        let modalstoryboard = UIStoryboard(name: "HomeP", bundle: nil)
+        let vc = modalstoryboard.instantiateViewController(identifier: "HomeView") as! HomePageViewController
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true)
+    }
 
 }
 
