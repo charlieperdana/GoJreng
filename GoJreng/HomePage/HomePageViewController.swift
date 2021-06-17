@@ -13,6 +13,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var stageCollection: UICollectionView!
     @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var stackViewHome: UIStackView!
     
     @IBOutlet weak var testLabel: UILabel!
     
@@ -24,7 +25,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     var newHighScore: Int = 0
     
     let stage = [
-        Stages(stageName: "Mayor/Minor Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 900),
+        Stages(stageName: "Major/Minor Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 900),
         Stages(stageName: "Chord Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 0),
         Stages(stageName: "Chord Progession Indentification", stageState: .locked, question: [], questionNumber: 10, highScore: 200)
     ]
@@ -46,6 +47,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
 //            defaults.set(0, forKey: "highS")
 //        }
         
+        setupStackView()
 
         stageCollection.dataSource = self
         stageCollection.delegate = self
@@ -62,6 +64,10 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
         //stageCollection.reloadData()
     }
     
+    func setupStackView() {
+        view.addSubview(stackViewHome)
+        stackViewHome.setCustomSpacing(72, after: logoImage)
+    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
