@@ -70,8 +70,8 @@ class ExitOverlayView: UIViewController {
     
     
     @IBAction func tapExit(_ sender: UIButton) {
-        let homeSB = UIStoryboard(name: "Main", bundle: nil)
-        let vc = homeSB.instantiateViewController(withIdentifier: "HomeViewController")
+        let homeSB = UIStoryboard(name: "HomeP", bundle: nil)
+        let vc = homeSB.instantiateViewController(withIdentifier: "HomeView")
         vc.modalTransitionStyle = .coverVertical
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
