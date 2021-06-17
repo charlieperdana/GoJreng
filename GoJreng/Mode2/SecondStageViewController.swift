@@ -216,7 +216,8 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
                 highScore = score
                 print(" ini HG:  \(highScore)")
                 //showHomePage()
-                showFeedback()
+                //showFeedback()
+                PageHelper.showFeedback(stgPlayed: 2, stgScore: score, currentStoryBoard: self)
             }
         }
         
@@ -269,7 +270,8 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
             
         } else {
             print("Ini kepanggil")
-            showHomePage()
+            PageHelper.showFeedback(stgPlayed: 2 , stgScore: score, currentStoryBoard: self)
+            //showHomePage()
         }
         
         remaining = 2
@@ -356,7 +358,8 @@ extension SecondStageViewController : UIViewControllerTransitioningDelegate {
 extension SecondStageViewController: ModalityViewControllerDelegate {
     func toHome(authorized: Bool) {
         if authorized {
-            showHomePage()
+            //showHomePage()
+            PageHelper.showFeedback(stgPlayed: 2, stgScore: score, currentStoryBoard: self)
         }
     }
 }
