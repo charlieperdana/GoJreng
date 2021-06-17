@@ -45,7 +45,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
         let hScore1 = defaults.integer(forKey: "hS1")
         print("\(hScore1)")
         
-        var checkStage2 = defaults.value(forKey: "hS1")
+        //var checkStage2 = defaults.value(forKey: "hS1")
 
       if defaults.value(forKey: "hS1") as? String != nil && defaults.value(forKey: "hS1") as! String >= "300"  {
           stage[1].stageState = .unlocked
@@ -129,27 +129,14 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0{
-            showStage1()
+            //showStage1()
+            PageHelper.showStage1(currentStoryBoard: self)
         } else if indexPath.row == 1{
-            showStage2()
+            //showStage2()
+            PageHelper.showStage2(currentStoryBoard: self)
+        } else {
+          PageHelper.showStage3()
         }
     }
-    
-    func showStage2(){
-        let modalstoryboard = UIStoryboard(name: "SecondStage", bundle: nil)
-        let vc = modalstoryboard.instantiateViewController(identifier: "secondStage") as! SecondStageViewController
-        vc.highScore = newHighScore2
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true)
-    }
-    
-    func showStage1(){
-        let modalstoryboard = UIStoryboard(name: "Mode1Board", bundle: nil)
-        let vc = modalstoryboard.instantiateViewController(identifier: "firstStage") as! Mode1ViewController
-        vc.highScore = newHighScore1
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true)
-    }
+
 }

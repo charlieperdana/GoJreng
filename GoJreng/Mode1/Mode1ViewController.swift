@@ -167,15 +167,6 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         soundIsPlaying = false
     }
     
-    func feedbackSequence(){
-        let modalstoryboard = UIStoryboard(name: "FeedbackPage", bundle: nil)
-        let vc = modalstoryboard.instantiateViewController(withIdentifier: "feedbackPage") as! FeedbackPageViewController
-        vc.stageScore =  score
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true)
-    }
-    
     @IBAction func testGameover(_ sender: Any) {
         showExitModal()
     }
@@ -274,16 +265,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
 //        let rmid = self.view.frame.midX
         rightPlayButton.frame = CGRect(x: 500, y: playButton.frame.origin.y, width: size/1.5, height: size/1.5)
     }
-    
-    func showHomePage(){
-        let modalstoryboard = UIStoryboard(name: "HomeP", bundle: nil)
-        let vc = modalstoryboard.instantiateViewController(identifier: "HomeView") as! HomePageViewController
-        vc.newHighScore1 = score
-        defaults.set("\(highScore)", forKey: "hS1")
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true)
-    }
+
 }
 
 extension Mode1ViewController : UIViewControllerTransitioningDelegate {
