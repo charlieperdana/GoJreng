@@ -69,13 +69,13 @@
             </constraints>
             <size key="customSize" width="291" height="145"/>
             <connections>
-                <outlet property="bagdeImage" destination="ZQg-MU-wpP" id="1yg-b5-VdF"/>
+                <outlet property="badgeImage" destination="ZQg-MU-wpP" id="1yg-b5-VdF"/>
                 <outlet property="bgImage" destination="QyV-82-qin" id="gxP-Of-6Kc"/>
                 <outlet property="playImage" destination="Hf7-e8-DIk" id="17h-qM-oV9"/>
                 <outlet property="scoreImage" destination="GtG-Cv-YO8" id="fVO-D5-tbR"/>
                 <outlet property="scoreLabel" destination="d3k-58-d8l" id="QI5-jP-rds"/>
                 <outlet property="titleLabel" destination="nmr-bb-j6A" id="dE8-cj-LLt"/>
-                <outlet property="unlockCellWrapper" destination="7g5-ZO-TFg" id="znA-f1-Mzb"/>
+                <outlet property="unlockCellWrapper" destination="7g5-ZO-TFg" id="iCO-E9-bxT"/>
             </connections>
             <point key="canvasLocation" x="125.36231884057972" y="121.54017857142857"/>
         </collectionViewCell>

@@ -51,6 +51,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
 
         stageCollection.dataSource = self
         stageCollection.delegate = self
+        stageCollection.clipsToBounds = true
         
        // stage[1].highScore = newHighScore
         

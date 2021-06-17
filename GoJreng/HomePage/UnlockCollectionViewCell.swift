@@ -16,7 +16,7 @@ class UnlockCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var playImage: UIImageView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var scoreImage: UIImageView!
-    @IBOutlet weak var bagdeImage: UIImageView!
+    @IBOutlet weak var badgeImage: UIImageView!
     
     
     static let identifier = "unlockCell"
@@ -29,8 +29,7 @@ class UnlockCollectionViewCell: UICollectionViewCell {
        
         unlockCellWrapper.translatesAutoresizingMaskIntoConstraints = false
         
-        //Set Autolayout for Xib - Alt 1
+        //Set Autolayout for Xib: Horizontal Self-Sizing
         unlockCellWrapper.widthAnchor.constraint(lessThanOrEqualToConstant: UIScreen.main.bounds.size.width - 50).isActive = true
     }
-    
 }
