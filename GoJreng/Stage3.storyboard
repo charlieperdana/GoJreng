@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -30,30 +30,18 @@
                                     <action selector="closeButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="XQE-5g-1Zd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUv-wI-KRM">
-                                <rect key="frame" x="329" y="75" width="13" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUv-wI-KRM">
+                                <rect key="frame" x="317" y="75" width="44" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
                                 <color key="textColor" red="0.90588235289999997" green="0.85490196080000003" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alivePicks" translatesAutoresizingMaskIntoConstraints="NO" id="W5k-QX-x5C">
-                                <rect key="frame" x="274" y="119" width="29" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alivePicks" translatesAutoresizingMaskIntoConstraints="NO" id="yJr-mW-ETT">
-                                <rect key="frame" x="307" y="119" width="29" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alivePicks" translatesAutoresizingMaskIntoConstraints="NO" id="tl9-kW-DiD">
-                                <rect key="frame" x="340" y="119" width="29" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="b19-sT-ABk">
                                 <rect key="frame" x="146" y="164" width="98" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hmk-Fx-Wrw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hmk-Fx-Wrw">
                                 <rect key="frame" x="202" y="172" width="26" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
@@ -71,6 +59,9 @@
                                 <rect key="frame" x="123" y="309" width="144" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="stagesPlayButton"/>
+                                <connections>
+                                    <action selector="playButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jez-GP-sTa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUV-X1-cBZ">
                                 <rect key="frame" x="20" y="754" width="350" height="56"/>
@@ -87,6 +78,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="checkAnswer:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KgJ-E1-68q"/>
+                                    <action selector="checkButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7al-pK-L1h"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nsw-dP-e94">
@@ -159,7 +151,10 @@
                         <outlet property="answer2" destination="5Dh-8X-4L8" id="aPe-b1-nnL"/>
                         <outlet property="answer3" destination="NtF-dv-VON" id="F7a-mW-NuY"/>
                         <outlet property="answer4" destination="UJd-yE-7ZV" id="s59-5F-Ceo"/>
+                        <outlet property="checkButton" destination="DUV-X1-cBZ" id="yJh-EI-l60"/>
                         <outlet property="optionChordCollectonView" destination="nsw-dP-e94" id="kiT-CB-b56"/>
+                        <outlet property="playButton" destination="7nq-sl-vCW" id="f2Z-U0-0hj"/>
+                        <outlet property="scoreLabel" destination="xUv-wI-KRM" id="j89-a8-0R2"/>
                         <outlet property="timeLabel" destination="Hmk-Fx-Wrw" id="dQU-Dn-BN8"/>
                     </connections>
                 </viewController>
@@ -169,7 +164,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="alivePicks" width="31" height="34"/>
         <image name="answerPlaceholder3" width="72" height="63"/>
         <image name="closeButton" width="24" height="24"/>
         <image name="score" width="102" height="40"/>
