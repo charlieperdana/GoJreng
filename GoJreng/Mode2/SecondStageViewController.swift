@@ -189,7 +189,6 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         print("Pressed")
         if status == true{
             showCorrectAnswerModal()
-//            showHomePage()
             print("Benar")
             score += 100
 
@@ -209,14 +208,11 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
             if score <= highScore{
                 //score = highScore
                 print("skor masih kurang")
-                //showHomePage()
-               // showFeedback()
+
             } else {
                 print("new HG")
                 highScore = score
                 print(" ini HG:  \(highScore)")
-                //showHomePage()
-                //showFeedback()
                 PageHelper.showFeedback(stgPlayed: 2, stgScore: score, currentStoryBoard: self)
             }
         }
@@ -266,12 +262,10 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
             Buttons[1].setTitle(arrayBaru[questionNum].answer[questionArray[1]].answerLabel, for: UIControl.State.normal)
             Buttons[2].setTitle(arrayBaru[questionNum].answer[questionArray[2]].answerLabel, for: UIControl.State.normal)
             Buttons[3].setTitle(arrayBaru[questionNum].answer[questionArray[3]].answerLabel, for: UIControl.State.normal)
-           // showHomePage()
             
         } else {
             print("Ini kepanggil")
             PageHelper.showFeedback(stgPlayed: 2 , stgScore: score, currentStoryBoard: self)
-            //showHomePage()
         }
         
         remaining = 2
@@ -283,11 +277,7 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         
         print("\(questionNum)")
     }
-    
-    func updateUI(){
-        
-    }
-    
+
     
     @IBAction func exitPressed(_ sender: UIButton) {
         showExitModal()
@@ -327,26 +317,6 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
 //        })
     }
     
-    func showFeedback(){
-        let modalstoryboard = UIStoryboard(name: "FeedbackPage", bundle: nil)
-        let vc = modalstoryboard.instantiateViewController(identifier: "feedbackPage") as! FeedbackPageViewController
-        vc.stageScore = score
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        print("ini pasing:::\(vc.stageScore)")
-        self.present(vc, animated: true)
-    }
-    
-    func showHomePage(){
-        let modalstoryboard = UIStoryboard(name: "HomeP", bundle: nil)
-        let vc = modalstoryboard.instantiateViewController(identifier: "HomeView") as! HomePageViewController
-        vc.newHighScore2 = score
-        defaults.set("\(highScore)", forKey: "hS2")
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true)
-    }
-    
 }
 
 extension SecondStageViewController : UIViewControllerTransitioningDelegate {
@@ -358,7 +328,7 @@ extension SecondStageViewController : UIViewControllerTransitioningDelegate {
 extension SecondStageViewController: ModalityViewControllerDelegate {
     func toHome(authorized: Bool) {
         if authorized {
-            //showHomePage()
+            //showPage after last questions
             PageHelper.showFeedback(stgPlayed: 2, stgScore: score, currentStoryBoard: self)
         }
     }

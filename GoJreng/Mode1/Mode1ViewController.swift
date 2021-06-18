@@ -251,7 +251,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
 
             },completion: { finish in
                 UIView.animate(withDuration: 0.7, delay: 0,options: UIView.AnimationOptions.curveEaseOut,animations: {
-                self.rightPlayButton.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+                self.rightPlayButton.transform = CGAffineTransform(scaleX: 1, y: 1)
             },
                 completion:  { finish in
                     self.restoreButtonPosition()
