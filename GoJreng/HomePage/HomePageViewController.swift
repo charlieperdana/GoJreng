@@ -5,10 +5,42 @@
 //  Created by Dion Lamilga on 10/06/21.
 //
 
+
 import UIKit
 
+func resetDefaults() {
+    let defaults = UserDefaults.standard
+    let dictionary = defaults.dictionaryRepresentation()
+    dictionary.keys.forEach { key in
+        defaults.removeObject(forKey: key)
+    }
+}
 
-class HomePageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+func checkHSinited(){
+    let defaults = UserDefaults.standard
+    let keyArr = ["initChecked", "hS1", "hS2", "hS3"]
+    
+    if (defaults.value(forKey: "initChecked") != nil) != true{ //returns true if initChecked == nil
+        print("not checked")
+        defaults.setValue(true, forKey: "initChecked")
+        defaults.setValue(0, forKey: "hS1")
+        defaults.setValue(0, forKey: "hS2")
+        defaults.setValue(0, forKey: "hS3")
+    }
+    else {
+        print("defaults set:")
+        let dictionary = defaults.dictionaryRepresentation()
+            dictionary.keys.forEach { key in
+                if keyArr.contains(key){
+                    print(key)
+                    print(defaults.value(forKey: key)!)
+                    print("============")
+                }
+            }
+        
+    }
+}
+class HomePageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var stageCollection: UICollectionView!
@@ -16,8 +48,6 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     @IBOutlet weak var stackViewHome: UIStackView!
     
     @IBOutlet weak var testLabel: UILabel!
-    
-   // let userDefaults = UserDefaults.standard
     
     let defaults = UserDefaults.standard
     
@@ -27,12 +57,14 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     
     let stage = [
         Stages(stageName: "Major/Minor Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 900),
-        Stages(stageName: "Chord Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 0),
-        Stages(stageName: "Chord Progression Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 200)
+        Stages(stageName: "Chord Identification", stageState: .locked, question: [], questionNumber: 10, highScore: 0),
+        Stages(stageName: "Chord Progression Identification", stageState: .locked, question: [], questionNumber: 10, highScore: 200)
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkHSinited()
+//        resetDefaults()
 
         stageCollection.dataSource = self
         stageCollection.delegate = self
@@ -43,12 +75,21 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
         let hScore1 = defaults.integer(forKey: "hS1")
         print("\(hScore1)")
         
-        //var checkStage2 = defaults.value(forKey: "hS1")
-
-      if defaults.value(forKey: "hS1") as? String != nil && defaults.value(forKey: "hS1") as! String >= "300"  {
+       // print("Ini Hs: \(defaults.value(forKey: "hS1"))")
+        
+//        if Int(defaults.value(forKey: "hS1").intValue as! String) ?? 0 >= 1000  {
+        if defaults.value(forKey: "hS1") as! Int >= 1400  {
           stage[1].stageState = .unlocked
+        } else{
+            defaults.setValue(0, forKey: "hS1")
         }
         
+//        if (defaults.value(forKey: "hS2") ?? 0) as! String != nil && Int((defaults.value(forKey: "hS2") ?? 0) as! String) ?? 0 == 1000 {
+//           stage[2].stageState = .unlocked
+//        }
+
+        
+        stageCollection.reloadData()
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -62,11 +103,15 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
             
             cell.titleLabel.text = stage[indexPath.row].stageName
             cell.scoreLabel.text = "\(defaults.value(forKey: "hS1") ?? 0)"
-            if cell.scoreLabel.text == "1000"{
+            
+//            if Int(defaults.value(forKey: "hS1") as! String) ?? 0 >= 2400{
+            if defaults.value(forKey: "hS1") as! Int >= 2400{
                 cell.badgeImage.image = #imageLiteral(resourceName: "goldBadge")
-            } else if cell.scoreLabel.text == "600" || cell.scoreLabel.text == "500"{
+//            } else if (Int(defaults.value(forKey: "hS1") as! String) ?? 0 >= 1500){
+            } else if (defaults.value(forKey: "hS1") as! Int >= 1500){
                 cell.badgeImage.image = #imageLiteral(resourceName: "silverBadge")
             }
+            
             cell.layer.cornerRadius = 14
             
             return cell
@@ -80,6 +125,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
                 cell.bgImage.image = stage[indexPath.row].stageState?.getBackground()
                 cell.lockImage.image = stage[indexPath.row].stageState?.getIcon()
                 cell.titleLabel.text = stage[indexPath.row].stageName
+                cell.isSelected = false
                 return cell
             }
             
@@ -93,6 +139,8 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
                 } else if cell.scoreLabel.text == "900" || cell.scoreLabel.text == "800"{
                     cell.badgeImage.image = #imageLiteral(resourceName: "silverBadge")
                 }
+                
+                cell.isSelected = true
                 
                 return cell
             }
