@@ -41,11 +41,11 @@ class FeedbackHelper{
     
     switch stagePlayed {
     case 1:
-      defaults.setValue("\(newHighScore)", forKey: "hS1")
+      defaults.setValue(newHighScore, forKey: "hS1")
     case 2:
-      defaults.setValue("\(newHighScore)", forKey: "hS2")
+      defaults.setValue(newHighScore, forKey: "hS2")
     case 3:
-      defaults.setValue("\(newHighScore)", forKey: "hS3")
+      defaults.setValue(newHighScore, forKey: "hS3")
     default:
       break
     }
