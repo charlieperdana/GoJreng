@@ -57,7 +57,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
         stageCollection.register(LockCollectionViewCell.nib(), forCellWithReuseIdentifier: LockCollectionViewCell.identifier)
         let hScore = defaults.integer(forKey: "hS")
         
-        testLabel.text = "\(hScore)"
+//        testLabel.text = "\(hScore)"
         
         
         //stageCollection.reloadData()
