@@ -190,6 +190,9 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
             timer -= 1
             timerLabel.text = String(timer)
         }
+        else {
+            checkFinished()
+        }
     }
     func checkFinished(){
         if score <= highScore{
