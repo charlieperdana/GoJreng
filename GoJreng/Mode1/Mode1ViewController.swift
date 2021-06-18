@@ -42,10 +42,12 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         self.minorButton.clipsToBounds = true
         
 //        test question
-        setUpQuestionsStage()
+        if majorQuestionsAnswers.count == 0{
+            setUpQuestionsStage()
+        }
         questionArray = majorQuestionsAnswers + minorQuestionsAnswers
         questionArray?.shuffle()
-
+        
 //        timer setup
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         
@@ -163,7 +165,6 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     
 //    Check if audio finished playing
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        print("calledx")
         soundIsPlaying = false
     }
     
