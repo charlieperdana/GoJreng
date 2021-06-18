@@ -16,8 +16,6 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     
     @IBOutlet weak var testLabel: UILabel!
     
-   // let userDefaults = UserDefaults.standard
-    
     let defaults = UserDefaults.standard
     
     
@@ -45,12 +43,20 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
         let hScore1 = defaults.integer(forKey: "hS1")
         print("\(hScore1)")
         
-        //var checkStage2 = defaults.value(forKey: "hS1")
-
-      if defaults.value(forKey: "hS1") as? String != nil && defaults.value(forKey: "hS1") as! String >= "300"  {
+       // print("Ini Hs: \(defaults.value(forKey: "hS1"))")
+        
+        if defaults.value(forKey: "hS1") != nil && Int((defaults.value(forKey: "hS1") ?? 0) as! String) ?? 0 >= 1000  {
           stage[1].stageState = .unlocked
+        } else{
+            defaults.setValue(0, forKey: "hS1")
         }
         
+//        if (defaults.value(forKey: "hS2") ?? 0) as! String != nil && Int((defaults.value(forKey: "hS2") ?? 0) as! String) ?? 0 == 1000 {
+//           stage[2].stageState = .unlocked
+//        }
+
+        
+        stageCollection.reloadData()
     }
     
 
@@ -65,11 +71,13 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
             
             cell.titleLabel.text = stage[indexPath.row].stageName
             cell.scoreLabel.text = "\(defaults.value(forKey: "hS1") ?? 0)"
-            if cell.scoreLabel.text == "1000"{
+            
+            if defaults.value(forKey: "hS1") != nil && Int((defaults.value(forKey: "hS1") ?? 0) as! String)! >= 2400{
                 cell.bagdeImage.image = #imageLiteral(resourceName: "goldBadge")
-            } else if cell.scoreLabel.text == "600" || cell.scoreLabel.text == "500"{
+            } else if defaults.value(forKey: "hS1") != nil && Int((defaults.value(forKey: "hS1") ?? 0) as! String)! >= 1500{
                 cell.bagdeImage.image = #imageLiteral(resourceName: "silverBadge")
             }
+            
             cell.layer.cornerRadius = 14
             
             return cell
@@ -83,6 +91,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
                 cell.bgImage.image = stage[indexPath.row].stageState?.getBackground()
                 cell.lockImage.image = stage[indexPath.row].stageState?.getIcon()
                 cell.titleLabel.text = stage[indexPath.row].stageName
+                cell.isSelected = false
                 return cell
             }
             else{
@@ -90,11 +99,8 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
                 cell.layer.cornerRadius = 14
                 cell.titleLabel.text = stage[indexPath.row].stageName
                 cell.scoreLabel.text = "\(defaults.value(forKey: "hS2") ?? 0)"
-                if cell.scoreLabel.text == "1000"{
-                    cell.bagdeImage.image = #imageLiteral(resourceName: "goldBadge")
-                } else if cell.scoreLabel.text == "900" || cell.scoreLabel.text == "800"{
-                    cell.bagdeImage.image = #imageLiteral(resourceName: "silverBadge")
-                }
+                
+                cell.isSelected = true
                 
                 return cell
             }

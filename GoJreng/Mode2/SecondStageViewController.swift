@@ -271,7 +271,6 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         } else {
             print("Ini kepanggil")
             PageHelper.showFeedback(stgPlayed: 2 , stgScore: score, currentStoryBoard: self)
-            //showHomePage()
         }
         
         remaining = 2
