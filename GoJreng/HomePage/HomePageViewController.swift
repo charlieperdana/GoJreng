@@ -8,11 +8,12 @@
 import UIKit
 
 
-class HomePageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class HomePageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var stageCollection: UICollectionView!
     @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var stackViewHome: UIStackView!
     
     @IBOutlet weak var testLabel: UILabel!
     
@@ -25,9 +26,9 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     var newHighScore1: Int = 0
     
     let stage = [
-        Stages(stageName: "Mayor/Minor Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 0),
-        Stages(stageName: "Chord Identification", stageState: .locked, question: [], questionNumber: 10, highScore: 0),
-        Stages(stageName: "Chord Progession Indentification", stageState: .locked, question: [], questionNumber: 10, highScore: 200)
+        Stages(stageName: "Major/Minor Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 900),
+        Stages(stageName: "Chord Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 0),
+        Stages(stageName: "Chord Progression Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 200)
     ]
     
     override func viewDidLoad() {
@@ -38,10 +39,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
         
         stageCollection.register(UnlockCollectionViewCell.nib(), forCellWithReuseIdentifier: UnlockCollectionViewCell.identifier)
         stageCollection.register(LockCollectionViewCell.nib(), forCellWithReuseIdentifier: LockCollectionViewCell.identifier)
-        
-        let hScore2 = defaults.integer(forKey: "hS2")
-        print("\(hScore2)")
-        
+
         let hScore1 = defaults.integer(forKey: "hS1")
         print("\(hScore1)")
         
@@ -52,7 +50,6 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
         }
         
     }
-    
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
@@ -66,16 +63,16 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
             cell.titleLabel.text = stage[indexPath.row].stageName
             cell.scoreLabel.text = "\(defaults.value(forKey: "hS1") ?? 0)"
             if cell.scoreLabel.text == "1000"{
-                cell.bagdeImage.image = #imageLiteral(resourceName: "goldBadge")
+                cell.badgeImage.image = #imageLiteral(resourceName: "goldBadge")
             } else if cell.scoreLabel.text == "600" || cell.scoreLabel.text == "500"{
-                cell.bagdeImage.image = #imageLiteral(resourceName: "silverBadge")
+                cell.badgeImage.image = #imageLiteral(resourceName: "silverBadge")
             }
             cell.layer.cornerRadius = 14
             
             return cell
         }
         
-        if indexPath.row == 1{
+        if indexPath.row == 1 {
             if stage[indexPath.row].stageState == StageState.locked{
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LockCollectionViewCell.identifier, for: indexPath) as! LockCollectionViewCell
                 
@@ -85,15 +82,16 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
                 cell.titleLabel.text = stage[indexPath.row].stageName
                 return cell
             }
+            
             else{
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UnlockCollectionViewCell.identifier, for: indexPath) as! UnlockCollectionViewCell
                 cell.layer.cornerRadius = 14
                 cell.titleLabel.text = stage[indexPath.row].stageName
                 cell.scoreLabel.text = "\(defaults.value(forKey: "hS2") ?? 0)"
                 if cell.scoreLabel.text == "1000"{
-                    cell.bagdeImage.image = #imageLiteral(resourceName: "goldBadge")
+                    cell.badgeImage.image = #imageLiteral(resourceName: "goldBadge")
                 } else if cell.scoreLabel.text == "900" || cell.scoreLabel.text == "800"{
-                    cell.bagdeImage.image = #imageLiteral(resourceName: "silverBadge")
+                    cell.badgeImage.image = #imageLiteral(resourceName: "silverBadge")
                 }
                 
                 return cell
