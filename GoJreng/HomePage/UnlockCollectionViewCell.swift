@@ -24,4 +24,12 @@ class UnlockCollectionViewCell: UICollectionViewCell {
     static func nib() -> UINib{
         return UINib(nibName: "UnlockCollectionViewCell", bundle: nil)
     }
+    
+    override func awakeFromNib() {
+        
+        //BUAT AUTORESIZE LABEL - NETTA
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.minimumScaleFactor = 0.4
+        titleLabel.numberOfLines = 2
+    }
 }

@@ -17,20 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomePage" translatesAutoresizingMaskIntoConstraints="NO" id="0Yk-NL-SFq">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomePage" translatesAutoresizingMaskIntoConstraints="NO" id="0Yk-NL-SFq">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="titleGoJreng" translatesAutoresizingMaskIntoConstraints="NO" id="eqv-DL-J5V">
-                                <rect key="frame" x="124.66666666666669" y="140" width="141" height="53"/>
+                                <rect key="frame" x="124.66666666666669" y="100.33333333333333" width="141" height="52.999999999999986"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="K1r-Wj-Zce"/>
                                 </constraints>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RDc-14-gts">
-                                <rect key="frame" x="50" y="233" width="290" height="577"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RDc-14-gts">
+                                <rect key="frame" x="40" y="185.66666666666669" width="310" height="584.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="32" minimumInteritemSpacing="10" id="vwm-k8-VgG">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="32" minimumInteritemSpacing="10" id="vwm-k8-VgG">
                                     <size key="itemSize" width="290" height="145"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -38,7 +37,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Mxy-Hk-TDL">
-                                        <rect key="frame" x="0.0" y="0.0" width="290" height="145"/>
+                                        <rect key="frame" x="10" y="0.0" width="290" height="145"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="o9Y-99-pL8">
                                             <rect key="frame" x="0.0" y="0.0" width="290" height="145"/>
@@ -47,7 +46,7 @@
                                         <size key="customSize" width="290" height="145"/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DC3-kR-HA8">
-                                        <rect key="frame" x="0.0" y="177" width="290" height="145"/>
+                                        <rect key="frame" x="10" y="177" width="290" height="145"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="er9-D0-RvZ">
                                             <rect key="frame" x="0.0" y="0.0" width="290" height="145"/>
@@ -55,18 +54,30 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="290" height="145"/>
                                     </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tRz-uq-6jQ">
+                                        <rect key="frame" x="10" y="354" width="290" height="145"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Y3q-AB-nTy">
+                                            <rect key="frame" x="0.0" y="0.0" width="290" height="145"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bDE-iN-3jt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="RDc-14-gts" firstAttribute="top" secondItem="eqv-DL-J5V" secondAttribute="bottom" constant="40" id="2Mh-lJ-ssC"/>
+                            <constraint firstItem="RDc-14-gts" firstAttribute="top" secondItem="eqv-DL-J5V" secondAttribute="bottom" multiplier="0.95" constant="40" id="2Mh-lJ-ssC"/>
                             <constraint firstItem="eqv-DL-J5V" firstAttribute="centerX" secondItem="bDE-iN-3jt" secondAttribute="centerX" id="Che-9M-V3T"/>
-                            <constraint firstItem="eqv-DL-J5V" firstAttribute="top" secondItem="bDE-iN-3jt" secondAttribute="top" constant="96" id="LSk-GS-fSQ"/>
-                            <constraint firstItem="bDE-iN-3jt" firstAttribute="bottom" secondItem="RDc-14-gts" secondAttribute="bottom" id="UAz-o2-TNW"/>
-                            <constraint firstItem="bDE-iN-3jt" firstAttribute="trailing" secondItem="RDc-14-gts" secondAttribute="trailing" constant="50" id="ptd-wA-Oej"/>
-                            <constraint firstItem="RDc-14-gts" firstAttribute="leading" secondItem="bDE-iN-3jt" secondAttribute="leading" constant="50" id="qhb-wY-gyE"/>
+                            <constraint firstItem="eqv-DL-J5V" firstAttribute="top" secondItem="bDE-iN-3jt" secondAttribute="top" multiplier="0.1" constant="96" id="LSk-GS-fSQ"/>
+                            <constraint firstItem="0Yk-NL-SFq" firstAttribute="top" secondItem="DKu-N5-87E" secondAttribute="top" id="QSS-Bx-loo"/>
+                            <constraint firstItem="0Yk-NL-SFq" firstAttribute="leading" secondItem="DKu-N5-87E" secondAttribute="leading" id="U9M-uw-2fI"/>
+                            <constraint firstItem="bDE-iN-3jt" firstAttribute="bottom" secondItem="RDc-14-gts" secondAttribute="bottom" constant="40" id="UAz-o2-TNW"/>
+                            <constraint firstItem="0Yk-NL-SFq" firstAttribute="trailing" secondItem="DKu-N5-87E" secondAttribute="trailing" id="jU2-DD-yrq"/>
+                            <constraint firstItem="bDE-iN-3jt" firstAttribute="trailing" secondItem="RDc-14-gts" secondAttribute="trailing" constant="40" id="ptd-wA-Oej"/>
+                            <constraint firstItem="RDc-14-gts" firstAttribute="leading" secondItem="bDE-iN-3jt" secondAttribute="leading" constant="40" id="qhb-wY-gyE"/>
+                            <constraint firstItem="0Yk-NL-SFq" firstAttribute="bottom" secondItem="DKu-N5-87E" secondAttribute="bottom" id="tcn-g1-8Bi"/>
                         </constraints>
                     </view>
                     <connections>

@@ -27,7 +27,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     let stage = [
         Stages(stageName: "Major/Minor Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 900),
         Stages(stageName: "Chord Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 0),
-        Stages(stageName: "Chord Progession Indentification", stageState: .locked, question: [], questionNumber: 10, highScore: 200)
+        Stages(stageName: "Chord Progression Indentification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 200)
     ]
     
     override func viewDidLoad() {
@@ -79,7 +79,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
             return cell
         }
         
-        if indexPath.row == 1{
+        if indexPath.row == 1 {
             if stage[indexPath.row].stageState == StageState.locked{
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LockCollectionViewCell.identifier, for: indexPath) as! LockCollectionViewCell
                 
@@ -89,6 +89,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
                 cell.titleLabel.text = stage[indexPath.row].stageName
                 return cell
             }
+            
             else{
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UnlockCollectionViewCell.identifier, for: indexPath) as! UnlockCollectionViewCell
                 cell.layer.cornerRadius = 14
