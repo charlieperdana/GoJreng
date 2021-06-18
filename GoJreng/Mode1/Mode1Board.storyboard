@@ -47,7 +47,7 @@
                                     <action selector="minorTouched:" destination="d7F-JX-kRO" eventType="touchUpInside" id="ZAR-vX-Per"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess the chord!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2e4-sQ-Qkg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess the chord!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2e4-sQ-Qkg">
                                 <rect key="frame" x="53.666666666666657" y="230" width="283" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="283" id="5Bd-aV-fsp"/>
@@ -121,7 +121,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srr-9p-7gg">
-                                <rect key="frame" x="123" y="355" width="144" height="144"/>
+                                <rect key="frame" x="81.333333333333329" y="313.33333333333331" width="227.33333333333337" height="227.33333333333331"/>
                                 <state key="normal" image="stage1PlayButton"/>
                                 <connections>
                                     <action selector="playSoundClicked:" destination="d7F-JX-kRO" eventType="touchUpInside" id="jQ0-va-2XL"/>
@@ -150,11 +150,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thm-74-qPh">
-                                <rect key="frame" x="420" y="379" width="96" height="96"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="96" id="H4S-XM-ILV"/>
-                                    <constraint firstAttribute="width" constant="96" id="sjc-U1-oRm"/>
-                                </constraints>
+                                <rect key="frame" x="420" y="351.33333333333331" width="151.66666666666663" height="151.33333333333331"/>
                                 <state key="normal" image="stage1PlayButton"/>
                                 <connections>
                                     <action selector="playSoundClicked:" destination="d7F-JX-kRO" eventType="touchUpInside" id="B2j-2B-6Vc"/>
@@ -174,9 +170,13 @@
                             <constraint firstItem="h9k-Q6-4UB" firstAttribute="leading" secondItem="nvi-Lc-JmJ" secondAttribute="trailing" constant="25" id="CCi-Rb-h2x"/>
                             <constraint firstItem="2e4-sQ-Qkg" firstAttribute="centerX" secondItem="gLB-5C-CKw" secondAttribute="centerX" id="Cus-lb-S5A"/>
                             <constraint firstItem="gLB-5C-CKw" firstAttribute="trailing" secondItem="0Xd-Jq-wXp" secondAttribute="trailing" constant="21" id="DuE-Be-fax"/>
+                            <constraint firstItem="Thm-74-qPh" firstAttribute="centerY" secondItem="srr-9p-7gg" secondAttribute="centerY" id="ENy-dm-23M"/>
                             <constraint firstItem="0Xd-Jq-wXp" firstAttribute="top" secondItem="gLB-5C-CKw" secondAttribute="top" constant="20" id="Fao-EI-SBm"/>
+                            <constraint firstItem="Thm-74-qPh" firstAttribute="height" secondItem="srr-9p-7gg" secondAttribute="height" multiplier="0.666667" id="ILC-UG-4CC"/>
+                            <constraint firstItem="Thm-74-qPh" firstAttribute="width" secondItem="srr-9p-7gg" secondAttribute="width" multiplier="0.666667" id="NjT-Ix-YIZ"/>
                             <constraint firstItem="gLB-5C-CKw" firstAttribute="trailing" secondItem="hIR-ca-eaN" secondAttribute="trailing" constant="20" id="P9b-aH-Qq8"/>
                             <constraint firstItem="HMD-DF-kav" firstAttribute="trailing" secondItem="gLB-5C-CKw" secondAttribute="trailing" id="RVk-eT-A5Y"/>
+                            <constraint firstItem="Thm-74-qPh" firstAttribute="width" secondItem="srr-9p-7gg" secondAttribute="height" multiplier="2:3" id="WGN-4z-9Xh"/>
                             <constraint firstItem="nvi-Lc-JmJ" firstAttribute="leading" secondItem="gLB-5C-CKw" secondAttribute="leading" constant="23" id="WpG-40-Jrd"/>
                             <constraint firstItem="nvi-Lc-JmJ" firstAttribute="height" secondItem="h9k-Q6-4UB" secondAttribute="height" id="WsS-7U-gfX"/>
                             <constraint firstItem="Thm-74-qPh" firstAttribute="leading" secondItem="gLB-5C-CKw" secondAttribute="leading" constant="420" id="bge-Ai-CV6"/>
@@ -189,6 +189,7 @@
                             <constraint firstItem="HMD-DF-kav" firstAttribute="leading" secondItem="gLB-5C-CKw" secondAttribute="leading" id="sr7-nT-VX8"/>
                             <constraint firstItem="ehx-Pk-4iB" firstAttribute="top" secondItem="gLB-5C-CKw" secondAttribute="top" constant="123" id="tUr-JH-yeW"/>
                             <constraint firstAttribute="bottom" secondItem="HMD-DF-kav" secondAttribute="bottom" id="uni-aV-ueH"/>
+                            <constraint firstItem="srr-9p-7gg" firstAttribute="top" secondItem="2e4-sQ-Qkg" secondAttribute="bottom" multiplier="0.98" constant="37" id="xLv-4M-9sW"/>
                         </constraints>
                     </view>
                     <connections>
