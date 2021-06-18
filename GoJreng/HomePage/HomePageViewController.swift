@@ -8,7 +8,7 @@
 import UIKit
 
 
-class HomePageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class HomePageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var stageCollection: UICollectionView!
@@ -47,11 +47,9 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
 //            defaults.set(0, forKey: "highS")
 //        }
         
-        setupStackView()
 
         stageCollection.dataSource = self
         stageCollection.delegate = self
-        stageCollection.clipsToBounds = true
         
        // stage[1].highScore = newHighScore
         
@@ -63,20 +61,6 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
         
         
         //stageCollection.reloadData()
-    }
-    
-    func setupStackView() {
-        view.addSubview(stackViewHome)
-        stackViewHome.setCustomSpacing(72, after: logoImage)
-        
-        setupCollectionViewAutolayout()
-    }
-    
-    func setupCollectionViewAutolayout() {
-        
-        if let collectionViewLayout = stageCollection.collectionViewLayout as? UICollectionViewFlowLayout {
-            collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        }
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -24,12 +24,4 @@ class UnlockCollectionViewCell: UICollectionViewCell {
     static func nib() -> UINib{
         return UINib(nibName: "UnlockCollectionViewCell", bundle: nil)
     }
-    
-    override func awakeFromNib() {
-       
-        unlockCellWrapper.translatesAutoresizingMaskIntoConstraints = false
-        
-        //Set Autolayout for Xib: Horizontal Self-Sizing
-        unlockCellWrapper.widthAnchor.constraint(lessThanOrEqualToConstant: UIScreen.main.bounds.size.width - 50).isActive = true
-    }
 }
