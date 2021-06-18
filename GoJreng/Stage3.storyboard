@@ -77,7 +77,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="checkAnswer:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KgJ-E1-68q"/>
                                     <action selector="checkButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7al-pK-L1h"/>
                                 </connections>
                             </button>

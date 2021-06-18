@@ -7,10 +7,23 @@
 
 import UIKit
 
+protocol ModalityViewControllerDelegate: AnyObject {
+    func toHome(authorized: Bool)
+    //func stage3ToHome(authorized: Bool)
+}
+
 class ModalityViewController: UIViewController {
 
     @IBOutlet weak var wrongContinueButton: UIButton!
     @IBOutlet weak var correctAnswerBg: UIView!
+    @IBOutlet weak var correctAnswerLabel: UILabel!
+    
+    var text: String?
+    
+    var indexQuestion = 0
+    
+    weak var delegate: ModalityViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,30 +32,26 @@ class ModalityViewController: UIViewController {
             self.wrongContinueButton.clipsToBounds = true
             self.correctAnswerBg.layer.cornerRadius = 10
             self.correctAnswerBg.clipsToBounds = true
+            self.delegate?.toHome(authorized: self.indexQuestion == 8 ? true : false)
         }
         else{
             Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
-                self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true) {
+                    self.delegate?.toHome(authorized: self.indexQuestion == 9 ? true : false)
+                    //self.delegate?.stage3ToHome(authorized: self.)
+                }
             }
         }
         
-
+        if text != nil {
+            correctAnswerLabel.text = text
+        }
         // Do any additional setup after loading the view.
     }
     @IBAction func wrongContinueTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 //dismiss on touch feature
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

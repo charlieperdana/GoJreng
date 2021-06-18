@@ -10,6 +10,7 @@ import UIKit
 
 struct Questions {
     var questionSound: String
+    var questionSoundName: String?
     var answer: [Answers]
 }
 

@@ -178,7 +178,7 @@ var questionsForStage2 = [
     //1 chord
     
     //C
-    Questions(questionSound: "\(majorQuestionsAnswers[3])", answer: [
+    Questions(questionSound: "\(majorQuestionsAnswers[3])", questionSoundName: "C", answer: [
         Answers(answerSound: "\(majorQuestionsAnswers[3])", answerLabel: "C", isCorrect: true),
         Answers(answerSound: "\(majorQuestionsAnswers[8])", answerLabel: "F", isCorrect: false),
         Answers(answerSound: "\(majorQuestionsAnswers[10])", answerLabel: "G", isCorrect: false),
@@ -187,7 +187,7 @@ var questionsForStage2 = [
     ]),
     
     //Am
-    Questions(questionSound: "\(minorQuestionsAnswers[1])", answer: [
+    Questions(questionSound: "\(minorQuestionsAnswers[1])", questionSoundName: "Am", answer: [
         Answers(answerSound: "\(majorQuestionsAnswers[8])", answerLabel: "F", isCorrect: false),
         Answers(answerSound: "\(majorQuestionsAnswers[10])", answerLabel: "G", isCorrect: false),
         Answers(answerSound: "\(majorQuestionsAnswers[3])", answerLabel: "C", isCorrect: false),
@@ -196,7 +196,7 @@ var questionsForStage2 = [
     ]),
     
     //Dm
-    Questions(questionSound: "\(minorQuestionsAnswers[6])", answer: [
+    Questions(questionSound: "\(minorQuestionsAnswers[6])", questionSoundName: "Dm", answer: [
         Answers(answerSound: "\(majorQuestionsAnswers[10])", answerLabel: "G", isCorrect: false),
         Answers(answerSound: "\(majorQuestionsAnswers[8])", answerLabel: "F", isCorrect: false),
         Answers(answerSound: "\(minorQuestionsAnswers[6])", answerLabel: "Dm", isCorrect: true),
@@ -206,7 +206,7 @@ var questionsForStage2 = [
     ]),
     
     //G
-    Questions(questionSound: "\(majorQuestionsAnswers[10])", answer: [
+    Questions(questionSound: "\(majorQuestionsAnswers[10])", questionSoundName: "G", answer: [
         Answers(answerSound: "\(minorQuestionsAnswers[7])", answerLabel: "Em", isCorrect: false),
         Answers(answerSound: "\(majorQuestionsAnswers[10])", answerLabel: "G", isCorrect: true),
         Answers(answerSound: "\(minorQuestionsAnswers[11])", answerLabel: "Gm", isCorrect: false),
@@ -217,7 +217,7 @@ var questionsForStage2 = [
     //2 chord
     
     //C-Am
-    Questions(questionSound: "\(chord2Progressions[1])", answer: [
+    Questions(questionSound: "\(chord2Progressions[1])", questionSoundName: "C-Am", answer: [
         Answers(answerSound: "\(chord2Progressions[3])", answerLabel: "D-Bm", isCorrect: false),
         Answers(answerSound: "\(chord2Progressions[7])", answerLabel: "F-G", isCorrect: false),
         Answers(answerSound: "\(chord2Progressions[5])", answerLabel: "Dm-G", isCorrect: false),
@@ -226,7 +226,7 @@ var questionsForStage2 = [
     ]),
     
     //Dm-G
-    Questions(questionSound: "\(chord2Progressions[5])", answer: [
+    Questions(questionSound: "\(chord2Progressions[5])", questionSoundName: "Dm-G", answer: [
         Answers(answerSound: "\(chord2Progressions[4])", answerLabel: "D-G", isCorrect: false),
         Answers(answerSound: "\(chord2Progressions[5])", answerLabel: "Dm-G", isCorrect: true),
         Answers(answerSound: "\(chord2Progressions[8])", answerLabel: "G-A", isCorrect: false),
@@ -235,7 +235,7 @@ var questionsForStage2 = [
     ]),
     
     //G-C
-    Questions(questionSound: "\(chord2Progressions[9])", answer: [
+    Questions(questionSound: "\(chord2Progressions[9])", questionSoundName: "G-C", answer: [
         Answers(answerSound: "\(chord2Progressions[2])", answerLabel: "C-F", isCorrect: false),
         Answers(answerSound: "\(chord2Progressions[6])", answerLabel: "Em-A", isCorrect: false),
         Answers(answerSound: "\(chord2Progressions[9])", answerLabel: "G-C", isCorrect: true),
@@ -246,7 +246,7 @@ var questionsForStage2 = [
     //3 chord
     
     //C-Am-Dm
-    Questions(questionSound: "\(chord3Progressions[1])", answer: [
+    Questions(questionSound: "\(chord3Progressions[1])", questionSoundName: "C-Am-Dm", answer: [
         Answers(answerSound: "\(chord3Progressions[2])", answerLabel: "C-F-G", isCorrect: false),
         Answers(answerSound: "\(chord3Progressions[1])", answerLabel: "C-Am-Dm", isCorrect: true),
         Answers(answerSound: "\(chord3Progressions[0])", answerLabel: "A-D-E", isCorrect: false),
@@ -255,7 +255,7 @@ var questionsForStage2 = [
     ]),
     
     //C-F-G
-    Questions(questionSound: "\(chord3Progressions[2])", answer: [
+    Questions(questionSound: "\(chord3Progressions[2])", questionSoundName: "C-F-G", answer: [
         Answers(answerSound: "\(chord3Progressions[2])", answerLabel: "C-F-G", isCorrect: true),
         Answers(answerSound: "\(chord3Progressions[3])", answerLabel: "D-Bm-Em", isCorrect: false),
         Answers(answerSound: "\(chord3Progressions[6])", answerLabel: "E-A-B", isCorrect: false),
@@ -263,7 +263,7 @@ var questionsForStage2 = [
         
     ]),
     //Dm-G-C
-    Questions(questionSound: "\(chord3Progressions[5])", answer: [
+    Questions(questionSound: "\(chord3Progressions[5])", questionSoundName: "Dm-G-C", answer: [
         Answers(answerSound: "\(chord3Progressions[4])", answerLabel: "D-G-A", isCorrect: false),
         Answers(answerSound: "\(chord3Progressions[8])", answerLabel: "G-C-D", isCorrect: false),
         Answers(answerSound: "\(chord3Progressions[6])", answerLabel: "E-A-B", isCorrect: false),
@@ -403,7 +403,7 @@ var questionsForStage3 = [
         Answers(answerLabel: "Em", isCorrect: false),
         Answers(answerLabel: "Am", isCorrect: false),
         Answers(answerLabel: "Dm", isCorrect: false),
-        Answers(answerLabel: "F#", isCorrect: false),
+        Answers(answerLabel: "F", isCorrect: false),
         //Jawaban
         
         Answers(answerLabel: "C-G-C-F", isCorrect: true),
