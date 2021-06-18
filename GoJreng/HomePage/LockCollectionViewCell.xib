@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -32,7 +31,6 @@
                     </label>
                 </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="ngF-Bd-wta" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2MV-ka-SiB"/>
                 <constraint firstAttribute="trailing" secondItem="ngF-Bd-wta" secondAttribute="trailing" id="3ca-sd-u54"/>
@@ -48,7 +46,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="bg-0" width="290" height="84"/>
+        <image name="bg-0" width="294" height="88"/>
         <image name="lock" width="39" height="48"/>
     </resources>
 </document>
