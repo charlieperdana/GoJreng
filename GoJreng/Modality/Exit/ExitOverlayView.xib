@@ -16,11 +16,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="243"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="264"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMP-Pd-SmH">
-                    <rect key="frame" x="84.333333333333329" y="24" width="245.33333333333337" height="79.333333333333329"/>
+                    <rect key="frame" x="84.333333333333329" y="16" width="245.33333333333337" height="79.333333333333329"/>
                     <string key="text">Are you sure
 you want to exit ?</string>
                     <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="28"/>
@@ -28,13 +28,13 @@ you want to exit ?</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All your progress will not be saved !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6N-j0-EmO">
-                    <rect key="frame" x="57.333333333333343" y="111.33333333333333" width="299.33333333333326" height="25.666666666666671"/>
+                    <rect key="frame" x="57.333333333333343" y="103.33333333333333" width="299.33333333333326" height="25.666666666666671"/>
                     <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
                     <color key="textColor" red="0.82745098039215681" green="0.85098039215686272" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Klg-uL-N5F">
-                    <rect key="frame" x="211" y="169" width="183" height="56"/>
+                    <rect key="frame" x="211" y="161" width="183" height="56"/>
                     <color key="backgroundColor" red="0.90588235294117647" green="0.85490196078431369" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="22"/>
                     <state key="normal" title="Go Back">
@@ -45,7 +45,7 @@ you want to exit ?</string>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9p-HR-Aje">
-                    <rect key="frame" x="20" y="169" width="183" height="56"/>
+                    <rect key="frame" x="20" y="161" width="183" height="56"/>
                     <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="22"/>
                     <state key="normal" title="Exit">
                         <color key="titleColor" red="0.90588235294117647" green="0.85490196078431369" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,7 +60,7 @@ you want to exit ?</string>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Klg-uL-N5F" secondAttribute="trailing" constant="20" id="3Ia-3Y-HXR"/>
                 <constraint firstItem="Klg-uL-N5F" firstAttribute="leading" secondItem="k9p-HR-Aje" secondAttribute="trailing" constant="8" symbolic="YES" id="4Rr-al-U6I"/>
-                <constraint firstItem="VMP-Pd-SmH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="5RO-5s-An7"/>
+                <constraint firstItem="VMP-Pd-SmH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="5RO-5s-An7"/>
                 <constraint firstItem="U6N-j0-EmO" firstAttribute="top" secondItem="VMP-Pd-SmH" secondAttribute="bottom" constant="8" id="9JY-Th-YX1"/>
                 <constraint firstItem="Klg-uL-N5F" firstAttribute="height" secondItem="k9p-HR-Aje" secondAttribute="height" id="FCY-8X-ttN"/>
                 <constraint firstItem="k9p-HR-Aje" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="H5j-eN-JSF"/>
@@ -72,7 +72,7 @@ you want to exit ?</string>
                 <constraint firstItem="Klg-uL-N5F" firstAttribute="width" secondItem="k9p-HR-Aje" secondAttribute="height" multiplier="165:56" constant="18" id="xFw-VZ-sYb"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="186.95652173913044" y="269.53125"/>
+            <point key="canvasLocation" x="186.15384615384616" y="186.96682464454975"/>
         </view>
     </objects>
 </document>
