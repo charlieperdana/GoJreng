@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "lockedStageDescriptions.png",
+      "filename" : "Locked stage descriptionsnew.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "lockedStageDescriptions@2x.png",
+      "filename" : "Locked stage descriptionsnew @2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "lockedStageDescriptions@3x.png",
+      "filename" : "Locked stage descriptionsnew @3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
