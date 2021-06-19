@@ -118,6 +118,7 @@ class FeedbackPageViewController: UIViewController {
     stackViewFeedback.setCustomSpacing(20, after: primaryButton)
     stackViewFeedback.setCustomSpacing(0, after: secondaryButton)
 
+    //autosize text
     feedbackDescLabel.adjustsFontSizeToFitWidth = true
     feedbackDescLabel.minimumScaleFactor = 0.2
     feedbackDescLabel.numberOfLines = 2

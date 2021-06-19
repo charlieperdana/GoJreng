@@ -32,15 +32,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="score" translatesAutoresizingMaskIntoConstraints="NO" id="fIN-iR-9vf">
                                 <rect key="frame" x="272" y="67" width="102" height="40"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1D-87-imn">
-                                <rect key="frame" x="319" y="71" width="47" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="47" id="mzx-VN-QKc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
-                                <color key="textColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining: 2x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixk-4n-srN">
                                 <rect key="frame" x="126" y="461.66666666666669" width="138" height="32"/>
                                 <constraints>
@@ -90,7 +81,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJh-9u-Cy4">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJh-9u-Cy4">
                                 <rect key="frame" x="37" y="529" width="148" height="75"/>
                                 <color key="backgroundColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="34"/>
@@ -101,7 +92,7 @@
                                     <action selector="answerPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="y80-xv-rzJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bf6-ex-a9R">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bf6-ex-a9R">
                                 <rect key="frame" x="205" y="529" width="148" height="75"/>
                                 <color key="backgroundColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="34"/>
@@ -112,7 +103,7 @@
                                     <action selector="answerPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Ie6-Fs-Zoq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19M-7Q-spY">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19M-7Q-spY">
                                 <rect key="frame" x="205" y="624" width="148" height="75"/>
                                 <color key="backgroundColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="34"/>
@@ -140,7 +131,7 @@
                                     <action selector="exitPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="rZb-IU-y8T"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBe-fT-tw9">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBe-fT-tw9">
                                 <rect key="frame" x="37" y="624" width="148" height="75"/>
                                 <color key="backgroundColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="34"/>
@@ -151,17 +142,26 @@
                                     <action selector="answerPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Hdj-aC-Npd"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G1D-87-imn">
+                                <rect key="frame" x="315" y="68.333333333333329" width="56" height="31.333333333333329"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="mzx-VN-QKc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                <color key="textColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fIN-iR-9vf" firstAttribute="centerY" secondItem="G1D-87-imn" secondAttribute="centerY" id="0rI-Ev-Crh"/>
+                            <constraint firstItem="fIN-iR-9vf" firstAttribute="centerY" secondItem="G1D-87-imn" secondAttribute="centerY" constant="3" id="0rI-Ev-Crh"/>
                             <constraint firstItem="2bG-Dv-dfF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="3k9-0g-Qvv"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2bG-Dv-dfF" secondAttribute="trailing" constant="20" id="6a9-Ja-KR4"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3nH-bp-dYr" secondAttribute="trailing" constant="49" id="7Wr-Tq-z9d"/>
                             <constraint firstItem="fIN-iR-9vf" firstAttribute="top" secondItem="yoo-A6-PRV" secondAttribute="top" id="8sC-Rw-aed"/>
                             <constraint firstItem="FuE-j7-VXX" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="AFd-J9-c7F"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="G1D-87-imn" secondAttribute="trailing" constant="24" id="An3-pU-E4G"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="G1D-87-imn" secondAttribute="trailing" constant="19" id="An3-pU-E4G"/>
                             <constraint firstItem="tBe-fT-tw9" firstAttribute="height" secondItem="lJh-9u-Cy4" secondAttribute="height" id="CAg-Sl-Ilg"/>
                             <constraint firstItem="lJh-9u-Cy4" firstAttribute="width" secondItem="bf6-ex-a9R" secondAttribute="width" id="CJG-RJ-AME"/>
                             <constraint firstItem="fIN-iR-9vf" firstAttribute="top" secondItem="0AA-wx-WiJ" secondAttribute="bottom" constant="8" symbolic="YES" id="FFo-qQ-Djn"/>

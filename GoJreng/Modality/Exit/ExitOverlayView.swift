@@ -11,6 +11,7 @@ class ExitOverlayView: UIViewController {
     
     var hasSetPointOrigin = false
     var pointOrigin: CGPoint?
+    var stagePlayed: Int?
 
     @IBOutlet weak var exitBtn: UIButton!{
         didSet{
@@ -70,11 +71,7 @@ class ExitOverlayView: UIViewController {
     
     
     @IBAction func tapExit(_ sender: UIButton) {
-        let homeSB = UIStoryboard(name: "HomeP", bundle: nil)
-        let vc = homeSB.instantiateViewController(withIdentifier: "HomeView")
-        vc.modalTransitionStyle = .coverVertical
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+      PageHelper.showHomePage(currentStoryBoard: self)
     }
     
     

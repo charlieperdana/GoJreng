@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "score.png",
+      "filename" : "Scorenew score.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "score@2x.png",
+      "filename" : "Scorenew score @2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "score@3x.png",
+      "filename" : "Scorenew score @3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -67,15 +67,31 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         Buttons[1].layer.cornerRadius = 8
         Buttons[2].layer.cornerRadius = 8
         Buttons[3].layer.cornerRadius = 8
-        
-        print("Hallo")
-        
+
+        Buttons[0].titleLabel?.adjustsFontSizeToFitWidth = true
+        Buttons[1].titleLabel?.adjustsFontSizeToFitWidth = true
+        Buttons[2].titleLabel?.adjustsFontSizeToFitWidth = true
+        Buttons[3].titleLabel?.adjustsFontSizeToFitWidth = true
+
+        Buttons[0].titleLabel?.minimumScaleFactor = 0.5
+        Buttons[1].titleLabel?.minimumScaleFactor = 0.5
+        Buttons[2].titleLabel?.minimumScaleFactor = 0.5
+        Buttons[3].titleLabel?.minimumScaleFactor = 0.5
+
+        Buttons[0].titleLabel?.numberOfLines = 1
+        Buttons[1].titleLabel?.numberOfLines = 1
+        Buttons[2].titleLabel?.numberOfLines = 1
+        Buttons[3].titleLabel?.numberOfLines = 1
+
         setUpQuestionsStage()
         print(" ini: \(highScore)")
         
         let newArray = questionsForStage2[0..<4].shuffled() + questionsForStage2[4..<7].shuffled() + questionsForStage2[7..<10].shuffled()
         
-        
+        scoreLabel.adjustsFontSizeToFitWidth = true
+        scoreLabel.minimumScaleFactor = 0.5
+        scoreLabel.numberOfLines = 1
+
         arrayBaru = newArray
         
         print("\(arrayBaru)")
@@ -312,12 +328,10 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         vc.delegate = self
         vc.indexQuestion = questionNum
         self.present(vc, animated: true)
-//        vc.dismiss(animated: true, completion: {
-//
-//        })
     }
     
 }
+
 
 extension SecondStageViewController : UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
