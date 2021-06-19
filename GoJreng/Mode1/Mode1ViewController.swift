@@ -207,22 +207,17 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         if lifeCount > 0{
 //            check if time's up
             if timer <= 0{//ggl
-                //showHomePage()
-                //feedbackSequence()
                 PageHelper.showFeedback(stgPlayed: 1, stgScore: score, currentStoryBoard: self)
                 return
             }
             if soundIsPlaying == false && qIndex >= questionArray!.count{
                 print("finished")//bhsl
-                //showHomePage()
-                //feedbackSequence()
                 PageHelper.showFeedback(stgPlayed: 1, stgScore: score, currentStoryBoard: self)
                 return
             }
             print("continue + " + String(qIndex))
             animatePlayButton{ (success) -> Void in
                 if success {
-//                    restoreButtonPosition()
                     playQuestion(index: qIndex)
                 }
             }
@@ -230,8 +225,6 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
 //        dead
         else{//ggl
             PageHelper.showFeedback(stgPlayed: 1, stgScore: score, currentStoryBoard: self)
-            //showHomePage()
-            //feedbackSequence()
             return
         }
     }
