@@ -68,7 +68,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pUW-sZ-rXo">
-                                        <rect key="frame" x="43" y="0.0" width="59" height="34"/>
+                                        <rect key="frame" x="43" y="0.0" width="53" height="34"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
                                         <color key="textColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                                     <constraint firstItem="DDh-0s-SYY" firstAttribute="centerX" secondItem="0Xd-Jq-wXp" secondAttribute="centerX" id="NRR-Vo-ZNE"/>
                                     <constraint firstAttribute="width" constant="102" id="RdX-1D-iPK"/>
                                     <constraint firstAttribute="height" constant="40" id="SDL-Y8-PeB"/>
-                                    <constraint firstItem="pUW-sZ-rXo" firstAttribute="trailing" secondItem="0Xd-Jq-wXp" secondAttribute="trailingMargin" constant="8" id="UpW-MJ-a3h"/>
+                                    <constraint firstItem="pUW-sZ-rXo" firstAttribute="trailing" secondItem="0Xd-Jq-wXp" secondAttribute="trailingMargin" constant="2" id="UpW-MJ-a3h"/>
                                     <constraint firstItem="pUW-sZ-rXo" firstAttribute="leading" secondItem="0Xd-Jq-wXp" secondAttribute="leading" constant="43" id="VW9-IW-I8M"/>
                                     <constraint firstAttribute="trailing" secondItem="DDh-0s-SYY" secondAttribute="trailing" id="cyt-5y-OoO"/>
                                     <constraint firstItem="DDh-0s-SYY" firstAttribute="leading" secondItem="0Xd-Jq-wXp" secondAttribute="leading" id="ex2-8e-TTc"/>
@@ -212,10 +212,10 @@
     <resources>
         <image name="alivePicksRotated" width="31" height="34"/>
         <image name="closeButton" width="24" height="24"/>
-        <image name="score" width="102" height="40"/>
+        <image name="score" width="103" height="42"/>
         <image name="stage-1" width="390" height="844"/>
         <image name="stage1PlayButton" width="144" height="144"/>
-        <image name="time" width="98" height="48"/>
+        <image name="time" width="99" height="48"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
