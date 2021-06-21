@@ -111,7 +111,7 @@ class FeedbackPageViewController: UIViewController {
       primaryButton.setTitle("Continue", for: .normal)
       secondaryButton.isHidden = true
       newHighScoreLabel.isHidden = true
-      lplayFeedbackSoundEffect(isCongrats: true)
+      playFeedbackSoundEffect(isCongrats: true)
       stackViewBottom.constant = 56
 
     default:
