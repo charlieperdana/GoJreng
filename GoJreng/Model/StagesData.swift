@@ -259,7 +259,7 @@ var questionsForStage2 = [
         Answers(answerSound: "\(chord3Progressions[2])", answerLabel: "C-F-G", isCorrect: true),
         Answers(answerSound: "\(chord3Progressions[3])", answerLabel: "D-Bm-Em", isCorrect: false),
         Answers(answerSound: "\(chord3Progressions[6])", answerLabel: "E-A-B", isCorrect: false),
-        Answers(answerSound: "\(chord3Progressions[7])", answerLabel: "E-C#m-F#m", isCorrect: false),
+        Answers(answerSound: "\(chord3Progressions[0])", answerLabel: "A-D-E", isCorrect: false),
         
     ]),
     //Dm-G-C

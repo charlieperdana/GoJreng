@@ -31,7 +31,6 @@ class ModalityViewController: UIViewController {
             self.wrongContinueButton.clipsToBounds = true
             self.correctAnswerBg.layer.cornerRadius = 10
             self.correctAnswerBg.clipsToBounds = true
-            self.delegate?.toHome(authorized: self.indexQuestion == 9 ? true : false)
         }
         else{
             Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
@@ -48,6 +47,8 @@ class ModalityViewController: UIViewController {
     }
     @IBAction func wrongContinueTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        // dismiss klik continue
+        self.delegate?.toHome(authorized: self.indexQuestion == 9 ? true : false)
     }
     
 
