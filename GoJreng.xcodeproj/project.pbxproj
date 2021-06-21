@@ -38,20 +38,14 @@
 		0BD9BB4E2673A8A9005DD71E /* bm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BD9BB172673A8A9005DD71E /* bm.mp3 */; };
 		55F130FA2669EF23008BFC97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F130F92669EF23008BFC97 /* AppDelegate.swift */; };
 		55F130FC2669EF23008BFC97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F130FB2669EF23008BFC97 /* SceneDelegate.swift */; };
-		55F131012669EF23008BFC97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F130FF2669EF23008BFC97 /* Main.storyboard */; };
 		55F131042669EF23008BFC97 /* GoJreng.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55F131022669EF23008BFC97 /* GoJreng.xcdatamodeld */; };
 		55F131062669EF26008BFC97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F131052669EF26008BFC97 /* Assets.xcassets */; };
 		55F131092669EF26008BFC97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F131072669EF26008BFC97 /* LaunchScreen.storyboard */; };
 		55F131142669EF26008BFC97 /* GoJrengTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F131132669EF26008BFC97 /* GoJrengTests.swift */; };
 		55F1311F2669EF26008BFC97 /* GoJrengUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F1311E2669EF26008BFC97 /* GoJrengUITests.swift */; };
-		55F131362669EF9A008BFC97 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F131352669EF9A008BFC97 /* HomeViewController.swift */; };
 		55F131DB2672002E008BFC97 /* ExitPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F131DA2672002E008BFC97 /* ExitPresentationController.swift */; };
 		55F131E326720187008BFC97 /* ExitOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55F131E226720187008BFC97 /* ExitOverlayView.xib */; };
 		55F131F026720A63008BFC97 /* ExitOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F131EF26720A63008BFC97 /* ExitOverlayView.swift */; };
-		84364171266F76B40060A9CE /* UnlockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436416F266F76B40060A9CE /* UnlockTableViewCell.swift */; };
-		84364172266F76B40060A9CE /* UnlockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84364170266F76B40060A9CE /* UnlockTableViewCell.xib */; };
-		84364180266F8DC40060A9CE /* LockedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436417E266F8DC40060A9CE /* LockedTableViewCell.swift */; };
-		84364181266F8DC40060A9CE /* LockedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8436417F266F8DC40060A9CE /* LockedTableViewCell.xib */; };
 		8436554B26733E2200244A84 /* SecondStage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8436554A26733E2200244A84 /* SecondStage.storyboard */; };
 		8436554D26733E3300244A84 /* SecondStageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436554C26733E3300244A84 /* SecondStageViewController.swift */; };
 		849D29F22671E6660022B08E /* HomeP.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849D29F12671E6660022B08E /* HomeP.storyboard */; };
@@ -61,6 +55,7 @@
 		84A268192671E31200536F14 /* LockCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A268172671E31200536F14 /* LockCollectionViewCell.xib */; };
 		84B050EA2671EA0100F968FC /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B050E92671EA0100F968FC /* HomePageViewController.swift */; };
 		95E254DA2670A65900BB39D8 /* GoJrengColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E254D92670A65900BB39D8 /* GoJrengColors.swift */; };
+		A551C6B4267DF760001DDECF /* HomeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A551C6B3267DF760001DDECF /* HomeHelper.swift */; };
 		A58E3D19267A2BD400F641EA /* FeedbackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58E3D18267A2BD400F641EA /* FeedbackHelper.swift */; };
 		A58E3D1B267A2C1600F641EA /* PageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58E3D1A267A2C1600F641EA /* PageHelper.swift */; };
 		A597393E2673CF40003DE384 /* FeedbackPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A597393C2673CF40003DE384 /* FeedbackPageViewController.swift */; };
@@ -179,7 +174,6 @@
 		55F130F62669EF23008BFC97 /* GoJreng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoJreng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F130F92669EF23008BFC97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55F130FB2669EF23008BFC97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		55F131002669EF23008BFC97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55F131032669EF23008BFC97 /* GoJreng.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoJreng.xcdatamodel; sourceTree = "<group>"; };
 		55F131052669EF26008BFC97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55F131082669EF26008BFC97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -190,14 +184,9 @@
 		55F1311A2669EF26008BFC97 /* GoJrengUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoJrengUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F1311E2669EF26008BFC97 /* GoJrengUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoJrengUITests.swift; sourceTree = "<group>"; };
 		55F131202669EF26008BFC97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55F131352669EF9A008BFC97 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		55F131DA2672002E008BFC97 /* ExitPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitPresentationController.swift; sourceTree = "<group>"; };
 		55F131E226720187008BFC97 /* ExitOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExitOverlayView.xib; sourceTree = "<group>"; };
 		55F131EF26720A63008BFC97 /* ExitOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitOverlayView.swift; sourceTree = "<group>"; };
-		8436416F266F76B40060A9CE /* UnlockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockTableViewCell.swift; sourceTree = "<group>"; };
-		84364170266F76B40060A9CE /* UnlockTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnlockTableViewCell.xib; sourceTree = "<group>"; };
-		8436417E266F8DC40060A9CE /* LockedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedTableViewCell.swift; sourceTree = "<group>"; };
-		8436417F266F8DC40060A9CE /* LockedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockedTableViewCell.xib; sourceTree = "<group>"; };
 		8436554A26733E2200244A84 /* SecondStage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondStage.storyboard; sourceTree = "<group>"; };
 		8436554C26733E3300244A84 /* SecondStageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondStageViewController.swift; sourceTree = "<group>"; };
 		849D29F12671E6660022B08E /* HomeP.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeP.storyboard; sourceTree = "<group>"; };
@@ -207,6 +196,7 @@
 		84A268172671E31200536F14 /* LockCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockCollectionViewCell.xib; sourceTree = "<group>"; };
 		84B050E92671EA0100F968FC /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		95E254D92670A65900BB39D8 /* GoJrengColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoJrengColors.swift; sourceTree = "<group>"; };
+		A551C6B3267DF760001DDECF /* HomeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHelper.swift; sourceTree = "<group>"; };
 		A58E3D18267A2BD400F641EA /* FeedbackHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackHelper.swift; sourceTree = "<group>"; };
 		A58E3D1A267A2C1600F641EA /* PageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHelper.swift; sourceTree = "<group>"; };
 		A597393C2673CF40003DE384 /* FeedbackPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackPageViewController.swift; sourceTree = "<group>"; };
@@ -395,7 +385,6 @@
 				55F131342669EF58008BFC97 /* Mode3 */,
 				55F131332669EF52008BFC97 /* Mode2 */,
 				84044D922671D94400196E42 /* HomePage */,
-				55F131312669EF46008BFC97 /* Home */,
 				A5CCC0AB267374A7006F2F42 /* Feedback */,
 				55F1312F2669EF30008BFC97 /* Utils */,
 				55F130F92669EF23008BFC97 /* AppDelegate.swift */,
@@ -432,19 +421,6 @@
 				55F131402669F06F008BFC97 /* Model */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		55F131312669EF46008BFC97 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				55F130FF2669EF23008BFC97 /* Main.storyboard */,
-				55F131352669EF9A008BFC97 /* HomeViewController.swift */,
-				8436416F266F76B40060A9CE /* UnlockTableViewCell.swift */,
-				84364170266F76B40060A9CE /* UnlockTableViewCell.xib */,
-				8436417E266F8DC40060A9CE /* LockedTableViewCell.swift */,
-				8436417F266F8DC40060A9CE /* LockedTableViewCell.xib */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		55F131332669EF52008BFC97 /* Mode2 */ = {
@@ -489,6 +465,7 @@
 				84A268172671E31200536F14 /* LockCollectionViewCell.xib */,
 				849D29F12671E6660022B08E /* HomeP.storyboard */,
 				84B050E92671EA0100F968FC /* HomePageViewController.swift */,
+				A551C6B3267DF760001DDECF /* HomeHelper.swift */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -806,17 +783,14 @@
 				0BD9BB4C2673A8A9005DD71E /* f#m.mp3 in Resources */,
 				0BD9BB3A2673A8A9005DD71E /* C.mp3 in Resources */,
 				0BD9BB402673A8A9005DD71E /* D#.mp3 in Resources */,
-				55F131012669EF23008BFC97 /* Main.storyboard in Resources */,
 				0BD9BB412673A8A9005DD71E /* gm.mp3 in Resources */,
 				0BD9BB462673A8A9005DD71E /* dm.mp3 in Resources */,
 				0BD9BB492673A8A9005DD71E /* G#.mp3 in Resources */,
 				55F131E326720187008BFC97 /* ExitOverlayView.xib in Resources */,
 				0BD9BB392673A8A9005DD71E /* B.mp3 in Resources */,
-				84364172266F76B40060A9CE /* UnlockTableViewCell.xib in Resources */,
 				0BD9BB422673A8A9005DD71E /* fm.mp3 in Resources */,
 				0BD9BB3C2673A8A9005DD71E /* G.mp3 in Resources */,
 				0BD9BB442673A8A9005DD71E /* g#m.mp3 in Resources */,
-				84364181266F8DC40060A9CE /* LockedTableViewCell.xib in Resources */,
 				0BD9BB3E2673A8A9005DD71E /* D.mp3 in Resources */,
 				0BD9BB382673A8A9005DD71E /* am.mp3 in Resources */,
 				0BD9BB4A2673A8A9005DD71E /* d#m.mp3 in Resources */,
@@ -837,7 +811,6 @@
 				B5D56DE72673B417000E358E /* chord4-4.mp3 in Resources */,
 				B5D56DF82673B417000E358E /* major-3.mp3 in Resources */,
 				B5D56E0B2673B417000E358E /* chord3-5.mp3 in Resources */,
-				55F131012669EF23008BFC97 /* Main.storyboard in Resources */,
 				B5D56DDC2673B417000E358E /* chord2-3.mp3 in Resources */,
 				B5D56DDE2673B417000E358E /* chord2-6.mp3 in Resources */,
 				B5D56DFF2673B417000E358E /* minor-6.mp3 in Resources */,
@@ -845,9 +818,7 @@
 				B5D56DF92673B417000E358E /* major-2.mp3 in Resources */,
 				B54233FD2677647F000DB5D2 /* correctAnswer.mp3 in Resources */,
 				55F131E326720187008BFC97 /* ExitOverlayView.xib in Resources */,
-				84364172266F76B40060A9CE /* UnlockTableViewCell.xib in Resources */,
 				84A268122671DCCD00536F14 /* UnlockCollectionViewCell.xib in Resources */,
-				84364181266F8DC40060A9CE /* LockedTableViewCell.xib in Resources */,
 				B5D56E032673B417000E358E /* minor-9.mp3 in Resources */,
 				B5D56E052673B417000E358E /* major-8.mp3 in Resources */,
 				B5D56DE02673B417000E358E /* chord2-5.mp3 in Resources */,
@@ -855,10 +826,8 @@
 				B5D56DF42673B417000E358E /* major-0.mp3 in Resources */,
 				A597393F2673CF40003DE384 /* FeedbackPage.storyboard in Resources */,
 				B5D56DF52673B417000E358E /* minor-10.mp3 in Resources */,
-				84364172266F76B40060A9CE /* UnlockTableViewCell.xib in Resources */,
 				B5D56DE62673B417000E358E /* chord4-5.mp3 in Resources */,
 				B5D56DFB2673B417000E358E /* minor-0.mp3 in Resources */,
-				84364181266F8DC40060A9CE /* LockedTableViewCell.xib in Resources */,
 				B5D56DDD2673B417000E358E /* chord2-2.mp3 in Resources */,
 				B5D56DEA2673B417000E358E /* chord4-3.mp3 in Resources */,
 				B5D56DE52673B417000E358E /* chord4-7.mp3 in Resources */,
@@ -889,16 +858,14 @@
 			files = (
 				84A268112671DCCD00536F14 /* UnlockCollectionViewCell.swift in Sources */,
 				8436554D26733E3300244A84 /* SecondStageViewController.swift in Sources */,
-				84364171266F76B40060A9CE /* UnlockTableViewCell.swift in Sources */,
 				A597393E2673CF40003DE384 /* FeedbackPageViewController.swift in Sources */,
 				55F131F026720A63008BFC97 /* ExitOverlayView.swift in Sources */,
-				84364180266F8DC40060A9CE /* LockedTableViewCell.swift in Sources */,
 				0B64588F2673643D005DAD2B /* Mode1ViewController.swift in Sources */,
-				55F131362669EF9A008BFC97 /* HomeViewController.swift in Sources */,
 				A58E3D19267A2BD400F641EA /* FeedbackHelper.swift in Sources */,
 				55F131042669EF23008BFC97 /* GoJreng.xcdatamodeld in Sources */,
 				84A268182671E31200536F14 /* LockCollectionViewCell.swift in Sources */,
 				55F130FA2669EF23008BFC97 /* AppDelegate.swift in Sources */,
+				A551C6B4267DF760001DDECF /* HomeHelper.swift in Sources */,
 				0B348D582672089400404EF4 /* ModalityViewController.swift in Sources */,
 				55F131DB2672002E008BFC97 /* ExitPresentationController.swift in Sources */,
 				84B050EA2671EA0100F968FC /* HomePageViewController.swift in Sources */,
@@ -944,14 +911,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		55F130FF2669EF23008BFC97 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				55F131002669EF23008BFC97 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		55F131072669EF26008BFC97 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1085,13 +1044,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 99GMPVPXYW;
+				DEVELOPMENT_TEAM = N6T98R4V55;
 				INFOPLIST_FILE = GoJreng/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = AppleAcademy.GoJreng;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = team10.GoJreng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1104,13 +1064,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 99GMPVPXYW;
+				DEVELOPMENT_TEAM = N6T98R4V55;
 				INFOPLIST_FILE = GoJreng/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = AppleAcademy.GoJreng;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = team10.GoJreng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

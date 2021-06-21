@@ -28,6 +28,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     var lifeCount = 3
     var qIndex = 0
     var score = 0
+    var isShowingFeedBack = false
+    var timerInstance: Timer?
     
     var highScore: Int = 0
     
@@ -42,12 +44,14 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         self.minorButton.clipsToBounds = true
         
 //        test question
-        setUpQuestionsStage()
+        if majorQuestionsAnswers.count == 0{
+            setUpQuestionsStage()
+        }
         questionArray = majorQuestionsAnswers + minorQuestionsAnswers
         questionArray?.shuffle()
-
+        
 //        timer setup
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+        timerInstance = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         
         playQuestion(index: qIndex)
     }
@@ -75,12 +79,16 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         player?.stop()
         soundIsPlaying = false
         checkAnswer(choice: "major", button: majorButton)
+        majorButton.isEnabled = false
+        minorButton.isEnabled = false
     }
     
     @IBAction func minorTouched(_ sender: Any) {
         player?.stop()
         soundIsPlaying = false
         checkAnswer(choice: "minor", button: minorButton)
+        majorButton.isEnabled = false
+        minorButton.isEnabled = false
     }
     
     func checkAnswer(choice: String, button: UIButton) {
@@ -139,6 +147,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     
     func playSound(soundFileName: String){
         let fileUrl = Bundle.main.path(forResource: soundFileName, ofType: "mp3")
+        playButton.isEnabled = false
         do {
             try AVAudioSession.sharedInstance().setMode(.default)
             try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
@@ -163,8 +172,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     
 //    Check if audio finished playing
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        print("calledx")
         soundIsPlaying = false
+        playButton.isEnabled = true
     }
     
     @IBAction func testGameover(_ sender: Any) {
@@ -189,8 +198,13 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
             timer -= 1
             timerLabel.text = String(timer)
         }
+        else {
+            checkFinished()
+        }
     }
     func checkFinished(){
+        majorButton.backgroundColor = GoJrengColors.WindsorTan
+        minorButton.backgroundColor = GoJrengColors.WindsorTan
         if score <= highScore{
             //score = highScore
             print("Masih Kurang")
@@ -202,37 +216,41 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
 //        life
         if lifeCount > 0{
 //            check if time's up
-            if timer <= 0{//ggl
-                //showHomePage()
-                //feedbackSequence()
+            if timer <= 0 && !isShowingFeedBack{//ggl
+                isShowingFeedBack = true
+                timerInstance?.invalidate()
+                timerInstance = nil
                 PageHelper.showFeedback(stgPlayed: 1, stgScore: score, currentStoryBoard: self)
                 return
             }
             if soundIsPlaying == false && qIndex >= questionArray!.count{
-                print("finished")//bhsl
-                //showHomePage()
-                //feedbackSequence()
-                PageHelper.showFeedback(stgPlayed: 1, stgScore: score, currentStoryBoard: self)
-                return
+                print("finished 24, randomizing new arr")//bhsl
+                qIndex = 0
+                questionArray = questionArray?.shuffled()
+//                PageHelper.showFeedback(stgPlayed: 1, stgScore: score, currentStoryBoard: self)
+//                return
             }
             print("continue + " + String(qIndex))
             animatePlayButton{ (success) -> Void in
                 if success {
-//                    restoreButtonPosition()
                     playQuestion(index: qIndex)
+                    majorButton.isEnabled = true
+                    minorButton.isEnabled = true
                 }
             }
         }
 //        dead
         else{//ggl
+            timerInstance?.invalidate()
+            timerInstance = nil
             PageHelper.showFeedback(stgPlayed: 1, stgScore: score, currentStoryBoard: self)
-            //showHomePage()
-            //feedbackSequence()
             return
         }
     }
     
     func animatePlayButton(completion: (_ success: Bool) -> Void){
+        majorButton.isEnabled = false
+        minorButton.isEnabled = false
         let midy = self.playButton.frame.origin.y
         let righty = self.rightPlayButton.frame.origin.y
 //        let initxActual = self.playButton.frame.midX
@@ -244,10 +262,10 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
             
             
             self.rightPlayButton.frame = CGRect(x: self.view.frame.midX - self.rightPlayButton.frame.width/2, y: righty, width: self.rightPlayButton.frame.width, height: self.rightPlayButton.frame.height)
-
+            self.playButton.isEnabled = true
             },completion: { finish in
                 UIView.animate(withDuration: 0.7, delay: 0,options: UIView.AnimationOptions.curveEaseOut,animations: {
-                self.rightPlayButton.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+                self.rightPlayButton.transform = CGAffineTransform(scaleX: 1, y: 1)
             },
                 completion:  { finish in
                     self.restoreButtonPosition()
@@ -264,6 +282,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         
 //        let rmid = self.view.frame.midX
         rightPlayButton.frame = CGRect(x: 500, y: playButton.frame.origin.y, width: size/1.5, height: size/1.5)
+        majorButton.isEnabled = true
+        minorButton.isEnabled = true
     }
 
 }

@@ -41,17 +41,17 @@ class FeedbackHelper{
     
     switch stagePlayed {
     case 1:
-      defaults.setValue(newHighScore, forKey: "hS1")
+      defaults.set(newHighScore, forKey: "hS1")
     case 2:
-      defaults.setValue(newHighScore, forKey: "hS2")
+      defaults.set(newHighScore, forKey: "hS2")
     case 3:
-      defaults.setValue(newHighScore, forKey: "hS3")
+      defaults.set(newHighScore, forKey: "hS3")
     default:
       break
     }
   }
 
-  static func getFeedbackPage (curHighScore: Int, stgScore: Int) -> Int{
+  static func getFeedbackPage (curHighScore: Int, stgScore: Int, stagePlayed: Int) -> Int{
 
     if stgScore == 0{
       //feedback type 1 - GameOver
@@ -61,7 +61,9 @@ class FeedbackHelper{
       //feedback type 0 - Congrats
       return 0
     }
-
+    else if stagePlayed == 2 || stagePlayed == 3 && stgScore == 1000{ //level done
+      return 2
+    }
     else{
       //feedback type 1 - GameOver
       return 1

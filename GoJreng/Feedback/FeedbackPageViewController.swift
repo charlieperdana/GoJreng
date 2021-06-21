@@ -42,7 +42,7 @@ class FeedbackPageViewController: UIViewController {
       secondaryButton.layer.borderColor = #colorLiteral(red: 0.9155033827, green: 0.8542029858, blue: 0.7580156922, alpha: 1)
       
       currentHighScore = FeedbackHelper.getCurrentHighScore(stagePlayed: stagePlayed ?? 0)
-      feedbackType = FeedbackHelper.getFeedbackPage(curHighScore: currentHighScore ?? 0, stgScore: stageScore ?? 0)
+      feedbackType = FeedbackHelper.getFeedbackPage(curHighScore: currentHighScore ?? 0, stgScore: stageScore ?? 0, stagePlayed: stagePlayed ?? 0)
       newHighScore = FeedbackHelper.highScoreChanger(stgScore: stageScore ?? 0, curHighScore: currentHighScore ?? 0)
       FeedbackType()
       setupStackView()
@@ -50,7 +50,7 @@ class FeedbackPageViewController: UIViewController {
     }
 
   @IBAction func primaryButtonAction(_ sender: Any) {
-    if feedbackType == 0 {
+    if feedbackType == 0 || feedbackType == 2 {
       //greatJob -> homePage
       FeedbackHelper.saveHighScore(stagePlayed: stagePlayed ?? 0, newHighScore: newHighScore ?? 0)
       PageHelper.showHomePage(currentStoryBoard: self)
@@ -102,6 +102,18 @@ class FeedbackPageViewController: UIViewController {
       stackViewFeedback.setCustomSpacing(40, after: scoreLabel)
       stackViewFeedback.setCustomSpacing(24, after: newHighScoreLabel)
 
+    case 2: //Level Done
+      feedbackBG.image = #imageLiteral(resourceName: "feedbackGreatJob")
+      feedbackTitleLabel.text = "Perfect!"
+      feedbackImage.image = #imageLiteral(resourceName: "win")
+      scoreLabel.text = "\(stageScore ?? 0)"
+      feedbackDescLabel.text = "Congratulations! \nYou have completed this level!"
+      primaryButton.setTitle("Continue", for: .normal)
+      secondaryButton.isHidden = true
+      newHighScoreLabel.isHidden = true
+
+      stackViewBottom.constant = 56
+
     default:
       break
     }
@@ -118,6 +130,7 @@ class FeedbackPageViewController: UIViewController {
     stackViewFeedback.setCustomSpacing(20, after: primaryButton)
     stackViewFeedback.setCustomSpacing(0, after: secondaryButton)
 
+    //autosize text
     feedbackDescLabel.adjustsFontSizeToFitWidth = true
     feedbackDescLabel.minimumScaleFactor = 0.2
     feedbackDescLabel.numberOfLines = 2
