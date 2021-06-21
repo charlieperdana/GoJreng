@@ -51,7 +51,7 @@ class FeedbackHelper{
     }
   }
 
-  static func getFeedbackPage (curHighScore: Int, stgScore: Int) -> Int{
+  static func getFeedbackPage (curHighScore: Int, stgScore: Int, stagePlayed: Int) -> Int{
 
     if stgScore == 0{
       //feedback type 1 - GameOver
@@ -61,7 +61,9 @@ class FeedbackHelper{
       //feedback type 0 - Congrats
       return 0
     }
-
+    else if stagePlayed == 2 || stagePlayed == 3 && stgScore == 1000{ //level done
+      return 2
+    }
     else{
       //feedback type 1 - GameOver
       return 1
