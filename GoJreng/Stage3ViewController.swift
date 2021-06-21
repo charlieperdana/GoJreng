@@ -17,11 +17,18 @@ class Stage3ViewController: UIViewController{
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     
+    //Constraint
+    @IBOutlet weak var leadingAnswer1Constraint: NSLayoutConstraint!
+    @IBOutlet weak var leadingAnswer4Constraint: NSLayoutConstraint!
+    @IBOutlet weak var trailingAnswer4Constraint: NSLayoutConstraint!
+    @IBOutlet weak var trailingAnswer3Constraint: NSLayoutConstraint!
+    
+    
     //var currentQuestion: Questions?
     var seconds = 30
     var timer = Timer()
-    var currentQuestionIndex: Int = 0
-//    var questionSoundsArray: [String] = []
+    var currentQuestionIndex: Int = 8
+    //    var questionSoundsArray: [String] = []
     var score: Int = 0
     var highScore: Int = 0
     var answer: [Answers] = []
@@ -56,16 +63,22 @@ class Stage3ViewController: UIViewController{
         
         //setupQuestions
         setUpQuestionsStage()
-        
         randomQuestionsArray =
             questionsForStage3[0..<4].shuffled() +
             questionsForStage3[4..<7].shuffled() +
             questionsForStage3[7..<10].shuffled()
-
+        
+        //timer
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
+        
+        playQuestionSound(questionSoundFileName: randomQuestionsArray[currentQuestionIndex].questionSound)
+        
+        
+        
         //Set questions sounds
-//        for i in 0..<(stage3.questionNumber) {
-//            questionSoundsArray.append(questionsForStage3[i].questionSound)
-//        }
+        //        for i in 0..<(stage3.questionNumber) {
+        //            questionSoundsArray.append(questionsForStage3[i].questionSound)
+        //        }
         //Check Button is disabled at first
         checkButton.isEnabled = false
         checkButton.backgroundColor = #colorLiteral(red: 0.5803921569, green: 0.5529411765, blue: 0.5254901961, alpha: 1)
@@ -87,11 +100,12 @@ class Stage3ViewController: UIViewController{
         
     }
     
-//    override func viewDidLayoutSubviews() {
-//        print("This loaaad")
-//    }
+    //    override func viewDidLayoutSubviews() {
+    //        print("This loaaad")
+    //    }
     
     func updateQuestion() {
+        
         answer = randomQuestionsArray[currentQuestionIndex].answer
         seconds = 30
         concateAnswer = ""
@@ -119,15 +133,25 @@ class Stage3ViewController: UIViewController{
             answer1.isHidden = true
             answer4.isHidden = true
             
-//            answer2.frame = CGRect(x: 113, y: 474, width: 72, height: 62)
-//            answer3.frame = CGRect(x: 204, y: 474, width: 72, height: 62)
+            //            answer2.frame = CGRect(x: 113, y: 474, width: 72, height: 62)
+            //            answer3.frame = CGRect(x: 204, y: 474, width: 72, height: 62)
             
         } else if jumlah == 3 {
-            answer3.isHidden = true
-            
-            
+            answer4.isHidden = true
+            leadingAnswer1Constraint.constant = 67
+//            leadingAnswer4Constraint.constant = 20
+//            trailingAnswer4Constraint.constant = 67
+            trailingAnswer3Constraint.constant = 67
+        } else if jumlah == 8 {
+            answer1.isHidden = false
+            answer2.isHidden = false
+            answer3.isHidden = false
+            answer4.isHidden = false
+            leadingAnswer1Constraint.constant = 21
+            trailingAnswer3Constraint.constant = 113
         }
     }
+    
     
     @IBAction func checkButtonTapped(_ sender: UIButton) {
         if questionSound != nil {
@@ -164,6 +188,8 @@ class Stage3ViewController: UIViewController{
         }
         
         optionChordCollectonView.reloadData()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
+        playQuestionSound(questionSoundFileName: randomQuestionsArray[currentQuestionIndex].questionSound)
     }
     @objc func timerCounter() {
         seconds -= 1
@@ -205,7 +231,6 @@ class Stage3ViewController: UIViewController{
     }
     
     @IBAction func playButtonTapped(_ sender: UIButton) {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
         playQuestionSound(questionSoundFileName: randomQuestionsArray[currentQuestionIndex].questionSound)
     }
     
@@ -422,16 +447,16 @@ extension Stage3ViewController: UICollectionViewDataSource, UICollectionViewDele
         
         //change the cell after drag
         if successDrop == true {
-//            itemsChord[indexPath.row] = "noChord"
-//            self.concateAnswer += "\(itemsChord[indexPath.row])-"
+            //            itemsChord[indexPath.row] = "noChord"
+            //            self.concateAnswer += "\(itemsChord[indexPath.row])-"
         }
         
         checkButton.isEnabled = true
         checkButton.backgroundColor = #colorLiteral(red: 0.631372549, green: 0.3490196078, blue: 0.09019607843, alpha: 1)
         checkButton.setTitleColor(#colorLiteral(red: 0.9058823529, green: 0.8549019608, blue: 0.768627451, alpha: 1), for: .normal)
         return [dragItem]
-        
     }
+    
 }
 
 extension Stage3ViewController: UIDragInteractionDelegate{
@@ -526,6 +551,67 @@ extension Stage3ViewController : UIDropInteractionDelegate {
         
     }
 }
+
+extension Stage3ViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        //Where elements_count is the count of all your items in that
+        //Collection view...
+        if collectionView == self.optionChordCollectonView{
+            let cellCount = CGFloat(itemsChord.count)
+            let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+            let cellWidth = flowLayout.itemSize.width + flowLayout.minimumInteritemSpacing
+            //If the cell count is zero, there is no point in calculating anything.
+            if cellCount == 2 {
+                
+                
+                //20.00 was just extra spacing I wanted to add to my cell.
+                let totalCellWidth = cellWidth*cellCount - 20.00 * (cellCount-1)
+                let contentWidth = collectionView.frame.size.width - collectionView.contentInset.left - collectionView.contentInset.right
+                if (totalCellWidth < contentWidth) {
+                    //If the number of cells that exists take up less room than the
+                    //collection view width... then there is an actual point to centering them.
+                    
+                    //Calculate the right amount of padding to center the cells.
+                    let padding = (contentWidth - totalCellWidth) / 2.0
+                    return UIEdgeInsets(top: 0, left: padding, bottom: 0, right: padding)
+                } else {
+                    //Pretty much if the number of cells that exist take up
+                    //more room than the actual collectionView width, there is no
+                    // point in trying to center them. So we leave the default behavior.
+                    return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+                }
+                
+            }
+            else if cellCount == 3 {
+                //20.00 was just extra spacing I wanted to add to my cell.
+                let totalCellWidth = cellWidth*cellCount + 1.00 * (cellCount-1)
+                let contentWidth = collectionView.frame.size.width - collectionView.contentInset.left - collectionView.contentInset.right
+                if (totalCellWidth < contentWidth) {
+                    //If the number of cells that exists take up less room than the
+                    //collection view width... then there is an actual point to centering them.
+                    
+                    //Calculate the right amount of padding to center the cells.
+                    let padding = (contentWidth - totalCellWidth) / 2.0
+                    return UIEdgeInsets(top: 0, left: padding, bottom: 0, right: padding)
+                } else {
+                    //Pretty much if the number of cells that exist take up
+                    //more room than the actual collectionView width, there is no
+                    // point in trying to center them. So we leave the default behavior.
+                    return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+                }
+                
+            }
+            
+            
+            
+            
+        }
+        return UIEdgeInsets.zero
+    }
+    
+}
+
 
 extension Stage3ViewController: ModalityViewControllerDelegate {
     func didUpdatePlaceholder() {
