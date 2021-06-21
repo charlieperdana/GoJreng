@@ -12,8 +12,11 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      run: swift build -v
-    - name: Run tests
-      run: swift test -v
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - uses: sersoft-gmbh/xcodebuild-action@v1
+        with:
+          project: GoJreng.xcodeproj
+          scheme: GoJreng
+          destination: platform=iOS Simulator,OS=14.4,name=iPhone 12
+          action: build
