@@ -214,6 +214,42 @@ var questionsForStage2 = [
         
     ]),
     
+    //E
+    Questions(questionSound: "\(majorQuestionsAnswers[7])", questionSoundName: "E", answer: [
+        Answers(answerSound: "\(majorQuestionsAnswers[5])", answerLabel: "D", isCorrect: false),
+        Answers(answerSound: "\(minorQuestionsAnswers[7])", answerLabel: "Em", isCorrect: false),
+        Answers(answerSound: "\(majorQuestionsAnswers[7])", answerLabel: "E", isCorrect: true),
+        Answers(answerSound: "\(minorQuestionsAnswers[2])", answerLabel: "Bm", isCorrect: false),
+        
+    ]),
+    
+    //B
+    Questions(questionSound: "\(majorQuestionsAnswers[2])", questionSoundName: "B", answer: [
+        Answers(answerSound: "\(majorQuestionsAnswers[2])", answerLabel: "B", isCorrect: true),
+        Answers(answerSound: "\(minorQuestionsAnswers[6])", answerLabel: "Dm", isCorrect: false),
+        Answers(answerSound: "\(majorQuestionsAnswers[0])", answerLabel: "A", isCorrect: false),
+        Answers(answerSound: "\(majorQuestionsAnswers[4])", answerLabel: "C#", isCorrect: false),
+        
+    ]),
+    
+    //Em
+    Questions(questionSound: "\(minorQuestionsAnswers[7])", questionSoundName: "Em", answer: [
+        Answers(answerSound: "\(minorQuestionsAnswers[7])", answerLabel: "Em", isCorrect: true),
+        Answers(answerSound: "\(majorQuestionsAnswers[10])", answerLabel: "G", isCorrect: false),
+        Answers(answerSound: "\(minorQuestionsAnswers[5])", answerLabel: "D#m", isCorrect: false),
+        Answers(answerSound: "\(minorQuestionsAnswers[8])", answerLabel: "F#m", isCorrect: false),
+        
+    ]),
+    
+    //Dm
+    Questions(questionSound: "\(minorQuestionsAnswers[6])", questionSoundName: "Dm", answer: [
+        Answers(answerSound: "\(majorQuestionsAnswers[6])", answerLabel: "D#", isCorrect: false),
+        Answers(answerSound: "\(minorQuestionsAnswers[6])", answerLabel: "Dm", isCorrect: true),
+        Answers(answerSound: "\(minorQuestionsAnswers[11])", answerLabel: "Gm", isCorrect: false),
+        Answers(answerSound: "\(majorQuestionsAnswers[8])", answerLabel: "F", isCorrect: false),
+        
+    ]),
+    
     //2 chord
     
     //C-Am
@@ -243,6 +279,33 @@ var questionsForStage2 = [
         
     ]),
     
+    //F-G
+    Questions(questionSound: "\(chord2Progressions[7])", questionSoundName: "F-G", answer: [
+        Answers(answerSound: "\(chord2Progressions[1])", answerLabel: "C-Am", isCorrect: false),
+        Answers(answerSound: "\(chord2Progressions[8])", answerLabel: "G-A", isCorrect: false),
+        Answers(answerSound: "\(chord2Progressions[3])", answerLabel: "D-Bm", isCorrect: false),
+        Answers(answerSound: "\(chord2Progressions[7])", answerLabel: "F-G", isCorrect: true),
+        
+    ]),
+    
+    //Em-A
+    Questions(questionSound: "\(chord2Progressions[6])", questionSoundName: "Em-A", answer: [
+        Answers(answerSound: "\(chord2Progressions[5])", answerLabel: "Dm-G", isCorrect: false),
+        Answers(answerSound: "\(chord2Progressions[0])", answerLabel: "A-D", isCorrect: false),
+        Answers(answerSound: "\(chord2Progressions[6])", answerLabel: "Em-A", isCorrect: true),
+        Answers(answerSound: "\(chord2Progressions[4])", answerLabel: "D-G", isCorrect: false),
+        
+    ]),
+    
+    //D-Bm
+    Questions(questionSound: "\(chord2Progressions[3])", questionSoundName: "D-Bm", answer: [
+        Answers(answerSound: "\(chord2Progressions[3])", answerLabel: "D-Bm", isCorrect: true),
+        Answers(answerSound: "\(chord2Progressions[9])", answerLabel: "G-C", isCorrect: false),
+        Answers(answerSound: "\(chord2Progressions[5])", answerLabel: "Dm-G", isCorrect: false),
+        Answers(answerSound: "\(chord2Progressions[2])", answerLabel: "C-F", isCorrect: false),
+        
+    ]),
+    
     //3 chord
     
     //C-Am-Dm
@@ -262,12 +325,40 @@ var questionsForStage2 = [
         Answers(answerSound: "\(chord3Progressions[0])", answerLabel: "A-D-E", isCorrect: false),
         
     ]),
+    
     //Dm-G-C
     Questions(questionSound: "\(chord3Progressions[5])", questionSoundName: "Dm-G-C", answer: [
         Answers(answerSound: "\(chord3Progressions[4])", answerLabel: "D-G-A", isCorrect: false),
         Answers(answerSound: "\(chord3Progressions[8])", answerLabel: "G-C-D", isCorrect: false),
         Answers(answerSound: "\(chord3Progressions[6])", answerLabel: "E-A-B", isCorrect: false),
         Answers(answerSound: "\(chord3Progressions[5])", answerLabel: "Dm-G-C", isCorrect: true),
+        
+    ]),
+    
+    //D-Bm-Em
+    Questions(questionSound: "\(chord3Progressions[3])", questionSoundName: "D-Bm-Em", answer: [
+        Answers(answerSound: "\(chord3Progressions[3])", answerLabel: "D-Bm-Em", isCorrect: true),
+        Answers(answerSound: "\(chord3Progressions[0])", answerLabel: "A-D-E", isCorrect: false),
+        Answers(answerSound: "\(chord3Progressions[5])", answerLabel: "Dm-G-C", isCorrect: false),
+        Answers(answerSound: "\(chord3Progressions[2])", answerLabel: "C-F-G", isCorrect: false),
+        
+    ]),
+    
+    //E-A-B
+    Questions(questionSound: "\(chord3Progressions[6])", questionSoundName: "E-A-B", answer: [
+        Answers(answerSound: "\(chord3Progressions[1])", answerLabel: "C-Am-Dm", isCorrect: false),
+        Answers(answerSound: "\(chord3Progressions[0])", answerLabel: "A-D-E", isCorrect: false),
+        Answers(answerSound: "\(chord3Progressions[6])", answerLabel: "E-A-B", isCorrect: true),
+        Answers(answerSound: "\(chord3Progressions[4])", answerLabel: "D-G-A", isCorrect: false),
+        
+    ]),
+    
+    //D-G-A
+    Questions(questionSound: "\(chord3Progressions[4])", questionSoundName: "D-G-A", answer: [
+        Answers(answerSound: "\(chord3Progressions[7])", answerLabel: "E-C#m-F#m", isCorrect: false),
+        Answers(answerSound: "\(chord3Progressions[9])", answerLabel: "G-Em-Am", isCorrect: false),
+        Answers(answerSound: "\(chord3Progressions[1])", answerLabel: "C-Am-Dm", isCorrect: false),
+        Answers(answerSound: "\(chord3Progressions[4])", answerLabel: "D-G-A", isCorrect: true),
         
     ]),
 ]
