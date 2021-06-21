@@ -23,6 +23,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     
     var player: AVAudioPlayer!
     var timerSound: AVAudioPlayer!
+    var soundEffectPlayer: AVAudioPlayer!
     var timer = 90
     
     var soundIsPlaying = false
@@ -92,6 +93,25 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         minorButton.isEnabled = false
     }
     
+    func checkAnswerSoundEffect(isCorrect: Bool){
+        var name = ""
+        if isCorrect{
+            name = "correctAnswer"
+        } else {
+            name = "wrongAnswer"
+        }
+        guard let soundFile = Bundle.main.path(forResource: name, ofType: "mp3") else {return}
+        let urlSound = URL(fileURLWithPath: soundFile )
+        do {
+            soundEffectPlayer = try AVAudioPlayer(contentsOf: urlSound)
+            soundEffectPlayer.volume = 0.5
+            soundEffectPlayer.play()
+        }
+        catch {
+            print(error)
+        }
+    }
+    
     func checkAnswer(choice: String, button: UIButton) {
         print("CHOICE: " + choice)
         var chord: String
@@ -110,7 +130,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         else{ //if major
             isCorrect = choice == "major"
         }
-        
+        checkAnswerSoundEffect(isCorrect: isCorrect)
         if (qIndex < questionArray!.count){
             qIndex += 1
         }
@@ -128,6 +148,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         scoreLabel.text = String(score)
         let prevColor = button.backgroundColor
         button.backgroundColor = UIColor.green
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             button.backgroundColor = prevColor //change it back to original
             self.checkFinished()
@@ -139,6 +161,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         lifeCount -= 1
         let prevColor = button.backgroundColor
         button.backgroundColor = UIColor.red
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.warning)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             button.backgroundColor = prevColor //change it back to original
             self.checkFinished()

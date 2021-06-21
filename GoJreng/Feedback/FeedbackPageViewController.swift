@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import AVFoundation
 class FeedbackPageViewController: UIViewController {
 
   @IBOutlet weak var feedbackBG: UIImageView!
@@ -25,7 +25,7 @@ class FeedbackPageViewController: UIViewController {
   var stagePlayed: Int?
   var stageScore: Int?
   var currentHighScore: Int?
-
+  var soundPlayer: AVAudioPlayer!
   //feedback type 0 - GreatJob
   //feedback type 1 - GameOver
   var feedbackType: Int?
@@ -86,7 +86,7 @@ class FeedbackPageViewController: UIViewController {
       primaryButton.setTitle("Continue", for: .normal)
       secondaryButton.isHidden = true
       newHighScoreLabel.isHidden = false
-
+      playFeedbackSoundEffect(isCongrats: true)
       stackViewBottom.constant = 56
 
     case 1: //GameOver
@@ -98,7 +98,7 @@ class FeedbackPageViewController: UIViewController {
       primaryButton.setTitle("Try Again", for: .normal)
       secondaryButton.setTitle("Close", for: .normal)
       newHighScoreLabel.isHidden = true
-
+      playFeedbackSoundEffect(isCongrats: false)
       stackViewFeedback.setCustomSpacing(40, after: scoreLabel)
       stackViewFeedback.setCustomSpacing(24, after: newHighScoreLabel)
 
@@ -111,7 +111,7 @@ class FeedbackPageViewController: UIViewController {
       primaryButton.setTitle("Continue", for: .normal)
       secondaryButton.isHidden = true
       newHighScoreLabel.isHidden = true
-
+      playFeedbackSoundEffect(isCongrats: true)
       stackViewBottom.constant = 56
 
     default:
@@ -135,6 +135,24 @@ class FeedbackPageViewController: UIViewController {
     feedbackDescLabel.minimumScaleFactor = 0.2
     feedbackDescLabel.numberOfLines = 2
   }
+    func playFeedbackSoundEffect(isCongrats: Bool){
+        var name = ""
+        if isCongrats{
+            name = "congrats"
+        } else {
+            name = "over"
+        }
+        guard let soundFile = Bundle.main.path(forResource: name, ofType: "wav") else {return}
+        let urlSound = URL(fileURLWithPath: soundFile )
+        do {
+            soundPlayer = try AVAudioPlayer(contentsOf: urlSound)
+            soundPlayer.volume = 0.5
+            soundPlayer.play()
+        }
+        catch {
+            print(error)
+        }
+    }
 
 }
 
