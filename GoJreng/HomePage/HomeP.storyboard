@@ -65,7 +65,7 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qBD-jR-Mf7">
-                                <rect key="frame" x="64" y="467" width="347" height="80"/>
+                                <rect key="frame" x="64" y="447" width="295" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lockedStageDescriptions" translatesAutoresizingMaskIntoConstraints="NO" id="RbR-kw-Ep6">
@@ -83,7 +83,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s8M-6S-kjh">
-                                <rect key="frame" x="64" y="582" width="347" height="80"/>
+                                <rect key="frame" x="64" y="567" width="295" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lockedStageDescriptions" translatesAutoresizingMaskIntoConstraints="NO" id="4aC-Yl-KH9">
@@ -150,7 +150,7 @@
     </scenes>
     <resources>
         <image name="HomePage" width="390" height="844"/>
-        <image name="lockedStageDescriptions" width="252" height="57"/>
+        <image name="lockedStageDescriptions" width="254" height="57"/>
         <image name="titleGoJreng" width="141" height="53"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
