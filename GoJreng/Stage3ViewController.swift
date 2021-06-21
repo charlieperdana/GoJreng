@@ -11,6 +11,7 @@ class Stage3ViewController: UIViewController{
     
     
     @IBOutlet weak var optionChordCollectonView: UICollectionView!
+    @IBOutlet weak var pageControlCollectonView: UICollectionView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var checkButton: UIButton!
@@ -19,11 +20,15 @@ class Stage3ViewController: UIViewController{
     //var currentQuestion: Questions?
     var seconds = 30
     var timer = Timer()
-    var currentQuestionIndex: Int = 9
-    var questionSoundsArray: [String] = []
+    var currentQuestionIndex: Int = 8
+//    var questionSoundsArray: [String] = []
     var score: Int = 0
+    var highScore: Int = 0
     var answer: [Answers] = []
-    
+    var questionNumberForPageControl: [Int] = []
+    var randomQuestionsArray: [Questions] = [Questions]()
+    var index: [Int] = []
+    var indexPath = IndexPath(row: 0, section: 0)
     //answerPlaceholder
     @IBOutlet weak var answer1: UIImageView!
     @IBOutlet weak var answer2: UIImageView!
@@ -37,26 +42,26 @@ class Stage3ViewController: UIViewController{
     
     
     var selectedIndex = 0
-    //    var itemsChord : [UIImage] = []
     var itemsChord : [String] = []
-    
     var concateAnswer : String = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
-       
-       // print("ini cur index: \(currentQuestionIndex)")
         
         //setupQuestions
         setUpQuestionsStage()
         
+        randomQuestionsArray =
+            questionsForStage3[0..<4].shuffled() +
+            questionsForStage3[4..<7].shuffled() +
+            questionsForStage3[7..<10].shuffled()
+
         //Set questions sounds
-        for i in 0..<(stage3.questionNumber) {
-            questionSoundsArray.append(questionsForStage3[i].questionSound)
-        }
-        
+//        for i in 0..<(stage3.questionNumber) {
+//            questionSoundsArray.append(questionsForStage3[i].questionSound)
+//        }
         //Check Button is disabled at first
         checkButton.isEnabled = false
         checkButton.backgroundColor = #colorLiteral(red: 0.5803921569, green: 0.5529411765, blue: 0.5254901961, alpha: 1)
@@ -65,12 +70,10 @@ class Stage3ViewController: UIViewController{
         
         //        itemsChord = [#imageLiteral(resourceName: "Em"),#imageLiteral(resourceName: "Dm"),#imageLiteral(resourceName: "G"),#imageLiteral(resourceName: "B"),#imageLiteral(resourceName: "A"),#imageLiteral(resourceName: "F"),#imageLiteral(resourceName: "C"),#imageLiteral(resourceName: "Am")]n
         
-        answer = questionsForStage3[currentQuestionIndex].answer
-        
-        for i in 0...(answer.count-2) {
-            itemsChord.append(answer[i].answerLabel)
-        }
-//        itemsChord = ["Em","Dm","G","B","A","F","C","Am"]
+        answer = randomQuestionsArray[currentQuestionIndex].answer
+        questionNumberForPageControl.append(currentQuestionIndex)
+        updateQuestion()
+        //        itemsChord = ["Em","Dm","G","B","A","F","C","Am"]
         optionChordCollectonView.dataSource = self
         optionChordCollectonView.delegate = self
         
@@ -81,10 +84,59 @@ class Stage3ViewController: UIViewController{
     func updateQuestion() {
         seconds = 30
         timeLabel.text = "\(seconds)"
-//        checkButton.isEnabled = false
-//        checkButton.backgroundColor = #colorLiteral(red: 0.5803921569, green: 0.5529411765, blue: 0.5254901961, alpha: 1)
-//        checkButton.setTitleColor(#colorLiteral(red: 0.9058823529, green: 0.8549019608, blue: 0.768627451, alpha: 1), for: .disabled)
-//        optionChordCollectonView.reloadData()
+        for i in 0...(answer.count-2) {
+            itemsChord.append(answer[i].answerLabel)
+        }
+        //        checkButton.isEnabled = false
+        //        checkButton.backgroundColor = #colorLiteral(red: 0.5803921569, green: 0.5529411765, blue: 0.5254901961, alpha: 1)
+        //        checkButton.setTitleColor(#colorLiteral(red: 0.9058823529, green: 0.8549019608, blue: 0.768627451, alpha: 1), for: .disabled)
+        //        optionChordCollectonView.reloadData()
+        
+        pageControlCollectonView.reloadData()
+        
+    }
+    @IBAction func checkButtonTapped(_ sender: UIButton) {
+        //        print(questionsForStage3[currentQuestionIndex].answer.count-1)
+        
+        //        print("Answer "+concateAnswer)
+        
+        if questionSound != nil {
+            questionSound.stop()
+        }
+        
+        timer.invalidate()
+        if timerSound != nil{
+            timerSound.stop()
+        }
+        
+        //If the answer is true
+        var isCorrect = checkAnswer()
+        if(isCorrect){
+            score+=100
+            scoreLabel.text = "\(score)"
+            showCorrectModal()
+            //            goToHome()
+            //            showFeedback()
+        }
+        else {
+            showWrongModal()
+        }
+        print("Current Question Index = \(currentQuestionIndex)")
+        
+        if currentQuestionIndex < randomQuestionsArray.count-1{
+//            print("Question Sound Array : ",questionSoundsArray.count)
+            currentQuestionIndex+=1
+            questionNumberForPageControl.append(currentQuestionIndex)
+            updateQuestion()
+            print("Current question index setelah tap check button : \(currentQuestionIndex)")
+        }
+        
+        else {
+            print("Kalo current index udah 9, ini keprint")
+            showFeedback()
+        }
+        
+        
     }
     @objc func timerCounter() {
         seconds -= 1
@@ -107,13 +159,26 @@ class Stage3ViewController: UIViewController{
         if (seconds==0){
             timer.invalidate()
             questionSound.stop()
-//            seconds = 30
+            showWrongModal()
+            
+            if currentQuestionIndex < randomQuestionsArray.count-1{
+                currentQuestionIndex+=1
+                updateQuestion()
+                print("Current question index setelah tap check button : \(currentQuestionIndex)")
+            }
+            
+            else {
+                print("Kalo current index udah 9, ini keprint")
+                showFeedback()
+                
+                //showFeedback()
+            }
         }
     }
     
     @IBAction func playButtonTapped(_ sender: UIButton) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
-        playQuestionSound(questionSoundFileName: questionSoundsArray[currentQuestionIndex])
+        playQuestionSound(questionSoundFileName: randomQuestionsArray[currentQuestionIndex].questionSound)
     }
     
     func playQuestionSound(questionSoundFileName: String) {
@@ -147,51 +212,6 @@ class Stage3ViewController: UIViewController{
         view.backgroundColor = UIColor(patternImage: UIImage(named: "stage-3") ?? UIImage())
     }
     
-    @IBAction func checkButtonTapped(_ sender: UIButton) {
-//        print(questionsForStage3[currentQuestionIndex].answer.count-1)
-        
-//        print("Answer "+concateAnswer)
-        
-        if questionSound != nil {
-            questionSound.stop()
-        }
-        
-        timer.invalidate()
-        if timerSound != nil{
-            timerSound.stop()
-        }
-        
-        //If the answer is true
-        var isCorrect = checkAnswer()
-        if(isCorrect){
-            score+=100
-            scoreLabel.text = "\(score)"
-            showCorrectModal()
-//            goToHome()
-//            showFeedback()
-        }
-        else {
-            showWrongModal()
-        }
-        print("Current Question Index = \(currentQuestionIndex)")
-        
-        
-        if currentQuestionIndex < questionSoundsArray.count-1{
-            print("Question Sound Array : ",questionSoundsArray.count)
-            currentQuestionIndex+=1
-            updateQuestion()
-            print("Current question index setelah tap check button : \(currentQuestionIndex)")
-        }
-        
-        else {
-            print("Kalo current index udah 9, ini keprint")
-            showFeedback()
-            
-            //showFeedback()
-        }
-        
-        
-    }
     func checkAnswer() -> Bool {
         var finalAnswer = concateAnswer.dropLast(1)
         print(finalAnswer)
@@ -203,6 +223,13 @@ class Stage3ViewController: UIViewController{
         }
     }
     
+    func setPlaceholderDefault() {
+        answer1.image = UIImage(named: "answerPlaceholder3")
+        answer2.image = UIImage(named: "answerPlaceholder3")
+        answer3.image = UIImage(named: "answerPlaceholder3")
+        answer4.image = UIImage(named: "answerPlaceholder3")
+        print("placeholder berhasil diset")
+    }
     func goToHome() {
         
         let homeStoryboard = UIStoryboard(name: "HomeP", bundle: nil)
@@ -218,7 +245,6 @@ class Stage3ViewController: UIViewController{
         fc.stageScore = score
         fc.modalPresentationStyle = .overFullScreen
         fc.modalTransitionStyle = .crossDissolve
-        
         self.present(fc, animated: true)
     }
     
@@ -229,7 +255,10 @@ class Stage3ViewController: UIViewController{
         vc.modalTransitionStyle = .crossDissolve
         vc.indexQuestion = currentQuestionIndex
         vc.delegate = self
+        let controller = ModalityViewController()
+        controller.delegate = self
         present(vc, animated: true)
+        
     }
     
     func showWrongModal() {
@@ -238,9 +267,11 @@ class Stage3ViewController: UIViewController{
         vc.text = answer[answer.count-1].answerLabel
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
+        vc.indexQuestion = currentQuestionIndex
         vc.delegate = self
+        let controller = ModalityViewController()
+        controller.delegate = self
         present(vc, animated: true)
-        
     }
     func setDragAndDropSettings(){
         
@@ -292,15 +323,36 @@ extension Stage3ViewController: UIViewControllerTransitioningDelegate {
 
 extension Stage3ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDragDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return itemsChord.count
-        
+        if collectionView == self.optionChordCollectonView {
+            return itemsChord.count
+        }
+        else {
+            return 10
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell =  collectionView.dequeueReusableCell(withReuseIdentifier:"answerCell", for: indexPath) as! AnswersCollectionVC
-        //        cell.imageOptionChord.image = itemsChord[indexPath.row]
-        cell.imageOptionChord.image = UIImage(named: "\(itemsChord[indexPath.row])")
-        return cell
+        
+        if collectionView == self.optionChordCollectonView {
+            let cell =  collectionView.dequeueReusableCell(withReuseIdentifier:"answerCell", for: indexPath) as! AnswersCollectionVC
+            //        cell.imageOptionChord.image = itemsChord[indexPath.row]
+            cell.imageOptionChord.image = UIImage(named: "\(itemsChord[indexPath.row])")
+            
+            
+            return cell
+        }
+        else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pageControlCell", for: indexPath)
+            
+            if questionNumberForPageControl.contains(indexPath.row) {
+                cell.backgroundColor =  #colorLiteral(red: 0.6327156425, green: 0.3489228785, blue: 0.09062369913, alpha: 1)
+            } else {
+                cell.backgroundColor =  #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            }
+            
+            return cell
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
@@ -315,14 +367,10 @@ extension Stage3ViewController: UICollectionViewDataSource, UICollectionViewDele
         self.concateAnswer += "\(itemsChord[indexPath.row])-"
         
         //change the cell after drag
-        //        itemsChord[indexPath.row] = #imageLiteral(resourceName: "noChord")
         itemsChord[indexPath.row] = "noChord"
-        //        optionChordCollectonView.reloadData()
-        
         checkButton.isEnabled = true
         checkButton.backgroundColor = #colorLiteral(red: 0.631372549, green: 0.3490196078, blue: 0.09019607843, alpha: 1)
         checkButton.setTitleColor(#colorLiteral(red: 0.9058823529, green: 0.8549019608, blue: 0.768627451, alpha: 1), for: .normal)
-        
         return [dragItem]
         
     }
@@ -398,7 +446,6 @@ extension Stage3ViewController : UIDropInteractionDelegate {
                         self.answer4.image = images.last
                         break
                         
-                        
                     default:
                         print("exit")
                     }
@@ -419,10 +466,14 @@ extension Stage3ViewController : UIDropInteractionDelegate {
 }
 
 extension Stage3ViewController: ModalityViewControllerDelegate {
+    func didUpdatePlaceholder() {
+        setPlaceholderDefault()
+    }
+    
     func toHome(authorized: Bool) {
         if authorized {
             //showHomePage()
-            PageHelper.showFeedback(stgPlayed: 2, stgScore: score, currentStoryBoard: self)
+            PageHelper.showFeedback(stgPlayed: 3, stgScore: score, currentStoryBoard: self)
         }
     }
 }

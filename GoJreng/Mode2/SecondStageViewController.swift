@@ -356,6 +356,10 @@ extension SecondStageViewController : UIViewControllerTransitioningDelegate {
 }
 
 extension SecondStageViewController: ModalityViewControllerDelegate {
+    func didUpdatePlaceholder() {
+    }
+    
+    
     func toHome(authorized: Bool) {
         if authorized {
             //showHomePage()

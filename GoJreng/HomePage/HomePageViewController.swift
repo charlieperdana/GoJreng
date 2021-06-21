@@ -135,7 +135,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
             //showStage2()
             PageHelper.showStage2(currentStoryBoard: self)
         } else {
-          PageHelper.showStage3()
+          PageHelper.showStage3(currentStoryBoard: self)
         }
     }
 

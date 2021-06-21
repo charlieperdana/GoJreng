@@ -336,7 +336,7 @@ var questionsForStage3 = [
     ]),
     
     //C-F-G
-    Questions(questionSound: "\(chord3Progressions[1])", answer: [
+    Questions(questionSound: "\(chord3Progressions[2])", answer: [
         //Pilihan
         Answers(answerLabel: "C", isCorrect: false),
         Answers(answerLabel: "F", isCorrect: false),
