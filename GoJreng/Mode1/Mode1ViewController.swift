@@ -28,6 +28,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     var lifeCount = 3
     var qIndex = 0
     var score = 0
+    var isShowingFeedBack = false
+    var timerInstance: Timer?
     
     var highScore: Int = 0
     
@@ -49,7 +51,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         questionArray?.shuffle()
         
 //        timer setup
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+        timerInstance = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         
         playQuestion(index: qIndex)
     }
@@ -214,7 +216,10 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
 //        life
         if lifeCount > 0{
 //            check if time's up
-            if timer <= 0{//ggl
+            if timer <= 0 && !isShowingFeedBack{//ggl
+                isShowingFeedBack = true
+                timerInstance?.invalidate()
+                timerInstance = nil
                 PageHelper.showFeedback(stgPlayed: 1, stgScore: score, currentStoryBoard: self)
                 return
             }
