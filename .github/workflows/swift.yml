@@ -2,9 +2,9 @@ name: Swift
 
 on:
   push:
-    branches: [ test-pipeline ]
+    branches: [ staging ]
   pull_request:
-    branches: [ test-pipeline ]
+    branches: [ staging ]
 
 jobs:
   build:
