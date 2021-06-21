@@ -296,7 +296,13 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
 
     
     @IBAction func exitPressed(_ sender: UIButton) {
-        showExitModal()
+        let modalStoryBoard = UIStoryboard(name: "ExitMenuStoryboard", bundle: nil)
+        let vc = modalStoryBoard.instantiateViewController(identifier: "exitModal") as! ExitMenuViewController
+
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: false)
+//        showExitModal()
     }
     
     @objc func showExitModal() {
