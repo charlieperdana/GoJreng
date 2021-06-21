@@ -148,6 +148,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         scoreLabel.text = String(score)
         let prevColor = button.backgroundColor
         button.backgroundColor = UIColor.green
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             button.backgroundColor = prevColor //change it back to original
             self.checkFinished()
@@ -159,6 +161,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         lifeCount -= 1
         let prevColor = button.backgroundColor
         button.backgroundColor = UIColor.red
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.warning)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             button.backgroundColor = prevColor //change it back to original
             self.checkFinished()
