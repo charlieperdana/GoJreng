@@ -27,7 +27,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     
     let stage = [
         Stages(stageName: "Major/Minor Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 900),
-        Stages(stageName: "Chord Identification", stageState: .locked, question: [], questionNumber: 10, highScore: 0),
+        Stages(stageName: "Chord Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 0),
         Stages(stageName: "Chord Progression Identification", stageState: .locked, question: [], questionNumber: 10, highScore: 200)
     ]
 
@@ -141,22 +141,10 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
                 
                 if stage2Warning.isHidden == true{
                     self.stage2Warning.isHidden = false
-                    Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
-                        self.dismiss(animated: true) {
-                            UIView.animate(withDuration: 1.0, animations: { () -> Void in
-                                self.stage2Warning.alpha = 0
-                            })
-                        }
-                }
+                    showWarningStage2()
                 } else {
                     self.stage2Warning.alpha = 1
-                    Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
-                        self.dismiss(animated: true) {
-                            UIView.animate(withDuration: 1.0, animations: { () -> Void in
-                                self.stage2Warning.alpha = 0
-                            })
-                        }
-                }
+                    showWarningStage2()
                 }
                 
                 
@@ -165,29 +153,49 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
             }
         } else if indexPath.row == 2 {
             if stage[2].stageState == .locked{
-                if stage3Warning.isHidden == true{
-                    self.stage3Warning.isHidden = false
-                    Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
-                        self.dismiss(animated: true) {
-                            UIView.animate(withDuration: 1.0, animations: { () -> Void in
-                                self.stage3Warning.alpha = 0
-                            })
+                if stage[1].stageState == .unlocked{
+                    stage3Warning.frame = CGRect(x: 64, y: 628, width: 295, height: 80)
+                        if stage3Warning.isHidden == true{
+                            self.stage3Warning.isHidden = false
+                            showWarningState3()
+                        } else {
+                            self.stage3Warning.alpha = 1
+                            showWarningState3()
                         }
-                }
+                    
                 } else {
+                    if stage3Warning.isHidden == true{
+                        self.stage3Warning.isHidden = false
+                        showWarningState3()
+                    } else {
                     self.stage3Warning.alpha = 1
-                    Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
-                        self.dismiss(animated: true) {
-                            UIView.animate(withDuration: 1.0, animations: { () -> Void in
-                                self.stage3Warning.alpha = 0
-                            })
-                        }
+                        showWarningState3()
+                    }
                 }
-            }
             }else {
                 PageHelper.showStage3()
             }
         }
+    }
+    
+    func showWarningStage2() {
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
+            self.dismiss(animated: true) {
+                UIView.animate(withDuration: 1.0, animations: { () -> Void in
+                    self.stage2Warning.alpha = 0
+                })
+            }
+        }
+    }
+    
+    func showWarningState3() {
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
+            self.dismiss(animated: true) {
+                UIView.animate(withDuration: 1.0, animations: { () -> Void in
+                    self.stage3Warning.alpha = 0
+                })
+            }
+    }
     }
 
 }
