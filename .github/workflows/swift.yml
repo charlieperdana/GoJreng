@@ -12,9 +12,11 @@ jobs:
     runs-on: macos-latest
 
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
       - uses: sersoft-gmbh/xcodebuild-action@v1
-      - with:
-      - project: GoJreng.xcodeproj
-      - scheme: GoJreng
-      - destination: platform=macOS
-      - action: build
+        with:
+          project: GoJreng.xcodeproj
+          scheme: GoJreng
+          destination: platform=macOS
+          action: build
