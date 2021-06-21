@@ -95,8 +95,19 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         arrayBaru = newArray
         
         print("\(arrayBaru)")
-       //questionAssertArray.append(questionNum)
+        
         updateQuestion()
+        
+        let pathToSound = Bundle.main.path(forResource: arrayBaru[questionNum].questionSound, ofType: "mp3")!
+        let url = URL(fileURLWithPath: pathToSound)
+        
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+        } catch {
+            print("Audio Error")
+        }
+        
     }
 
     
@@ -207,11 +218,12 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
             showCorrectAnswerModal()
             print("Benar")
             score += 100
-
+            playDelaySound()
         } else {
             showWrongAnswerModal()
             print("Salah")
             score += 0
+            playDelaySound()
         }
 
         Buttons.forEach({
@@ -290,7 +302,6 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         checkButton.isEnabled = false
         checkButton.backgroundColor = #colorLiteral(red: 0.5811545253, green: 0.5523337722, blue: 0.5264291167, alpha: 1)
         indikatorCollection.reloadData()
-        
         print("\(questionNum)")
     }
 
@@ -314,7 +325,6 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         vc.delegate = self
-        
         vc.indexQuestion = questionNum
        self.present(vc, animated: true)
     }
@@ -328,6 +338,24 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         vc.delegate = self
         vc.indexQuestion = questionNum
         self.present(vc, animated: true)
+    }
+    
+    func playDelaySound() {
+        let second = 1.5
+        let when = DispatchTime.now() + second
+        
+        DispatchQueue.main.asyncAfter(deadline: when){
+            let pathToSound = Bundle.main.path(forResource: self.arrayBaru[self.questionNum].questionSound, ofType: "mp3")!
+            let url = URL(fileURLWithPath: pathToSound)
+            
+            do{
+                self.audioPlayer = try AVAudioPlayer(contentsOf: url)
+                self.audioPlayer?.play()
+            } catch {
+                print("Audio Error")
+            }
+        }
+
     }
     
 }

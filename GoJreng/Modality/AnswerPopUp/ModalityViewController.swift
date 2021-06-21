@@ -47,7 +47,6 @@ class ModalityViewController: UIViewController {
     }
     @IBAction func wrongContinueTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-        // dismiss klik continue
         self.delegate?.toHome(authorized: self.indexQuestion == 9 ? true : false)
     }
     
