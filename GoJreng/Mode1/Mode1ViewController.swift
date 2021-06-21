@@ -241,6 +241,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         }
 //        dead
         else{//ggl
+            timerInstance?.invalidate()
+            timerInstance = nil
             PageHelper.showFeedback(stgPlayed: 1, stgScore: score, currentStoryBoard: self)
             return
         }
