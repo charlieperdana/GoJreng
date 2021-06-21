@@ -95,7 +95,7 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         arrayBaru = newArray
         
         print("\(arrayBaru)")
-        questionAssertArray.append(questionNum)
+       //questionAssertArray.append(questionNum)
         updateQuestion()
     }
 
@@ -244,7 +244,7 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         playButton.layer.opacity = 1
         questionNum += 1
         scoreLabel.text = "\(score)"
-        questionAssertArray.append(questionNum)
+        questionAssertArray.append(questionNum - 1)
         updateQuestion()
     }
     

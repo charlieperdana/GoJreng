@@ -64,6 +64,46 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="titleGoJreng" translatesAutoresizingMaskIntoConstraints="NO" id="eqv-DL-J5V">
+                                <rect key="frame" x="137" y="91" width="141" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qBD-jR-Mf7">
+                                <rect key="frame" x="64" y="467" width="347" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lockedStageDescriptions" translatesAutoresizingMaskIntoConstraints="NO" id="RbR-kw-Ep6">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Get 1500 pts in Major/Minor Identification to unlock this stage!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zes-sp-VVX">
+                                        <rect key="frame" x="10" y="23" width="274" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="14"/>
+                                        <color key="textColor" red="0.23525029419999999" green="0.22745192049999999" blue="0.22745102640000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s8M-6S-kjh">
+                                <rect key="frame" x="64" y="582" width="347" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lockedStageDescriptions" translatesAutoresizingMaskIntoConstraints="NO" id="4aC-Yl-KH9">
+                                        <rect key="frame" x="0.0" y="0.0" width="292" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Get 800 pts in Major/Minor Identification to unlock this stage!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEA-E0-pvC">
+                                        <rect key="frame" x="9" y="22" width="275" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="14"/>
+                                        <color key="textColor" red="0.23525029419999999" green="0.22745192049999999" blue="0.22745102640000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bDE-iN-3jt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -83,16 +123,38 @@
                     <connections>
                         <outlet property="bgImage" destination="0Yk-NL-SFq" id="lTa-U4-p4j"/>
                         <outlet property="logoImage" destination="eqv-DL-J5V" id="fP3-lm-Xod"/>
+                        <outlet property="stage2Warning" destination="qBD-jR-Mf7" id="GL4-CH-Jut"/>
+                        <outlet property="stage3Warning" destination="s8M-6S-kjh" id="o2o-xh-Ydy"/>
                         <outlet property="stageCollection" destination="RDc-14-gts" id="VaN-sJ-6S9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igj-iH-jrp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="uZS-Wp-chX">
+                    <rect key="frame" x="0.0" y="0.0" width="347" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lockedStageDescriptions" translatesAutoresizingMaskIntoConstraints="NO" id="ryD-WN-J53">
+                            <rect key="frame" x="0.0" y="0.0" width="347" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Get 1500 pts in Major/Mibor Identification to unlock this stage!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpa-Nx-9yy">
+                            <rect key="frame" x="17" y="19" width="312" height="42"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="12"/>
+                            <color key="textColor" red="0.57621103529999995" green="0.55328506229999996" blue="0.52940851450000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="PoQ-LA-3Wh"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="-2112.3076923076924" y="-616.35071090047393"/>
         </scene>
     </scenes>
     <resources>
         <image name="HomePage" width="390" height="844"/>
+        <image name="lockedStageDescriptions" width="252" height="57"/>
         <image name="titleGoJreng" width="141" height="53"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
