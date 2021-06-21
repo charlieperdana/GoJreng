@@ -21,7 +21,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     
     var questionArray: [String]?
     
-    var player: AVAudioPlayer?
+    var player: AVAudioPlayer!
+    var timerSound: AVAudioPlayer!
     var timer = 90
     
     var soundIsPlaying = false
@@ -202,8 +203,22 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         if(timer > 0) {
             timer -= 1
             timerLabel.text = String(timer)
+            if timer == 10{
+                guard let pathQuestionSound = Bundle.main.path(forResource: "timer 10s", ofType: "mp3") else {return}
+                
+                let urlTimerSound = URL(fileURLWithPath: pathQuestionSound )
+                do {
+                    timerSound = try AVAudioPlayer(contentsOf: urlTimerSound)
+                    timerSound.volume = 2
+                    timerSound.play()
+                }
+                catch {
+                    print(error)
+                }
+            }
         }
         else {
+            
             checkFinished()
         }
     }
