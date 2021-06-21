@@ -73,8 +73,10 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         setUpQuestionsStage()
         print(" ini: \(highScore)")
         
-        let newArray = questionsForStage2[0..<4].shuffled() + questionsForStage2[4..<7].shuffled() + questionsForStage2[7..<10].shuffled()
-        
+        let easyQuestions = questionsForStage2[0..<8].shuffled()
+        let mediumQuestions = questionsForStage2[8..<14].shuffled()
+        let hardQuestions = questionsForStage2[14..<20].shuffled()
+        let newArray = easyQuestions[0..<4].shuffled() + mediumQuestions[0..<3].shuffled() + hardQuestions[0..<3].shuffled()
         
         arrayBaru = newArray
         

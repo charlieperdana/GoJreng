@@ -80,8 +80,6 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
 //        if Int(defaults.value(forKey: "hS1").intValue as! String) ?? 0 >= 1000  {
         if defaults.value(forKey: "hS1") as! Int >= 1400  {
           stage[1].stageState = .unlocked
-        } else{
-            defaults.setValue(0, forKey: "hS1")
         }
         
 //        if (defaults.value(forKey: "hS2") ?? 0) as! String != nil && Int((defaults.value(forKey: "hS2") ?? 0) as! String) ?? 0 == 1000 {
