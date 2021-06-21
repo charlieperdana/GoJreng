@@ -11,6 +11,7 @@ class ExitMenuViewController: UIViewController {
 
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var exitButton: UIButton!
+    @IBOutlet weak var squareBackgroundThingy: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,8 @@ class ExitMenuViewController: UIViewController {
         self.exitButton.clipsToBounds = true
         self.exitButton.layer.borderWidth = 1
         self.exitButton.layer.borderColor = GoJrengColors.Bone.cgColor
+        self.squareBackgroundThingy.layer.cornerRadius = 10
+        self.squareBackgroundThingy.clipsToBounds = true
         
 
         // Do any additional setup after loading the view.
@@ -36,12 +39,13 @@ class ExitMenuViewController: UIViewController {
     }
     */
     @IBAction func exitButtonTapped(_ sender: Any) {
-        let modalStoryBoard = UIStoryboard(name: "HomeP", bundle: nil)
-        let vc = modalStoryBoard.instantiateViewController(identifier: "HomeView") as! HomePageViewController
-
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true)
+//        let modalStoryBoard = UIStoryboard(name: "HomeP", bundle: nil)
+//        let vc = modalStoryBoard.instantiateViewController(identifier: "HomeView") as! HomePageViewController
+//
+//        vc.modalPresentationStyle = .overFullScreen
+//        vc.modalTransitionStyle = .crossDissolve
+//        self.present(vc, animated: true)
+        self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {

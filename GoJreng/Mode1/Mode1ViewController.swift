@@ -176,28 +176,26 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         playButton.isEnabled = true
     }
     
-    @IBAction func testGameover(_ sender: Any) {
-//        showExitModal()
+    @IBAction func exitButtonTapped(_ sender: Any) {
         let modalStoryBoard = UIStoryboard(name: "ExitMenuStoryboard", bundle: nil)
         let vc = modalStoryBoard.instantiateViewController(identifier: "exitModal") as! ExitMenuViewController
 
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: false)
-        
     }
     
-    
-    
-    @objc func showExitModal() {
-        print("exit tapped")
-        let exitModality = ExitOverlayView()
-        exitModality.modalPresentationStyle = .custom
-        exitModality.transitioningDelegate = self
-        self.present(exitModality, animated: true, completion: nil)
-
-    }
-    
+//
+//
+//    @objc func showExitModal() {
+//        print("exit tapped")
+//        let exitModality = ExitOverlayView()
+//        exitModality.modalPresentationStyle = .custom
+//        exitModality.transitioningDelegate = self
+//        self.present(exitModality, animated: true, completion: nil)
+//
+//    }
+//
     
 //    update timer
     @objc func update() {
@@ -295,8 +293,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
 
 }
 
-extension Mode1ViewController : UIViewControllerTransitioningDelegate {
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        ExitPresentationController(presentedViewController: presented, presenting: presenting)
-    }
-}
+//extension Mode1ViewController : UIViewControllerTransitioningDelegate {
+//    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+//        ExitPresentationController(presentedViewController: presented, presenting: presenting)
+//    }
+//}

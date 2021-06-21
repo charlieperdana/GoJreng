@@ -95,7 +95,7 @@
                                             <color key="titleColor" red="0.89739078279999995" green="0.85600394010000003" blue="0.77645903829999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <action selector="exitButtonTapped:" destination="JCo-y8-cUe" eventType="touchUpInside" id="GQk-WB-mGb"/>
+                                            <action selector="exitButtonTapped:" destination="JCo-y8-cUe" eventType="touchUpInside" id="Fnd-g4-tfL"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Are you sure you want to exit?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqF-B7-LBO">
@@ -121,12 +121,23 @@
                     <connections>
                         <outlet property="backButton" destination="tXo-dI-xjm" id="GYx-3e-7j2"/>
                         <outlet property="exitButton" destination="PeS-UA-SKZ" id="7W4-Cj-7BO"/>
+                        <outlet property="squareBackgroundThingy" destination="pcl-zf-iIf" id="VkY-ES-H83"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HMt-oW-2EZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="heh-wC-pkx"/>
             </objects>
             <point key="canvasLocation" x="178.46153846153845" y="45.497630331753555"/>
+        </scene>
+        <!--HomeP-->
+        <scene sceneID="cWy-xh-SgN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HomeP" id="lv7-ru-yMb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="9gn-oF-9QD"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QnW-uB-xEr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="841" y="111"/>
         </scene>
     </scenes>
 </document>
