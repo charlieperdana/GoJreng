@@ -77,12 +77,16 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         player?.stop()
         soundIsPlaying = false
         checkAnswer(choice: "major", button: majorButton)
+        majorButton.isEnabled = false
+        minorButton.isEnabled = false
     }
     
     @IBAction func minorTouched(_ sender: Any) {
         player?.stop()
         soundIsPlaying = false
         checkAnswer(choice: "minor", button: minorButton)
+        majorButton.isEnabled = false
+        minorButton.isEnabled = false
     }
     
     func checkAnswer(choice: String, button: UIButton) {
@@ -195,6 +199,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     func checkFinished(){
+        majorButton.backgroundColor = GoJrengColors.WindsorTan
+        minorButton.backgroundColor = GoJrengColors.WindsorTan
         if score <= highScore{
             //score = highScore
             print("Masih Kurang")
@@ -219,6 +225,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
             animatePlayButton{ (success) -> Void in
                 if success {
                     playQuestion(index: qIndex)
+                    majorButton.isEnabled = true
+                    minorButton.isEnabled = true
                 }
             }
         }
@@ -230,6 +238,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func animatePlayButton(completion: (_ success: Bool) -> Void){
+        majorButton.isEnabled = false
+        minorButton.isEnabled = false
         let midy = self.playButton.frame.origin.y
         let righty = self.rightPlayButton.frame.origin.y
 //        let initxActual = self.playButton.frame.midX
@@ -261,6 +271,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         
 //        let rmid = self.view.frame.midX
         rightPlayButton.frame = CGRect(x: 500, y: playButton.frame.origin.y, width: size/1.5, height: size/1.5)
+        majorButton.isEnabled = true
+        minorButton.isEnabled = true
     }
 
 }
