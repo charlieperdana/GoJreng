@@ -145,6 +145,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     
     func playSound(soundFileName: String){
         let fileUrl = Bundle.main.path(forResource: soundFileName, ofType: "mp3")
+        playButton.isEnabled = false
         do {
             try AVAudioSession.sharedInstance().setMode(.default)
             try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
@@ -170,6 +171,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
 //    Check if audio finished playing
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         soundIsPlaying = false
+        playButton.isEnabled = true
     }
     
     @IBAction func testGameover(_ sender: Any) {
@@ -217,9 +219,11 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
                 return
             }
             if soundIsPlaying == false && qIndex >= questionArray!.count{
-                print("finished")//bhsl
-                PageHelper.showFeedback(stgPlayed: 1, stgScore: score, currentStoryBoard: self)
-                return
+                print("finished 24, randomizing new arr")//bhsl
+                qIndex = 0
+                questionArray = questionArray?.shuffled()
+//                PageHelper.showFeedback(stgPlayed: 1, stgScore: score, currentStoryBoard: self)
+//                return
             }
             print("continue + " + String(qIndex))
             animatePlayButton{ (success) -> Void in
@@ -251,7 +255,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
             
             
             self.rightPlayButton.frame = CGRect(x: self.view.frame.midX - self.rightPlayButton.frame.width/2, y: righty, width: self.rightPlayButton.frame.width, height: self.rightPlayButton.frame.height)
-
+            self.playButton.isEnabled = true
             },completion: { finish in
                 UIView.animate(withDuration: 0.7, delay: 0,options: UIView.AnimationOptions.curveEaseOut,animations: {
                 self.rightPlayButton.transform = CGAffineTransform(scaleX: 1, y: 1)
