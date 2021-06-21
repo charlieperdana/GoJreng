@@ -177,7 +177,14 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func testGameover(_ sender: Any) {
-        showExitModal()
+//        showExitModal()
+        let modalStoryBoard = UIStoryboard(name: "ExitMenuStoryboard", bundle: nil)
+        let vc = modalStoryBoard.instantiateViewController(identifier: "exitModal") as! ExitMenuViewController
+
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: false)
+        
     }
     
     

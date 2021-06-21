@@ -10,6 +10,8 @@
 		0B348D532672087900404EF4 /* BaseModality.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B348D522672087900404EF4 /* BaseModality.storyboard */; settings = {ASSET_TAGS = (11, ); }; };
 		0B348D582672089400404EF4 /* ModalityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B348D572672089400404EF4 /* ModalityViewController.swift */; };
 		0B348D5D26720E4B00404EF4 /* BaseModalityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B348D5C26720E4B00404EF4 /* BaseModalityViewController.swift */; };
+		0B3CF48A2680928900AF0611 /* ExitMenuStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B3CF4892680928900AF0611 /* ExitMenuStoryboard.storyboard */; };
+		0B3CF48C2680929A00AF0611 /* ExitMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3CF48B2680929A00AF0611 /* ExitMenuViewController.swift */; };
 		0B64588E2673643D005DAD2B /* Mode1Board.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B64588C2673643D005DAD2B /* Mode1Board.storyboard */; };
 		0B64588F2673643D005DAD2B /* Mode1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B64588D2673643D005DAD2B /* Mode1ViewController.swift */; };
 		0BD9BB372673A8A9005DD71E /* A.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BD9BB002673A8A9005DD71E /* A.mp3 */; };
@@ -145,6 +147,8 @@
 		0B348D522672087900404EF4 /* BaseModality.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BaseModality.storyboard; sourceTree = "<group>"; };
 		0B348D572672089400404EF4 /* ModalityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalityViewController.swift; sourceTree = "<group>"; };
 		0B348D5C26720E4B00404EF4 /* BaseModalityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModalityViewController.swift; sourceTree = "<group>"; };
+		0B3CF4892680928900AF0611 /* ExitMenuStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExitMenuStoryboard.storyboard; sourceTree = "<group>"; };
+		0B3CF48B2680929A00AF0611 /* ExitMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitMenuViewController.swift; sourceTree = "<group>"; };
 		0B64588C2673643D005DAD2B /* Mode1Board.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mode1Board.storyboard; sourceTree = "<group>"; };
 		0B64588D2673643D005DAD2B /* Mode1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mode1ViewController.swift; sourceTree = "<group>"; };
 		0BD9BB002673A8A9005DD71E /* A.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = A.mp3; sourceTree = "<group>"; };
@@ -452,6 +456,8 @@
 				55F131DA2672002E008BFC97 /* ExitPresentationController.swift */,
 				55F131E226720187008BFC97 /* ExitOverlayView.xib */,
 				55F131EF26720A63008BFC97 /* ExitOverlayView.swift */,
+				0B3CF4892680928900AF0611 /* ExitMenuStoryboard.storyboard */,
+				0B3CF48B2680929A00AF0611 /* ExitMenuViewController.swift */,
 			);
 			path = Exit;
 			sourceTree = "<group>";
@@ -829,6 +835,7 @@
 				B5D56DE62673B417000E358E /* chord4-5.mp3 in Resources */,
 				B5D56DFB2673B417000E358E /* minor-0.mp3 in Resources */,
 				B5D56DDD2673B417000E358E /* chord2-2.mp3 in Resources */,
+				0B3CF48A2680928900AF0611 /* ExitMenuStoryboard.storyboard in Resources */,
 				B5D56DEA2673B417000E358E /* chord4-3.mp3 in Resources */,
 				B5D56DE52673B417000E358E /* chord4-7.mp3 in Resources */,
 				B54233FE2677647F000DB5D2 /* timer 5s.mp3 in Resources */,
@@ -873,6 +880,7 @@
 				A58E3D1B267A2C1600F641EA /* PageHelper.swift in Sources */,
 				B5E6E1A2266FBD53004C3CBD /* Stages.swift in Sources */,
 				B5B7AFB32672743000A2F263 /* StagesData.swift in Sources */,
+				0B3CF48C2680929A00AF0611 /* ExitMenuViewController.swift in Sources */,
 				0B348D5D26720E4B00404EF4 /* BaseModalityViewController.swift in Sources */,
 				55F130FC2669EF23008BFC97 /* SceneDelegate.swift in Sources */,
 				95E254DA2670A65900BB39D8 /* GoJrengColors.swift in Sources */,
