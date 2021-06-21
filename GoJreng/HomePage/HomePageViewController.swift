@@ -15,9 +15,10 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     @IBOutlet weak var stageCollection: UICollectionView!
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var stackViewHome: UIStackView!
+
     
-    @IBOutlet weak var testLabel: UILabel!
-    
+    @IBOutlet weak var stage3Warning: UIView!
+    @IBOutlet weak var stage2Warning: UIView!
     let defaults = UserDefaults.standard
     
     
@@ -42,15 +43,18 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
         stageCollection.register(UnlockCollectionViewCell.nib(), forCellWithReuseIdentifier: UnlockCollectionViewCell.identifier)
         stageCollection.register(LockCollectionViewCell.nib(), forCellWithReuseIdentifier: LockCollectionViewCell.identifier)
         
-        //unlock stage 2
+        let hScore2 = defaults.integer(forKey: "hS2")
+        print("\(hScore2)")
+        
+        let hScore1 = defaults.integer(forKey: "hS1")
+        print("\(hScore1)")
+
         if defaults.value(forKey: "hS1") as! Int >= 1400  {
           stage[1].stageState = .unlocked
         }
-
-        //unlock stage 3
-        //        if (defaults.value(forKey: "hS2") ?? 0) as! String != nil && Int((defaults.value(forKey: "hS2") ?? 0) as! String) ?? 0 == 1000 {
-        //           stage[2].stageState = .unlocked
-        //        }
+        
+        stage2Warning.isHidden = true
+        stage3Warning.isHidden = true
 
         
         stageCollection.reloadData()
@@ -73,6 +77,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
 
             if defaults.value(forKey: "hS1") as! Int >= 2400{
                 cell.badgeImage.image = #imageLiteral(resourceName: "goldBadge")
+
             } else if (defaults.value(forKey: "hS1") as! Int >= 1500){
                 cell.badgeImage.image = #imageLiteral(resourceName: "silverBadge")
             }
@@ -87,7 +92,6 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
                 cell.bgImage.image = stage[indexPath.row].stageState?.getBackground()
                 cell.lockImage.image = stage[indexPath.row].stageState?.getIcon()
                 cell.titleLabel.text = stage[indexPath.row].stageName
-                cell.isUserInteractionEnabled = false
                 return cell
             }
             
@@ -100,7 +104,6 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
                 } else if cell.scoreLabel.text == "900" || cell.scoreLabel.text == "800"{
                     cell.badgeImage.image = #imageLiteral(resourceName: "silverBadge")
                 }
-                
                 return cell
             }
                 
@@ -132,13 +135,58 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0{
-            //showStage1()
             PageHelper.showStage1(currentStoryBoard: self)
         } else if indexPath.row == 1{
-            //showStage2()
+            if stage[1].stageState == .locked {
+                
+                if stage2Warning.isHidden == true{
+                    self.stage2Warning.isHidden = false
+                    Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
+                        self.dismiss(animated: true) {
+                            UIView.animate(withDuration: 1.0, animations: { () -> Void in
+                                self.stage2Warning.alpha = 0
+                            })
+                        }
+                }
+                } else {
+                    self.stage2Warning.alpha = 1
+                    Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
+                        self.dismiss(animated: true) {
+                            UIView.animate(withDuration: 1.0, animations: { () -> Void in
+                                self.stage2Warning.alpha = 0
+                            })
+                        }
+                }
+                }
+                
+                
+            } else{
             PageHelper.showStage2(currentStoryBoard: self)
-        } else {
-            PageHelper.showStage3()
+            }
+        } else if indexPath.row == 2 {
+            if stage[2].stageState == .locked{
+                if stage3Warning.isHidden == true{
+                    self.stage3Warning.isHidden = false
+                    Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
+                        self.dismiss(animated: true) {
+                            UIView.animate(withDuration: 1.0, animations: { () -> Void in
+                                self.stage3Warning.alpha = 0
+                            })
+                        }
+                }
+                } else {
+                    self.stage3Warning.alpha = 1
+                    Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
+                        self.dismiss(animated: true) {
+                            UIView.animate(withDuration: 1.0, animations: { () -> Void in
+                                self.stage3Warning.alpha = 0
+                            })
+                        }
+                }
+            }
+            }else {
+                PageHelper.showStage3()
+            }
         }
     }
 
