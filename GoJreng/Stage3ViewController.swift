@@ -252,10 +252,10 @@ class Stage3ViewController: UIViewController{
     }
     
     @IBAction func closeButtonTapped(_ sender: UIButton) {
-        timer.invalidate()
-        if questionSound != nil {
-            questionSound.pause()
-        }
+//        timer.invalidate()
+//        if questionSound != nil {
+//            questionSound.pause()
+//        }
         
         let modalStoryBoard = UIStoryboard(name: "ExitMenuStoryboard", bundle: nil)
         let vc = modalStoryBoard.instantiateViewController(identifier: "exitModal") as! ExitMenuViewController

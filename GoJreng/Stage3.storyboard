@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2tr-UQ-U9N">
-                                <rect key="frame" x="267" y="67" width="103" height="45"/>
+                                <rect key="frame" x="266" y="67" width="104" height="47.333333333333343"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="score" translatesAutoresizingMaskIntoConstraints="NO" id="Tsq-np-O9N">
-                                        <rect key="frame" x="0.0" y="2" width="102" height="40"/>
+                                        <rect key="frame" x="0.0" y="2" width="103" height="42"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xUv-wI-KRM">
-                                        <rect key="frame" x="42" y="2" width="53" height="35"/>
+                                        <rect key="frame" x="42" y="2" width="54" height="37.333333333333336"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
                                         <color key="textColor" red="0.90588235289999997" green="0.85490196080000003" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -164,13 +164,13 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xV1-fo-d0I">
-                                <rect key="frame" x="146" y="164" width="98" height="48"/>
+                                <rect key="frame" x="145.66666666666666" y="164" width="99" height="48"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="b19-sT-ABk">
-                                        <rect key="frame" x="0.0" y="0.0" width="98" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="99" height="48"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hmk-Fx-Wrw">
-                                        <rect key="frame" x="38" y="8" width="60" height="32"/>
+                                        <rect key="frame" x="38" y="8" width="61" height="32"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
                                         <color key="textColor" red="0.63137254899999995" green="0.34901960780000002" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -273,9 +273,9 @@
     <resources>
         <image name="answerPlaceholder3" width="72" height="63"/>
         <image name="closeButton" width="24" height="24"/>
-        <image name="score" width="102" height="40"/>
+        <image name="score" width="103" height="42"/>
         <image name="stagesPlayButton" width="144" height="144"/>
-        <image name="time" width="98" height="48"/>
+        <image name="time" width="99" height="48"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
