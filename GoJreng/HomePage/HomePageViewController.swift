@@ -65,7 +65,6 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     }
 
 
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
