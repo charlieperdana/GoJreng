@@ -32,5 +32,18 @@ class HomeHelper{
             }
     }
   }
+    
+    static func resetHS(){
+      let defaults = UserDefaults.standard
+      let keyArr = ["initChecked", "hS1", "hS2", "hS3"]
+
+        if ((defaults.value(forKey: "initChecked")) != nil){
+          print("RESET HS")
+          defaults.setValue(true, forKey: "initChecked")
+          defaults.setValue(0, forKey: "hS1")
+          defaults.setValue(0, forKey: "hS2")
+          defaults.setValue(0, forKey: "hS3")
+      }
+    }
   
 }

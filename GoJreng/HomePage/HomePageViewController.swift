@@ -26,9 +26,9 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     var newHighScore1: Int = 0
     
     let stage = [
-        Stages(stageName: "Major/Minor Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 900),
+        Stages(stageName: "Major/Minor Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 0),
         Stages(stageName: "Chord Identification", stageState: .locked, question: [], questionNumber: 10, highScore: 0),
-        Stages(stageName: "Chord Progression Identification", stageState: .locked, question: [], questionNumber: 10, highScore: 200)
+        Stages(stageName: "Chord Progression Identification", stageState: .locked, question: [], questionNumber: 10, highScore: 0)
     ]
 
 
@@ -36,6 +36,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         HomeHelper.checkHSinited()
+//        HomeHelper.resetHS()
 
         stageCollection.dataSource = self
         stageCollection.delegate = self
@@ -51,6 +52,9 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
 
         if defaults.value(forKey: "hS1") as! Int >= 1400  {
           stage[1].stageState = .unlocked
+        }
+        if defaults.value(forKey: "hS2") as! Int >= 800  {
+          stage[2].stageState = .unlocked
         }
         
         stage2Warning.isHidden = true
