@@ -329,6 +329,15 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         majorButton.isEnabled = true
         minorButton.isEnabled = true
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        timerInstance?.invalidate()
+        timerSound = nil
+        soundEffectPlayer = nil
+        player = nil
+        soundIsPlaying = false
+    }
 
 }
 

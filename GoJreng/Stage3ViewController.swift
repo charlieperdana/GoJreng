@@ -409,7 +409,6 @@ class Stage3ViewController: UIViewController{
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        print("dismissed called")
         timer.invalidate()
         questionSound = nil
         timerSound = nil
