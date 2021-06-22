@@ -164,13 +164,16 @@ class Stage3ViewController: UIViewController{
         }
         
         //If the answer is true
-        var isCorrect = checkAnswer()
+        let isCorrect = checkAnswer()
+        let generator = UINotificationFeedbackGenerator()
         if(isCorrect){
+            generator.notificationOccurred(.success)
             score+=100
             scoreLabel.text = "\(score)"
             showCorrectModal()
         }
         else {
+            generator.notificationOccurred(.warning)
             showWrongModal()
         }
         print("Current Question Index = \(currentQuestionIndex)")

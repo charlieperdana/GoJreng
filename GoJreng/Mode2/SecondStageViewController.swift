@@ -25,6 +25,7 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
     @IBOutlet var Buttons: [UIButton]!
     
     var audioPlayer: AVAudioPlayer?
+    var soundEffectPlayer: AVAudioPlayer!
     
     var questionNum: Int = 0
     var questionAssertArray: [Int] = []
@@ -215,15 +216,18 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
     
     
     @IBAction func checkButtonPressed(_ sender: UIButton) {
-        
+        let generator = UINotificationFeedbackGenerator()
         print("Pressed")
+        checkAnswerSoundEffect(isCorrect: status!)
         if status == true{
+            generator.notificationOccurred(.success)
             showCorrectAnswerModal()
             print("Benar")
             score += 100
             playDelaySound()
         } else {
             showWrongAnswerModal()
+            generator.notificationOccurred(.warning)
             print("Salah")
             score += 0
             playDelaySound()
@@ -369,6 +373,24 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
                     print("Audio Error")
                 }
             }
+        }
+    }
+    func checkAnswerSoundEffect(isCorrect: Bool){
+        var name = ""
+        if isCorrect{
+            name = "correctAnswer"
+        } else {
+            name = "wrongAnswer"
+        }
+        guard let soundFile = Bundle.main.path(forResource: name, ofType: "mp3") else {return}
+        let urlSound = URL(fileURLWithPath: soundFile )
+        do {
+            soundEffectPlayer = try AVAudioPlayer(contentsOf: urlSound)
+            soundEffectPlayer.volume = 0.5
+            soundEffectPlayer.play()
+        }
+        catch {
+            print(error)
         }
     }
     
