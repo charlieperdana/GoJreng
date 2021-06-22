@@ -12,12 +12,14 @@ import UIKit
 
 class PageHelper{
   static func showHomePage(currentStoryBoard: UIViewController){
-    let modalStoryBoard = UIStoryboard(name: "HomeP", bundle: nil)
-    let vc = modalStoryBoard.instantiateViewController(identifier: "HomeView") as! HomePageViewController
-
-    vc.modalPresentationStyle = .overFullScreen
-    vc.modalTransitionStyle = .flipHorizontal
-    currentStoryBoard.present(vc, animated: true)
+//    let modalStoryBoard = UIStoryboard(name: "HomeP", bundle: nil)
+//    let vc = modalStoryBoard.instantiateViewController(identifier: "HomeView") as! HomePageViewController
+//
+//    vc.modalPresentationStyle = .overFullScreen
+//    vc.modalTransitionStyle = .flipHorizontal
+//    currentStoryBoard.present(vc, animated: true)
+    
+    currentStoryBoard.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
   }
 
   static func showStage1(currentStoryBoard: UIViewController){
