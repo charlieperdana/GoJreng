@@ -257,7 +257,14 @@ class Stage3ViewController: UIViewController{
             questionSound.pause()
         }
         
-        exitModal()
+        let modalStoryBoard = UIStoryboard(name: "ExitMenuStoryboard", bundle: nil)
+        let vc = modalStoryBoard.instantiateViewController(identifier: "exitModal") as! ExitMenuViewController
+
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: false)
+        
+//        exitModal()
     }
     
     func exitModal() {
