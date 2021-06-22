@@ -100,12 +100,7 @@ class Stage3ViewController: UIViewController{
         
     }
     
-    //    override func viewDidLayoutSubviews() {
-    //        print("This loaaad")
-    //    }
-    
     func updateQuestion() {
-        
         answer = randomQuestionsArray[currentQuestionIndex].answer
         seconds = 30
         concateAnswer = ""
@@ -114,10 +109,10 @@ class Stage3ViewController: UIViewController{
         for i in 0...(answer.count-2) {
             itemsChord.append(answer[i].answerLabel)
         }
-        //        checkButton.isEnabled = false
-        //        checkButton.backgroundColor = #colorLiteral(red: 0.5803921569, green: 0.5529411765, blue: 0.5254901961, alpha: 1)
-        //        checkButton.setTitleColor(#colorLiteral(red: 0.9058823529, green: 0.8549019608, blue: 0.768627451, alpha: 1), for: .disabled)
-        //        optionChordCollectonView.reloadData()
+        checkButton.isEnabled = false
+        checkButton.backgroundColor = #colorLiteral(red: 0.5803921569, green: 0.5529411765, blue: 0.5254901961, alpha: 1)
+        checkButton.setTitleColor(#colorLiteral(red: 0.9058823529, green: 0.8549019608, blue: 0.768627451, alpha: 1), for: .disabled)
+        optionChordCollectonView.reloadData()
         pageControlCollectonView.reloadData()
         setOptionChordsCount(jumlah: answer.count-1)
     }
