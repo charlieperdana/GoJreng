@@ -406,7 +406,21 @@ class Stage3ViewController: UIViewController{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("dismissed called")
+        timer.invalidate()
+        questionSound = nil
+        timerSound = nil
+        correctSound = nil
+        wrongSound = nil
+    }
+    
 }
+
+
+
 extension Stage3ViewController: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         ExitPresentationController(presentedViewController: presented, presenting: presenting)
