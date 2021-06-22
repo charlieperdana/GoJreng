@@ -125,7 +125,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UnlockCollectionViewCell.identifier, for: indexPath) as! UnlockCollectionViewCell
 
                 cell.titleLabel.text = stage[indexPath.row].stageName
-                cell.scoreLabel.text = "\(stage[indexPath.row].highScore ?? 0)"
+                cell.scoreLabel.text = "\(defaults.value(forKey: "hS3") ?? 0)"
                 return cell
             }
         }
