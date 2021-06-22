@@ -33,6 +33,7 @@ class HomeHelper{
     }
   }
     
+    
     static func resetHS(){
       let defaults = UserDefaults.standard
       let keyArr = ["initChecked", "hS1", "hS2", "hS3"]
