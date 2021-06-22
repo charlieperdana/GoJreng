@@ -63,7 +63,7 @@ class FeedbackPageViewController: UIViewController {
       case 2:
         PageHelper.showStage2(currentStoryBoard: self)
       case 3:
-        PageHelper.showStage3()
+        PageHelper.showStage3(currentStoryBoard: self)
       default:
         PageHelper.showHomePage(currentStoryBoard: self)
       }

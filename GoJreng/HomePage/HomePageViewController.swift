@@ -173,7 +173,7 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
                     }
                 }
             }else {
-                PageHelper.showStage3()
+                PageHelper.showStage3(currentStoryBoard: self)
             }
         }
     }

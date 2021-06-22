@@ -36,9 +36,16 @@ class PageHelper{
     vc.modalPresentationStyle = .overFullScreen
     vc.modalTransitionStyle = .flipHorizontal
     currentStoryBoard.present(vc, animated: true)
+    
   }
 
-  static func showStage3(){
+  static func showStage3(currentStoryBoard: UIViewController){
+    let modalstoryboard = UIStoryboard(name: "Stage3", bundle: nil)
+    let vc = modalstoryboard.instantiateViewController(identifier: "Stage3") as! Stage3ViewController
+    
+    vc.modalPresentationStyle = .overFullScreen
+    vc.modalTransitionStyle = .flipHorizontal
+    currentStoryBoard.present(vc, animated: true)
     
   }
 

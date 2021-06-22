@@ -58,7 +58,7 @@
         <!--nope-->
         <scene sceneID="7ci-od-fsQ">
             <objects>
-                <viewController storyboardIdentifier="wrong" title="nope" id="mwJ-nv-NfL" customClass="ModalityViewController" customModule="GoJreng" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="wrong" title="nope" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mwJ-nv-NfL" customClass="ModalityViewController" customModule="GoJreng" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MZo-sx-SwA">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,7 +156,7 @@
         <!--yay-->
         <scene sceneID="gTk-eH-vgx">
             <objects>
-                <viewController storyboardIdentifier="correct" title="yay" id="pZ8-nQ-2ft" customClass="ModalityViewController" customModule="GoJreng" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="correct" title="yay" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pZ8-nQ-2ft" customClass="ModalityViewController" customModule="GoJreng" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qxB-Sz-NQq">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

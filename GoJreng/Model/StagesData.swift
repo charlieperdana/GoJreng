@@ -427,7 +427,7 @@ var questionsForStage3 = [
     ]),
     
     //C-F-G
-    Questions(questionSound: "\(chord3Progressions[1])", answer: [
+    Questions(questionSound: "\(chord3Progressions[2])", answer: [
         //Pilihan
         Answers(answerLabel: "C", isCorrect: false),
         Answers(answerLabel: "F", isCorrect: false),
@@ -494,7 +494,7 @@ var questionsForStage3 = [
         Answers(answerLabel: "Em", isCorrect: false),
         Answers(answerLabel: "Am", isCorrect: false),
         Answers(answerLabel: "Dm", isCorrect: false),
-        Answers(answerLabel: "F#", isCorrect: false),
+        Answers(answerLabel: "F", isCorrect: false),
         //Jawaban
         
         Answers(answerLabel: "C-G-C-F", isCorrect: true),
