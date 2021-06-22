@@ -27,7 +27,7 @@ class Stage3ViewController: UIViewController{
     //var currentQuestion: Questions?
     var seconds = 30
     var timer = Timer()
-    var currentQuestionIndex: Int = 8
+    var currentQuestionIndex: Int = 0
     //    var questionSoundsArray: [String] = []
     var score: Int = 0
     var highScore: Int = 0
@@ -187,7 +187,7 @@ class Stage3ViewController: UIViewController{
         }
         
         else {
-            showFeedback()
+          PageHelper.showFeedback(stgPlayed: 3, stgScore: score, currentStoryBoard: self)
         }
         
         optionChordCollectonView.reloadData()
@@ -225,9 +225,7 @@ class Stage3ViewController: UIViewController{
             
             else {
                 print("Kalo current index udah 9, ini keprint")
-                showFeedback()
-                
-                //showFeedback()
+                PageHelper.showFeedback(stgPlayed: 3, stgScore: score, currentStoryBoard: self)
             }
             optionChordCollectonView.reloadData()
         }
@@ -296,23 +294,6 @@ class Stage3ViewController: UIViewController{
         answer3.image = UIImage(named: "answerPlaceholder3")
         answer4.image = UIImage(named: "answerPlaceholder3")
         print("placeholder berhasil diset")
-    }
-    func goToHome() {
-        
-        let homeStoryboard = UIStoryboard(name: "HomeP", bundle: nil)
-        let hc = homeStoryboard.instantiateViewController(identifier: "HomeView") as! HomePageViewController
-        self.present(hc, animated: true)
-        
-    }
-    func showFeedback() {
-        
-        let feedbackStoryboard = UIStoryboard(name: "FeedbackPage", bundle: nil)
-        let fc = feedbackStoryboard.instantiateViewController(identifier: "feedbackPage") as! FeedbackPageViewController
-        print(score)
-        fc.stageScore = score
-        fc.modalPresentationStyle = .overFullScreen
-        fc.modalTransitionStyle = .crossDissolve
-        self.present(fc, animated: true)
     }
     
     func showCorrectModal() {
@@ -625,9 +606,6 @@ extension Stage3ViewController: UICollectionViewDelegateFlowLayout {
                 }
                 
             }
-            
-            
-            
             
         }
         return UIEdgeInsets.zero
