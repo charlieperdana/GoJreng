@@ -413,7 +413,6 @@ extension Stage3ViewController: UICollectionViewDataSource, UICollectionViewDele
         
         if collectionView == self.optionChordCollectonView {
             let cell =  collectionView.dequeueReusableCell(withReuseIdentifier:"answerCell", for: indexPath) as! AnswersCollectionVC
-            //        cell.imageOptionChord.image = itemsChord[indexPath.row]
             cell.imageOptionChord.image = UIImage(named: "\(itemsChord[indexPath.row])")
             return cell
         }
@@ -446,8 +445,8 @@ extension Stage3ViewController: UICollectionViewDataSource, UICollectionViewDele
         
         //change the cell after drag
         if successDrop == true {
-            //            itemsChord[indexPath.row] = "noChord"
-            //            self.concateAnswer += "\(itemsChord[indexPath.row])-"
+//                        itemsChord[indexPath.row] = "noChord"
+//                        self.concateAnswer += "\(itemsChord[indexPath.row])-"
         }
         
         checkButton.isEnabled = true
@@ -554,54 +553,36 @@ extension Stage3ViewController : UIDropInteractionDelegate {
 extension Stage3ViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        //Where elements_count is the count of all your items in that
-        //Collection view...
+        
         if collectionView == self.optionChordCollectonView{
-            let cellCount = CGFloat(itemsChord.count)
+            let cellNumbers = CGFloat(itemsChord.count)
             let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
             let cellWidth = flowLayout.itemSize.width + flowLayout.minimumInteritemSpacing
-            //If the cell count is zero, there is no point in calculating anything.
-            if cellCount == 2 {
-                
-                
-                //20.00 was just extra spacing I wanted to add to my cell.
-                let totalCellWidth = cellWidth*cellCount - 20.00 * (cellCount-1)
-                let contentWidth = collectionView.frame.size.width - collectionView.contentInset.left - collectionView.contentInset.right
-                if (totalCellWidth < contentWidth) {
-                    //If the number of cells that exists take up less room than the
-                    //collection view width... then there is an actual point to centering them.
-                    
-                    //Calculate the right amount of padding to center the cells.
-                    let padding = (contentWidth - totalCellWidth) / 2.0
-                    return UIEdgeInsets(top: 0, left: padding, bottom: 0, right: padding)
-                } else {
-                    //Pretty much if the number of cells that exist take up
-                    //more room than the actual collectionView width, there is no
-                    // point in trying to center them. So we leave the default behavior.
-                    return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-                }
-                
-            }
-            else if cellCount == 3 {
-                //20.00 was just extra spacing I wanted to add to my cell.
-                let totalCellWidth = cellWidth*cellCount + 1.00 * (cellCount-1)
-                let contentWidth = collectionView.frame.size.width - collectionView.contentInset.left - collectionView.contentInset.right
-                if (totalCellWidth < contentWidth) {
-                    //If the number of cells that exists take up less room than the
-                    //collection view width... then there is an actual point to centering them.
-                    
-                    //Calculate the right amount of padding to center the cells.
-                    let padding = (contentWidth - totalCellWidth) / 2.0
-                    return UIEdgeInsets(top: 0, left: padding, bottom: 0, right: padding)
-                } else {
-                    //Pretty much if the number of cells that exist take up
-                    //more room than the actual collectionView width, there is no
-                    // point in trying to center them. So we leave the default behavior.
-                    return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-                }
-                
-            }
+            let totalCellWidth: CGFloat
+            let contentWidth: CGFloat
             
+            if cellNumbers == 2 {
+                totalCellWidth = cellWidth * cellNumbers - 20.00 * (cellNumbers-1)
+                contentWidth = collectionView.frame.size.width - collectionView.contentInset.left - collectionView.contentInset.right
+                if (totalCellWidth < contentWidth) {
+                    let padding = (contentWidth - totalCellWidth) / 2.0
+                    return UIEdgeInsets(top: 0, left: padding, bottom: 0, right: padding)
+                } else {
+                    return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+                }
+                
+            }
+            else if cellNumbers == 3 {
+                totalCellWidth = cellWidth * cellNumbers + 1.00 * (cellNumbers-1)
+                contentWidth = collectionView.frame.size.width - collectionView.contentInset.left - collectionView.contentInset.right
+                if (totalCellWidth < contentWidth) {
+                    let padding = (contentWidth - totalCellWidth) / 2.0
+                    return UIEdgeInsets(top: 0, left: padding, bottom: 0, right: padding)
+                } else {
+                    return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+                }
+                
+            }
         }
         return UIEdgeInsets.zero
     }
