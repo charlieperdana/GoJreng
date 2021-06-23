@@ -1,4 +1,4 @@
-<img src="https://i.ibb.co/XkfWSvN/TJ.jpg" width="300" alt="taxjourney">
+<img src="https://i.ibb.co/CntQQmn/gojreng.png" alt="gojreng" border="0" />
 
 # GoJreng
 This is an app to help you train your hearing of guitar chord whenever and wherever you are .
