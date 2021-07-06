@@ -12,7 +12,11 @@ class ExitMenuViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var squareBackgroundThingy: UIView!
-    
+
+    var stage: Int?
+    var currentVC1: Mode1ViewController?
+    var currentVC3: Stage3ViewController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.backButton.layer.cornerRadius = 10
@@ -39,17 +43,18 @@ class ExitMenuViewController: UIViewController {
     }
     */
     @IBAction func exitButtonTapped(_ sender: Any) {
-//        let modalStoryBoard = UIStoryboard(name: "HomeP", bundle: nil)
-//        let vc = modalStoryBoard.instantiateViewController(identifier: "HomeView") as! HomePageViewController
-//
-//        vc.modalPresentationStyle = .overFullScreen
-//        vc.modalTransitionStyle = .crossDissolve
-//        self.present(vc, animated: true)
-        self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
+
+      self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
+      PageHelper.showFeedback(stgPlayed: stage ?? 0, stgScore: 0 , currentStoryBoard: self)
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+      if stage == 1 {
+        currentVC1?.setTimer()
+      }else if stage == 3 {
+        //currentVC3?.
+      }
+      dismiss(animated: true, completion: nil)
     }
     
 //dismiss on touch feature

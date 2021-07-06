@@ -63,5 +63,20 @@ class PageHelper{
     currentStoryBoard.present(vc, animated: true)
   }
 
+  static func showExitModal(stgPlayed: Int, currentTimer: Int, currentStoryBoard: UIViewController){
+    let modalStoryBoard = UIStoryboard(name: "ExitMenuStoryboard", bundle: nil)
+    let vc = modalStoryBoard.instantiateViewController(identifier: "exitModal") as! ExitMenuViewController
+
+    vc.stage = stgPlayed
+    if stgPlayed == 1 {
+      vc.currentVC1 = currentStoryBoard as! Mode1ViewController
+    }else if stgPlayed == 3 {
+      vc.currentVC3 = currentStoryBoard as! Stage3ViewController
+    }
+    vc.modalPresentationStyle = .overFullScreen
+    vc.modalTransitionStyle = .crossDissolve
+    currentStoryBoard.present(vc, animated: true)
+  }
+
 }
 
