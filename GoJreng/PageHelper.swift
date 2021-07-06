@@ -63,7 +63,7 @@ class PageHelper{
     currentStoryBoard.present(vc, animated: true)
   }
 
-  static func showExitModal(stgPlayed: Int, currentTimer: Int, currentStoryBoard: UIViewController){
+  static func showExitModal(stgPlayed: Int, currentStoryBoard: UIViewController){
     let modalStoryBoard = UIStoryboard(name: "ExitMenuStoryboard", bundle: nil)
     let vc = modalStoryBoard.instantiateViewController(identifier: "exitModal") as! ExitMenuViewController
 
