@@ -52,7 +52,7 @@ class ExitMenuViewController: UIViewController {
       if stage == 1 {
         currentVC1?.setTimer()
       }else if stage == 3 {
-        //currentVC3?.
+        currentVC3?.setTimer()
       }
       dismiss(animated: true, completion: nil)
     }
