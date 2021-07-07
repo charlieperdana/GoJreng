@@ -67,10 +67,7 @@ class Stage3ViewController: UIViewController{
             questionsForStage3[0..<4].shuffled() +
             questionsForStage3[4..<7].shuffled() +
             questionsForStage3[7..<10].shuffled()
-        
-        //timer
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
-        
+
         playQuestionSound(questionSoundFileName: randomQuestionsArray[currentQuestionIndex].questionSound)
         
         
@@ -98,6 +95,11 @@ class Stage3ViewController: UIViewController{
         
         setOptionChordsCount(jumlah: answer.count-1)
         
+    }
+
+    func setTimer(){
+      //timer
+      timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
     }
     
     func updateQuestion() {
@@ -245,26 +247,11 @@ class Stage3ViewController: UIViewController{
     }
     
     @IBAction func closeButtonTapped(_ sender: UIButton) {
-//        timer.invalidate()
 //        if questionSound != nil {
 //            questionSound.pause()
 //        }
-        
-        let modalStoryBoard = UIStoryboard(name: "ExitMenuStoryboard", bundle: nil)
-        let vc = modalStoryBoard.instantiateViewController(identifier: "exitModal") as! ExitMenuViewController
-
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: false)
-        
-//        exitModal()
-    }
-    
-    func exitModal() {
-        let exitModality = ExitOverlayView()
-        exitModality.modalPresentationStyle = .custom
-        exitModality.transitioningDelegate = self
-        self.present(exitModality, animated: true, completion: nil)
+        timer.invalidate()
+        PageHelper.showExitModal(stgPlayed: 3, currentStoryBoard: self)
     }
     
     func setBackground() {

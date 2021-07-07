@@ -205,21 +205,9 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBAction func exitButtonTapped(_ sender: Any) {
         timerInstance.invalidate()
-        PageHelper.showExitModal(stgPlayed: 1, currentTimer: Int(timer), currentStoryBoard: self)
+        PageHelper.showExitModal(stgPlayed: 1, currentStoryBoard: self)
 
     }
-    
-//
-//
-//    @objc func showExitModal() {
-//        print("exit tapped")
-//        let exitModality = ExitOverlayView()
-//        exitModality.modalPresentationStyle = .custom
-//        exitModality.transitioningDelegate = self
-//        self.present(exitModality, animated: true, completion: nil)
-//
-//    }
-//
     
 //    update timer
     @objc func update() {

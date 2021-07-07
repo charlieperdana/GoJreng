@@ -31,17 +31,8 @@ class ExitMenuViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func exitButtonTapped(_ sender: Any) {
 
       self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
@@ -52,13 +43,18 @@ class ExitMenuViewController: UIViewController {
       if stage == 1 {
         currentVC1?.setTimer()
       }else if stage == 3 {
-        //currentVC3?.
+        currentVC3?.setTimer()
       }
       dismiss(animated: true, completion: nil)
     }
     
-//dismiss on touch feature
+    //dismiss on touch feature
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if stage == 1 {
+          currentVC1?.setTimer()
+        }else if stage == 3 {
+          currentVC3?.setTimer()
+        }
         dismiss(animated: true, completion: nil)
     }
 }
