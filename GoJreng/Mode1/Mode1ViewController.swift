@@ -31,7 +31,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     var qIndex = 0
     var score = 0
     var isShowingFeedBack = false
-    var timerInstance: Timer?
+    var timerInstance = Timer()
     
     var highScore: Int = 0
     
@@ -51,13 +51,15 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         }
         questionArray = majorQuestionsAnswers + minorQuestionsAnswers
         questionArray?.shuffle()
-        
-//        timer setup
-        timerInstance = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
-        
+
         playQuestion(index: qIndex)
+        setTimer()
     }
-    
+
+    func setTimer(){
+      timerInstance = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+    }
+
     func playQuestion(index: Int){
         playSound(soundFileName: questionArray![index])
         
@@ -202,12 +204,9 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func exitButtonTapped(_ sender: Any) {
-        let modalStoryBoard = UIStoryboard(name: "ExitMenuStoryboard", bundle: nil)
-        let vc = modalStoryBoard.instantiateViewController(identifier: "exitModal") as! ExitMenuViewController
+        timerInstance.invalidate()
+        PageHelper.showExitModal(stgPlayed: 1, currentTimer: Int(timer), currentStoryBoard: self)
 
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: false)
     }
     
 //
@@ -262,8 +261,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
 //            check if time's up
             if timer <= 0 && !isShowingFeedBack{//ggl
                 isShowingFeedBack = true
-                timerInstance?.invalidate()
-                timerInstance = nil
+                timerInstance.invalidate()
+                //timerInstance = nil
                 PageHelper.showFeedback(stgPlayed: 1, stgScore: score, currentStoryBoard: self)
                 return
             }
@@ -285,8 +284,8 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
         }
 //        dead
         else{//ggl
-            timerInstance?.invalidate()
-            timerInstance = nil
+            timerInstance.invalidate()
+            //timerInstance = nil
             PageHelper.showFeedback(stgPlayed: 1, stgScore: score, currentStoryBoard: self)
             return
         }
@@ -332,7 +331,7 @@ class Mode1ViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        timerInstance?.invalidate()
+        timerInstance.invalidate()
         timerSound = nil
         soundEffectPlayer = nil
         player = nil
