@@ -32,7 +32,6 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     ]
 
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         HomeHelper.checkHSinited()
