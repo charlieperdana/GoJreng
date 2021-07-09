@@ -13,7 +13,7 @@ class HomeHelper{
     let defaults = UserDefaults.standard
     let keyArr = ["initChecked", "hS1", "hS2", "hS3"]
 
-    if (defaults.value(forKey: "initChecked") != nil) != true{ //returns true if initChecked == nil
+    if (defaults.value(forKey: "initChecked") != nil) != true { //returns true if initChecked == nil
         print("not checked")
         defaults.setValue(true, forKey: "initChecked")
         defaults.setValue(0, forKey: "hS1")

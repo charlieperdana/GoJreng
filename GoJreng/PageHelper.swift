@@ -19,7 +19,11 @@ class PageHelper{
 //    vc.modalTransitionStyle = .flipHorizontal
 //    currentStoryBoard.present(vc, animated: true)
     
-    currentStoryBoard.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
+    if let HomePage = currentStoryBoard.view.window?.rootViewController as? HomePageViewController {
+        HomePage.stageCollection.reloadData()
+        HomePage.dismiss(animated: true, completion: nil)
+    }
+    
   }
 
   static func showStage1(currentStoryBoard: UIViewController){
