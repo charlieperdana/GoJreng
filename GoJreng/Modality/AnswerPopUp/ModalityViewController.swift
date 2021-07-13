@@ -15,6 +15,8 @@ protocol ModalityViewControllerDelegate: AnyObject {
 
 class ModalityViewController: UIViewController {
     
+    var newDelegate: SoundPlayDelagate?
+    
     @IBOutlet weak var wrongContinueButton: UIButton!
     @IBOutlet weak var correctAnswerBg: UIView!
     @IBOutlet weak var correctAnswerLabel: UILabel!
@@ -24,6 +26,8 @@ class ModalityViewController: UIViewController {
     var indexQuestion = 0
     
     var delegate: ModalityViewControllerDelegate?
+    
+    var playCurrentSound = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,10 +56,14 @@ class ModalityViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func wrongContinueTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
         print("Index Question di mvc : ",indexQuestion)
         self.delegate?.toHome(authorized: self.indexQuestion == 9 ? true : false)
+        playCurrentSound = true
         
+        self.newDelegate?.soundPlayed(soundPlay: playCurrentSound)
+        
+        print(playCurrentSound)
+        dismiss(animated: true, completion: nil)
     }
     
     

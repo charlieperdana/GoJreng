@@ -8,6 +8,27 @@
 import UIKit
 import AVFoundation
 
+protocol SoundPlayDelagate {
+    func soundPlayed(soundPlay: Bool)
+}
+
+extension SecondStageViewController: SoundPlayDelagate{
+    func soundPlayed(soundPlay: Bool) {
+        nextSound = soundPlay
+        if nextSound == true{
+            let pathToSound = Bundle.main.path(forResource: arrayBaru[questionNum].questionSound, ofType: "mp3")!
+            let url = URL(fileURLWithPath: pathToSound)
+            
+            do{
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer?.play()
+            } catch {
+                print("Audio Error")
+            }
+        }
+    }
+}
+
 class SecondStageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     
@@ -53,6 +74,8 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
     var arrayNumber: [Int] = [0,1,2,3,4,5,6,7,8,9]
     
     var arrayBaru: [Questions] = [Questions]()
+    
+    var nextSound = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,15 +125,7 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         
         updateQuestion()
         
-        let pathToSound = Bundle.main.path(forResource: arrayBaru[questionNum].questionSound, ofType: "mp3")!
-        let url = URL(fileURLWithPath: pathToSound)
-        
-        do{
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.play()
-        } catch {
-            print("Audio Error")
-        }
+        playDelaySound2()
         
     }
 
@@ -230,7 +245,6 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
             generator.notificationOccurred(.warning)
             print("Salah")
             score += 0
-            playDelaySound()
         }
 
         Buttons.forEach({
@@ -349,6 +363,7 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
         vc.delegate = self
+        vc.newDelegate = self
         vc.indexQuestion = questionNum
         self.present(vc, animated: true)
     }
@@ -375,6 +390,30 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
             }
         }
     }
+    
+    func playDelaySound2(){
+        let second = 0.5
+        let when = DispatchTime.now() + second
+        
+        if self.questionNum < self.arrayBaru.count - 1 {
+            print("QUESTION NUM: ")
+            print(self.questionNum)
+            print("ARRAYBARU: ")
+            print(self.arrayBaru.count)
+            DispatchQueue.main.asyncAfter(deadline: when){
+                let pathToSound = Bundle.main.path(forResource: self.arrayBaru[self.questionNum].questionSound, ofType: "mp3")!
+                let url = URL(fileURLWithPath: pathToSound)
+                
+                do{
+                    self.audioPlayer = try AVAudioPlayer(contentsOf: url)
+                    self.audioPlayer?.play()
+                } catch {
+                    print("Audio Error")
+                }
+            }
+        }
+    }
+    
     func checkAnswerSoundEffect(isCorrect: Bool){
         var name = ""
         if isCorrect{
