@@ -35,7 +35,7 @@ class Stage3ViewController: UIViewController{
     var questionNumberForPageControl: [Int] = []
     var randomQuestionsArray: [Questions] = [Questions]()
     var index: [Int] = []
-    var indexPath = IndexPath(row: 0, section: 0)
+    var indexPath = 0
     var successDrop = false
     
     //answerPlaceholder
@@ -260,7 +260,7 @@ class Stage3ViewController: UIViewController{
     
     func checkAnswer() -> Bool {
         var finalAnswer = concateAnswer.dropLast(1)
-        print(finalAnswer)
+        print("final answer = \(finalAnswer)")
         if finalAnswer == answer[answer.count-1].answerLabel  {
             return true
         }
@@ -425,16 +425,7 @@ extension Stage3ViewController: UICollectionViewDataSource, UICollectionViewDele
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = item
         selectedIndex = indexPath.row + 1
-        
-        //setAnswer
-        self.concateAnswer += "\(itemsChord[indexPath.row])-"
-        itemsChord[indexPath.row] = "noChord"
-        
-        //change the cell after drag
-        if successDrop == true {
-//                        itemsChord[indexPath.row] = "noChord"
-//                        self.concateAnswer += "\(itemsChord[indexPath.row])-"
-        }
+        self.indexPath = indexPath.row
         
         checkButton.isEnabled = true
         checkButton.backgroundColor = #colorLiteral(red: 0.631372549, green: 0.3490196078, blue: 0.09019607843, alpha: 1)
@@ -447,12 +438,12 @@ extension Stage3ViewController: UICollectionViewDataSource, UICollectionViewDele
 extension Stage3ViewController: UIDragInteractionDelegate{
     
     func dragInteraction(_ interaction: UIDragInteraction, itemsForBeginning session: UIDragSession) -> [UIDragItem] {
-        if let imageView = interaction.view as? UIImageView{
-            guard let image = imageView.image else {return []}
-            let provider = NSItemProvider(object: image)
-            let item = UIDragItem.init(itemProvider: provider)
-            return[item]
-        }
+//        if let imageView = interaction.view as? UIImageView{
+//            guard let image = imageView.image else {return []}
+//            let provider = NSItemProvider(object: image)
+//            let item = UIDragItem.init(itemProvider: provider)
+//            return[item]
+//        }
         return []
     }
 }
@@ -467,15 +458,15 @@ extension Stage3ViewController : UIDropInteractionDelegate {
                 dropOperation = .copy
                 selectedIndex = 1
                 successDrop = true
-            } else if  answer2.frame.contains(location) {
+            } else if answer2.frame.contains(location) {
                 dropOperation = .copy
                 selectedIndex = 2
                 successDrop = true
-            } else if  answer3.frame.contains(location) {
+            } else if answer3.frame.contains(location) {
                 dropOperation = .copy
                 selectedIndex = 3
                 successDrop = true
-            } else if  answer4.frame.contains(location) {
+            } else if answer4.frame.contains(location) {
                 dropOperation = .copy
                 selectedIndex = 4
                 successDrop = true
@@ -490,46 +481,70 @@ extension Stage3ViewController : UIDropInteractionDelegate {
             successDrop = false
         }
         
-        //reload collectionview
-        optionChordCollectonView.reloadData()
-        
         return UIDropProposal(operation: dropOperation!)
     }
     
     func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
         if session.canLoadObjects(ofClass: UIImage.self) {
             session.loadObjects(ofClass: UIImage.self) { (items) in
-                if let images = items as? [UIImage] {
-                    switch self.selectedIndex{
+                switch self.selectedIndex{
+                
+                case 1 :
+                    self.answer1.image = UIImage(named: self.itemsChord[self.indexPath])
+                    break
                     
-                    case 1 :
-                        self.answer1.image = images.last
-                        break
-                        
-                    case 2 :
-                        self.answer2.image = images.last
-                        break
-                        
-                    case 3 :
-                        self.answer3.image = images.last
-                        break
-                        
-                    case 4 :
-                        self.answer4.image = images.last
-                        break
-                        
-                    default:
-                        print("exit")
-                    }
+                case 2 :
+                    self.answer2.image = UIImage(named: self.itemsChord[self.indexPath])
+                    break
                     
+                case 3 :
+                    self.answer3.image = UIImage(named: self.itemsChord[self.indexPath])
+                    break
+                    
+                case 4 :
+                    self.answer4.image = UIImage(named: self.itemsChord[self.indexPath])
+                    break
+                    
+                default:
+                    print("exit")
                 }
             }
         }
     }
     
     func dropInteraction(_ interaction: UIDropInteraction, sessionDidEnd session: UIDropSession){
+        let location = session.location(in: self.view)
+        if session.canLoadObjects(ofClass: UIImage.self) {
+            if  answer1.frame.contains(location) {
+                selectedIndex = 1
+                successDrop = true
+            } else if  answer2.frame.contains(location) {
+                selectedIndex = 2
+                successDrop = true
+            } else if  answer3.frame.contains(location) {
+                selectedIndex = 3
+                successDrop = true
+            } else if  answer4.frame.contains(location) {
+                selectedIndex = 4
+                successDrop = true
+            } else {
+                selectedIndex = 0
+                successDrop = false
+            }
+        } else {
+            selectedIndex = 0
+            successDrop = false
+        }
+
+        optionChordCollectonView.reloadData()
         
-        
+        if successDrop == true {
+            self.concateAnswer += "\(itemsChord[indexPath])-"
+            itemsChord[indexPath] = "noChord"
+        } else {
+            self.concateAnswer += "\(itemsChord[indexPath])-"
+        }
+
     }
     
     func dropInteraction(_ interaction: UIDropInteraction, sessionDidEnter session: UIDropSession){
