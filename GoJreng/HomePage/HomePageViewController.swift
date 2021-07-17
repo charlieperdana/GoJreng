@@ -27,8 +27,8 @@ class HomePageViewController: UIViewController, UICollectionViewDataSource, UICo
     
     let stage = [
         Stages(stageName: "Major/Minor Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 0),
-        Stages(stageName: "Chord Identification", stageState: .locked, question: [], questionNumber: 10, highScore: 0),
-        Stages(stageName: "Chord Progression Identification", stageState: .locked, question: [], questionNumber: 10, highScore: 0)
+        Stages(stageName: "Chord Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 0),
+        Stages(stageName: "Chord Progression Identification", stageState: .unlocked, question: [], questionNumber: 10, highScore: 0)
     ]
 
 

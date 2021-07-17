@@ -396,10 +396,6 @@ class SecondStageViewController: UIViewController, UICollectionViewDelegate, UIC
         let when = DispatchTime.now() + second
         
         if self.questionNum < self.arrayBaru.count - 1 {
-            print("QUESTION NUM: ")
-            print(self.questionNum)
-            print("ARRAYBARU: ")
-            print(self.arrayBaru.count)
             DispatchQueue.main.asyncAfter(deadline: when){
                 let pathToSound = Bundle.main.path(forResource: self.arrayBaru[self.questionNum].questionSound, ofType: "mp3")!
                 let url = URL(fileURLWithPath: pathToSound)

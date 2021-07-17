@@ -17,6 +17,8 @@ class ModalityViewController: UIViewController {
     
     var newDelegate: SoundPlayDelagate?
     
+    var newDelagete2: SoundPlayDelagateStage3?
+    
     @IBOutlet weak var wrongContinueButton: UIButton!
     @IBOutlet weak var correctAnswerBg: UIView!
     @IBOutlet weak var correctAnswerLabel: UILabel!
@@ -28,6 +30,7 @@ class ModalityViewController: UIViewController {
     var delegate: ModalityViewControllerDelegate?
     
     var playCurrentSound = false
+    var playCurrentSounfStage3 = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,16 +62,10 @@ class ModalityViewController: UIViewController {
         print("Index Question di mvc : ",indexQuestion)
         self.delegate?.toHome(authorized: self.indexQuestion == 9 ? true : false)
         playCurrentSound = true
+        playCurrentSounfStage3 = true
         
         self.newDelegate?.soundPlayed(soundPlay: playCurrentSound)
-        
-        print(playCurrentSound)
-        dismiss(animated: true, completion: nil)
-    }
-    
-    
-    //dismiss on touch feature
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.newDelagete2?.soundPlayedStage3(soundPlay: playCurrentSounfStage3)
         dismiss(animated: true, completion: nil)
     }
     
