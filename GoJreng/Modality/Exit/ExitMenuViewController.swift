@@ -16,6 +16,10 @@ class ExitMenuViewController: UIViewController {
     var stage: Int?
     var currentVC1: Mode1ViewController?
     var currentVC3: Stage3ViewController?
+    
+    var SoundPlay = false
+    
+    var delegate: resumeSound?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +49,9 @@ class ExitMenuViewController: UIViewController {
       }else if stage == 3 {
         currentVC3?.setTimer()
       }
+        
+        SoundPlay = true
+        self.delegate?.soundIsResume(soundResume: SoundPlay)
       dismiss(animated: true, completion: nil)
     }
     

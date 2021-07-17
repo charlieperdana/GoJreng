@@ -90,8 +90,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="292" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Get 800 pts in Major/Minor Identification to unlock this stage!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEA-E0-pvC">
-                                        <rect key="frame" x="9" y="22" width="275" height="42"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Get 800 pts in Chord Identification to unlock this stage!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEA-E0-pvC">
+                                        <rect key="frame" x="9" y="22" width="278" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="14"/>
                                         <color key="textColor" red="0.23525029419999999" green="0.22745192049999999" blue="0.22745102640000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -145,7 +145,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="-2112.3076923076924" y="-616.35071090047393"/>
+            <point key="canvasLocation" x="-2113.0434782608695" y="-617.11956521739137"/>
         </scene>
     </scenes>
     <resources>

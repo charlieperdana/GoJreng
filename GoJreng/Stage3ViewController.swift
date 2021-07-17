@@ -7,6 +7,33 @@
 
 import UIKit
 import AVFoundation
+
+protocol SoundPlayDelagateStage3 {
+    func soundPlayedStage3(soundPlay: Bool)
+}
+
+protocol resumeSound{
+    func soundIsResume(soundResume: Bool)
+}
+
+extension Stage3ViewController: SoundPlayDelagateStage3, resumeSound{
+    func soundPlayedStage3(soundPlay: Bool) {
+        nextSound = soundPlay
+        if nextSound == true{
+            playQuestionSound(questionSoundFileName: randomQuestionsArray[currentQuestionIndex].questionSound)
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
+        }
+    }
+    
+    func soundIsResume(soundResume: Bool) {
+        resumeSound = soundResume
+        if resumeSound == true{
+            questionSound.play()
+            setTimer()
+        }
+    }
+}
+
 class Stage3ViewController: UIViewController{
     
     
@@ -37,6 +64,8 @@ class Stage3ViewController: UIViewController{
     var index: [Int] = []
     var indexPath = 0
     var successDrop = false
+    var nextSound = false
+    var resumeSound = false
     
     //answerPlaceholder
     @IBOutlet weak var answer1: UIImageView!
@@ -70,30 +99,21 @@ class Stage3ViewController: UIViewController{
 
         playQuestionSound(questionSoundFileName: randomQuestionsArray[currentQuestionIndex].questionSound)
         
-        
-        
-        //Set questions sounds
-        //        for i in 0..<(stage3.questionNumber) {
-        //            questionSoundsArray.append(questionsForStage3[i].questionSound)
-        //        }
-        //Check Button is disabled at first
         checkButton.isEnabled = false
         checkButton.backgroundColor = #colorLiteral(red: 0.5803921569, green: 0.5529411765, blue: 0.5254901961, alpha: 1)
         checkButton.setTitleColor(#colorLiteral(red: 0.9058823529, green: 0.8549019608, blue: 0.768627451, alpha: 1), for: .disabled)
         
-        
-        //        itemsChord = [#imageLiteral(resourceName: "Em"),#imageLiteral(resourceName: "Dm"),#imageLiteral(resourceName: "G"),#imageLiteral(resourceName: "B"),#imageLiteral(resourceName: "A"),#imageLiteral(resourceName: "F"),#imageLiteral(resourceName: "C"),#imageLiteral(resourceName: "Am")]n
-        
         answer = randomQuestionsArray[currentQuestionIndex].answer
         questionNumberForPageControl.append(currentQuestionIndex)
         updateQuestion()
-        //        itemsChord = ["Em","Dm","G","B","A","F","C","Am"]
         optionChordCollectonView.dataSource = self
         optionChordCollectonView.delegate = self
         optionChordCollectonView.reloadData()
         self.setDragAndDropSettings()
         
         setOptionChordsCount(jumlah: answer.count-1)
+        
+        setTimer()
         
     }
 
@@ -168,6 +188,8 @@ class Stage3ViewController: UIViewController{
             score+=100
             scoreLabel.text = "\(score)"
             showCorrectModal()
+            playQuestionSound2(questionSoundFileName: randomQuestionsArray[currentQuestionIndex].questionSound)
+            setTimer()
         }
         else {
             generator.notificationOccurred(.warning)
@@ -175,21 +197,18 @@ class Stage3ViewController: UIViewController{
         }
         print("Current Question Index = \(currentQuestionIndex)")
         
-        if currentQuestionIndex < randomQuestionsArray.count-1{
+        if currentQuestionIndex < randomQuestionsArray.count + 1{
             currentQuestionIndex+=1
             questionNumberForPageControl.append(currentQuestionIndex)
             
             updateQuestion()
-            print("Current question index setelah tap check button : \(currentQuestionIndex)")
+            print("Current question index setelah tap check button : \(currentQuestionIndex):::\(randomQuestionsArray.count)")
         }
-        
         else {
           PageHelper.showFeedback(stgPlayed: 3, stgScore: score, currentStoryBoard: self)
         }
         
         optionChordCollectonView.reloadData()
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
-        playQuestionSound(questionSoundFileName: randomQuestionsArray[currentQuestionIndex].questionSound)
     }
     @objc func timerCounter() {
         seconds -= 1
@@ -214,7 +233,7 @@ class Stage3ViewController: UIViewController{
             questionSound.stop()
             showWrongModal()
             
-            if currentQuestionIndex < randomQuestionsArray.count-1{
+            if currentQuestionIndex < randomQuestionsArray.count + 1{
                 currentQuestionIndex+=1
                 updateQuestion()
                 print("Current question index setelah tap check button : \(currentQuestionIndex)")
@@ -233,16 +252,40 @@ class Stage3ViewController: UIViewController{
     }
     
     func playQuestionSound(questionSoundFileName: String) {
-        guard let pathQuestionSound = Bundle.main.path(forResource: questionSoundFileName, ofType: "mp3") else {return}
+        let second = 0.5
+        let when = DispatchTime.now() + second
         
-        let urlQuestionSounds = URL(fileURLWithPath: pathQuestionSound ?? "")
+        DispatchQueue.main.asyncAfter(deadline: when){
+            guard let pathQuestionSound = Bundle.main.path(forResource: questionSoundFileName, ofType: "mp3") else {return}
+            
+            let urlQuestionSounds = URL(fileURLWithPath: pathQuestionSound ?? "")
+            
+            do {
+                self.questionSound = try AVAudioPlayer(contentsOf: urlQuestionSounds)
+                self.questionSound.volume = 1.7
+                self.questionSound.play()
+            } catch  {
+                print(error)
+            }
+        }
+    }
+    
+    func playQuestionSound2(questionSoundFileName: String) {
+        let second = 1.5
+        let when = DispatchTime.now() + second
         
-        do {
-            questionSound = try AVAudioPlayer(contentsOf: urlQuestionSounds)
-            questionSound.volume = 1.7
-            questionSound.play()
-        } catch  {
-            print(error)
+        DispatchQueue.main.asyncAfter(deadline: when){
+            guard let pathQuestionSound = Bundle.main.path(forResource: questionSoundFileName, ofType: "mp3") else {return}
+            
+            let urlQuestionSounds = URL(fileURLWithPath: pathQuestionSound ?? "")
+            
+            do {
+                self.questionSound = try AVAudioPlayer(contentsOf: urlQuestionSounds)
+                self.questionSound.volume = 1.7
+                self.questionSound.play()
+            } catch  {
+                print(error)
+            }
         }
     }
     
@@ -251,7 +294,10 @@ class Stage3ViewController: UIViewController{
 //            questionSound.pause()
 //        }
         timer.invalidate()
-        PageHelper.showExitModal(stgPlayed: 3, currentStoryBoard: self)
+        exitModality()
+        //PageHelper.showExitModal(stgPlayed: 3, currentStoryBoard: self)
+        questionSound.pause()
+        
     }
     
     func setBackground() {
@@ -312,6 +358,7 @@ class Stage3ViewController: UIViewController{
         vc.modalTransitionStyle = .crossDissolve
         vc.indexQuestion = currentQuestionIndex
         vc.delegate = self
+        vc.newDelagete2 = self
         let controller = ModalityViewController()
         controller.delegate = self
         present(vc, animated: true)
@@ -329,6 +376,16 @@ class Stage3ViewController: UIViewController{
             print(error)
         }
     }
+    
+    func exitModality(){
+        let modalStoryBoard = UIStoryboard(name: "ExitMenuStoryboard", bundle: nil)
+        let vc = modalStoryBoard.instantiateViewController(identifier: "exitModal") as! ExitMenuViewController
+        vc.delegate = self
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true)
+    }
+    
     func setDragAndDropSettings(){
         
         optionChordCollectonView.dragDelegate = self
@@ -382,7 +439,6 @@ class Stage3ViewController: UIViewController{
 }
 
 
-
 extension Stage3ViewController: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         ExitPresentationController(presentedViewController: presented, presenting: presenting)
@@ -407,7 +463,7 @@ extension Stage3ViewController: UICollectionViewDataSource, UICollectionViewDele
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pageControlCell", for: indexPath)
             
-            if questionNumberForPageControl.contains(indexPath.row) {
+            if questionNumberForPageControl.contains(indexPath.row+1) {
                 cell.backgroundColor =  #colorLiteral(red: 0.6327156425, green: 0.3489228785, blue: 0.09062369913, alpha: 1)
             } else {
                 cell.backgroundColor =  #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
