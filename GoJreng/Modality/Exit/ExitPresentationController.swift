@@ -27,20 +27,20 @@ class ExitPresentationController: UIPresentationController {
     
     
 //    MARK: masih di conditional satusatu heheheh
-    override var frameOfPresentedViewInContainerView: CGRect {
-        print(" HEIGHTTTT:   " + "\(self.containerView!.frame.height)")
-        
-        if(self.containerView!.frame.height <= 668){
-            return CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * 0.6),
-                   size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height *
-                                    0.6))
-        }
-        else {
-            return CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * 0.72),
-                   size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height *
-                                    0.6))
-        }
-    }
+//    override var frameOfPresentedViewInContainerView: CGRect {
+//        print(" HEIGHTTTT:   " + "\(self.containerView!.frame.height)")
+//        
+//        if(self.containerView!.frame.height <= 668){
+//            return CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * 0.6),
+//                   size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height *
+//                                    0.6))
+//        }
+//        else {
+//            return CGRect(origin: CGPoint(x: 0, y: self.containerView!.frame.height * 0.72),
+//                   size: CGSize(width: self.containerView!.frame.width, height: self.containerView!.frame.height *
+//                                    0.6))
+//        }
+//    }
     
     override func presentationTransitionWillBegin() {
         self.blurEffectView.alpha = 0
