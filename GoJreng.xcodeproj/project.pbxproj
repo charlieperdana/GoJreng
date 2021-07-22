@@ -48,7 +48,6 @@
 		55F131142669EF26008BFC97 /* GoJrengTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F131132669EF26008BFC97 /* GoJrengTests.swift */; };
 		55F1311F2669EF26008BFC97 /* GoJrengUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F1311E2669EF26008BFC97 /* GoJrengUITests.swift */; };
 		55F131DB2672002E008BFC97 /* ExitPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F131DA2672002E008BFC97 /* ExitPresentationController.swift */; };
-		55F131E326720187008BFC97 /* ExitOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55F131E226720187008BFC97 /* ExitOverlayView.xib */; };
 		55F131F026720A63008BFC97 /* ExitOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F131EF26720A63008BFC97 /* ExitOverlayView.swift */; };
 		84364171266F76B40060A9CE /* UnlockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436416F266F76B40060A9CE /* UnlockTableViewCell.swift */; };
 		84364180266F8DC40060A9CE /* LockedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436417E266F8DC40060A9CE /* LockedTableViewCell.swift */; };
@@ -199,7 +198,6 @@
 		55F1311E2669EF26008BFC97 /* GoJrengUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoJrengUITests.swift; sourceTree = "<group>"; };
 		55F131202669EF26008BFC97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55F131DA2672002E008BFC97 /* ExitPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitPresentationController.swift; sourceTree = "<group>"; };
-		55F131E226720187008BFC97 /* ExitOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExitOverlayView.xib; sourceTree = "<group>"; };
 		55F131EF26720A63008BFC97 /* ExitOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitOverlayView.swift; sourceTree = "<group>"; };
 		8436416F266F76B40060A9CE /* UnlockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockTableViewCell.swift; sourceTree = "<group>"; };
 		84364170266F76B40060A9CE /* UnlockTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnlockTableViewCell.xib; sourceTree = "<group>"; };
@@ -479,7 +477,6 @@
 			isa = PBXGroup;
 			children = (
 				55F131DA2672002E008BFC97 /* ExitPresentationController.swift */,
-				55F131E226720187008BFC97 /* ExitOverlayView.xib */,
 				55F131EF26720A63008BFC97 /* ExitOverlayView.swift */,
 				0B3CF4892680928900AF0611 /* ExitMenuStoryboard.storyboard */,
 				0B3CF48B2680929A00AF0611 /* ExitMenuViewController.swift */,
@@ -822,7 +819,6 @@
 				0BD9BB412673A8A9005DD71E /* gm.mp3 in Resources */,
 				0BD9BB462673A8A9005DD71E /* dm.mp3 in Resources */,
 				0BD9BB492673A8A9005DD71E /* G#.mp3 in Resources */,
-				55F131E326720187008BFC97 /* ExitOverlayView.xib in Resources */,
 				0BD9BB392673A8A9005DD71E /* B.mp3 in Resources */,
 				0BD9BB422673A8A9005DD71E /* fm.mp3 in Resources */,
 				0BD9BB3C2673A8A9005DD71E /* G.mp3 in Resources */,
@@ -855,7 +851,6 @@
 				B54233F626775406000DB5D2 /* Stage3.storyboard in Resources */,
 				B5D56DF92673B417000E358E /* major-2.mp3 in Resources */,
 				B54233FD2677647F000DB5D2 /* correctAnswer.mp3 in Resources */,
-				55F131E326720187008BFC97 /* ExitOverlayView.xib in Resources */,
 				84A268122671DCCD00536F14 /* UnlockCollectionViewCell.xib in Resources */,
 				B5D56E032673B417000E358E /* minor-9.mp3 in Resources */,
 				B5D56E052673B417000E358E /* major-8.mp3 in Resources */,
@@ -1091,14 +1086,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = N6T98R4V55;
+				DEVELOPMENT_TEAM = 28SH3489JH;
 				INFOPLIST_FILE = GoJreng/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = team10.GoJreng;
+				PRODUCT_BUNDLE_IDENTIFIER = "Annetta-Carolina";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1112,14 +1107,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = N6T98R4V55;
+				DEVELOPMENT_TEAM = 28SH3489JH;
 				INFOPLIST_FILE = GoJreng/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = team10.GoJreng;
+				PRODUCT_BUNDLE_IDENTIFIER = "Annetta-Carolina";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
