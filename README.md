@@ -4,7 +4,7 @@
 This is an app to help you train your hearing of guitar chord whenever and wherever you are .
 
 ```
-This apps is for fulfilling Mini Challenge 2 on Apple Developer Academy C4 , Team 10
+This apps is for  Mini Challenge 2 on Apple Developer Academy C4 , Team 10
 ```
 
 ## Screenshoot
